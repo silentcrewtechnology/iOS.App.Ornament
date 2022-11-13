@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		886BE62A291959030085BDDD /* BorderLabeledInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 886BE629291959030085BDDD /* BorderLabeledInput.swift */; };
 		8889557029140FB300A46293 /* Ornament.h in Headers */ = {isa = PBXBuildFile; fileRef = 8889556F29140FB300A46293 /* Ornament.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		888955A92914103700A46293 /* OnlyUppercasedTextFieldDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 888955982914103700A46293 /* OnlyUppercasedTextFieldDelegate.swift */; };
 		888955AA2914103700A46293 /* SumInputTextFieldDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 888955992914103700A46293 /* SumInputTextFieldDelegate.swift */; };
@@ -22,6 +23,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		886BE629291959030085BDDD /* BorderLabeledInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BorderLabeledInput.swift; sourceTree = "<group>"; };
 		8889556C29140FB300A46293 /* Ornament.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Ornament.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8889556F29140FB300A46293 /* Ornament.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Ornament.h; sourceTree = "<group>"; };
 		888955982914103700A46293 /* OnlyUppercasedTextFieldDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnlyUppercasedTextFieldDelegate.swift; sourceTree = "<group>"; };
@@ -48,6 +50,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		886BE628291958D10085BDDD /* Inputs */ = {
+			isa = PBXGroup;
+			children = (
+				886BE629291959030085BDDD /* BorderLabeledInput.swift */,
+			);
+			path = Inputs;
+			sourceTree = "<group>";
+		};
 		8889556229140FB300A46293 = {
 			isa = PBXGroup;
 			children = (
@@ -105,6 +115,7 @@
 		8889559D2914103700A46293 /* UIElements */ = {
 			isa = PBXGroup;
 			children = (
+				886BE628291958D10085BDDD /* Inputs */,
 				8889559E2914103700A46293 /* Buttons */,
 				888955A12914103700A46293 /* TextFields */,
 				888955A42914103700A46293 /* TableCells */,
@@ -234,6 +245,7 @@
 				888955AF2914103700A46293 /* FloatingTextField.swift in Sources */,
 				888955AA2914103700A46293 /* SumInputTextFieldDelegate.swift in Sources */,
 				888955B22914103700A46293 /* UIImage+Extension.swift in Sources */,
+				886BE62A291959030085BDDD /* BorderLabeledInput.swift in Sources */,
 				888955B32914103700A46293 /* UIColor+Extensions.swift in Sources */,
 				888955AE2914103700A46293 /* FilledButton.swift in Sources */,
 				888955B02914103700A46293 /* BorderRoundedTextField.swift in Sources */,

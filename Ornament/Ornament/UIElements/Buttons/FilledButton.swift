@@ -14,9 +14,9 @@ open class FilledButton: UIButton {
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        setBackgroundImage(UIImage(color: .grass500), for: .normal)
-        setBackgroundImage(UIImage(color: .grass400), for: .highlighted)
-        setBackgroundImage(UIImage(color: .grass300), for: .disabled)
+        setBackgroundImage(UIImage(color: .backgroundAction), for: .normal)
+        setBackgroundImage(UIImage(color: .backgroundActionPressed), for: .highlighted)
+        setBackgroundImage(UIImage(color: .backgroundDisabled), for: .disabled)
         setTitleColor(.white, for: .normal)
         setTitleColor(.white.withAlphaComponent(0.5), for: .highlighted)
         setTitleColor(.white, for: .disabled)

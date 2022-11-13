@@ -8,7 +8,7 @@
 import UIKit
 
 @objc
-public class AbbTypography: NSObject {
+extension UIFont {
     
     public static let text4XL = UIFont.systemFont(ofSize: 40, weight: .regular)
     public static let text4XL_1 = UIFont.systemFont(ofSize: 40, weight: .medium)
