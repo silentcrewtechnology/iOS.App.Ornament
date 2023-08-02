@@ -7,6 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		34241B382A7AE46300DCBBB4 /* MainViewControllerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34241B352A7AE46300DCBBB4 /* MainViewControllerManager.swift */; };
+		34241B392A7AE46300DCBBB4 /* MainBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34241B362A7AE46300DCBBB4 /* MainBuilder.swift */; };
+		34241B3A2A7AE46300DCBBB4 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34241B372A7AE46300DCBBB4 /* MainViewController.swift */; };
+		34241B402A7AE46E00DCBBB4 /* MainViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34241B3B2A7AE46D00DCBBB4 /* MainViewManager.swift */; };
+		34241B412A7AE46E00DCBBB4 /* MainCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34241B3C2A7AE46D00DCBBB4 /* MainCollectionCell.swift */; };
+		34241B422A7AE46E00DCBBB4 /* MainCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34241B3D2A7AE46E00DCBBB4 /* MainCollectionView.swift */; };
+		34241B432A7AE46E00DCBBB4 /* MainCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34241B3E2A7AE46E00DCBBB4 /* MainCellModel.swift */; };
+		34241B442A7AE46E00DCBBB4 /* MainCollectionBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34241B3F2A7AE46E00DCBBB4 /* MainCollectionBuilder.swift */; };
+		34241B462A7AE47600DCBBB4 /* ComponentsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34241B452A7AE47600DCBBB4 /* ComponentsService.swift */; };
+		34241B492A7AE49E00DCBBB4 /* ios.designsystem in Frameworks */ = {isa = PBXBuildFile; productRef = 34241B482A7AE49E00DCBBB4 /* ios.designsystem */; };
 		8889558329140FFC00A46293 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8889558229140FFC00A46293 /* AppDelegate.swift */; };
 		8889558C29140FFE00A46293 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8889558B29140FFE00A46293 /* Assets.xcassets */; };
 		8889558F29140FFE00A46293 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8889558D29140FFE00A46293 /* LaunchScreen.storyboard */; };
@@ -15,6 +25,15 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		34241B352A7AE46300DCBBB4 /* MainViewControllerManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewControllerManager.swift; sourceTree = "<group>"; };
+		34241B362A7AE46300DCBBB4 /* MainBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainBuilder.swift; sourceTree = "<group>"; };
+		34241B372A7AE46300DCBBB4 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		34241B3B2A7AE46D00DCBBB4 /* MainViewManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewManager.swift; sourceTree = "<group>"; };
+		34241B3C2A7AE46D00DCBBB4 /* MainCollectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainCollectionCell.swift; sourceTree = "<group>"; };
+		34241B3D2A7AE46E00DCBBB4 /* MainCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainCollectionView.swift; sourceTree = "<group>"; };
+		34241B3E2A7AE46E00DCBBB4 /* MainCellModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainCellModel.swift; sourceTree = "<group>"; };
+		34241B3F2A7AE46E00DCBBB4 /* MainCollectionBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainCollectionBuilder.swift; sourceTree = "<group>"; };
+		34241B452A7AE47600DCBBB4 /* ComponentsService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComponentsService.swift; sourceTree = "<group>"; };
 		8889557F29140FFC00A46293 /* OrnamentApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OrnamentApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8889558229140FFC00A46293 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8889558B29140FFE00A46293 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -29,6 +48,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				34241B492A7AE49E00DCBBB4 /* ios.designsystem in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -38,6 +58,9 @@
 		34241B302A7AE34000DCBBB4 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				34241B362A7AE46300DCBBB4 /* MainBuilder.swift */,
+				34241B372A7AE46300DCBBB4 /* MainViewController.swift */,
+				34241B352A7AE46300DCBBB4 /* MainViewControllerManager.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -45,6 +68,11 @@
 		34241B312A7AE34F00DCBBB4 /* CollectionView */ = {
 			isa = PBXGroup;
 			children = (
+				34241B3E2A7AE46E00DCBBB4 /* MainCellModel.swift */,
+				34241B3F2A7AE46E00DCBBB4 /* MainCollectionBuilder.swift */,
+				34241B3C2A7AE46D00DCBBB4 /* MainCollectionCell.swift */,
+				34241B3D2A7AE46E00DCBBB4 /* MainCollectionView.swift */,
+				34241B3B2A7AE46D00DCBBB4 /* MainViewManager.swift */,
 			);
 			path = CollectionView;
 			sourceTree = "<group>";
@@ -52,6 +80,7 @@
 		34241B332A7AE36200DCBBB4 /* ComponentServices */ = {
 			isa = PBXGroup;
 			children = (
+				34241B452A7AE47600DCBBB4 /* ComponentsService.swift */,
 			);
 			path = ComponentServices;
 			sourceTree = "<group>";
@@ -120,6 +149,9 @@
 			dependencies = (
 			);
 			name = OrnamentApp;
+			packageProductDependencies = (
+				34241B482A7AE49E00DCBBB4 /* ios.designsystem */,
+			);
 			productName = OrnamentApp;
 			productReference = 8889557F29140FFC00A46293 /* OrnamentApp.app */;
 			productType = "com.apple.product-type.application";
@@ -148,6 +180,9 @@
 				Base,
 			);
 			mainGroup = 8889557629140FFC00A46293;
+			packageReferences = (
+				34241B472A7AE49E00DCBBB4 /* XCRemoteSwiftPackageReference "ios.designsystem" */,
+			);
 			productRefGroup = 8889558029140FFC00A46293 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -174,9 +209,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				34241B432A7AE46E00DCBBB4 /* MainCellModel.swift in Sources */,
+				34241B442A7AE46E00DCBBB4 /* MainCollectionBuilder.swift in Sources */,
 				888955B52914107800A46293 /* ViewController.swift in Sources */,
+				34241B382A7AE46300DCBBB4 /* MainViewControllerManager.swift in Sources */,
 				8889558329140FFC00A46293 /* AppDelegate.swift in Sources */,
+				34241B462A7AE47600DCBBB4 /* ComponentsService.swift in Sources */,
+				34241B3A2A7AE46300DCBBB4 /* MainViewController.swift in Sources */,
+				34241B412A7AE46E00DCBBB4 /* MainCollectionCell.swift in Sources */,
 				888955B72914108700A46293 /* SceneDelegate.swift in Sources */,
+				34241B402A7AE46E00DCBBB4 /* MainViewManager.swift in Sources */,
+				34241B392A7AE46300DCBBB4 /* MainBuilder.swift in Sources */,
+				34241B422A7AE46E00DCBBB4 /* MainCollectionView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -390,6 +434,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		34241B472A7AE49E00DCBBB4 /* XCRemoteSwiftPackageReference "ios.designsystem" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://gitlab.akbars.tech/abo/ios.designsystem.git";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		34241B482A7AE49E00DCBBB4 /* ios.designsystem */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 34241B472A7AE49E00DCBBB4 /* XCRemoteSwiftPackageReference "ios.designsystem" */;
+			productName = ios.designsystem;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 8889557729140FFC00A46293 /* Project object */;
 }

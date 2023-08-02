@@ -1,0 +1,32 @@
+{
+  "pins" : [
+    {
+      "identity" : "ios.architecture",
+      "kind" : "remoteSourceControl",
+      "location" : "https://gitlab.akbars.tech/abo/ios.architecture",
+      "state" : {
+        "branch" : "main",
+        "revision" : "a08a38e91d2af84ac8b4916107f08916bf0cc2f6"
+      }
+    },
+    {
+      "identity" : "ios.designsystem",
+      "kind" : "remoteSourceControl",
+      "location" : "https://gitlab.akbars.tech/abo/ios.designsystem",
+      "state" : {
+        "branch" : "main",
+        "revision" : "d2b3847d3204694ba108206dee0872b63754deee"
+      }
+    },
+    {
+      "identity" : "snapkit",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/SnapKit/SnapKit.git",
+      "state" : {
+        "revision" : "f222cbdf325885926566172f6f5f06af95473158",
+        "version" : "5.6.0"
+      }
+    }
+  ],
+  "version" : 2
+}
