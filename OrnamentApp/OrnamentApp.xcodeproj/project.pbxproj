@@ -12,7 +12,6 @@
 		8889558F29140FFE00A46293 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8889558D29140FFE00A46293 /* LaunchScreen.storyboard */; };
 		888955B52914107800A46293 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 888955B42914107800A46293 /* ViewController.swift */; };
 		888955B72914108700A46293 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 888955B62914108700A46293 /* SceneDelegate.swift */; };
-		888955BA2914112F00A46293 /* Ornament.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 888955B92914112F00A46293 /* Ornament.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,7 +22,6 @@
 		8889559029140FFE00A46293 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		888955B42914107800A46293 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		888955B62914108700A46293 /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		888955B92914112F00A46293 /* Ornament.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Ornament.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,13 +29,40 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				888955BA2914112F00A46293 /* Ornament.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		34241B302A7AE34000DCBBB4 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		34241B312A7AE34F00DCBBB4 /* CollectionView */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = CollectionView;
+			sourceTree = "<group>";
+		};
+		34241B332A7AE36200DCBBB4 /* ComponentServices */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ComponentServices;
+			sourceTree = "<group>";
+		};
+		34241B342A7AE37500DCBBB4 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
 		8889557629140FFC00A46293 = {
 			isa = PBXGroup;
 			children = (
@@ -58,6 +83,10 @@
 		8889558129140FFC00A46293 /* OrnamentApp */ = {
 			isa = PBXGroup;
 			children = (
+				34241B342A7AE37500DCBBB4 /* Components */,
+				34241B332A7AE36200DCBBB4 /* ComponentServices */,
+				34241B312A7AE34F00DCBBB4 /* CollectionView */,
+				34241B302A7AE34000DCBBB4 /* Main */,
 				8889558229140FFC00A46293 /* AppDelegate.swift */,
 				888955B42914107800A46293 /* ViewController.swift */,
 				888955B62914108700A46293 /* SceneDelegate.swift */,
@@ -71,7 +100,6 @@
 		888955B82914112F00A46293 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				888955B92914112F00A46293 /* Ornament.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";

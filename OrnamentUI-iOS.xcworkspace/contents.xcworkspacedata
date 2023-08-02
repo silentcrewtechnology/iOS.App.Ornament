@@ -4,7 +4,4 @@
    <FileRef
       location = "group:OrnamentApp/OrnamentApp.xcodeproj">
    </FileRef>
-   <FileRef
-      location = "group:Ornament/Ornament.xcodeproj">
-   </FileRef>
 </Workspace>
