@@ -32,7 +32,6 @@
 		34241B3D2A7AE46E00DCBBB4 /* MainCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainCollectionView.swift; sourceTree = "<group>"; };
 		34241B3E2A7AE46E00DCBBB4 /* MainCellModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainCellModel.swift; sourceTree = "<group>"; };
 		34241B3F2A7AE46E00DCBBB4 /* MainCollectionBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainCollectionBuilder.swift; sourceTree = "<group>"; };
-		34BF7F242A7B9EAE00F1A12F /* ios.designsystem */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = ios.designsystem; path = ../../ios.designsystem; sourceTree = "<group>"; };
 		8889557F29140FFC00A46293 /* OrnamentApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OrnamentApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8889558229140FFC00A46293 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8889558B29140FFE00A46293 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -79,7 +78,6 @@
 		8889557629140FFC00A46293 = {
 			isa = PBXGroup;
 			children = (
-				34BF7F242A7B9EAE00F1A12F /* ios.designsystem */,
 				8889558129140FFC00A46293 /* OrnamentApp */,
 				8889558029140FFC00A46293 /* Products */,
 				888955B82914112F00A46293 /* Frameworks */,
@@ -341,6 +339,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = NM6255M99C;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = OrnamentApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -371,6 +370,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = NM6255M99C;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = OrnamentApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
