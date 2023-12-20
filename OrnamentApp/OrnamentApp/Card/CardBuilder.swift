@@ -1,4 +1,4 @@
-//  SectionMessageBuilder.swift
+//  CardBuilder.swift
 //  OrnamentApp
 //
 //  Created by Валерий Васин on 20.12.2023.
@@ -7,14 +7,13 @@
 
 import Foundation
 import Architecture
-import DesignSystem
 
-final class SectionMessageBuilder: Builder<SectionMessageViewController, SectionMessageUpdater, SectionMessageFeature, Coordinator> {
+final class CardBuilder: Builder<CardViewController, CardUpdater, CardFeature, Coordinator> {
     
     // нужно заменить Coordinator на твой Coordinator
     
     deinit {
-        print("💀 удалился SectionMessageBuilder")
+        print("💀 удалился CardBuilder")
     }
     
     init(coordinator: Coordinator) {
@@ -22,7 +21,7 @@ final class SectionMessageBuilder: Builder<SectionMessageViewController, Section
         
         // Код, который можно спрятать в родителя (на подумать)
         viewUpdater.bind(view: view)
-        let feature = SectionMessageFeature.init(coordinator: coordinator)
+        let feature = CardFeature.init(coordinator: coordinator)
         feature.viewUpdater = viewUpdater
         self.view.feature = feature
         creating(feature: feature)
@@ -30,13 +29,13 @@ final class SectionMessageBuilder: Builder<SectionMessageViewController, Section
     }
     
     
-    override func creating(feature: SectionMessageFeature) {
+    override func creating(feature: CardFeature) {
         
         // нужно заменить some на твои реализации
         
-         let sectionMessageView = SectionMessageView()
+        // let someBuilder = SomeBuilder()
         
-         view.sectionMessageView = sectionMessageView
+        // view.someView = someBuilder.view
         
         
         // updater.bind(
@@ -44,7 +43,7 @@ final class SectionMessageBuilder: Builder<SectionMessageViewController, Section
         // )
     }
     
-    override func start(feature: SectionMessageFeature) {
+    override func start(feature: CardFeature) {
         feature.handle(action: .start)
     }
 }

@@ -1,28 +1,28 @@
-//  MainUpdater.swift
+//  CardUpdater.swift
 //  OrnamentApp
 //
-//  Created by Валерий Васин on 19.12.2023.
+//  Created by Валерий Васин on 20.12.2023.
 //  Copyright (c) 2023 ___ORGANIZATIONNAME___. All rights reserved.
 //
 
 import Foundation
 import Architecture
 
-final class MainUpdater: ViewUpdater<MainViewController> {
+final class CardUpdater: ViewUpdater<CardViewController> {
     
     deinit {
-        print("💀 удалился MainUpdater")
+        print("💀 удалился CardScreenUpdater")
     }
     
     // нужно заменить SomeUpdater на твои
-     private var mainCollectionViewUpdater: MainCollectionViewUpdater?
+    // private var someUpdater: SomeUpdater?
     
     // Здесь прописываем все updater'ы вьюх, которые входят в экран
-    func bind(mainCollectionViewUpdater: MainCollectionViewUpdater) {
-        self.mainCollectionViewUpdater = mainCollectionViewUpdater
-    }
+    //func bind(someUpdater: SomeUpdater) {
+    //    self.someUpdater = SomeUpdater
+    //}
     
-    func handle(state: MainViewController.State) {
+    func handle(state: CardViewController.State) {
         // Здесь обрабатываем все состояния, которые может принять View
         switch state {
         case .create(let viewProperties):
@@ -32,16 +32,15 @@ final class MainUpdater: ViewUpdater<MainViewController> {
         update(properties: viewProperties)
     }
     
-    // Метод создания View, здесь настраиваем .init() у viewEntity
-    private func create(properties: MainViewController.ViewProperties?) {
+    // Метод создания View, здесь настраиваем .init() у viewProperties
+    private func create(properties: CardViewController.ViewProperties?) {
         guard let properties else { return }
         
         self.viewProperties = properties
-        mainCollectionViewUpdater?.handle(state: .create(properties.mainCollectionViewProperty))
     }
     
     // Метод, вызывающий обновление у View
-    private func update(properties: MainViewController.ViewProperties?) {
+    private func update(properties: CardViewController.ViewProperties?) {
         DispatchQueue.main.async {
             self.update(properties)
         }

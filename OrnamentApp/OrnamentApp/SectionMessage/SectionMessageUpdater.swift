@@ -14,12 +14,12 @@ final class SectionMessageUpdater: ViewUpdater<SectionMessageViewController> {
         print("💀 удалился SectionMessageUpdater")
     }
     
-    // нужно заменить SomePresenter на твои
+    // нужно заменить SomeUpdater на твои
 //     private var sectionMessageStyle = SectionMessageStyle()
     
-    // Здесь прописываем все presenter'ы вьюх, которые входят в экран
-    //func bind(somePresenter: SomePresenter) {
-    //    self.somePresenter = SomePresenter
+    // Здесь прописываем все updater'ы вьюх, которые входят в экран
+    //func bind(someUpdater: SomeUpdater) {
+    //    self.someUpdater = SomeUpdater
     //}
     
     func handle(state: SectionMessageViewController.State) {

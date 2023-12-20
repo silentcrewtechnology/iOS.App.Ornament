@@ -22,6 +22,13 @@
 		34D6C9F22B3257F600FA1A8D /* SectionMessageUpdater.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34D6C9EA2B3257F600FA1A8D /* SectionMessageUpdater.swift */; };
 		34D6C9F32B3257F600FA1A8D /* SectionMessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34D6C9EB2B3257F600FA1A8D /* SectionMessageViewController.swift */; };
 		34D6C9F42B3257F600FA1A8D /* SectionMessageFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34D6C9EC2B3257F600FA1A8D /* SectionMessageFeature.swift */; };
+		34D82FE72B338C2700E5DE4C /* CardFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34D82FE32B338C2700E5DE4C /* CardFeature.swift */; };
+		34D82FE82B338C2700E5DE4C /* CardBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34D82FE42B338C2700E5DE4C /* CardBuilder.swift */; };
+		34D82FE92B338C2700E5DE4C /* CardUpdater.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34D82FE52B338C2700E5DE4C /* CardUpdater.swift */; };
+		34D82FEA2B338C2700E5DE4C /* CardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34D82FE62B338C2700E5DE4C /* CardViewController.swift */; };
+		34D82FEF2B338C4200E5DE4C /* TrueButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34D82FEC2B338C4200E5DE4C /* TrueButtonView.swift */; };
+		34D82FF02B338C4200E5DE4C /* TrueButtonViewBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34D82FED2B338C4200E5DE4C /* TrueButtonViewBuilder.swift */; };
+		34D82FF12B338C4200E5DE4C /* TrueButtonViewUpdater.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34D82FEE2B338C4200E5DE4C /* TrueButtonViewUpdater.swift */; };
 		8889558329140FFC00A46293 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8889558229140FFC00A46293 /* AppDelegate.swift */; };
 		8889558C29140FFE00A46293 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8889558B29140FFE00A46293 /* Assets.xcassets */; };
 		8889558F29140FFE00A46293 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8889558D29140FFE00A46293 /* LaunchScreen.storyboard */; };
@@ -45,6 +52,13 @@
 		34D6C9EA2B3257F600FA1A8D /* SectionMessageUpdater.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SectionMessageUpdater.swift; sourceTree = "<group>"; };
 		34D6C9EB2B3257F600FA1A8D /* SectionMessageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SectionMessageViewController.swift; sourceTree = "<group>"; };
 		34D6C9EC2B3257F600FA1A8D /* SectionMessageFeature.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SectionMessageFeature.swift; sourceTree = "<group>"; };
+		34D82FE32B338C2700E5DE4C /* CardFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardFeature.swift; sourceTree = "<group>"; };
+		34D82FE42B338C2700E5DE4C /* CardBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardBuilder.swift; sourceTree = "<group>"; };
+		34D82FE52B338C2700E5DE4C /* CardUpdater.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardUpdater.swift; sourceTree = "<group>"; };
+		34D82FE62B338C2700E5DE4C /* CardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardViewController.swift; sourceTree = "<group>"; };
+		34D82FEC2B338C4200E5DE4C /* TrueButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrueButtonView.swift; sourceTree = "<group>"; };
+		34D82FED2B338C4200E5DE4C /* TrueButtonViewBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrueButtonViewBuilder.swift; sourceTree = "<group>"; };
+		34D82FEE2B338C4200E5DE4C /* TrueButtonViewUpdater.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrueButtonViewUpdater.swift; sourceTree = "<group>"; };
 		8889557F29140FFC00A46293 /* OrnamentApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OrnamentApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8889558229140FFC00A46293 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8889558B29140FFE00A46293 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -108,6 +122,28 @@
 			path = SectionMessage;
 			sourceTree = "<group>";
 		};
+		34D82FE22B338C1B00E5DE4C /* Card */ = {
+			isa = PBXGroup;
+			children = (
+				34D82FEB2B338C2C00E5DE4C /* TrueButton */,
+				34D82FE32B338C2700E5DE4C /* CardFeature.swift */,
+				34D82FE42B338C2700E5DE4C /* CardBuilder.swift */,
+				34D82FE52B338C2700E5DE4C /* CardUpdater.swift */,
+				34D82FE62B338C2700E5DE4C /* CardViewController.swift */,
+			);
+			path = Card;
+			sourceTree = "<group>";
+		};
+		34D82FEB2B338C2C00E5DE4C /* TrueButton */ = {
+			isa = PBXGroup;
+			children = (
+				34D82FEC2B338C4200E5DE4C /* TrueButtonView.swift */,
+				34D82FED2B338C4200E5DE4C /* TrueButtonViewBuilder.swift */,
+				34D82FEE2B338C4200E5DE4C /* TrueButtonViewUpdater.swift */,
+			);
+			path = TrueButton;
+			sourceTree = "<group>";
+		};
 		8889557629140FFC00A46293 = {
 			isa = PBXGroup;
 			children = (
@@ -130,6 +166,7 @@
 		8889558129140FFC00A46293 /* OrnamentApp */ = {
 			isa = PBXGroup;
 			children = (
+				34D82FE22B338C1B00E5DE4C /* Card */,
 				34D6C9E82B3257F600FA1A8D /* SectionMessage */,
 				34241B312A7AE34F00DCBBB4 /* CollectionView */,
 				34241B302A7AE34000DCBBB4 /* Main */,
@@ -225,12 +262,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				34D82FE92B338C2700E5DE4C /* CardUpdater.swift in Sources */,
 				34D6C9F42B3257F600FA1A8D /* SectionMessageFeature.swift in Sources */,
 				34241B432A7AE46E00DCBBB4 /* MainCellModel.swift in Sources */,
 				34D6C9F22B3257F600FA1A8D /* SectionMessageUpdater.swift in Sources */,
 				8889558329140FFC00A46293 /* AppDelegate.swift in Sources */,
 				34D6C9BE2B31EA2900FA1A8D /* MainUpdater.swift in Sources */,
+				34D82FF02B338C4200E5DE4C /* TrueButtonViewBuilder.swift in Sources */,
+				34D82FE72B338C2700E5DE4C /* CardFeature.swift in Sources */,
 				34D6C9BF2B31EA2900FA1A8D /* MainViewController.swift in Sources */,
+				34D82FEA2B338C2700E5DE4C /* CardViewController.swift in Sources */,
+				34D82FE82B338C2700E5DE4C /* CardBuilder.swift in Sources */,
+				34D82FF12B338C4200E5DE4C /* TrueButtonViewUpdater.swift in Sources */,
 				34D6C9BC2B31EA2900FA1A8D /* MainFeature.swift in Sources */,
 				888955B72914108700A46293 /* SceneDelegate.swift in Sources */,
 				34D6C9D52B31FDA700FA1A8D /* MainCollectionCellView.swift in Sources */,
@@ -241,6 +284,7 @@
 				34D6C9F12B3257F600FA1A8D /* SectionMessageBuilder.swift in Sources */,
 				34D6C9F32B3257F600FA1A8D /* SectionMessageViewController.swift in Sources */,
 				34D6C9CE2B31FC3D00FA1A8D /* MainCollectionView.swift in Sources */,
+				34D82FEF2B338C4200E5DE4C /* TrueButtonView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
