@@ -1,0 +1,96 @@
+//  SectionMessageFeature.swift
+//  OrnamentApp
+//
+//  Created by Валерий Васин on 20.12.2023.
+//  Copyright (c) 2023 ___ORGANIZATIONNAME___. All rights reserved.
+//
+
+import Foundation
+import Architecture
+import DesignSystem
+
+final class SectionMessageFeature: FeatureProtocol {
+    
+    deinit {
+        print("💀 удалился SectionMessageFeature")
+    }
+    
+    // Указание с каким Энамом мы работаем
+    typealias ActionEnum = Action
+    
+    enum Action {
+        case start
+        // здесь описываем все экшены, которые могут прилететь от View
+    }
+    
+    var viewUpdater: SectionMessageUpdater?
+    
+    // нужно заменить Coordinator на твой Coordinator
+     var coordinator: Coordinator
+    
+     init(coordinator: Coordinator) {
+        self.coordinator = coordinator
+     }
+    
+    func handle(action: Action) {
+        // Здесь обрабатываем все экшены, которые может принять interactor
+        switch action {
+        case .start:
+            start()
+        }
+    }
+    
+    private func start() {
+        // Здесь пишем код, который нужен пи создании экрана
+        let properties = createAllProperties()
+        viewUpdater?.handle(state: .create(.info ,properties))
+    }
+    
+    private func styleButtonActions(id: Int) {
+        switch id {
+        case 1:
+            viewUpdater?.handle(state: .newState(.info, createAllProperties()))
+        case 2:
+            viewUpdater?.handle(state: .newState(.warning, createAllProperties()))
+        case 3:
+            viewUpdater?.handle(state: .newState(.success, createAllProperties()))
+        case 4:
+            viewUpdater?.handle(state: .newState(.error, createAllProperties()))
+        case 5:
+            viewUpdater?.handle(state: .newState(.security, createAllProperties()))
+        case 6:
+            viewUpdater?.handle(state: .newState(.none, createAllProperties()))
+        default:
+            break
+        }
+    }
+}
+
+
+// MARK: Creation
+
+extension SectionMessageFeature {
+    
+    private func createAllProperties() -> SectionMessageViewController.ViewProperties {
+        // Здесь создаем все View Entities, которые входят в экран
+        let property = SectionMessageViewController.ViewProperties(
+            sectionMessageProperties: creatgetDefaultProperies(),
+            styleButtonsAction: { [weak self] id in
+                self?.styleButtonActions(id: id)
+            })
+        return property
+    }
+    
+    private func creatgetDefaultProperies() -> SectionMessageView.ViewProperties {
+        let property = SectionMessageView.ViewProperties(
+            title: "SWIFT Переводы".attributed,
+            content: "Мы единственный банк, который возобновил переводы забугор".attributed,
+            subtitle: "Да, мы это сделали".attributed,
+            iconImage: nil,
+            backgroundColor: nil,
+            action: { //[weak self] in
+                print("👀")
+            })
+        return property
+    }
+}

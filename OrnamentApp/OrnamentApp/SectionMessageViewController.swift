@@ -1,23 +1,22 @@
-//  MainViewController.swift
+//  SectionMessageViewController.swift
 //  OrnamentApp
 //
-//  Created by Валерий Васин on 19.12.2023.
+//  Created by Валерий Васин on 20.12.2023.
 //  Copyright (c) 2023 ___ORGANIZATIONNAME___. All rights reserved.
 //
 
 import UIKit
 import SnapKit
-import Architecture
 
-final class MainViewController: ViewController<MainFeature>, ViewProtocol {
+final class SectionMessageViewController: ViewController<SectionMessageFeature>, ViewProtocol {
     
     deinit {
-        print("💀 удалился MainScreenController")
+        print("💀 удалился SectionMessageScreenController")
     }
     
     struct ViewProperties {
-        var accessibilityId = "MainScreenController"
-        var mainCollectionViewProperty: MainCollectionView.ViewProperties?
+        var accessibilityId = "SectionMessageScreenController"
+        // var someView: SomeView.ViewEntity?
         // Здесь описываются свойства вью
         // нужно заменить SomeView на твою View
     }
@@ -33,8 +32,6 @@ final class MainViewController: ViewController<MainFeature>, ViewProtocol {
     // Ниже создаем внутренние вью элементы
     // MARK: UI Elements
     
-    var mainCollectionView: MainCollectionView?
-    
     // нужно заменить SomeView на твою View
     // var someView: SomeView?
     
@@ -42,16 +39,6 @@ final class MainViewController: ViewController<MainFeature>, ViewProtocol {
         super.viewDidLoad()
         configureViews()
         setupSubview()
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        self.navigationController?.navigationBar.isHidden = true
-    }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        self.navigationController?.navigationBar.isHidden = false
     }
     
     // Ниже функции от ViewProtocol'а
@@ -71,11 +58,6 @@ final class MainViewController: ViewController<MainFeature>, ViewProtocol {
     }
     
     private func setupSubview() {
-        guard let mainCollectionView else { return }
         // Здесь мы добавляем вьюхи и настраиваем констрейнты
-        view.addSubview(mainCollectionView)
-        mainCollectionView.snp.makeConstraints {
-            $0.edges.equalToSuperview()
-        }
     }
 }

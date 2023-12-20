@@ -1,38 +1,43 @@
-//
 //  MainBuilder.swift
 //  OrnamentApp
 //
-//  Created by Валерий Васин on 27.07.2023.
+//  Created by Валерий Васин on 19.12.2023.
+//  Copyright (c) 2023 ___ORGANIZATIONNAME___. All rights reserved.
 //
 
-import UIKit
+import Foundation
 import Architecture
 
-final class MainBuilder: BuilderProtocol {
+final class MainBuilder: Builder<MainViewController, MainUpdater, MainFeature, MainScreenCoordinator> {
     
-    typealias V  = MainViewController
-    typealias VM = MainViewControllerManager
+    // нужно заменить Coordinator на твой Coordinator
     
-    public var view       : MainViewController
-    public var viewManager: MainViewControllerManager
-    
-    public static func build() -> MainBuilder {
-        let view = MainViewController()
-        let viewManager = MainViewControllerManager()
-        view.loadViewIfNeeded()
-        viewManager.bind(with: view)
-        let selfBuilder = MainBuilder(
-            with: view,
-            with: viewManager
-        )
-        return selfBuilder
+    deinit {
+        print("💀 удалился MainBuilder")
     }
     
-    private init(
-        with view: MainViewController,
-        with viewManager: MainViewControllerManager
-    ) {
-        self.view        = view
-        self.viewManager = viewManager
+    init(coordinator: MainScreenCoordinator) {
+        super.init(coordinator: coordinator)
+        
+        // Код, который можно спрятать в родителя (на подумать)
+        viewUpdater.bind(view: view)
+        let feature = MainFeature.init(coordinator: coordinator)
+        feature.viewUpdater = viewUpdater
+        self.view.feature = feature
+        creating(feature: feature)
+        start(feature: feature)
+    }
+    
+    
+    override func creating(feature: MainFeature) {
+        let mainViewCollectionBuilder = MainCollectionViewBuilder()
+        
+        view.mainCollectionView = mainViewCollectionBuilder.view
+        
+        viewUpdater.bind(mainCollectionViewUpdater: mainViewCollectionBuilder.viewUpdater)
+    }
+    
+    override func start(feature: MainFeature) {
+        feature.handle(action: .start)
     }
 }

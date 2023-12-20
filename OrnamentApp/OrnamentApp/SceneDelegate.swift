@@ -17,15 +17,14 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window = UIWindow(frame: windowScene.coordinateSpace.bounds)
         window?.windowScene = windowScene
         
-        let mainBuilder = MainBuilder.build()
-        let rootVC = mainBuilder.view
+        let navigation = UINavigationController()
         
-        let navigationController = UINavigationController(rootViewController: rootVC)
+        let coordinator = MainScreenCoordinator(navigation: navigation)
+        let builder = MainBuilder(coordinator: coordinator)
+        navigation.setViewControllers([builder.view], animated: true)
         
-        window?.rootViewController = navigationController
+        window?.rootViewController = navigation
         window?.makeKeyAndVisible()
-        
-        mainBuilder.viewManager.state = .createViewProperties
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {

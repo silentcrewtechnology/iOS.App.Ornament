@@ -1,0 +1,49 @@
+//  MainUpdater.swift
+//  OrnamentApp
+//
+//  Created by Валерий Васин on 19.12.2023.
+//  Copyright (c) 2023 ___ORGANIZATIONNAME___. All rights reserved.
+//
+
+import Foundation
+import Architecture
+
+final class MainUpdater: ViewUpdater<MainViewController> {
+    
+    deinit {
+        print("💀 удалился MainUpdater")
+    }
+    
+    // нужно заменить SomePresenter на твои
+     private var mainCollectionViewUpdater: MainCollectionViewUpdater?
+    
+    // Здесь прописываем все presenter'ы вьюх, которые входят в экран
+    func bind(mainCollectionViewUpdater: MainCollectionViewUpdater) {
+        self.mainCollectionViewUpdater = mainCollectionViewUpdater
+    }
+    
+    func handle(state: MainViewController.State) {
+        // Здесь обрабатываем все состояния, которые может принять View
+        switch state {
+        case .create(let viewProperties):
+            create(properties: viewProperties)
+        }
+        
+        update(properties: viewProperties)
+    }
+    
+    // Метод создания View, здесь настраиваем .init() у viewEntity
+    private func create(properties: MainViewController.ViewProperties?) {
+        guard let properties else { return }
+        
+        self.viewProperties = properties
+        mainCollectionViewUpdater?.handle(state: .create(properties.mainCollectionViewProperty))
+    }
+    
+    // Метод, вызывающий обновление у View
+    private func update(properties: MainViewController.ViewProperties?) {
+        DispatchQueue.main.async {
+            self.update(properties)
+        }
+    }
+}
