@@ -8,6 +8,7 @@
 import Foundation
 import Architecture
 import DesignSystem
+import Components
 
 final class MainFeature: FeatureProtocol {
     

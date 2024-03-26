@@ -8,6 +8,7 @@
 import Foundation
 import Architecture
 import DesignSystem
+import Components
 
 final class SectionMessageFeature: FeatureProtocol {
     
@@ -74,14 +75,14 @@ extension SectionMessageFeature {
     private func createAllProperties() -> SectionMessageViewController.ViewProperties {
         // Здесь создаем все View Entities, которые входят в экран
         let property = SectionMessageViewController.ViewProperties(
-            sectionMessageProperties: creatgetDefaultProperies(),
+            sectionMessageProperties: createDefaultProperies(),
             styleButtonsAction: { [weak self] id in
                 self?.styleButtonActions(id: id)
             })
         return property
     }
     
-    private func creatgetDefaultProperies() -> SectionMessageView.ViewProperties {
+    private func createDefaultProperies() -> SectionMessageView.ViewProperties {
         let property = SectionMessageView.ViewProperties(
             title: "SWIFT Переводы".attributed,
             content: "Мы единственный банк, который возобновил переводы забугор".attributed,

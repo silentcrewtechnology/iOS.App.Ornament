@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		34241B432A7AE46E00DCBBB4 /* MainCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34241B3E2A7AE46E00DCBBB4 /* MainCellModel.swift */; };
+		34469B732BB2EA8B00E65500 /* Architecture in Frameworks */ = {isa = PBXBuildFile; productRef = 34469B722BB2EA8B00E65500 /* Architecture */; };
+		34469B7A2BB2F00600E65500 /* ComponentsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34469B792BB2F00600E65500 /* ComponentsService.swift */; };
 		34BF7F232A7B9E7300F1A12F /* ios.designsystem in Frameworks */ = {isa = PBXBuildFile; productRef = 34BF7F222A7B9E7300F1A12F /* ios.designsystem */; };
 		34D6C9BC2B31EA2900FA1A8D /* MainFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34D6C9B82B31EA2900FA1A8D /* MainFeature.swift */; };
 		34D6C9BD2B31EA2900FA1A8D /* MainBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34D6C9B92B31EA2900FA1A8D /* MainBuilder.swift */; };
@@ -37,12 +39,11 @@
 
 /* Begin PBXFileReference section */
 		34241B3E2A7AE46E00DCBBB4 /* MainCellModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainCellModel.swift; sourceTree = "<group>"; };
-		34D6C9B32B3190FE00FA1A8D /* ios.designsystem */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = ios.designsystem; path = ../../ios.designsystem; sourceTree = "<group>"; };
+		34469B792BB2F00600E65500 /* ComponentsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComponentsService.swift; sourceTree = "<group>"; };
 		34D6C9B82B31EA2900FA1A8D /* MainFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainFeature.swift; sourceTree = "<group>"; };
 		34D6C9B92B31EA2900FA1A8D /* MainBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainBuilder.swift; sourceTree = "<group>"; };
 		34D6C9BA2B31EA2900FA1A8D /* MainUpdater.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainUpdater.swift; sourceTree = "<group>"; };
 		34D6C9BB2B31EA2900FA1A8D /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
-		34D6C9C92B31F3AD00FA1A8D /* ios.architecture */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = ios.architecture; path = ../../ios.architecture; sourceTree = "<group>"; };
 		34D6C9CB2B31FC3D00FA1A8D /* MainCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCollectionView.swift; sourceTree = "<group>"; };
 		34D6C9CC2B31FC3D00FA1A8D /* MainCollectionViewBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCollectionViewBuilder.swift; sourceTree = "<group>"; };
 		34D6C9CD2B31FC3D00FA1A8D /* MainCollectionViewUpdater.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCollectionViewUpdater.swift; sourceTree = "<group>"; };
@@ -73,6 +74,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				34BF7F232A7B9E7300F1A12F /* ios.designsystem in Frameworks */,
+				34469B732BB2EA8B00E65500 /* Architecture in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -147,8 +149,6 @@
 		8889557629140FFC00A46293 = {
 			isa = PBXGroup;
 			children = (
-				34D6C9C92B31F3AD00FA1A8D /* ios.architecture */,
-				34D6C9B32B3190FE00FA1A8D /* ios.designsystem */,
 				8889558129140FFC00A46293 /* OrnamentApp */,
 				8889558029140FFC00A46293 /* Products */,
 				888955B82914112F00A46293 /* Frameworks */,
@@ -166,6 +166,7 @@
 		8889558129140FFC00A46293 /* OrnamentApp */ = {
 			isa = PBXGroup;
 			children = (
+				34469B792BB2F00600E65500 /* ComponentsService.swift */,
 				34D82FE22B338C1B00E5DE4C /* Card */,
 				34D6C9E82B3257F600FA1A8D /* SectionMessage */,
 				34241B312A7AE34F00DCBBB4 /* CollectionView */,
@@ -204,6 +205,7 @@
 			name = OrnamentApp;
 			packageProductDependencies = (
 				34BF7F222A7B9E7300F1A12F /* ios.designsystem */,
+				34469B722BB2EA8B00E65500 /* Architecture */,
 			);
 			productName = OrnamentApp;
 			productReference = 8889557F29140FFC00A46293 /* OrnamentApp.app */;
@@ -235,6 +237,7 @@
 			mainGroup = 8889557629140FFC00A46293;
 			packageReferences = (
 				34BF7F212A7B9E7300F1A12F /* XCRemoteSwiftPackageReference "ios" */,
+				34469B712BB2EA8B00E65500 /* XCRemoteSwiftPackageReference "ios" */,
 			);
 			productRefGroup = 8889558029140FFC00A46293 /* Products */;
 			projectDirPath = "";
@@ -279,6 +282,7 @@
 				34D6C9D52B31FDA700FA1A8D /* MainCollectionCellView.swift in Sources */,
 				34D6C9DA2B322B8C00FA1A8D /* MainScreenCoordinator.swift in Sources */,
 				34D6C9D02B31FC3D00FA1A8D /* MainCollectionViewUpdater.swift in Sources */,
+				34469B7A2BB2F00600E65500 /* ComponentsService.swift in Sources */,
 				34D6C9BD2B31EA2900FA1A8D /* MainBuilder.swift in Sources */,
 				34D6C9CF2B31FC3D00FA1A8D /* MainCollectionViewBuilder.swift in Sources */,
 				34D6C9F12B3257F600FA1A8D /* SectionMessageBuilder.swift in Sources */,
@@ -502,6 +506,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		34469B712BB2EA8B00E65500 /* XCRemoteSwiftPackageReference "ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://gitlab.akbars.tech/abo/ios.architecture";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.0.3;
+			};
+		};
 		34BF7F212A7B9E7300F1A12F /* XCRemoteSwiftPackageReference "ios" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://gitlab.akbars.tech/abo/ios.designsystem";
@@ -513,6 +525,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		34469B722BB2EA8B00E65500 /* Architecture */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 34469B712BB2EA8B00E65500 /* XCRemoteSwiftPackageReference "ios" */;
+			productName = Architecture;
+		};
 		34BF7F222A7B9E7300F1A12F /* ios.designsystem */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 34BF7F212A7B9E7300F1A12F /* XCRemoteSwiftPackageReference "ios" */;

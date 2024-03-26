@@ -9,6 +9,7 @@ import UIKit
 import SnapKit
 import Architecture
 import DesignSystem
+import Components
 
 final class ChoosingStyleButtonView: UIButton {
     

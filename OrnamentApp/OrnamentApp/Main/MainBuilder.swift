@@ -28,7 +28,6 @@ final class MainBuilder: Builder<MainViewController, MainUpdater, MainFeature, M
         start(feature: feature)
     }
     
-    
     override func creating(feature: MainFeature) {
         let mainViewCollectionBuilder = MainCollectionViewBuilder()
         
