@@ -25,14 +25,15 @@ final class SectionMessageUpdater: ViewUpdater<SectionMessageViewController> {
     func handle(state: SectionMessageViewController.State) {
         // Здесь обрабатываем все состояния, которые может принять View
         switch state {
-        case .create(let state, let viewProperties):
+        case .create(let style, let viewProperties):
+            guard var viewProperties else { return }
+            style.update(with: &viewProperties.sectionMessageProperties)
             self.viewProperties = viewProperties
-            let sectionProperties = state.apply(viewProperties: viewProperties?.sectionMessageProperties)
-            self.viewProperties?.sectionMessageProperties = sectionProperties
 //            create(properties: self.viewProperties)
-        case .newState(let state, let viewProperties):
-            let sectionProperties = state.apply(viewProperties: viewProperties.sectionMessageProperties)
-            self.viewProperties?.sectionMessageProperties = sectionProperties
+        case .newState(let style, let viewProperties):
+            var viewProperties = viewProperties
+            style.update(with: &viewProperties.sectionMessageProperties)
+            self.viewProperties = viewProperties
         }
         
         update(properties: viewProperties)
