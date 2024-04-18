@@ -44,23 +44,21 @@ final class SectionMessageFeature: FeatureProtocol {
     private func start() {
         // Здесь пишем код, который нужен пи создании экрана
         let properties = createAllProperties()
-        viewUpdater?.handle(state: .create(.info ,properties))
+        viewUpdater?.handle(state: .create(.init(style: .info, size: .sizeS) ,properties))
     }
     
     private func styleButtonActions(id: Int) {
         switch id {
         case 1:
-            viewUpdater?.handle(state: .newState(.info, createAllProperties()))
+            viewUpdater?.handle(state: .newState(.init(style: .info, size: .sizeS), createAllProperties()))
         case 2:
-            viewUpdater?.handle(state: .newState(.warning, createAllProperties()))
+            viewUpdater?.handle(state: .newState(.init(style: .warning, size: .sizeS), createAllProperties()))
         case 3:
-            viewUpdater?.handle(state: .newState(.success, createAllProperties()))
+            viewUpdater?.handle(state: .newState(.init(style: .success, size: .sizeS), createAllProperties()))
         case 4:
-            viewUpdater?.handle(state: .newState(.error, createAllProperties()))
+            viewUpdater?.handle(state: .newState(.init(style: .error, size: .sizeS), createAllProperties()))
         case 5:
-            viewUpdater?.handle(state: .newState(.security, createAllProperties()))
-        case 6:
-            viewUpdater?.handle(state: .newState(.none, createAllProperties()))
+            viewUpdater?.handle(state: .newState(.init(style: .neutral, size: .sizeS), createAllProperties()))
         default:
             break
         }
@@ -85,13 +83,11 @@ extension SectionMessageFeature {
     private func createDefaultProperies() -> SectionMessageView.ViewProperties {
         let property = SectionMessageView.ViewProperties(
             title: "SWIFT Переводы".attributed,
-            content: "Мы единственный банк, который возобновил переводы забугор".attributed,
-            subtitle: "Да, мы это сделали".attributed,
-            iconImage: nil,
-            backgroundColor: nil,
-            action: { //[weak self] in
-                print("👀")
-            })
+            subtitle: "Мы единственный банк, который возобновил переводы забугор".attributed,
+            bottomButton: .init(
+                text: "Да, мы это сделали".attributed,
+                action: { print("👀") })
+        )
         return property
     }
 }

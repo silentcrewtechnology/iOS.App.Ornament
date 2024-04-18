@@ -50,7 +50,7 @@ final class SectionMessageViewController: ViewController<SectionMessageFeature>,
     
     struct ViewProperties {
         var accessibilityId = "SectionMessageScreenController"
-        var sectionMessageProperties: SectionMessageView.ViewProperties?
+        var sectionMessageProperties: SectionMessageView.ViewProperties = .init()
         var title = "Компонент SectionMessage"
         var styleButtonsAction: (Int) -> Void
         // Здесь описываются свойства вью
@@ -93,7 +93,7 @@ final class SectionMessageViewController: ViewController<SectionMessageFeature>,
         guard let viewProperties else { return }
         self.viewProperties = viewProperties
         view.accessibilityIdentifier = viewProperties.accessibilityId
-        sectionMessageView?.update(viewProperties: viewProperties.sectionMessageProperties)
+        sectionMessageView?.update(with: viewProperties.sectionMessageProperties)
         // Здесь обновляем все свойства вью
     }
     

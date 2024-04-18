@@ -8,9 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		34241B432A7AE46E00DCBBB4 /* MainCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34241B3E2A7AE46E00DCBBB4 /* MainCellModel.swift */; };
-		34469B732BB2EA8B00E65500 /* Architecture in Frameworks */ = {isa = PBXBuildFile; productRef = 34469B722BB2EA8B00E65500 /* Architecture */; };
 		34469B7A2BB2F00600E65500 /* ComponentsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34469B792BB2F00600E65500 /* ComponentsService.swift */; };
-		34BF7F232A7B9E7300F1A12F /* ios.designsystem in Frameworks */ = {isa = PBXBuildFile; productRef = 34BF7F222A7B9E7300F1A12F /* ios.designsystem */; };
 		34D6C9BC2B31EA2900FA1A8D /* MainFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34D6C9B82B31EA2900FA1A8D /* MainFeature.swift */; };
 		34D6C9BD2B31EA2900FA1A8D /* MainBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34D6C9B92B31EA2900FA1A8D /* MainBuilder.swift */; };
 		34D6C9BE2B31EA2900FA1A8D /* MainUpdater.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34D6C9BA2B31EA2900FA1A8D /* MainUpdater.swift */; };
@@ -35,6 +33,8 @@
 		8889558C29140FFE00A46293 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8889558B29140FFE00A46293 /* Assets.xcassets */; };
 		8889558F29140FFE00A46293 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8889558D29140FFE00A46293 /* LaunchScreen.storyboard */; };
 		888955B72914108700A46293 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 888955B62914108700A46293 /* SceneDelegate.swift */; };
+		D8A988D32BD136F9007C6BDC /* Architecture in Frameworks */ = {isa = PBXBuildFile; productRef = D8A988D22BD136F9007C6BDC /* Architecture */; };
+		D8A988D62BD1371C007C6BDC /* DesignSystem in Frameworks */ = {isa = PBXBuildFile; productRef = D8A988D52BD1371C007C6BDC /* DesignSystem */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -73,8 +73,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				34BF7F232A7B9E7300F1A12F /* ios.designsystem in Frameworks */,
-				34469B732BB2EA8B00E65500 /* Architecture in Frameworks */,
+				D8A988D32BD136F9007C6BDC /* Architecture in Frameworks */,
+				D8A988D62BD1371C007C6BDC /* DesignSystem in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -204,8 +204,8 @@
 			);
 			name = OrnamentApp;
 			packageProductDependencies = (
-				34BF7F222A7B9E7300F1A12F /* ios.designsystem */,
-				34469B722BB2EA8B00E65500 /* Architecture */,
+				D8A988D22BD136F9007C6BDC /* Architecture */,
+				D8A988D52BD1371C007C6BDC /* DesignSystem */,
 			);
 			productName = OrnamentApp;
 			productReference = 8889557F29140FFC00A46293 /* OrnamentApp.app */;
@@ -236,8 +236,8 @@
 			);
 			mainGroup = 8889557629140FFC00A46293;
 			packageReferences = (
-				34BF7F212A7B9E7300F1A12F /* XCRemoteSwiftPackageReference "ios" */,
-				34469B712BB2EA8B00E65500 /* XCRemoteSwiftPackageReference "ios" */,
+				D8A988D12BD136F9007C6BDC /* XCRemoteSwiftPackageReference "ios" */,
+				D8A988D42BD1371C007C6BDC /* XCRemoteSwiftPackageReference "ios" */,
 			);
 			productRefGroup = 8889558029140FFC00A46293 /* Products */;
 			projectDirPath = "";
@@ -506,34 +506,34 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		34469B712BB2EA8B00E65500 /* XCRemoteSwiftPackageReference "ios" */ = {
+		D8A988D12BD136F9007C6BDC /* XCRemoteSwiftPackageReference "ios" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://gitlab.akbars.tech/abo/ios.architecture";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 0.0.3;
+				minimumVersion = 0.0.4;
 			};
 		};
-		34BF7F212A7B9E7300F1A12F /* XCRemoteSwiftPackageReference "ios" */ = {
+		D8A988D42BD1371C007C6BDC /* XCRemoteSwiftPackageReference "ios" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://gitlab.akbars.tech/abo/ios.designsystem";
 			requirement = {
-				branch = main;
-				kind = branch;
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.2.40;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		34469B722BB2EA8B00E65500 /* Architecture */ = {
+		D8A988D22BD136F9007C6BDC /* Architecture */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 34469B712BB2EA8B00E65500 /* XCRemoteSwiftPackageReference "ios" */;
+			package = D8A988D12BD136F9007C6BDC /* XCRemoteSwiftPackageReference "ios" */;
 			productName = Architecture;
 		};
-		34BF7F222A7B9E7300F1A12F /* ios.designsystem */ = {
+		D8A988D52BD1371C007C6BDC /* DesignSystem */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 34BF7F212A7B9E7300F1A12F /* XCRemoteSwiftPackageReference "ios" */;
-			productName = ios.designsystem;
+			package = D8A988D42BD1371C007C6BDC /* XCRemoteSwiftPackageReference "ios" */;
+			productName = DesignSystem;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
