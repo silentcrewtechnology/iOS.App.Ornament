@@ -511,7 +511,7 @@
 			repositoryURL = "https://gitlab.akbars.tech/abo/ios.architecture";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 0.0.4;
+				minimumVersion = 0.0.5;
 			};
 		};
 		D8A988D42BD1371C007C6BDC /* XCRemoteSwiftPackageReference "ios" */ = {

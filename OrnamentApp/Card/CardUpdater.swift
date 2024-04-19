@@ -26,23 +26,21 @@ final class CardUpdater: ViewUpdater<CardViewController> {
         // Здесь обрабатываем все состояния, которые может принять View
         switch state {
         case .create(let viewProperties):
-            create(properties: viewProperties)
+            create(with: viewProperties)
+            update(with: viewProperties)
         }
-        
-        update(properties: viewProperties)
     }
     
     // Метод создания View, здесь настраиваем .init() у viewProperties
-    private func create(properties: CardViewController.ViewProperties?) {
-        guard let properties else { return }
-        
-        self.viewProperties = properties
+    private func create(with viewProperties: CardViewController.ViewProperties) {
+        self.viewProperties = viewProperties
     }
     
     // Метод, вызывающий обновление у View
-    private func update(properties: CardViewController.ViewProperties?) {
+    private func update(with viewProperties: CardViewController.ViewProperties) {
         DispatchQueue.main.async {
-            self.update(properties)
+            self.update(viewProperties)
         }
+        self.viewProperties = viewProperties
     }
 }

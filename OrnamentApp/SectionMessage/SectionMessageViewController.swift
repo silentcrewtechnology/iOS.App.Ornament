@@ -52,19 +52,19 @@ final class SectionMessageViewController: ViewController<SectionMessageFeature>,
         var accessibilityId = "SectionMessageScreenController"
         var sectionMessageProperties: SectionMessageView.ViewProperties = .init()
         var title = "Компонент SectionMessage"
-        var styleButtonsAction: (Int) -> Void
+        var styleButtonsAction: (Int) -> Void = { _ in }
         // Здесь описываются свойства вью
         // нужно заменить SomeView на твою View
     }
     
     enum State {
-        case create(SectionMessageStyle, ViewProperties?)
+        case create(SectionMessageStyle, ViewProperties)
         case newState(SectionMessageStyle, ViewProperties)
         // Здесь описываются состояния вью
     }
     
     // Здесь хранятся свойства вью, чтобы вызывать экшены
-    var viewProperties: ViewProperties?
+    private var viewProperties: ViewProperties = .init()
     
     // Ниже создаем внутренние вью элементы
     // MARK: UI Elements
@@ -75,7 +75,6 @@ final class SectionMessageViewController: ViewController<SectionMessageFeature>,
     var successButton = ChoosingStyleButtonView()
     var errorButton = ChoosingStyleButtonView()
     var securityButton = ChoosingStyleButtonView()
-    var noneButton = ChoosingStyleButtonView()
     
     // нужно заменить SomeView на твою View
     // var someView: SomeView?
@@ -89,12 +88,11 @@ final class SectionMessageViewController: ViewController<SectionMessageFeature>,
     // Ниже функции от ViewProtocol'а
     // MARK: ViewProtocol
     
-    func update(viewProperties: ViewProperties?) {
-        guard let viewProperties else { return }
-        self.viewProperties = viewProperties
+    func update(with viewProperties: ViewProperties) {
         view.accessibilityIdentifier = viewProperties.accessibilityId
         sectionMessageView?.update(with: viewProperties.sectionMessageProperties)
         // Здесь обновляем все свойства вью
+        self.viewProperties = viewProperties
     }
     
     // MARK: Private funcs
@@ -119,13 +117,10 @@ final class SectionMessageViewController: ViewController<SectionMessageFeature>,
         securityButton.tag = 5
         securityButton.label.text = "state security"
         securityButton.addTarget(self, action: #selector(buttonsAction), for: .touchUpInside)
-        noneButton.tag = 6
-        noneButton.label.text = "state none"
-        noneButton.addTarget(self, action: #selector(buttonsAction), for: .touchUpInside)
     }
     
     @objc private func buttonsAction(sender: UIButton) {
-        viewProperties?.styleButtonsAction(sender.tag)
+        viewProperties.styleButtonsAction(sender.tag)
     }
     
     private func setupSubview() {
@@ -156,6 +151,5 @@ final class SectionMessageViewController: ViewController<SectionMessageFeature>,
         stackView.addArrangedSubview(successButton)
         stackView.addArrangedSubview(errorButton)
         stackView.addArrangedSubview(securityButton)
-        stackView.addArrangedSubview(noneButton)
     }
 }

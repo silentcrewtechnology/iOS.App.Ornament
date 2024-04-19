@@ -16,27 +16,22 @@ final class MainCollectionViewUpdater: ViewUpdater<MainCollectionView> {
     
     func handle(state: MainCollectionView.State) {
         // Здесь обрабатываем все состояния, которые может принять View
-         switch state {
-         case .create(let viewProperty):
-             create(viewProperty)
-         }
-        
-        DispatchQueue.main.async {
-            self.update(properties: self.viewProperties)
+        switch state {
+        case .create(let viewProperties):
+            create(with: viewProperties)
+            update(with: viewProperties)
         }
     }
     
-    // Метод создания View, здесь настраиваем .init() у viewEntity
-    private func create(_ properties: MainCollectionView.ViewProperties?) {
-        guard let properties else { return }
-        
-        self.viewProperties = properties
+    // Метод создания View, здесь настраиваем .init() у viewProperties
+    private func create(with viewProperties: MainCollectionView.ViewProperties) {
+        self.viewProperties = viewProperties
     }
     
     // Метод, вызывающий обновление у View
-    private func update(properties: MainCollectionView.ViewProperties?) {
+    private func update(with viewProperties: MainCollectionView.ViewProperties) {
         DispatchQueue.main.async {
-            self.update(properties)
+            self.update(viewProperties)
         }
     }
 }

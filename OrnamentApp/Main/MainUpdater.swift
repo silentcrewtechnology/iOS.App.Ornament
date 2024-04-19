@@ -15,7 +15,7 @@ final class MainUpdater: ViewUpdater<MainViewController> {
     }
     
     // нужно заменить SomeUpdater на твои
-     private var mainCollectionViewUpdater: MainCollectionViewUpdater?
+    private var mainCollectionViewUpdater: MainCollectionViewUpdater?
     
     // Здесь прописываем все updater'ы вьюх, которые входят в экран
     func bind(mainCollectionViewUpdater: MainCollectionViewUpdater) {
@@ -26,24 +26,21 @@ final class MainUpdater: ViewUpdater<MainViewController> {
         // Здесь обрабатываем все состояния, которые может принять View
         switch state {
         case .create(let viewProperties):
-            create(properties: viewProperties)
+            create(with: viewProperties)
+            update(with: viewProperties)
         }
-        
-        update(properties: viewProperties)
     }
     
     // Метод создания View, здесь настраиваем .init() у viewEntity
-    private func create(properties: MainViewController.ViewProperties?) {
-        guard let properties else { return }
-        
-        self.viewProperties = properties
-        mainCollectionViewUpdater?.handle(state: .create(properties.mainCollectionViewProperty))
+    private func create(with viewProperties: MainViewController.ViewProperties) {
+        self.viewProperties = viewProperties
+        mainCollectionViewUpdater?.handle(state: .create(viewProperties.mainCollectionViewProperty))
     }
     
     // Метод, вызывающий обновление у View
-    private func update(properties: MainViewController.ViewProperties?) {
+    private func update(with viewProperties: MainViewController.ViewProperties) {
         DispatchQueue.main.async {
-            self.update(properties)
+            self.update(viewProperties)
         }
     }
 }
