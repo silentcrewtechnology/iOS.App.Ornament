@@ -17,19 +17,19 @@ final class MainCollectionCell: UICollectionViewCell, ViewProtocol {
     
     struct ViewProperties {
         var accessibilityId = "MainCollectionCell"
-        public var title: NSAttributedString
-        public var backgroundColor: UIColor
-        public let action: () -> Void
+        var title: NSAttributedString = .init(string: "")
+        var backgroundColor: UIColor = .clear
+        var action: () -> Void = { }
         // Здесь описываются свойства вью
     }
     
     enum State {
-        case create(ViewProperties?)
+        case create(ViewProperties)
         // Здесь описываются состояния вью
     }
     
     // Здесь хранятся свойства вью, чтобы вызывать экшены
-    var viewProperties: ViewProperties?
+    private var viewProperties: ViewProperties = .init()
     
     // Ниже создаем внутренние вью элементы
     // MARK: UI Elements
@@ -41,35 +41,31 @@ final class MainCollectionCell: UICollectionViewCell, ViewProtocol {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
+        setupView()
     }
     
-    func create(with viewProperties: ViewProperties?) {
-        self.viewProperties = viewProperties
+    private func setupView() {
         configureViews()
         setupSubview()
-        setData(with: viewProperties)
     }
     
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
+    required init?(coder: NSCoder) { fatalError() }
     
     // Ниже функции от ViewProtocol'а
     // MARK: ViewProtocol
     
-    func update(viewProperties: ViewProperties?) {
-        guard let viewProperties else { return }
-        self.viewProperties = viewProperties
+    func update(with viewProperties: ViewProperties) {
         // Здесь обновляем все свойства вью
         setData(with: viewProperties)
+        self.viewProperties = viewProperties
     }
     
     // MARK: Private funcs
     
-    private func setData(with viewProperties: ViewProperties?){
-        textLabel.attributedText = viewProperties?.title
-        accessibilityIdentifier = "\(viewProperties?.title)"
-        backgroundColor = viewProperties?.backgroundColor
+    private func setData(with viewProperties: ViewProperties){
+        textLabel.attributedText = viewProperties.title
+        accessibilityIdentifier = "\(viewProperties.title)"
+        backgroundColor = viewProperties.backgroundColor
     }
     
     private func configureViews() {

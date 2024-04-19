@@ -17,18 +17,18 @@ final class MainViewController: ViewController<MainFeature>, ViewProtocol {
     
     struct ViewProperties {
         var accessibilityId = "MainScreenController"
-        var mainCollectionViewProperty: MainCollectionView.ViewProperties?
+        var mainCollectionViewProperty: MainCollectionView.ViewProperties = .init()
         // Здесь описываются свойства вью
         // нужно заменить SomeView на твою View
     }
     
     enum State {
-        case create(ViewProperties?)
+        case create(ViewProperties)
         // Здесь описываются состояния вью
     }
     
     // Здесь хранятся свойства вью, чтобы вызывать экшены
-    var viewProperties: ViewProperties?
+    private var viewProperties: ViewProperties = .init()
     
     // Ниже создаем внутренние вью элементы
     // MARK: UI Elements
@@ -57,11 +57,10 @@ final class MainViewController: ViewController<MainFeature>, ViewProtocol {
     // Ниже функции от ViewProtocol'а
     // MARK: ViewProtocol
     
-    func update(viewProperties: ViewProperties?) {
-        guard let viewProperties else { return }
-        self.viewProperties = viewProperties
+    func update(with viewProperties: ViewProperties) {
         view.accessibilityIdentifier = viewProperties.accessibilityId
         // Здесь обновляем все свойства вью
+        self.viewProperties = viewProperties
     }
     
     // MARK: Private funcs

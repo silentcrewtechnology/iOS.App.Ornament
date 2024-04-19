@@ -26,30 +26,21 @@ final class SectionMessageUpdater: ViewUpdater<SectionMessageViewController> {
         // Здесь обрабатываем все состояния, которые может принять View
         switch state {
         case .create(let style, let viewProperties):
-            guard var viewProperties else { return }
+            var viewProperties = viewProperties
             style.update(with: &viewProperties.sectionMessageProperties)
-            self.viewProperties = viewProperties
-//            create(properties: self.viewProperties)
+            update(with: viewProperties)
         case .newState(let style, let viewProperties):
             var viewProperties = viewProperties
             style.update(with: &viewProperties.sectionMessageProperties)
-            self.viewProperties = viewProperties
+            update(with: viewProperties)
         }
-        
-        update(properties: viewProperties)
     }
     
-    // Метод создания View, здесь настраиваем .init() у viewEntity
-//    priva`te func create(properties: SectionMessageViewController.ViewProperties?) {
-//        guard let properties else { return }
-//
-//        self.viewProperties = properties
-//    }`
-    
     // Метод, вызывающий обновление у View
-    private func update(properties: SectionMessageViewController.ViewProperties?) {
+    private func update(with viewProperties: SectionMessageViewController.ViewProperties) {
         DispatchQueue.main.async {
-            self.update(properties)
+            self.update(viewProperties)
         }
+        self.viewProperties = viewProperties
     }
 }

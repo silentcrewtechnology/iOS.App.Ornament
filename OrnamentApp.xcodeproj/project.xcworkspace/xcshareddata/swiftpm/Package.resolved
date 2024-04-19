@@ -42,8 +42,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://gitlab.akbars.tech/abo/ios.architecture",
       "state" : {
-        "revision" : "c0ea5fa3bdb728e6cbdb27ae1160e814b011fcf1",
-        "version" : "0.0.4"
+        "revision" : "00e414b190188864b3329854feb3bbbaedf863e8",
+        "version" : "0.0.5"
       }
     },
     {

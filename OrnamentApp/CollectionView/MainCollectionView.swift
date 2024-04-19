@@ -22,12 +22,12 @@ final class MainCollectionView: UIView, ViewProtocol {
     }
     
     enum State {
-        case create(ViewProperties?)
+        case create(ViewProperties)
         // Здесь описываются состояния вью
     }
     
     // Здесь хранятся свойства вью, чтобы вызывать экшены
-    var viewProperties: ViewProperties?
+    private var viewProperties: ViewProperties = .init()
     
     // Ниже создаем внутренние вью элементы
     // MARK: UI Elements
@@ -60,12 +60,11 @@ final class MainCollectionView: UIView, ViewProtocol {
     // Ниже функции от ViewProtocol'а
     // MARK: ViewProtocol
     
-    func update(viewProperties: ViewProperties?) {
-        guard let viewProperties else { return }
-        self.viewProperties = viewProperties
+    func update(with viewProperties: ViewProperties) {
         accessibilityIdentifier = viewProperties.accessibilityId
         collectionView.reloadData()
         // Здесь обновляем все свойства вью
+        self.viewProperties = viewProperties
     }
     
     // MARK: Private funcs
@@ -89,7 +88,7 @@ final class MainCollectionView: UIView, ViewProtocol {
 
 extension MainCollectionView: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return viewProperties?.cellsModels?.count ?? 0
+        return viewProperties.cellsModels?.count ?? 0
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -98,7 +97,7 @@ extension MainCollectionView: UICollectionViewDelegate, UICollectionViewDataSour
             return UICollectionViewCell()
         }
 
-        guard let model = viewProperties?.cellsModels?[indexPath.row] else {
+        guard let model = viewProperties.cellsModels?[indexPath.row] else {
             return cell
         }
 
@@ -106,12 +105,12 @@ extension MainCollectionView: UICollectionViewDelegate, UICollectionViewDataSour
             title: model.title,
             backgroundColor: model.backgroundColor,
             action: model.action)
-        cell.create(with: cellProperty)
+        cell.update(with: cellProperty)
         return cell
     }
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        viewProperties?.cellsModels?[indexPath.row].action()
+        viewProperties.cellsModels?[indexPath.row].action()
     }
 }
 
