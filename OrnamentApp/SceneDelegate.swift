@@ -6,24 +6,32 @@
 //
 
 import UIKit
+import FontService
+import Router
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
+    let flowsCoordinator = FlowsCoordinator(
+        componentsShowcaseCoordinator: ComponentsShowcaseCoordinator(
+            routerService: .init(),
+            componentsShowcaseFeature: .init()
+        )
+    )
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
-
         guard let windowScene = (scene as? UIWindowScene) else { return }
-        window = UIWindow(frame: windowScene.coordinateSpace.bounds)
-        window?.windowScene = windowScene
         
-        let navigation = UINavigationController()
+        FontService.registerFonts()
         
-        let coordinator = MainScreenCoordinator(navigation: navigation)
-        let builder = MainBuilder(coordinator: coordinator)
-        navigation.setViewControllers([builder.view], animated: true)
-        
-        window?.rootViewController = navigation
+        let currentWindow = UIWindow(windowScene: windowScene)
+        let navController = UINavigationController()
+        currentWindow.backgroundColor = .white
+        window = currentWindow
+        window?.rootViewController = navController
         window?.makeKeyAndVisible()
+        
+        flowsCoordinator.setRoot()
+        flowsCoordinator.setupAllFlows()
     }
 }
