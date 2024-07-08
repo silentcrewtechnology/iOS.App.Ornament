@@ -137,6 +137,12 @@ extension InputTextField: Reusable {
     }
 }
 
+extension InputTextView: Reusable {
+    public func prepareForReuse() {
+        update(with: .init())
+    }
+}
+
 extension InputTextareaView: Reusable {
     public func prepareForReuse() {
         update(with: .init())
