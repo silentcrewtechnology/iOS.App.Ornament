@@ -50,7 +50,7 @@ final class AuthorizationButtonCellBuilder: NSObject, UITextFieldDelegate, CellB
                 guard let self = self else { return }
 
                 self.style.update(viewProperties: &self.viewProperties)
-                cell.containedView.update(with: viewProperties)
+                cell.containedView.update(with: self.viewProperties)
                 
                 cell.contentInset = .init(top: .zero, left: 16, bottom: 16, right: 16)
                 cell.selectionStyle = .none
@@ -72,7 +72,7 @@ final class AuthorizationButtonCellBuilder: NSObject, UITextFieldDelegate, CellB
                 guard let self = self else { return }
                 
                 var vp: InputTextView.ViewProperties = .init()
-                vp.textField.text = viewProperties.title
+                vp.textField.text = self.viewProperties.title
                 vp.textField.delegateAssigningClosure = { textField in
                     textField.delegate = self
                     textField.addTarget(self, action: #selector(self.onTextChange(textField:)), for: .editingChanged)
@@ -89,7 +89,7 @@ final class AuthorizationButtonCellBuilder: NSObject, UITextFieldDelegate, CellB
         row.rowHeight = 72
         
         let section = GenericTableViewSectionModel(with: [row])
-        section.makeHeader(title: "AuthorizationButton.Text.Title".localized)
+        section.makeHeader(title: "Component.Text.Title".localized)
         return section
     }
     

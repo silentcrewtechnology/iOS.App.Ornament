@@ -14,6 +14,7 @@
 		CE28279E2C3BDB2600156F14 /* CommonDetailFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE28279D2C3BDB2600156F14 /* CommonDetailFeature.swift */; };
 		CE2827A12C3BDB6900156F14 /* CellBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2827A02C3BDB6900156F14 /* CellBuilder.swift */; };
 		CE2827A42C3BDE6600156F14 /* ChipsViewSectionHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2827A32C3BDE6600156F14 /* ChipsViewSectionHelper.swift */; };
+		CE2827B02C3C1ECD00156F14 /* CheckboxCellBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2827AF2C3C1ECD00156F14 /* CheckboxCellBuilder.swift */; };
 		CEA336002C36A66200880A1F /* CheckboxViewUpdater.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA335FF2C36A66200880A1F /* CheckboxViewUpdater.swift */; };
 		CEA336022C36A9B800880A1F /* ChipsViewUpdater.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA336012C36A9B800880A1F /* ChipsViewUpdater.swift */; };
 		CEA336052C36B1A400880A1F /* Components.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA336042C36B1A400880A1F /* Components.swift */; };
@@ -44,6 +45,7 @@
 		CE28279D2C3BDB2600156F14 /* CommonDetailFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonDetailFeature.swift; sourceTree = "<group>"; };
 		CE2827A02C3BDB6900156F14 /* CellBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellBuilder.swift; sourceTree = "<group>"; };
 		CE2827A32C3BDE6600156F14 /* ChipsViewSectionHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChipsViewSectionHelper.swift; sourceTree = "<group>"; };
+		CE2827AF2C3C1ECD00156F14 /* CheckboxCellBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckboxCellBuilder.swift; sourceTree = "<group>"; };
 		CEA335FF2C36A66200880A1F /* CheckboxViewUpdater.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckboxViewUpdater.swift; sourceTree = "<group>"; };
 		CEA336012C36A9B800880A1F /* ChipsViewUpdater.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChipsViewUpdater.swift; sourceTree = "<group>"; };
 		CEA336042C36B1A400880A1F /* Components.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Components.swift; sourceTree = "<group>"; };
@@ -137,6 +139,14 @@
 			path = Helpers;
 			sourceTree = "<group>";
 		};
+		CE2827AE2C3C1EBA00156F14 /* CheckboxModule */ = {
+			isa = PBXGroup;
+			children = (
+				CE2827AF2C3C1ECD00156F14 /* CheckboxCellBuilder.swift */,
+			);
+			path = CheckboxModule;
+			sourceTree = "<group>";
+		};
 		CEA335FE2C36A65100880A1F /* ViewUpdaters */ = {
 			isa = PBXGroup;
 			children = (
@@ -181,8 +191,9 @@
 		CEEB5E5F2C356788000E0215 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
-				CEA4E2272C37CF530069707C /* AuthorizationButtonModule */,
 				CEA336072C36B94D00880A1F /* ActivityIndicatorModule */,
+				CEA4E2272C37CF530069707C /* AuthorizationButtonModule */,
+				CE2827AE2C3C1EBA00156F14 /* CheckboxModule */,
 				CEEB5E602C35678D000E0215 /* ComponentsShowcaseModule */,
 				CEA3360B2C36C0BE00880A1F /* FlowsCoordinator.swift */,
 				CE28279D2C3BDB2600156F14 /* CommonDetailFeature.swift */,
@@ -314,6 +325,7 @@
 				CEA3360E2C36C0E100880A1F /* ComponentsShowcaseCoordinator.swift in Sources */,
 				CEEB5E642C35681A000E0215 /* ComponentsShowcaseCellBuilder.swift in Sources */,
 				CEA336002C36A66200880A1F /* CheckboxViewUpdater.swift in Sources */,
+				CE2827B02C3C1ECD00156F14 /* CheckboxCellBuilder.swift in Sources */,
 				CEEB5E742C35A9A1000E0215 /* TableComponentViewCell.swift in Sources */,
 				CEA3360C2C36C0BE00880A1F /* FlowsCoordinator.swift in Sources */,
 				CEEB5E622C356802000E0215 /* ComponentsShowcaseFeature.swift in Sources */,
