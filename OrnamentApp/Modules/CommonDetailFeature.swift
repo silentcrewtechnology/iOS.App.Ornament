@@ -1,8 +1,8 @@
 //
-//  ActivityIndicatorFeature.swift
+//  CommonDetailFeature.swift
 //  OrnamentApp
 //
-//  Created by user on 04.07.2024.
+//  Created by user on 08.07.2024.
 //
 
 import UIKit
@@ -10,7 +10,7 @@ import Architecture
 import ArchitectureTableView
 import Extensions
 
-final class ActivityIndicatorFeature: NSObject, FeatureCoordinatorProtocol {
+final class CommonDetailFeature: NSObject, FeatureCoordinatorProtocol {
     
     // MARK: - Properties
     
@@ -18,14 +18,19 @@ final class ActivityIndicatorFeature: NSObject, FeatureCoordinatorProtocol {
     
     // MARK: - Private properties
     
-    private let cellBuilder = ActivityIndicatorCellBuilder()
+    private let cellBuilder: CellBuilder
     private var tableViewVCBuilder: TableViewVCBuilder
     private var tableViewBuilder: TableViewBuilder
     private var dataStorage = GenericTableViewDataStorage.empty
     
     // MARK: - Life cycle
     
-    override init() {
+    init(
+        cellBuilder: CellBuilder,
+        screenTitle: String
+    ) {
+        self.cellBuilder = cellBuilder
+        
         tableViewBuilder = .init(with: .init(
             backgroundColor: .white,
             dataSources: dataStorage.tableViewDataSource,
@@ -34,7 +39,7 @@ final class ActivityIndicatorFeature: NSObject, FeatureCoordinatorProtocol {
         dataStorage.registerFor(tableViewBuilder.view)
 
         tableViewVCBuilder = .init(with: .init(
-            screenTitle: Components.activityIndicator.rawValue,
+            screenTitle: screenTitle,
             tableView: tableViewBuilder.view,
             confirmButtonView: nil
         ))

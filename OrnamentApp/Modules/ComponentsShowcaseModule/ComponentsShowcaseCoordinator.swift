@@ -16,15 +16,20 @@ final class ComponentsShowcaseCoordinator: RootCoordinatorProtocol {
     private let routerService: RouterService
     private var componentsShowcaseFeature: FeatureCoordinatorProtocol
     private var activityIndicatorFeature: FeatureCoordinatorProtocol?
+    private var authorizationButtonFeature: FeatureCoordinatorProtocol?
 
     // MARK: - Life cycle
     
     init(
         routerService: RouterService,
-        componentsShowcaseFeature: ComponentsShowcaseFeature
+        componentsShowcaseFeature: ComponentsShowcaseFeature,
+        activityIndicatorFeature: CommonDetailFeature? = nil,
+        authorizationButtonFeature: CommonDetailFeature? = nil
     ) {
         self.routerService = routerService
         self.componentsShowcaseFeature = componentsShowcaseFeature
+        self.activityIndicatorFeature = activityIndicatorFeature
+        self.authorizationButtonFeature = authorizationButtonFeature
     }
     
     // MARK: - Methods
@@ -44,11 +49,19 @@ final class ComponentsShowcaseCoordinator: RootCoordinatorProtocol {
             
             switch component {
             case .activityIndicator:
-                self?.activityIndicatorFeature = ActivityIndicatorFeature()
+                self?.activityIndicatorFeature = CommonDetailFeature(
+                    cellBuilder: ActivityIndicatorCellBuilder(),
+                    screenTitle: Components.activityIndicator.rawValue
+                )
                 guard let builder = self?.activityIndicatorFeature?.runFlow(data: nil) else { return }
                 viewController = (builder.view as! UIViewController)
             case .authorizationButton:
-                break
+                self?.authorizationButtonFeature = CommonDetailFeature(
+                    cellBuilder: AuthorizationButtonCellBuilder(),
+                    screenTitle: Components.authorizationButton.rawValue
+                )
+                guard let builder = self?.authorizationButtonFeature?.runFlow(data: nil) else { return }
+                viewController = (builder.view as! UIViewController)
             case .badge:
                 break
             case .button:
@@ -86,6 +99,8 @@ final class ComponentsShowcaseCoordinator: RootCoordinatorProtocol {
             case .inputSelect:
                 break
             case .inputTextField:
+                break
+            case .inputTextView:
                 break
             case .inputTextarea:
                 break

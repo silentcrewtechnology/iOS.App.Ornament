@@ -1,3 +1,7 @@
 "ComponentsShowcase.Title" = "Витрина компонентов";
+"Component.Title" = "Component";
 "ActivityIndicator.Screen.Size.Title" = "Size";
 "ActivityIndicator.Screen.Animating.Title" = "Animating";
+"AuthorizationButton.Text.Title" = "Text";
+"AuthorizationButton.Variant.Title" = "Variant";
+"AuthorizationButton.Inversion.Title" = "Inversion";
