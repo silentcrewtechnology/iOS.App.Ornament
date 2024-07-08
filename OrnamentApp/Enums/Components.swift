@@ -11,8 +11,11 @@ import Extensions
 enum Components: String, CaseIterable {
     case activityIndicator = "Activity indicator"
     case authorizationButton = "Authorization button"
+    // TODO: - Actualize
     case badge = "Badge"
+    // TODO: - Actualize
     case button = "Button"
+    // TODO: - Actualize
     case cardImage = "Card image"
     case checkbox = "Checkbox"
     case chips = "Chips"
