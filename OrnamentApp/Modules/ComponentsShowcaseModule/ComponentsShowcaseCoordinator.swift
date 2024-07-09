@@ -18,6 +18,7 @@ final class ComponentsShowcaseCoordinator: RootCoordinatorProtocol {
     private var activityIndicatorFeature: FeatureCoordinatorProtocol?
     private var authorizationButtonFeature: FeatureCoordinatorProtocol?
     private var checkboxFeature: FeatureCoordinatorProtocol?
+    private var chipsFeature: FeatureCoordinatorProtocol?
 
     // MARK: - Life cycle
     
@@ -26,13 +27,15 @@ final class ComponentsShowcaseCoordinator: RootCoordinatorProtocol {
         componentsShowcaseFeature: ComponentsShowcaseFeature,
         activityIndicatorFeature: CommonDetailFeature? = nil,
         authorizationButtonFeature: CommonDetailFeature? = nil,
-        checkboxFeature: CommonDetailFeature? = nil
+        checkboxFeature: CommonDetailFeature? = nil,
+        chipsFeature: CommonDetailFeature? = nil
     ) {
         self.routerService = routerService
         self.componentsShowcaseFeature = componentsShowcaseFeature
         self.activityIndicatorFeature = activityIndicatorFeature
         self.authorizationButtonFeature = authorizationButtonFeature
         self.checkboxFeature = checkboxFeature
+        self.chipsFeature = chipsFeature
     }
     
     // MARK: - Methods
@@ -79,7 +82,12 @@ final class ComponentsShowcaseCoordinator: RootCoordinatorProtocol {
                 guard let builder = self?.checkboxFeature?.runFlow(data: nil) else { return }
                 viewController = (builder.view as! UIViewController)
             case .chips:
-                break
+                self?.chipsFeature = CommonDetailFeature(
+                    cellBuilder: ChipsCellBuilder(),
+                    screenTitle: Components.chips.rawValue
+                )
+                guard let builder = self?.chipsFeature?.runFlow(data: nil) else { return }
+                viewController = (builder.view as! UIViewController)
             case .divider:
                 break
             case .dot:

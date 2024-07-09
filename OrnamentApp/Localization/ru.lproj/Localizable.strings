@@ -7,3 +7,6 @@
 "AuthorizationButton.Inversion.Title" = "Inversion";
 "Checkbox.Checked.Title" = "Checked";
 "Checkbox.State.Title" = "State";
+"Chips.Selection.Title" = "Selection";
+"Chips.State.Title" = "State";
+"Chips.Size.Title" = "Size";

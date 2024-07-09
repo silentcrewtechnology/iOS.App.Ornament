@@ -12,11 +12,11 @@ enum Components: String, CaseIterable {
     case activityIndicator = "Activity indicator"
     case authorizationButton = "Authorization button"
     // TODO: - Actualize
-    case badge = "Badge"
+    case badge = "Badge (not actualized)"
     // TODO: - Actualize
-    case button = "Button"
+    case button = "Button (not actualized)"
     // TODO: - Actualize
-    case cardImage = "Card image"
+    case cardImage = "Card image (not actualized)"
     case checkbox = "Checkbox"
     case chips = "Chips"
     case divider = "Divider"
