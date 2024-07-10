@@ -20,11 +20,13 @@ enum Components: String, CaseIterable {
     case checkbox = "Checkbox"
     case chips = "Chips"
     case divider = "Divider"
-    case dot = "Dot"
     case hint = "Hint"
-    case iconButton = "Icon button"
-    case image = "Image";
-    case indicator = "Indicator"
+    // TODO: - Actualize
+    case iconButton = "Icon button (not actualized)"
+    // TODO: - Actualize
+    case image = "Image (not actualized)";
+    // TODO: - Actualize
+    case indicator = "Indicator (not actualized)"
     case inputAmountTextField = "Input amount text field"
     case inputAmountView = "Input amount view"
     case inputMessage = "Input message"
@@ -57,5 +59,6 @@ enum Components: String, CaseIterable {
     case textBlock = "Text block"
     case tile = "Tile"
     case title = "Title"
-    case toggle = "Toggle"
+    // TODO: - Actualize
+    case toggle = "Toggle (not actualized)"
 }
