@@ -20,6 +20,7 @@ final class ComponentsShowcaseCoordinator: RootCoordinatorProtocol {
     private var checkboxFeature: FeatureCoordinatorProtocol?
     private var chipsFeature: FeatureCoordinatorProtocol?
     private var dividerFeature: FeatureCoordinatorProtocol?
+    private var toggleFeature: FeatureCoordinatorProtocol?
 
     // MARK: - Life cycle
     
@@ -30,7 +31,8 @@ final class ComponentsShowcaseCoordinator: RootCoordinatorProtocol {
         authorizationButtonFeature: CommonDetailFeature? = nil,
         checkboxFeature: CommonDetailFeature? = nil,
         chipsFeature: CommonDetailFeature? = nil,
-        dividerFeature: CommonDetailFeature? = nil
+        dividerFeature: CommonDetailFeature? = nil,
+        toggleFeature: CommonDetailFeature? = nil
     ) {
         self.routerService = routerService
         self.componentsShowcaseFeature = componentsShowcaseFeature
@@ -39,6 +41,7 @@ final class ComponentsShowcaseCoordinator: RootCoordinatorProtocol {
         self.checkboxFeature = checkboxFeature
         self.chipsFeature = chipsFeature
         self.dividerFeature = dividerFeature
+        self.toggleFeature = toggleFeature
     }
     
     // MARK: - Methods
@@ -98,8 +101,6 @@ final class ComponentsShowcaseCoordinator: RootCoordinatorProtocol {
                 )
                 guard let builder = self?.dividerFeature?.runFlow(data: nil) else { return }
                 viewController = (builder.view as! UIViewController)
-            case .dot:
-                break
             case .hint:
                 break
             case .iconButton:
@@ -173,7 +174,12 @@ final class ComponentsShowcaseCoordinator: RootCoordinatorProtocol {
             case .title:
                 break
             case .toggle:
-                break
+                self?.toggleFeature = CommonDetailFeature(
+                    cellBuilder: ToggleCellBuilder(),
+                    screenTitle: Components.toggle.rawValue
+                )
+                guard let builder = self?.toggleFeature?.runFlow(data: nil) else { return }
+                viewController = (builder.view as! UIViewController)
             }
             
             self?.routerService.pushMainNavigation(to: viewController, animated: true)
