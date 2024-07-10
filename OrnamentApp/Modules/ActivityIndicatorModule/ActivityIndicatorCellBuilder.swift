@@ -50,7 +50,7 @@ final class ActivityIndicatorCellBuilder: CellBuilder {
         row.rowHeight = 72
         
         let section = GenericTableViewSectionModel(with: [row])
-        section.makeHeader(title: "Component.Title".localized)
+        section.makeHeader(title: Constants.componentTitle)
         return section
     }
     
@@ -62,7 +62,7 @@ final class ActivityIndicatorCellBuilder: CellBuilder {
                 { [weak self] in self?.remakeActivityIndicatorSize(size: .init(width: 36, height: 36)) },
                 { [weak self] in self?.remakeActivityIndicatorSize(size: .init(width: 48, height: 48)) }
             ],
-            headerTitle: "ActivityIndicator.Screen.Size.Title".localized
+            headerTitle: Constants.componentSize
         )
     }
     
@@ -73,7 +73,7 @@ final class ActivityIndicatorCellBuilder: CellBuilder {
                 { [weak self] in self?.updateActivityIndicatorAnimating(isAnimating: true) },
                 { [weak self] in self?.updateActivityIndicatorAnimating(isAnimating: false) }
             ],
-            headerTitle: "ActivityIndicator.Screen.Animating.Title".localized,
+            headerTitle: Constants.componentAnimating,
             viewWidth: 62
         )
     }
