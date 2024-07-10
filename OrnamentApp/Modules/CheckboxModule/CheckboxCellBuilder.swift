@@ -59,7 +59,7 @@ final class CheckboxCellBuilder: NSObject, UITextFieldDelegate, CellBuilder {
         row.rowHeight = 72
         
         let section = GenericTableViewSectionModel(with: [row])
-        section.makeHeader(title: "Component.Title".localized)
+        section.makeHeader(title: Constants.componentTitle)
         return section
     }
     
@@ -70,7 +70,7 @@ final class CheckboxCellBuilder: NSObject, UITextFieldDelegate, CellBuilder {
                 { [weak self] in self?.updateCheckboxStyle(selection: .default) },
                 { [weak self] in self?.updateCheckboxStyle(selection: .checked) }
             ],
-            headerTitle: "Checkbox.Checked.Title".localized,
+            headerTitle: Constants.componentChecked,
             viewWidth: 52
         )
     }
@@ -83,7 +83,7 @@ final class CheckboxCellBuilder: NSObject, UITextFieldDelegate, CellBuilder {
                 { [weak self] in self?.updateCheckboxStyle(state: .pressed) },
                 { [weak self] in self?.updateCheckboxStyle(state: .disabled) }
             ],
-            headerTitle: "Checkbox.State.Title".localized,
+            headerTitle: Constants.componentState,
             viewWidth: 86
         )
     }

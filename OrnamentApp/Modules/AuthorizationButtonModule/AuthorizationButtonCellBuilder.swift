@@ -61,7 +61,7 @@ final class AuthorizationButtonCellBuilder: NSObject, UITextFieldDelegate, CellB
         row.rowHeight = 72
         
         let section = GenericTableViewSectionModel(with: [row])
-        section.makeHeader(title: "Component.Title".localized)
+        section.makeHeader(title: Constants.componentTitle)
         return section
     }
     
@@ -89,7 +89,7 @@ final class AuthorizationButtonCellBuilder: NSObject, UITextFieldDelegate, CellB
         row.rowHeight = 72
         
         let section = GenericTableViewSectionModel(with: [row])
-        section.makeHeader(title: "Component.Text.Title".localized)
+        section.makeHeader(title: Constants.componentText)
         return section
     }
     
@@ -100,7 +100,7 @@ final class AuthorizationButtonCellBuilder: NSObject, UITextFieldDelegate, CellB
                 { [weak self] in self?.updateButtonStyle(variant: .gosuslugi, isInversed: nil) },
                 { [weak self] in self?.updateButtonStyle(variant: .standart, isInversed: nil) }
             ],
-            headerTitle: "AuthorizationButton.Variant.Title".localized,
+            headerTitle: Constants.componentVariant,
             viewWidth: 94
         )
     }
@@ -112,7 +112,7 @@ final class AuthorizationButtonCellBuilder: NSObject, UITextFieldDelegate, CellB
                 { [weak self] in self?.updateButtonStyle(variant: nil, isInversed: false) },
                 { [weak self] in self?.updateButtonStyle(variant: nil, isInversed: true) }
             ],
-            headerTitle: "AuthorizationButton.Inversion.Title".localized,
+            headerTitle: Constants.componentInversion,
             viewWidth: 64
         )
     }

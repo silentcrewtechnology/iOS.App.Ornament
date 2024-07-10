@@ -62,7 +62,7 @@ final class ChipsCellBuilder: NSObject, UITextFieldDelegate, CellBuilder {
         row.rowHeight = 72
         
         let section = GenericTableViewSectionModel(with: [row])
-        section.makeHeader(title: "Component.Title".localized)
+        section.makeHeader(title: Constants.componentTitle.localized)
         return section
     }
     
@@ -90,7 +90,7 @@ final class ChipsCellBuilder: NSObject, UITextFieldDelegate, CellBuilder {
         row.rowHeight = 72
         
         let section = GenericTableViewSectionModel(with: [row])
-        section.makeHeader(title: "Component.Text.Title".localized)
+        section.makeHeader(title: Constants.componentText.localized)
         return section
     }
     
@@ -101,7 +101,7 @@ final class ChipsCellBuilder: NSObject, UITextFieldDelegate, CellBuilder {
                 { [weak self] in self?.updateChipsStyle(selection: .default) },
                 { [weak self] in self?.updateChipsStyle(selection: .selected) }
             ],
-            headerTitle: "Chips.Selection.Title".localized,
+            headerTitle: Constants.componentSelection,
             viewWidth: 52
         )
     }
@@ -114,7 +114,7 @@ final class ChipsCellBuilder: NSObject, UITextFieldDelegate, CellBuilder {
                 { [weak self] in self?.updateChipsStyle(state: .pressed) },
                 { [weak self] in self?.updateChipsStyle(state: .disabled) }
             ],
-            headerTitle: "Chips.State.Title".localized,
+            headerTitle: Constants.componentState,
             viewWidth: 86
         )
     }
@@ -126,7 +126,7 @@ final class ChipsCellBuilder: NSObject, UITextFieldDelegate, CellBuilder {
                 { [weak self] in self?.updateChipsStyle(size: .small) },
                 { [weak self] in self?.updateChipsStyle(size: .large) }
             ],
-            headerTitle: "Chips.Size.Title".localized,
+            headerTitle: Constants.componentSize,
             viewWidth: 72
         )
     }
@@ -139,7 +139,7 @@ final class ChipsCellBuilder: NSObject, UITextFieldDelegate, CellBuilder {
                 { [weak self] in self?.addIconView(view: UIImageView(image: .ic16Tick), inRight: false) },
                 { [weak self] in self?.addIconView(view: UIImageView(image: .ic16Close), inRight: true) }
             ],
-            headerTitle: "Chips.State.Title".localized,
+            headerTitle: Constants.componentImage,
             viewWidth: 72
         )
     }

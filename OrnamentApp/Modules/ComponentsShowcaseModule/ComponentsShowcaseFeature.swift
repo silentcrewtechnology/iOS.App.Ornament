@@ -34,7 +34,7 @@ final class ComponentsShowcaseFeature: NSObject, FeatureCoordinatorProtocol {
         dataStorage.registerFor(tableViewBuilder.view)
 
         tableViewVCBuilder = .init(with: .init(
-            screenTitle: "ComponentsShowcase.Title".localized,
+            screenTitle: Constants.componentsShowcaseTitle,
             tableView: tableViewBuilder.view,
             confirmButtonView: nil
         ))

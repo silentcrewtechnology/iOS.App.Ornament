@@ -1,0 +1,23 @@
+//
+//  Constants.swift
+//  OrnamentApp
+//
+//  Created by user on 10.07.2024.
+//
+
+import Foundation
+
+enum Constants {
+    static let componentsShowcaseTitle = "Витрина компонентов"
+    static let componentTitle = "Component"
+    static let componentText = "Text"
+    static let componentSize = "Size"
+    static let componentAnimating = "Animating"
+    static let componentVariant = "Variant"
+    static let componentInversion = "Inversion"
+    static let componentChecked = "Checked"
+    static let componentState = "State"
+    static let componentSelection = "Selection"
+    static let componentImage = "Image"
+    static let componentStyle = "Style"
+}
