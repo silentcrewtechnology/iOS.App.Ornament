@@ -18,6 +18,7 @@
 		CE4A7C0A2C3E8ABF00AA7EB4 /* DividerCellBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4A7C092C3E8ABF00AA7EB4 /* DividerCellBuilder.swift */; };
 		CE4A7C0F2C3E8FC300AA7EB4 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4A7C0E2C3E8FC300AA7EB4 /* Constants.swift */; };
 		CE4A7C122C3E9E5900AA7EB4 /* ToggleCellBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4A7C112C3E9E5900AA7EB4 /* ToggleCellBuilder.swift */; };
+		CE4A7C152C3EBBEE00AA7EB4 /* InputAmountCellBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4A7C142C3EBBEE00AA7EB4 /* InputAmountCellBuilder.swift */; };
 		CE694C372C3D56090064C0C0 /* ChipsCellBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE694C362C3D56090064C0C0 /* ChipsCellBuilder.swift */; };
 		CEA336002C36A66200880A1F /* CheckboxViewUpdater.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA335FF2C36A66200880A1F /* CheckboxViewUpdater.swift */; };
 		CEA336022C36A9B800880A1F /* ChipsViewUpdater.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA336012C36A9B800880A1F /* ChipsViewUpdater.swift */; };
@@ -52,6 +53,7 @@
 		CE4A7C092C3E8ABF00AA7EB4 /* DividerCellBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DividerCellBuilder.swift; sourceTree = "<group>"; };
 		CE4A7C0E2C3E8FC300AA7EB4 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		CE4A7C112C3E9E5900AA7EB4 /* ToggleCellBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToggleCellBuilder.swift; sourceTree = "<group>"; };
+		CE4A7C142C3EBBEE00AA7EB4 /* InputAmountCellBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputAmountCellBuilder.swift; sourceTree = "<group>"; };
 		CE694C362C3D56090064C0C0 /* ChipsCellBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChipsCellBuilder.swift; sourceTree = "<group>"; };
 		CEA335FF2C36A66200880A1F /* CheckboxViewUpdater.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckboxViewUpdater.swift; sourceTree = "<group>"; };
 		CEA336012C36A9B800880A1F /* ChipsViewUpdater.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChipsViewUpdater.swift; sourceTree = "<group>"; };
@@ -167,6 +169,14 @@
 			path = ToggleModule;
 			sourceTree = "<group>";
 		};
+		CE4A7C132C3EBBD300AA7EB4 /* InputAmountModule */ = {
+			isa = PBXGroup;
+			children = (
+				CE4A7C142C3EBBEE00AA7EB4 /* InputAmountCellBuilder.swift */,
+			);
+			path = InputAmountModule;
+			sourceTree = "<group>";
+		};
 		CE694C352C3D4E2A0064C0C0 /* ChipsModule */ = {
 			isa = PBXGroup;
 			children = (
@@ -225,6 +235,7 @@
 				CE2827AE2C3C1EBA00156F14 /* CheckboxModule */,
 				CE694C352C3D4E2A0064C0C0 /* ChipsModule */,
 				CE4A7C082C3E8AAA00AA7EB4 /* DividerModule */,
+				CE4A7C132C3EBBD300AA7EB4 /* InputAmountModule */,
 				CE4A7C102C3E9E4100AA7EB4 /* ToggleModule */,
 				CEEB5E602C35678D000E0215 /* ComponentsShowcaseModule */,
 				CEA3360B2C36C0BE00880A1F /* FlowsCoordinator.swift */,
@@ -360,6 +371,7 @@
 				CEA4E22D2C37DFCE0069707C /* GenericTableViewSectionModel+Extensions.swift in Sources */,
 				CE28279E2C3BDB2600156F14 /* CommonDetailFeature.swift in Sources */,
 				8889558329140FFC00A46293 /* AppDelegate.swift in Sources */,
+				CE4A7C152C3EBBEE00AA7EB4 /* InputAmountCellBuilder.swift in Sources */,
 				888955B72914108700A46293 /* SceneDelegate.swift in Sources */,
 				CEA336052C36B1A400880A1F /* Components.swift in Sources */,
 				CEA336162C36D11000880A1F /* TableHeaderView.swift in Sources */,

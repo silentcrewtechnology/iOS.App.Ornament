@@ -20,6 +20,7 @@ final class ComponentsShowcaseCoordinator: RootCoordinatorProtocol {
     private var checkboxFeature: FeatureCoordinatorProtocol?
     private var chipsFeature: FeatureCoordinatorProtocol?
     private var dividerFeature: FeatureCoordinatorProtocol?
+    private var inputAmountFeature: FeatureCoordinatorProtocol?
     private var toggleFeature: FeatureCoordinatorProtocol?
 
     // MARK: - Life cycle
@@ -32,6 +33,7 @@ final class ComponentsShowcaseCoordinator: RootCoordinatorProtocol {
         checkboxFeature: CommonDetailFeature? = nil,
         chipsFeature: CommonDetailFeature? = nil,
         dividerFeature: CommonDetailFeature? = nil,
+        inputAmountFeature: CommonDetailFeature? = nil,
         toggleFeature: CommonDetailFeature? = nil
     ) {
         self.routerService = routerService
@@ -41,6 +43,7 @@ final class ComponentsShowcaseCoordinator: RootCoordinatorProtocol {
         self.checkboxFeature = checkboxFeature
         self.chipsFeature = chipsFeature
         self.dividerFeature = dividerFeature
+        self.inputAmountFeature = inputAmountFeature
         self.toggleFeature = toggleFeature
     }
     
@@ -101,18 +104,19 @@ final class ComponentsShowcaseCoordinator: RootCoordinatorProtocol {
                 )
                 guard let builder = self?.dividerFeature?.runFlow(data: nil) else { return }
                 viewController = (builder.view as! UIViewController)
-            case .hint:
-                break
             case .iconButton:
                 break
             case .image:
                 break
             case .indicator:
                 break
-            case .inputAmountTextField:
-                break
             case .inputAmountView:
-                break
+                self?.inputAmountFeature = CommonDetailFeature(
+                    cellBuilder: InputAmountCellBuilder(),
+                    screenTitle: Components.inputAmountView.rawValue
+                )
+                guard let builder = self?.inputAmountFeature?.runFlow(data: nil) else { return }
+                viewController = (builder.view as! UIViewController)
             case .inputMessage:
                 break
             case .inputOTPItem:
@@ -162,12 +166,6 @@ final class ComponentsShowcaseCoordinator: RootCoordinatorProtocol {
             case .tabItem:
                 break
             case .tabs:
-                break
-            case .tag:
-                break
-            case .tapInset:
-                break
-            case .textBlock:
                 break
             case .tile:
                 break
