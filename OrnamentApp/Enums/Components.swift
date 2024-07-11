@@ -27,8 +27,6 @@ enum Components: String, CaseIterable {
     // TODO: - Actualize
     case indicator = "Indicator (not actualized)"
     case inputAmountView = "Input amount view"
-    case inputMessage = "Input message"
-    case inputOTPItem = "Input OTP item"
     case inputOTP = "Input OTP"
     case inputPhoneNumber = "Input phone number"
     case inputSelect = "Input select"

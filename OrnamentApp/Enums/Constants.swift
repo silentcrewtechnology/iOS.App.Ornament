@@ -20,4 +20,6 @@ enum Constants {
     static let componentSelection = "Selection"
     static let componentImage = "Image"
     static let componentStyle = "Style"
+    static let componentHintText = "Hint text"
+    static let componentAmount = "Amount"
 }

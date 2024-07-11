@@ -21,6 +21,7 @@ final class ComponentsShowcaseCoordinator: RootCoordinatorProtocol {
     private var chipsFeature: FeatureCoordinatorProtocol?
     private var dividerFeature: FeatureCoordinatorProtocol?
     private var inputAmountFeature: FeatureCoordinatorProtocol?
+    private var inputOTPFeature: FeatureCoordinatorProtocol?
     private var toggleFeature: FeatureCoordinatorProtocol?
 
     // MARK: - Life cycle
@@ -34,6 +35,7 @@ final class ComponentsShowcaseCoordinator: RootCoordinatorProtocol {
         chipsFeature: CommonDetailFeature? = nil,
         dividerFeature: CommonDetailFeature? = nil,
         inputAmountFeature: CommonDetailFeature? = nil,
+        inputOTPFeature: CommonDetailFeature? = nil,
         toggleFeature: CommonDetailFeature? = nil
     ) {
         self.routerService = routerService
@@ -44,6 +46,7 @@ final class ComponentsShowcaseCoordinator: RootCoordinatorProtocol {
         self.chipsFeature = chipsFeature
         self.dividerFeature = dividerFeature
         self.inputAmountFeature = inputAmountFeature
+        self.inputOTPFeature = inputOTPFeature
         self.toggleFeature = toggleFeature
     }
     
@@ -117,12 +120,13 @@ final class ComponentsShowcaseCoordinator: RootCoordinatorProtocol {
                 )
                 guard let builder = self?.inputAmountFeature?.runFlow(data: nil) else { return }
                 viewController = (builder.view as! UIViewController)
-            case .inputMessage:
-                break
-            case .inputOTPItem:
-                break
             case .inputOTP:
-                break
+                self?.inputOTPFeature = CommonDetailFeature(
+                    cellBuilder: InputOTPCellBuilder(),
+                    screenTitle: Components.inputOTP.rawValue
+                )
+                guard let builder = self?.inputOTPFeature?.runFlow(data: nil) else { return }
+                viewController = (builder.view as! UIViewController)
             case .inputPhoneNumber:
                 break
             case .inputSelect:
