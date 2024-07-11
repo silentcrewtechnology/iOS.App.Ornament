@@ -31,6 +31,7 @@
 		CEA4E2292C37CF700069707C /* AuthorizationButtonCellBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA4E2282C37CF700069707C /* AuthorizationButtonCellBuilder.swift */; };
 		CEA4E22D2C37DFCE0069707C /* GenericTableViewSectionModel+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA4E22C2C37DFCE0069707C /* GenericTableViewSectionModel+Extensions.swift */; };
 		CEE15C4D2C3FD76C008E6D8C /* InputOTPCellBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE15C4C2C3FD76C008E6D8C /* InputOTPCellBuilder.swift */; };
+		CEE15C502C400F66008E6D8C /* InputPhoneNumberCellBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE15C4F2C400F66008E6D8C /* InputPhoneNumberCellBuilder.swift */; };
 		CEEB5E5B2C356246000E0215 /* ArchitectureTableView in Frameworks */ = {isa = PBXBuildFile; productRef = CEEB5E5A2C356246000E0215 /* ArchitectureTableView */; };
 		CEEB5E5E2C356259000E0215 /* DesignSystem in Frameworks */ = {isa = PBXBuildFile; productRef = CEEB5E5D2C356259000E0215 /* DesignSystem */; };
 		CEEB5E622C356802000E0215 /* ComponentsShowcaseFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEB5E612C356801000E0215 /* ComponentsShowcaseFeature.swift */; };
@@ -66,6 +67,7 @@
 		CEA4E2282C37CF700069707C /* AuthorizationButtonCellBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationButtonCellBuilder.swift; sourceTree = "<group>"; };
 		CEA4E22C2C37DFCE0069707C /* GenericTableViewSectionModel+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GenericTableViewSectionModel+Extensions.swift"; sourceTree = "<group>"; };
 		CEE15C4C2C3FD76C008E6D8C /* InputOTPCellBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputOTPCellBuilder.swift; sourceTree = "<group>"; };
+		CEE15C4F2C400F66008E6D8C /* InputPhoneNumberCellBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputPhoneNumberCellBuilder.swift; sourceTree = "<group>"; };
 		CEEB5E612C356801000E0215 /* ComponentsShowcaseFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComponentsShowcaseFeature.swift; sourceTree = "<group>"; };
 		CEEB5E632C35681A000E0215 /* ComponentsShowcaseCellBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComponentsShowcaseCellBuilder.swift; sourceTree = "<group>"; };
 		CEEB5E702C3596E6000E0215 /* Components+Reusable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Components+Reusable.swift"; sourceTree = "<group>"; };
@@ -237,6 +239,14 @@
 			path = InputOTPModule;
 			sourceTree = "<group>";
 		};
+		CEE15C4E2C400F48008E6D8C /* InputPhoneNumber */ = {
+			isa = PBXGroup;
+			children = (
+				CEE15C4F2C400F66008E6D8C /* InputPhoneNumberCellBuilder.swift */,
+			);
+			path = InputPhoneNumber;
+			sourceTree = "<group>";
+		};
 		CEEB5E5F2C356788000E0215 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
@@ -247,6 +257,7 @@
 				CE4A7C082C3E8AAA00AA7EB4 /* DividerModule */,
 				CE4A7C132C3EBBD300AA7EB4 /* InputAmountModule */,
 				CEE15C4B2C3FD759008E6D8C /* InputOTPModule */,
+				CEE15C4E2C400F48008E6D8C /* InputPhoneNumber */,
 				CE4A7C102C3E9E4100AA7EB4 /* ToggleModule */,
 				CEEB5E602C35678D000E0215 /* ComponentsShowcaseModule */,
 				CEA3360B2C36C0BE00880A1F /* FlowsCoordinator.swift */,
@@ -364,6 +375,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CEE15C502C400F66008E6D8C /* InputPhoneNumberCellBuilder.swift in Sources */,
 				CEA336132C36C45F00880A1F /* ActivityIndicatorCellBuilder.swift in Sources */,
 				CE4A7C0F2C3E8FC300AA7EB4 /* Constants.swift in Sources */,
 				CEA336022C36A9B800880A1F /* ChipsViewUpdater.swift in Sources */,
