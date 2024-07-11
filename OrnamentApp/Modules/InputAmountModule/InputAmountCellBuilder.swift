@@ -5,8 +5,6 @@
 //  Created by user on 10.07.2024.
 //
 
-import Foundation
-
 import UIKit
 import ArchitectureTableView
 import Components
@@ -59,7 +57,7 @@ final class InputAmountCellBuilder: NSObject, UITextFieldDelegate, CellBuilder {
         row.rowHeight = 72
         
         let section = GenericTableViewSectionModel(with: [row])
-        section.makeHeader(title: Constants.componentTitle.localized)
+        section.makeHeader(title: Constants.componentTitle)
         return section
     }
     
@@ -115,7 +113,7 @@ final class InputAmountCellBuilder: NSObject, UITextFieldDelegate, CellBuilder {
         row.rowHeight = 72
         
         let section = GenericTableViewSectionModel(with: [row])
-        section.makeHeader(title: Constants.componentText.localized)
+        section.makeHeader(title: Constants.componentHintText)
         return section
     }
     
@@ -154,11 +152,16 @@ final class InputAmountCellBuilder: NSObject, UITextFieldDelegate, CellBuilder {
         hintText = .init(string: textField.text ?? "")
         
         switch state {
-        case .error(let nSMutableAttributedString):
+        case .error(_):
+            var hintVP = HintView.ViewProperties()
+            let hintStyle = HintViewStyle()
+            hintStyle.update(variant: .left(hintText), viewProperties: &hintVP)
+            
             state = .error(hintText)
             style.update(state: state, viewProperties: &viewProperties)
+            viewProperties.hint = hintVP
             inputAmountView?.update(with: viewProperties)
-        case .default, .disabled:
+        default:
             break
         }
     }
