@@ -40,6 +40,7 @@
 		CEEB5E712C3596E6000E0215 /* Components+Reusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEB5E702C3596E6000E0215 /* Components+Reusable.swift */; };
 		CEEB5E742C35A9A1000E0215 /* TableComponentViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEB5E732C35A9A1000E0215 /* TableComponentViewCell.swift */; };
 		CEF2DE6E2C4130840065C1BD /* InputSelectCellBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF2DE6D2C4130840065C1BD /* InputSelectCellBuilder.swift */; };
+		CEF2DE712C4150130065C1BD /* InputTextCellBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF2DE702C4150130065C1BD /* InputTextCellBuilder.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -74,6 +75,7 @@
 		CEEB5E702C3596E6000E0215 /* Components+Reusable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Components+Reusable.swift"; sourceTree = "<group>"; };
 		CEEB5E732C35A9A1000E0215 /* TableComponentViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableComponentViewCell.swift; sourceTree = "<group>"; };
 		CEF2DE6D2C4130840065C1BD /* InputSelectCellBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputSelectCellBuilder.swift; sourceTree = "<group>"; };
+		CEF2DE702C4150130065C1BD /* InputTextCellBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputTextCellBuilder.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -261,6 +263,7 @@
 				CEE15C4B2C3FD759008E6D8C /* InputOTPModule */,
 				CEE15C4E2C400F48008E6D8C /* InputPhoneNumber */,
 				CEF2DE6C2C41306F0065C1BD /* InputSelectModule */,
+				CEF2DE6F2C414FD00065C1BD /* inputTextModule */,
 				CE4A7C102C3E9E4100AA7EB4 /* ToggleModule */,
 				CEEB5E602C35678D000E0215 /* ComponentsShowcaseModule */,
 				CEA3360B2C36C0BE00880A1F /* FlowsCoordinator.swift */,
@@ -302,6 +305,14 @@
 				CEF2DE6D2C4130840065C1BD /* InputSelectCellBuilder.swift */,
 			);
 			path = InputSelectModule;
+			sourceTree = "<group>";
+		};
+		CEF2DE6F2C414FD00065C1BD /* inputTextModule */ = {
+			isa = PBXGroup;
+			children = (
+				CEF2DE702C4150130065C1BD /* InputTextCellBuilder.swift */,
+			);
+			path = inputTextModule;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -391,6 +402,7 @@
 				CE4A7C0F2C3E8FC300AA7EB4 /* Constants.swift in Sources */,
 				CEA336022C36A9B800880A1F /* ChipsViewUpdater.swift in Sources */,
 				CEA3360E2C36C0E100880A1F /* ComponentsShowcaseCoordinator.swift in Sources */,
+				CEF2DE712C4150130065C1BD /* InputTextCellBuilder.swift in Sources */,
 				CE694C372C3D56090064C0C0 /* ChipsCellBuilder.swift in Sources */,
 				CEEB5E642C35681A000E0215 /* ComponentsShowcaseCellBuilder.swift in Sources */,
 				CE4A7C0A2C3E8ABF00AA7EB4 /* DividerCellBuilder.swift in Sources */,

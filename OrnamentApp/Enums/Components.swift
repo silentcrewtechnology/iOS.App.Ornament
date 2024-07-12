@@ -30,7 +30,6 @@ enum Components: String, CaseIterable {
     case inputOTP = "Input OTP"
     case inputPhoneNumber = "Input phone number"
     case inputSelect = "Input select"
-    case inputTextField = "Input text field"
     case inputTextView = "Input text"
     case inputTextarea = "Input textarea"
     case label = "Label"
