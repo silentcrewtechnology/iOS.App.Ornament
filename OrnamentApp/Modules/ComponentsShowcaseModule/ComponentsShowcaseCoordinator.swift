@@ -23,6 +23,7 @@ final class ComponentsShowcaseCoordinator: RootCoordinatorProtocol {
     private var inputAmountFeature: FeatureCoordinatorProtocol?
     private var inputOTPFeature: FeatureCoordinatorProtocol?
     private var inputPhoneNumberFeature: FeatureCoordinatorProtocol?
+    private var inputSelectFeature: FeatureCoordinatorProtocol?
     private var toggleFeature: FeatureCoordinatorProtocol?
 
     // MARK: - Life cycle
@@ -38,6 +39,7 @@ final class ComponentsShowcaseCoordinator: RootCoordinatorProtocol {
         inputAmountFeature: CommonDetailFeature? = nil,
         inputOTPFeature: CommonDetailFeature? = nil,
         inputPhoneNumberFeature: CommonDetailFeature? = nil,
+        inputSelectFeature: CommonDetailFeature? = nil,
         toggleFeature: CommonDetailFeature? = nil
     ) {
         self.routerService = routerService
@@ -50,6 +52,7 @@ final class ComponentsShowcaseCoordinator: RootCoordinatorProtocol {
         self.inputAmountFeature = inputAmountFeature
         self.inputOTPFeature = inputOTPFeature
         self.inputPhoneNumberFeature = inputPhoneNumberFeature
+        self.inputSelectFeature = inputSelectFeature
         self.toggleFeature = toggleFeature
     }
     
@@ -138,7 +141,12 @@ final class ComponentsShowcaseCoordinator: RootCoordinatorProtocol {
                 guard let builder = self?.inputPhoneNumberFeature?.runFlow(data: nil) else { return }
                 viewController = (builder.view as! UIViewController)
             case .inputSelect:
-                break
+                self?.inputSelectFeature = CommonDetailFeature(
+                    cellBuilder: InputSelectCellBuilder(),
+                    screenTitle: Components.inputSelect.rawValue
+                )
+                guard let builder = self?.inputSelectFeature?.runFlow(data: nil) else { return }
+                viewController = (builder.view as! UIViewController)
             case .inputTextField:
                 break
             case .inputTextView:

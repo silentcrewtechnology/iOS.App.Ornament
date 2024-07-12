@@ -18,7 +18,8 @@ struct ChipsViewSectionHelper {
         actions: [() -> Void],
         headerTitle: String,
         rowHeight: CGFloat = 48,
-        viewWidth: CGFloat = 48
+        viewWidth: CGFloat = 48,
+        eachViewWidths: [CGFloat] = []
     ) -> GenericTableViewSectionModel {
         let row = GenericTableViewRowModel(
             with: GenericTableViewCellWrapper<UIStackView>.self,
@@ -61,15 +62,20 @@ struct ChipsViewSectionHelper {
                 let view = UIView()
                 cell.containedView.addArrangedSubview(view)
                 views.append(view)
-                views.forEach { chipsView in
-                    chipsView.snp.makeConstraints { make in
-                        make.width.equalTo(viewWidth)
+                
+                for q in 0..<views.count {
+                    let width: CGFloat = eachViewWidths.count != 1
+                        ? eachViewWidths[q]
+                        : viewWidth
+                    
+                    views[q].snp.makeConstraints { make in
+                        make.width.equalTo(width)
                     }
                 }
                 
                 cell.containedView.axis = .horizontal
                 cell.containedView.spacing = 8
-                cell.containedView.distribution = .fillProportionally
+                cell.containedView.distribution = .fill
                 cell.contentInset = .init(top: .zero, left: 16, bottom: 16, right: 16)
                 cell.selectionStyle = .none
             },
