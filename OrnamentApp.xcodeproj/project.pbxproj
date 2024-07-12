@@ -39,6 +39,7 @@
 		CEEB5E672C3568B0000E0215 /* Extensions in Frameworks */ = {isa = PBXBuildFile; productRef = CEEB5E662C3568B0000E0215 /* Extensions */; };
 		CEEB5E712C3596E6000E0215 /* Components+Reusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEB5E702C3596E6000E0215 /* Components+Reusable.swift */; };
 		CEEB5E742C35A9A1000E0215 /* TableComponentViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEB5E732C35A9A1000E0215 /* TableComponentViewCell.swift */; };
+		CEF2DE6E2C4130840065C1BD /* InputSelectCellBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF2DE6D2C4130840065C1BD /* InputSelectCellBuilder.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -72,6 +73,7 @@
 		CEEB5E632C35681A000E0215 /* ComponentsShowcaseCellBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComponentsShowcaseCellBuilder.swift; sourceTree = "<group>"; };
 		CEEB5E702C3596E6000E0215 /* Components+Reusable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Components+Reusable.swift"; sourceTree = "<group>"; };
 		CEEB5E732C35A9A1000E0215 /* TableComponentViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableComponentViewCell.swift; sourceTree = "<group>"; };
+		CEF2DE6D2C4130840065C1BD /* InputSelectCellBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputSelectCellBuilder.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -258,6 +260,7 @@
 				CE4A7C132C3EBBD300AA7EB4 /* InputAmountModule */,
 				CEE15C4B2C3FD759008E6D8C /* InputOTPModule */,
 				CEE15C4E2C400F48008E6D8C /* InputPhoneNumber */,
+				CEF2DE6C2C41306F0065C1BD /* InputSelectModule */,
 				CE4A7C102C3E9E4100AA7EB4 /* ToggleModule */,
 				CEEB5E602C35678D000E0215 /* ComponentsShowcaseModule */,
 				CEA3360B2C36C0BE00880A1F /* FlowsCoordinator.swift */,
@@ -291,6 +294,14 @@
 				CEEB5E732C35A9A1000E0215 /* TableComponentViewCell.swift */,
 			);
 			path = Cells;
+			sourceTree = "<group>";
+		};
+		CEF2DE6C2C41306F0065C1BD /* InputSelectModule */ = {
+			isa = PBXGroup;
+			children = (
+				CEF2DE6D2C4130840065C1BD /* InputSelectCellBuilder.swift */,
+			);
+			path = InputSelectModule;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -391,6 +402,7 @@
 				CEEB5E622C356802000E0215 /* ComponentsShowcaseFeature.swift in Sources */,
 				CE2827A12C3BDB6900156F14 /* CellBuilder.swift in Sources */,
 				CEA4E2292C37CF700069707C /* AuthorizationButtonCellBuilder.swift in Sources */,
+				CEF2DE6E2C4130840065C1BD /* InputSelectCellBuilder.swift in Sources */,
 				CEA4E22D2C37DFCE0069707C /* GenericTableViewSectionModel+Extensions.swift in Sources */,
 				CE28279E2C3BDB2600156F14 /* CommonDetailFeature.swift in Sources */,
 				8889558329140FFC00A46293 /* AppDelegate.swift in Sources */,

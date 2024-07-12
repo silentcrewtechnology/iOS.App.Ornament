@@ -1,8 +1,8 @@
 //
-//  InputAmountCellBuilder.swift
+//  InputSelectCellBuilder.swift
 //  OrnamentApp
 //
-//  Created by user on 10.07.2024.
+//  Created by user on 12.07.2024.
 //
 
 import UIKit
@@ -12,25 +12,22 @@ import DesignSystem
 import ImagesService
 import Extensions
 
-final class InputAmountCellBuilder: NSObject, UITextFieldDelegate, CellBuilder {
+final class InputSelectCellBuilder: NSObject, UITextFieldDelegate, CellBuilder {
     
     // MARK: - Private properties
     
     private let chipsViewSectionHelper = ChipsViewSectionHelper()
-    private var inputAmountView: InputAmountView?
-    private var viewProperties = InputAmountView.ViewProperties(
-        textFieldProperties: .init(placeholder: .init(string: "0")),
-        amountSymbol: .init(string: "₽")
-    )
-    private var style = InputAmountViewStyle.init()
-    private var state: InputAmountViewStyle.State = .default
+    private var inputSelectView: InputSelectView?
+    private var viewProperties = InputSelectView.ViewProperties()
+    private var style = InputSelectViewStyle.init(state: .default)
+    private var state: InputSelectViewStyle.State = .default
     private var hintText: NSMutableAttributedString = .init(string: "")
     
     // MARK: - Methods
     
     func createSections() -> [GenericTableViewSectionModel] {
         return [
-            createAmountViewSection(),
+            createInputSelectViewSection(),
             createInputTextSection(),
             createHintInputTextSection(),
             createStateSection()
@@ -39,18 +36,45 @@ final class InputAmountCellBuilder: NSObject, UITextFieldDelegate, CellBuilder {
     
     // MARK: - Private methods
     
-    private func createAmountViewSection() -> GenericTableViewSectionModel {
+    private func createInputSelectViewSection() -> GenericTableViewSectionModel {
         let row = GenericTableViewRowModel(
-            with: GenericTableViewCellWrapper<InputAmountView>.self,
+            with: GenericTableViewCellWrapper<InputSelectView>.self,
             configuration: { [weak self] cell, _ in
                 guard let self = self else { return }
+                
+                let hintViewProperties: HintView.ViewProperties = {
+                    var viewProperties = HintView.ViewProperties()
+                    let style = HintViewStyle()
+                    style.update(
+                        variant: .empty,
+                        viewProperties: &viewProperties
+                    )
+                    return viewProperties
+                }()
 
-                self.style.update(state: .default, viewProperties: &self.viewProperties)
+                self.viewProperties = InputSelectView.ViewProperties(
+                    placeholder: .init(string: "Placeholder"),
+                    hint: hintViewProperties
+                )
+                self.viewProperties.inputTapAction = {
+                    self.selectText()
+                }
+                self.viewProperties.clearButtonAction = {
+                    self.clearText()
+                }
+
+                self.style.update(viewProperties: &self.viewProperties)
                 cell.containedView.update(with: self.viewProperties)
                 
                 cell.contentInset = .init(top: .zero, left: 16, bottom: 16, right: 16)
                 cell.selectionStyle = .none
-                self.inputAmountView = cell.containedView
+                self.inputSelectView = cell.containedView
+                
+                cell.containedView.snp.remakeConstraints { make in
+                    make.top.equalToSuperview()
+                    make.leading.trailing.equalToSuperview().inset(16)
+                    make.bottom.equalToSuperview().offset(16)
+                }
             },
             initializesFromNib: false
         )
@@ -68,7 +92,7 @@ final class InputAmountCellBuilder: NSObject, UITextFieldDelegate, CellBuilder {
                 guard let self = self else { return }
                 
                 var vp: InputTextView.ViewProperties = .init()
-                vp.textField.text = self.viewProperties.textFieldProperties.text
+                vp.textField.text = self.viewProperties.text
                 vp.textField.delegateAssigningClosure = { textField in
                     textField.delegate = self
                     textField.addTarget(self, action: #selector(self.onTextChange(textField:)), for: .editingChanged)
@@ -119,48 +143,77 @@ final class InputAmountCellBuilder: NSObject, UITextFieldDelegate, CellBuilder {
     
     private func createStateSection() -> GenericTableViewSectionModel {
         return chipsViewSectionHelper.makeHorizontalSection(
-            titles: ["Default", "Error", "Disabled"],
+            titles: ["Default", "Active" ,"Error", "Disabled"],
             actions: [
-                { [weak self] in self?.updateInputAmountViewStyle(state: .default) },
-                { [weak self] in
-                    guard let self = self else { return }
-                    self.updateInputAmountViewStyle(state: .error(self.hintText))
-                },
-                { [weak self] in self?.updateInputAmountViewStyle(state: .disabled) }
+                { [weak self] in self?.updateInputSelectViewStyle(state: .default) },
+                { [weak self] in self?.updateInputSelectViewStyle(state: .active) },
+                { [weak self] in self?.updateInputSelectViewStyle(state: .error) },
+                { [weak self] in self?.updateInputSelectViewStyle(state: .disabled) }
             ],
             headerTitle: Constants.componentState,
-            eachViewWidths: [82, 68, 84, 82]
+            eachViewWidths: [82, 72, 68, 84, 18]
         )
     }
 
-    private func updateInputAmountViewStyle(
-        state: InputAmountViewStyle.State
+    private func updateInputSelectViewStyle(
+        state: InputSelectViewStyle.State
     ) {
         self.state = state
         
-        style.update(state: self.state, viewProperties: &viewProperties)
-        inputAmountView?.update(with: viewProperties)
+        style = .init(state: state)
+        style.update(viewProperties: &viewProperties)
+        
+        if state == .error {
+            makeHintViewProperties()
+        } else {
+            viewProperties.hint = .init()
+        }
+        
+        inputSelectView?.update(with: viewProperties)
+    }
+    
+    private func clearText() {
+        viewProperties.text = .init(string: "")
+        style.update(viewProperties: &viewProperties)
+        inputSelectView?.update(with: viewProperties)
+    }
+    
+    private func selectText() {
+        style = .init(state: .active)
+        style.update(viewProperties: &viewProperties)
+        inputSelectView?.update(with: viewProperties)
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) { [weak self] in
+            guard let self = self else { return }
+            
+            let oldText = self.viewProperties.text
+            self.viewProperties.text = oldText
+            self.style = .init(state: .default)
+            self.style.update(viewProperties: &self.viewProperties)
+            self.inputSelectView?.update(with: self.viewProperties)
+        }
+    }
+    
+    private func makeHintViewProperties() {
+        var hintVP = HintView.ViewProperties()
+        let hintStyle = HintViewStyle()
+        hintStyle.update(variant: .left(hintText), viewProperties: &hintVP)
+        viewProperties.hint = hintVP
     }
 
     @objc private func onTextChange(textField: UITextField) {
-        viewProperties.textFieldProperties.text = .init(string: textField.text ?? "")
-        style.update(state: state, viewProperties: &viewProperties)
-        inputAmountView?.update(with: viewProperties)
+        viewProperties.text = .init(string: textField.text ?? "")
+        style.update(viewProperties: &viewProperties)
+        inputSelectView?.update(with: viewProperties)
     }
     
     @objc private func onHintTextChange(textField: UITextField) {
         hintText = .init(string: textField.text ?? "")
         
         switch state {
-        case .error(_):
-            var hintVP = HintView.ViewProperties()
-            let hintStyle = HintViewStyle()
-            hintStyle.update(variant: .left(hintText), viewProperties: &hintVP)
-            
-            state = .error(hintText)
-            style.update(state: state, viewProperties: &viewProperties)
-            viewProperties.hint = hintVP
-            inputAmountView?.update(with: viewProperties)
+        case .error:
+            makeHintViewProperties()
+            inputSelectView?.update(with: viewProperties)
         default:
             break
         }

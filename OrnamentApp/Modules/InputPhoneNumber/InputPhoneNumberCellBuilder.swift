@@ -108,6 +108,12 @@ final class InputPhoneNumberCellBuilder: NSObject, UITextFieldDelegate, CellBuil
                 cell.contentInset = .init(top: .zero, left: 16, bottom: 16, right: 16)
                 cell.selectionStyle = .none
                 self.inputPhoneNumberView = cell.containedView
+                
+                cell.containedView.snp.remakeConstraints { make in
+                    make.top.equalToSuperview()
+                    make.leading.trailing.equalToSuperview().inset(16)
+                    make.bottom.equalToSuperview().offset(16)
+                }
             },
             initializesFromNib: false
         )
@@ -148,7 +154,7 @@ final class InputPhoneNumberCellBuilder: NSObject, UITextFieldDelegate, CellBuil
     
     private func createStateSection() -> GenericTableViewSectionModel {
         return chipsViewSectionHelper.makeHorizontalSection(
-            titles: ["Default", "Active", "Error", "Disable"],
+            titles: ["Default", "Active", "Error", "Disabled"],
             actions: [
                 { [weak self] in self?.updateInputPhoneNumberViewStyle(state: .default) },
                 { [weak self] in self?.updateInputPhoneNumberViewStyle(state: .active) },
@@ -156,7 +162,7 @@ final class InputPhoneNumberCellBuilder: NSObject, UITextFieldDelegate, CellBuil
                 { [weak self] in self?.updateInputPhoneNumberViewStyle(state: .disabled) }
             ],
             headerTitle: Constants.componentState,
-            viewWidth: 86
+            eachViewWidths: [82, 72, 68, 84, 18]
         )
     }
 
@@ -165,23 +171,20 @@ final class InputPhoneNumberCellBuilder: NSObject, UITextFieldDelegate, CellBuil
         text: String? = nil
     ) {
         self.state = state
-        var hintVP = HintView.ViewProperties()
-        let hintStyle = HintViewStyle()
         
-        switch state {
-        case .error:
-            hintStyle.update(variant: .left(hintText), viewProperties: &hintVP)
-            viewProperties.hint = hintVP
-        default:
-            break
+        style = .init(state: state)
+        style.update(viewProperties: &viewProperties)
+        
+        if state == .error {
+            makeHintViewProperties()
+        } else {
+            viewProperties.hint = .init()
         }
         
         if let text = text {
             viewProperties.text = .init(string: text)
         }
         
-        style = .init(state: state)
-        style.update(viewProperties: &viewProperties)
         inputPhoneNumberView?.update(with: viewProperties)
     }
     
@@ -249,21 +252,19 @@ final class InputPhoneNumberCellBuilder: NSObject, UITextFieldDelegate, CellBuil
         }.joined()
     }
     
+    private func makeHintViewProperties() {
+        var hintVP = HintView.ViewProperties()
+        let hintStyle = HintViewStyle()
+        hintStyle.update(variant: .left(hintText), viewProperties: &hintVP)
+        viewProperties.hint = hintVP
+    }
+    
     @objc private func onHintTextChange(textField: UITextField) {
         hintText = .init(string: textField.text ?? "")
         
-        switch state {
-        case .error:
-            var hintVP = HintView.ViewProperties()
-            let hintStyle = HintViewStyle()
-            hintStyle.update(variant: .left(hintText), viewProperties: &hintVP)
-            
-            style = .init(state: state)
-            style.update(viewProperties: &viewProperties)
-            viewProperties.hint = hintVP
+        if state == .error {
+            makeHintViewProperties()
             inputPhoneNumberView?.update(with: viewProperties)
-        default:
-            break
         }
     }
 }
