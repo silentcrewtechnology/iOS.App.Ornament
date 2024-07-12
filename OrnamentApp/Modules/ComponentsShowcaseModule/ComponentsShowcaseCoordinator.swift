@@ -24,6 +24,7 @@ final class ComponentsShowcaseCoordinator: RootCoordinatorProtocol {
     private var inputOTPFeature: FeatureCoordinatorProtocol?
     private var inputPhoneNumberFeature: FeatureCoordinatorProtocol?
     private var inputSelectFeature: FeatureCoordinatorProtocol?
+    private var inputTextFeature: FeatureCoordinatorProtocol?
     private var toggleFeature: FeatureCoordinatorProtocol?
 
     // MARK: - Life cycle
@@ -40,6 +41,7 @@ final class ComponentsShowcaseCoordinator: RootCoordinatorProtocol {
         inputOTPFeature: CommonDetailFeature? = nil,
         inputPhoneNumberFeature: CommonDetailFeature? = nil,
         inputSelectFeature: CommonDetailFeature? = nil,
+        inputTextFeature: CommonDetailFeature? = nil,
         toggleFeature: CommonDetailFeature? = nil
     ) {
         self.routerService = routerService
@@ -53,6 +55,7 @@ final class ComponentsShowcaseCoordinator: RootCoordinatorProtocol {
         self.inputOTPFeature = inputOTPFeature
         self.inputPhoneNumberFeature = inputPhoneNumberFeature
         self.inputSelectFeature = inputSelectFeature
+        self.inputTextFeature = inputTextFeature
         self.toggleFeature = toggleFeature
     }
     
@@ -147,10 +150,13 @@ final class ComponentsShowcaseCoordinator: RootCoordinatorProtocol {
                 )
                 guard let builder = self?.inputSelectFeature?.runFlow(data: nil) else { return }
                 viewController = (builder.view as! UIViewController)
-            case .inputTextField:
-                break
             case .inputTextView:
-                break
+                self?.inputTextFeature = CommonDetailFeature(
+                    cellBuilder: InputTextCellBuilder(),
+                    screenTitle: Components.inputTextView.rawValue
+                )
+                guard let builder = self?.inputTextFeature?.runFlow(data: nil) else { return }
+                viewController = (builder.view as! UIViewController)
             case .inputTextarea:
                 break
             case .label:
