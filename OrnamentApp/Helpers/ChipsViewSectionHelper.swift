@@ -12,25 +12,29 @@ import Components
 import DesignSystem
 import SnapKit
 
-struct ChipsViewSectionHelper {
-    func makeHorizontalSection(
+struct ChipsViewSectionHelper { 
+    
+    func makeHorizontalSectionWithScroll(
         titles: [String],
         actions: [() -> Void],
         headerTitle: String,
-        rowHeight: CGFloat = 48,
-        viewWidth: CGFloat = 48,
-        eachViewWidths: [CGFloat] = []
+        rowHeight: CGFloat = 48
     ) -> GenericTableViewSectionModel {
         let row = GenericTableViewRowModel(
-            with: GenericTableViewCellWrapper<UIStackView>.self,
+            with: GenericTableViewCellWrapper<UIScrollView>.self,
             configuration: { cell, _ in
                 var updaters = [ChipsViewUpdater]()
                 var views = [UIView]()
+                let stackView = UIStackView()
+                cell.containedView.addSubview(stackView)
+                stackView.snp.makeConstraints {
+                    $0.edges.equalToSuperview()
+                }
                 
                 for i in 0..<titles.count {
                     let chipsViewProperties = ChipsView.ViewProperties(text: NSMutableAttributedString(string: titles[i]))
                     let chipsView = ChipsView()
-                    cell.containedView.addArrangedSubview(chipsView)
+                    stackView.addArrangedSubview(chipsView)
                     views.append(chipsView)
                     
                     updaters.append(
@@ -59,23 +63,9 @@ struct ChipsViewSectionHelper {
                     )
                 }
                 
-                let view = UIView()
-                cell.containedView.addArrangedSubview(view)
-                views.append(view)
-                
-                for q in 0..<views.count {
-                    let width: CGFloat = eachViewWidths.count != 1
-                        ? eachViewWidths[q]
-                        : viewWidth
-                    
-                    views[q].snp.makeConstraints { make in
-                        make.width.equalTo(width)
-                    }
-                }
-                
-                cell.containedView.axis = .horizontal
-                cell.containedView.spacing = 8
-                cell.containedView.distribution = .fill
+                stackView.axis = .horizontal
+                stackView.spacing = 8
+                stackView.distribution = .fillProportionally
                 cell.contentInset = .init(top: .zero, left: 16, bottom: 16, right: 16)
                 cell.selectionStyle = .none
             },

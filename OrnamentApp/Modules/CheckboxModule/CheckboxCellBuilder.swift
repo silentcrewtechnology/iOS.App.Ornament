@@ -64,27 +64,25 @@ final class CheckboxCellBuilder: NSObject, UITextFieldDelegate, CellBuilder {
     }
     
     private func createSelectionSection() -> GenericTableViewSectionModel {
-        return chipsViewSectionHelper.makeHorizontalSection(
+        return chipsViewSectionHelper.makeHorizontalSectionWithScroll(
             titles: ["Off", "On"],
             actions: [
                 { [weak self] in self?.updateCheckboxStyle(selection: .default) },
                 { [weak self] in self?.updateCheckboxStyle(selection: .checked) }
             ],
-            headerTitle: Constants.componentChecked,
-            viewWidth: 52
+            headerTitle: Constants.componentChecked
         )
     }
     
     private func createStateSection() -> GenericTableViewSectionModel {
-        return chipsViewSectionHelper.makeHorizontalSection(
+        return chipsViewSectionHelper.makeHorizontalSectionWithScroll(
             titles: ["Default", "Pressed", "Disabled"],
             actions: [
                 { [weak self] in self?.updateCheckboxStyle(state: .default) },
                 { [weak self] in self?.updateCheckboxStyle(state: .pressed) },
                 { [weak self] in self?.updateCheckboxStyle(state: .disabled) }
             ],
-            headerTitle: Constants.componentState,
-            viewWidth: 86
+            headerTitle: Constants.componentState
         )
     }
     

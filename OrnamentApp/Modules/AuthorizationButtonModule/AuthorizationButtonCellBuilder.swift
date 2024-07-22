@@ -86,7 +86,6 @@ final class AuthorizationButtonCellBuilder: NSObject, UITextFieldDelegate, CellB
             },
             initializesFromNib: false
         )
-        row.rowHeight = 72
         
         let section = GenericTableViewSectionModel(with: [row])
         section.makeHeader(title: Constants.componentText)
@@ -94,26 +93,24 @@ final class AuthorizationButtonCellBuilder: NSObject, UITextFieldDelegate, CellB
     }
     
     private func createVariantSection() -> GenericTableViewSectionModel {
-        return chipsViewSectionHelper.makeHorizontalSection(
+        return chipsViewSectionHelper.makeHorizontalSectionWithScroll(
             titles: ["Gosuslugi", "Standart"],
             actions: [
                 { [weak self] in self?.updateButtonStyle(variant: .gosuslugi, isInversed: nil) },
                 { [weak self] in self?.updateButtonStyle(variant: .standart, isInversed: nil) }
             ],
-            headerTitle: Constants.componentVariant,
-            viewWidth: 94
+            headerTitle: Constants.componentVariant
         )
     }
     
     private func createInversionSection() -> GenericTableViewSectionModel {
-        return chipsViewSectionHelper.makeHorizontalSection(
+        return chipsViewSectionHelper.makeHorizontalSectionWithScroll(
             titles: ["False", "True"],
             actions: [
                 { [weak self] in self?.updateButtonStyle(variant: nil, isInversed: false) },
                 { [weak self] in self?.updateButtonStyle(variant: nil, isInversed: true) }
             ],
-            headerTitle: Constants.componentInversion,
-            viewWidth: 64
+            headerTitle: Constants.componentInversion
         )
     }
     

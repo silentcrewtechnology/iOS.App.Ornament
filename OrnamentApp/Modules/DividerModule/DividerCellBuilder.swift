@@ -64,27 +64,25 @@ final class DividerCellBuilder: NSObject, UITextFieldDelegate, CellBuilder {
     }
     
     private func createStyleSection() -> GenericTableViewSectionModel {
-        return chipsViewSectionHelper.makeHorizontalSection(
+        return chipsViewSectionHelper.makeHorizontalSectionWithScroll(
             titles: ["Secondary", "Main", "Accent"],
             actions: [
                 { [weak self] in self?.updateDividerStyle(style: .secondary) },
                 { [weak self] in self?.updateDividerStyle(style: .main) },
                 { [weak self] in self?.updateDividerStyle(style: .action) }
             ],
-            headerTitle: Constants.componentStyle,
-            viewWidth: 96
+            headerTitle: Constants.componentStyle
         )
     }
     
     private func createVariantSection() -> GenericTableViewSectionModel {
-        return chipsViewSectionHelper.makeHorizontalSection(
+        return chipsViewSectionHelper.makeHorizontalSectionWithScroll(
             titles: ["Horizontal", "Vertical"],
             actions: [
                 { [weak self] in self?.updateDividerStyle(variant: .horizontal) },
                 { [weak self] in self?.updateDividerStyle(variant: .vertical) }
             ],
-            headerTitle: Constants.componentVariant,
-            viewWidth: 96
+            headerTitle: Constants.componentVariant
         )
     }
     

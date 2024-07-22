@@ -153,7 +153,7 @@ final class InputPhoneNumberCellBuilder: NSObject, UITextFieldDelegate, CellBuil
     }
     
     private func createStateSection() -> GenericTableViewSectionModel {
-        return chipsViewSectionHelper.makeHorizontalSection(
+        return chipsViewSectionHelper.makeHorizontalSectionWithScroll(
             titles: ["Default", "Active", "Error", "Disabled"],
             actions: [
                 { [weak self] in self?.updateInputPhoneNumberViewStyle(state: .default) },
@@ -161,8 +161,7 @@ final class InputPhoneNumberCellBuilder: NSObject, UITextFieldDelegate, CellBuil
                 { [weak self] in self?.updateInputPhoneNumberViewStyle(state: .error) },
                 { [weak self] in self?.updateInputPhoneNumberViewStyle(state: .disabled) }
             ],
-            headerTitle: Constants.componentState,
-            eachViewWidths: [82, 72, 68, 84, 18]
+            headerTitle: Constants.componentState
         )
     }
 

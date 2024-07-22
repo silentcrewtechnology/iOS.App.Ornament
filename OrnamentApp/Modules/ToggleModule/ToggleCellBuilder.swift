@@ -58,27 +58,25 @@ final class ToggleCellBuilder: NSObject, UITextFieldDelegate, CellBuilder {
     }
     
     private func createStateSection() -> GenericTableViewSectionModel {
-        return chipsViewSectionHelper.makeHorizontalSection(
+        return chipsViewSectionHelper.makeHorizontalSectionWithScroll(
             titles: ["Default", "Pressed", "Disabled"],
             actions: [
                 { [weak self] in self?.updateToggleStyle(state: .default) },
                 { [weak self] in self?.updateToggleStyle(state: .default) }, // Заменить на состояние pressed
                 { [weak self] in self?.updateToggleStyle(state: .disabled) }
             ],
-            headerTitle: Constants.componentState,
-            viewWidth: 92
+            headerTitle: Constants.componentState
         )
     }
     
     private func createCheckedSection() -> GenericTableViewSectionModel {
-        return chipsViewSectionHelper.makeHorizontalSection(
+        return chipsViewSectionHelper.makeHorizontalSectionWithScroll(
             titles: ["False", "True"],
             actions: [
                 { [weak self] in self?.updateToggleStyle(isChecked: false) },
                 { [weak self] in self?.updateToggleStyle(isChecked: true) }
             ],
-            headerTitle: Constants.componentChecked,
-            viewWidth: 64
+            headerTitle: Constants.componentChecked
         )
     }
     

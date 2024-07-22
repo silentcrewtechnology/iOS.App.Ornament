@@ -1,5 +1,5 @@
 //
-//  FlowsCoordinator.swift
+//  MainCoordinator.swift
 //  OrnamentApp
 //
 //  Created by user on 04.07.2024.
@@ -8,7 +8,7 @@
 import Architecture
 import Foundation
 
-struct FlowsCoordinator: FlowsCoordinatorProtocol {
+struct MainCoordinator: MainCoordinatorProtocol {
     
     // MARK: - Private properties
     
@@ -28,7 +28,7 @@ struct FlowsCoordinator: FlowsCoordinatorProtocol {
         componentsShowcaseCoordinator.setRoot()
     }
     
-    func setupAllFlows() {
-        componentsShowcaseCoordinator.setupFlow()
+    func setupCoordinatorsFlow() {
+        componentsShowcaseCoordinator.setupFlow(completion: { _ in })
     }
 }

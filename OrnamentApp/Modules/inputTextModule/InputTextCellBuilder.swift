@@ -105,7 +105,7 @@ final class InputTextCellBuilder: NSObject, UITextFieldDelegate, CellBuilder {
     }
     
     private func createStateSection() -> GenericTableViewSectionModel {
-        return chipsViewSectionHelper.makeHorizontalSection(
+        return chipsViewSectionHelper.makeHorizontalSectionWithScroll(
             titles: ["Default", "Active" ,"Error", "Disabled"],
             actions: [
                 { [weak self] in self?.updateInputTextViewStyle(state: .default) },
@@ -116,20 +116,18 @@ final class InputTextCellBuilder: NSObject, UITextFieldDelegate, CellBuilder {
                 },
                 { [weak self] in self?.updateInputTextViewStyle(state: .disabled) }
             ],
-            headerTitle: Constants.componentState,
-            eachViewWidths: [82, 72, 68, 84, 18]
+            headerTitle: Constants.componentState
         )
     }
     
     private func createImageSection() -> GenericTableViewSectionModel {
-        return chipsViewSectionHelper.makeHorizontalSection(
+        return chipsViewSectionHelper.makeHorizontalSectionWithScroll(
             titles: ["None", "Right"],
             actions: [
                 { [weak self] in self?.updateInputTextViewStyle(isImage: false) },
                 { [weak self] in self?.updateInputTextViewStyle(isImage: true) },
             ],
-            headerTitle: Constants.componentImage,
-            eachViewWidths: [72, 72, 200]
+            headerTitle: Constants.componentImage
         )
     }
 

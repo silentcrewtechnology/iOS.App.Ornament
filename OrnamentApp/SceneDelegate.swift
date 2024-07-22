@@ -12,7 +12,7 @@ import Router
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
-    let flowsCoordinator = FlowsCoordinator(
+    let mainCoordinator = MainCoordinator(
         componentsShowcaseCoordinator: ComponentsShowcaseCoordinator(
             routerService: .init(),
             componentsShowcaseFeature: .init()
@@ -21,17 +21,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         guard let windowScene = (scene as? UIWindowScene) else { return }
-        
         FontService.registerFonts()
-        
-        let currentWindow = UIWindow(windowScene: windowScene)
-        let navController = UINavigationController()
-        currentWindow.backgroundColor = .white
-        window = currentWindow
-        window?.rootViewController = navController
-        window?.makeKeyAndVisible()
-        
-        flowsCoordinator.setRoot()
-        flowsCoordinator.setupAllFlows()
+        window = UIWindow(windowScene: windowScene)
+        mainCoordinator.setRoot()
+        mainCoordinator.setupCoordinatorsFlow()
     }
 }
