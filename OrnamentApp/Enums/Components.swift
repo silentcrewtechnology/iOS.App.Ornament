@@ -11,8 +11,7 @@ import Extensions
 enum Components: String, CaseIterable {
     case activityIndicator = "Activity indicator"
     case authorizationButton = "Authorization button"
-    // TODO: - Actualize
-    case badge = "Badge (not actualized)"
+    case badge = "Badge"
     // TODO: - Actualize
     case button = "Button (not actualized)"
     // TODO: - Actualize
@@ -30,7 +29,8 @@ enum Components: String, CaseIterable {
     case inputOTP = "Input OTP"
     case inputPhoneNumber = "Input phone number"
     case inputSelect = "Input select"
-    case inputTextField = "Input text field"
+    // TODO: - Actualize
+    case inputTextField = "Input text field (not actualized)"
     case inputTextView = "Input text"
     case inputTextarea = "Input textarea"
     case label = "Label"

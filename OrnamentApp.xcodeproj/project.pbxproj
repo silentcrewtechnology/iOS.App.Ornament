@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		34FC04712C4005A1005DB295 /* BadgeModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34FC04702C4005A1005DB295 /* BadgeModuleBuilder.swift */; };
 		8889558329140FFC00A46293 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8889558229140FFC00A46293 /* AppDelegate.swift */; };
 		8889558C29140FFE00A46293 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8889558B29140FFE00A46293 /* Assets.xcassets */; };
 		8889558F29140FFE00A46293 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8889558D29140FFE00A46293 /* LaunchScreen.storyboard */; };
@@ -23,7 +24,7 @@
 		CEA336002C36A66200880A1F /* CheckboxViewUpdater.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA335FF2C36A66200880A1F /* CheckboxViewUpdater.swift */; };
 		CEA336022C36A9B800880A1F /* ChipsViewUpdater.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA336012C36A9B800880A1F /* ChipsViewUpdater.swift */; };
 		CEA336052C36B1A400880A1F /* Components.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA336042C36B1A400880A1F /* Components.swift */; };
-		CEA3360C2C36C0BE00880A1F /* FlowsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA3360B2C36C0BE00880A1F /* FlowsCoordinator.swift */; };
+		CEA3360C2C36C0BE00880A1F /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA3360B2C36C0BE00880A1F /* MainCoordinator.swift */; };
 		CEA3360E2C36C0E100880A1F /* ComponentsShowcaseCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA3360D2C36C0E100880A1F /* ComponentsShowcaseCoordinator.swift */; };
 		CEA336112C36C17100880A1F /* Router in Frameworks */ = {isa = PBXBuildFile; productRef = CEA336102C36C17100880A1F /* Router */; };
 		CEA336132C36C45F00880A1F /* ActivityIndicatorCellBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA336122C36C45F00880A1F /* ActivityIndicatorCellBuilder.swift */; };
@@ -32,7 +33,6 @@
 		CEA4E22D2C37DFCE0069707C /* GenericTableViewSectionModel+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA4E22C2C37DFCE0069707C /* GenericTableViewSectionModel+Extensions.swift */; };
 		CEE15C4D2C3FD76C008E6D8C /* InputOTPCellBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE15C4C2C3FD76C008E6D8C /* InputOTPCellBuilder.swift */; };
 		CEEB5E5B2C356246000E0215 /* ArchitectureTableView in Frameworks */ = {isa = PBXBuildFile; productRef = CEEB5E5A2C356246000E0215 /* ArchitectureTableView */; };
-		CEEB5E5E2C356259000E0215 /* DesignSystem in Frameworks */ = {isa = PBXBuildFile; productRef = CEEB5E5D2C356259000E0215 /* DesignSystem */; };
 		CEEB5E622C356802000E0215 /* ComponentsShowcaseFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEB5E612C356801000E0215 /* ComponentsShowcaseFeature.swift */; };
 		CEEB5E642C35681A000E0215 /* ComponentsShowcaseCellBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEB5E632C35681A000E0215 /* ComponentsShowcaseCellBuilder.swift */; };
 		CEEB5E672C3568B0000E0215 /* Extensions in Frameworks */ = {isa = PBXBuildFile; productRef = CEEB5E662C3568B0000E0215 /* Extensions */; };
@@ -41,6 +41,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		34FC04702C4005A1005DB295 /* BadgeModuleBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeModuleBuilder.swift; sourceTree = "<group>"; };
 		8889557F29140FFC00A46293 /* OrnamentApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OrnamentApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8889558229140FFC00A46293 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8889558B29140FFE00A46293 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -59,7 +60,7 @@
 		CEA335FF2C36A66200880A1F /* CheckboxViewUpdater.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckboxViewUpdater.swift; sourceTree = "<group>"; };
 		CEA336012C36A9B800880A1F /* ChipsViewUpdater.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChipsViewUpdater.swift; sourceTree = "<group>"; };
 		CEA336042C36B1A400880A1F /* Components.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Components.swift; sourceTree = "<group>"; };
-		CEA3360B2C36C0BE00880A1F /* FlowsCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlowsCoordinator.swift; sourceTree = "<group>"; };
+		CEA3360B2C36C0BE00880A1F /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
 		CEA3360D2C36C0E100880A1F /* ComponentsShowcaseCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComponentsShowcaseCoordinator.swift; sourceTree = "<group>"; };
 		CEA336122C36C45F00880A1F /* ActivityIndicatorCellBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicatorCellBuilder.swift; sourceTree = "<group>"; };
 		CEA336152C36D11000880A1F /* TableHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableHeaderView.swift; sourceTree = "<group>"; };
@@ -79,7 +80,6 @@
 			files = (
 				CEEB5E672C3568B0000E0215 /* Extensions in Frameworks */,
 				CEEB5E5B2C356246000E0215 /* ArchitectureTableView in Frameworks */,
-				CEEB5E5E2C356259000E0215 /* DesignSystem in Frameworks */,
 				CEA336112C36C17100880A1F /* Router in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -87,6 +87,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		34FC046F2C400565005DB295 /* BadgeModule */ = {
+			isa = PBXGroup;
+			children = (
+				34FC04702C4005A1005DB295 /* BadgeModuleBuilder.swift */,
+			);
+			path = BadgeModule;
+			sourceTree = "<group>";
+		};
 		8889557629140FFC00A46293 = {
 			isa = PBXGroup;
 			children = (
@@ -242,6 +250,7 @@
 			children = (
 				CEA336072C36B94D00880A1F /* ActivityIndicatorModule */,
 				CEA4E2272C37CF530069707C /* AuthorizationButtonModule */,
+				34FC046F2C400565005DB295 /* BadgeModule */,
 				CE2827AE2C3C1EBA00156F14 /* CheckboxModule */,
 				CE694C352C3D4E2A0064C0C0 /* ChipsModule */,
 				CE4A7C082C3E8AAA00AA7EB4 /* DividerModule */,
@@ -249,7 +258,7 @@
 				CEE15C4B2C3FD759008E6D8C /* InputOTPModule */,
 				CE4A7C102C3E9E4100AA7EB4 /* ToggleModule */,
 				CEEB5E602C35678D000E0215 /* ComponentsShowcaseModule */,
-				CEA3360B2C36C0BE00880A1F /* FlowsCoordinator.swift */,
+				CEA3360B2C36C0BE00880A1F /* MainCoordinator.swift */,
 				CE28279D2C3BDB2600156F14 /* CommonDetailFeature.swift */,
 			);
 			path = Modules;
@@ -268,6 +277,7 @@
 		CEEB5E6F2C3596D1000E0215 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				CEEB5E732C35A9A1000E0215 /* TableComponentViewCell.swift */,
 				CEEB5E702C3596E6000E0215 /* Components+Reusable.swift */,
 				CEA4E22C2C37DFCE0069707C /* GenericTableViewSectionModel+Extensions.swift */,
 			);
@@ -277,7 +287,6 @@
 		CEEB5E722C35A994000E0215 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
-				CEEB5E732C35A9A1000E0215 /* TableComponentViewCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -300,7 +309,6 @@
 			name = OrnamentApp;
 			packageProductDependencies = (
 				CEEB5E5A2C356246000E0215 /* ArchitectureTableView */,
-				CEEB5E5D2C356259000E0215 /* DesignSystem */,
 				CEEB5E662C3568B0000E0215 /* Extensions */,
 				CEA336102C36C17100880A1F /* Router */,
 			);
@@ -334,7 +342,6 @@
 			mainGroup = 8889557629140FFC00A46293;
 			packageReferences = (
 				CEEB5E592C356246000E0215 /* XCRemoteSwiftPackageReference "ios-architecture-table" */,
-				CEEB5E5C2C356259000E0215 /* XCRemoteSwiftPackageReference "ios" */,
 				CEEB5E652C3568B0000E0215 /* XCRemoteSwiftPackageReference "ios-extensions" */,
 				CEA3360F2C36C17100880A1F /* XCRemoteSwiftPackageReference "ios-service-routing" */,
 			);
@@ -375,7 +382,8 @@
 				CE2827B02C3C1ECD00156F14 /* CheckboxCellBuilder.swift in Sources */,
 				CEEB5E742C35A9A1000E0215 /* TableComponentViewCell.swift in Sources */,
 				CE4A7C122C3E9E5900AA7EB4 /* ToggleCellBuilder.swift in Sources */,
-				CEA3360C2C36C0BE00880A1F /* FlowsCoordinator.swift in Sources */,
+				34FC04712C4005A1005DB295 /* BadgeModuleBuilder.swift in Sources */,
+				CEA3360C2C36C0BE00880A1F /* MainCoordinator.swift in Sources */,
 				CEEB5E622C356802000E0215 /* ComponentsShowcaseFeature.swift in Sources */,
 				CE2827A12C3BDB6900156F14 /* CellBuilder.swift in Sources */,
 				CEA4E2292C37CF700069707C /* AuthorizationButtonCellBuilder.swift in Sources */,
@@ -621,15 +629,7 @@
 			repositoryURL = "https://gitlab.akbars.tech/abo/ios-architecture-table";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 3.0.0;
-			};
-		};
-		CEEB5E5C2C356259000E0215 /* XCRemoteSwiftPackageReference "ios" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://gitlab.akbars.tech/abo/ios.designsystem";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 4.1.1;
+				minimumVersion = 6.0.0;
 			};
 		};
 		CEEB5E652C3568B0000E0215 /* XCRemoteSwiftPackageReference "ios-extensions" */ = {
@@ -652,11 +652,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = CEEB5E592C356246000E0215 /* XCRemoteSwiftPackageReference "ios-architecture-table" */;
 			productName = ArchitectureTableView;
-		};
-		CEEB5E5D2C356259000E0215 /* DesignSystem */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = CEEB5E5C2C356259000E0215 /* XCRemoteSwiftPackageReference "ios" */;
-			productName = DesignSystem;
 		};
 		CEEB5E662C3568B0000E0215 /* Extensions */ = {
 			isa = XCSwiftPackageProductDependency;

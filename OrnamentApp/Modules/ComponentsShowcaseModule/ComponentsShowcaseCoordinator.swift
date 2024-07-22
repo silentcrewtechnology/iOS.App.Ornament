@@ -17,6 +17,7 @@ final class ComponentsShowcaseCoordinator: RootCoordinatorProtocol {
     private var componentsShowcaseFeature: FeatureCoordinatorProtocol
     private var activityIndicatorFeature: FeatureCoordinatorProtocol?
     private var authorizationButtonFeature: FeatureCoordinatorProtocol?
+    private var badgeFeature: FeatureCoordinatorProtocol?
     private var checkboxFeature: FeatureCoordinatorProtocol?
     private var chipsFeature: FeatureCoordinatorProtocol?
     private var dividerFeature: FeatureCoordinatorProtocol?
@@ -31,6 +32,7 @@ final class ComponentsShowcaseCoordinator: RootCoordinatorProtocol {
         componentsShowcaseFeature: ComponentsShowcaseFeature,
         activityIndicatorFeature: CommonDetailFeature? = nil,
         authorizationButtonFeature: CommonDetailFeature? = nil,
+        badgeFeature: CommonDetailFeature? = nil,
         checkboxFeature: CommonDetailFeature? = nil,
         chipsFeature: CommonDetailFeature? = nil,
         dividerFeature: CommonDetailFeature? = nil,
@@ -42,6 +44,7 @@ final class ComponentsShowcaseCoordinator: RootCoordinatorProtocol {
         self.componentsShowcaseFeature = componentsShowcaseFeature
         self.activityIndicatorFeature = activityIndicatorFeature
         self.authorizationButtonFeature = authorizationButtonFeature
+        self.badgeFeature = badgeFeature
         self.checkboxFeature = checkboxFeature
         self.chipsFeature = chipsFeature
         self.dividerFeature = dividerFeature
@@ -54,12 +57,12 @@ final class ComponentsShowcaseCoordinator: RootCoordinatorProtocol {
     
     func setRoot() {
         guard let vc = componentsShowcaseFeature.runFlow(data: nil)?.view as? UIViewController else { return }
+        let navigationVC = UINavigationController(rootViewController: vc)
         
-        routerService.setupMainNavigationVC(title: "")
-        routerService.pushMainNavigation(to: vc, animated: true)
+        routerService.setRootViewController(viewController: navigationVC)
     }
     
-    func setupFlow() {
+    func setupFlow(completion: @escaping Architecture.Closure<Any?>) {
         componentsShowcaseFeature.runNewFlow = { [weak self] flow in
             guard let component = flow as? Components else { return }
             
@@ -81,7 +84,12 @@ final class ComponentsShowcaseCoordinator: RootCoordinatorProtocol {
                 guard let builder = self?.authorizationButtonFeature?.runFlow(data: nil) else { return }
                 viewController = (builder.view as! UIViewController)
             case .badge:
-                break
+                self?.badgeFeature = CommonDetailFeature(
+                    cellBuilder: BadgeModuleBuilder(),
+                    screenTitle: Components.badge.rawValue
+                )
+                guard let builder = self?.badgeFeature?.runFlow(data: nil) else { return }
+                viewController = (builder.view as! UIViewController)
             case .button:
                 break
             case .cardImage:

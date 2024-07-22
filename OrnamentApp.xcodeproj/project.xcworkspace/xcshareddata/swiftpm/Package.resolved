@@ -1,13 +1,13 @@
 {
-  "originHash" : "1f4a6c11e6b2d88b2c9f28302c0b57150acfb591984365667add60b9667e7a53",
+  "originHash" : "2f7c3b11b63a7bdf94ba971be13908bf5dee3ea0f5c241d7745bf31692930c4b",
   "pins" : [
     {
       "identity" : "ios-architecture-table",
       "kind" : "remoteSourceControl",
       "location" : "https://gitlab.akbars.tech/abo/ios-architecture-table",
       "state" : {
-        "revision" : "8fd3c3d66d048b329c8100ec9a06f7b121e2279e",
-        "version" : "3.0.0"
+        "revision" : "0d5c81fc887f84351b5341b99c8ded1094fc7a8d",
+        "version" : "6.0.0"
       }
     },
     {
@@ -24,8 +24,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://gitlab.akbars.tech/abo/ios-resources-colors.git",
       "state" : {
-        "revision" : "a5575917f6db4ed88533fa8ed13ff2f36ba6a09c",
-        "version" : "0.0.3"
+        "revision" : "a34a2174602ca5eec5694ed62e4a0bd591f0bb6c",
+        "version" : "0.1.0"
       }
     },
     {
@@ -51,8 +51,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://gitlab.akbars.tech/abo/ios-resources-ui-components.git",
       "state" : {
-        "revision" : "7bcbc4e1342f38f4f23eec6e77005d7c96c2e733",
-        "version" : "4.3.0"
+        "revision" : "638f571772d3569a097ee1158cc743c940345ead",
+        "version" : "6.0.1"
       }
     },
     {
@@ -69,8 +69,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://gitlab.akbars.tech/abo/ios.architecture",
       "state" : {
-        "revision" : "42393a7d964b318398492610181824a55b92e0f6",
-        "version" : "1.0.0"
+        "revision" : "e204a8cc417d38e84d620dfdb5faf9e417385b3d",
+        "version" : "2.0.0"
       }
     },
     {
@@ -78,8 +78,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://gitlab.akbars.tech/abo/ios.designsystem",
       "state" : {
-        "revision" : "59a1c740c8faeeea6e682a3f961fb3bbe381b93e",
-        "version" : "4.1.1"
+        "revision" : "2c24ac753f425e3c6cf0747268d22472c2021f3d",
+        "version" : "6.0.1"
       }
     },
     {

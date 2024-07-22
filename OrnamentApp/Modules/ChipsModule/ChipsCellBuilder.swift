@@ -95,52 +95,48 @@ final class ChipsCellBuilder: NSObject, UITextFieldDelegate, CellBuilder {
     }
     
     private func createSelectionSection() -> GenericTableViewSectionModel {
-        return chipsViewSectionHelper.makeHorizontalSection(
+        return chipsViewSectionHelper.makeHorizontalSectionWithScroll(
             titles: ["Off", "On"],
             actions: [
                 { [weak self] in self?.updateChipsStyle(selection: .default) },
                 { [weak self] in self?.updateChipsStyle(selection: .selected) }
             ],
-            headerTitle: Constants.componentSelection,
-            viewWidth: 52
+            headerTitle: Constants.componentSelection
         )
     }
     
     private func createStateSection() -> GenericTableViewSectionModel {
-        return chipsViewSectionHelper.makeHorizontalSection(
+        return chipsViewSectionHelper.makeHorizontalSectionWithScroll(
             titles: ["Default", "Pressed", "Disabled"],
             actions: [
                 { [weak self] in self?.updateChipsStyle(state: .default) },
                 { [weak self] in self?.updateChipsStyle(state: .pressed) },
                 { [weak self] in self?.updateChipsStyle(state: .disabled) }
             ],
-            headerTitle: Constants.componentState,
-            viewWidth: 86
+            headerTitle: Constants.componentState
         )
     }
     
     private func createSizeSection() -> GenericTableViewSectionModel {
-        return chipsViewSectionHelper.makeHorizontalSection(
+        return chipsViewSectionHelper.makeHorizontalSectionWithScroll(
             titles: ["Small", "Large"],
             actions: [
                 { [weak self] in self?.updateChipsStyle(size: .small) },
                 { [weak self] in self?.updateChipsStyle(size: .large) }
             ],
-            headerTitle: Constants.componentSize,
-            viewWidth: 72
+            headerTitle: Constants.componentSize
         )
     }
     
     private func createImageSection() -> GenericTableViewSectionModel {
-        return chipsViewSectionHelper.makeHorizontalSection(
+        return chipsViewSectionHelper.makeHorizontalSectionWithScroll(
             titles: ["None", "Left", "Right"],
             actions: [
                 { [weak self] in self?.addIconView(view: nil) },
                 { [weak self] in self?.addIconView(view: UIImageView(image: .ic16Tick), inRight: false) },
                 { [weak self] in self?.addIconView(view: UIImageView(image: .ic16Close), inRight: true) }
             ],
-            headerTitle: Constants.componentImage,
-            viewWidth: 72
+            headerTitle: Constants.componentImage
         )
     }
     

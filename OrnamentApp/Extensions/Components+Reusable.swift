@@ -71,12 +71,6 @@ extension HintView: Reusable {
     }
 }
 
-extension IconButton: Reusable {
-    public func prepareForReuse() {
-        update(with: .init())
-    }
-}
-
 extension ImageView: Reusable {
     public func prepareForReuse() {
         update(with: .init())
@@ -276,5 +270,9 @@ extension ToggleView: Reusable {
 }
 
 extension UIStackView: Reusable {
+    public func prepareForReuse() { }
+}
+
+extension UIScrollView: Reusable {
     public func prepareForReuse() { }
 }

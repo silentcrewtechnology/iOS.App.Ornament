@@ -131,7 +131,7 @@ final class InputOTPCellBuilder: NSObject, UITextFieldDelegate, CellBuilder {
     }
     
     private func createStateSection() -> GenericTableViewSectionModel {
-        return chipsViewSectionHelper.makeHorizontalSection(
+        return chipsViewSectionHelper.makeHorizontalSectionWithScroll(
             titles: ["Default", "Active", "Error", "Disabled"],
             actions: [
                 { [weak self] in self?.updateState(state: .default) },
@@ -139,8 +139,7 @@ final class InputOTPCellBuilder: NSObject, UITextFieldDelegate, CellBuilder {
                 { [weak self] in self?.updateState(state: .error) },
                 { [weak self] in self?.updateState(state: .disabled) }
             ],
-            headerTitle: Constants.componentState,
-            viewWidth: 86
+            headerTitle: Constants.componentState
         )
     }
     

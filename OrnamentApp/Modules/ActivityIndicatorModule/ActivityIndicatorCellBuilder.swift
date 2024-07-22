@@ -55,7 +55,7 @@ final class ActivityIndicatorCellBuilder: CellBuilder {
     }
     
     private func createSizeSection() -> GenericTableViewSectionModel {
-        return chipsViewSectionHelper.makeHorizontalSection(
+        return chipsViewSectionHelper.makeHorizontalSectionWithScroll(
             titles: ["24", "36", "48"],
             actions: [
                 { [weak self] in self?.remakeActivityIndicatorSize(size: .init(width: 24, height: 24)) },
@@ -67,14 +67,13 @@ final class ActivityIndicatorCellBuilder: CellBuilder {
     }
     
     private func createAnimatingSection() -> GenericTableViewSectionModel {
-        return chipsViewSectionHelper.makeHorizontalSection(
+        return chipsViewSectionHelper.makeHorizontalSectionWithScroll(
             titles: ["Start", "Stop"],
             actions: [
                 { [weak self] in self?.updateActivityIndicatorAnimating(isAnimating: true) },
                 { [weak self] in self?.updateActivityIndicatorAnimating(isAnimating: false) }
             ],
-            headerTitle: Constants.componentAnimating,
-            viewWidth: 62
+            headerTitle: Constants.componentAnimating
         )
     }
     

@@ -118,7 +118,7 @@ final class InputAmountCellBuilder: NSObject, UITextFieldDelegate, CellBuilder {
     }
     
     private func createStateSection() -> GenericTableViewSectionModel {
-        return chipsViewSectionHelper.makeHorizontalSection(
+        return chipsViewSectionHelper.makeHorizontalSectionWithScroll(
             titles: ["Default", "Error", "Disabled"],
             actions: [
                 { [weak self] in self?.updateInputAmountViewStyle(state: .default) },
@@ -128,8 +128,7 @@ final class InputAmountCellBuilder: NSObject, UITextFieldDelegate, CellBuilder {
                 },
                 { [weak self] in self?.updateInputAmountViewStyle(state: .disabled) }
             ],
-            headerTitle: Constants.componentState,
-            viewWidth: 86
+            headerTitle: Constants.componentState
         )
     }
 
