@@ -86,7 +86,6 @@ final class AuthorizationButtonCellBuilder: NSObject, UITextFieldDelegate, CellB
             },
             initializesFromNib: false
         )
-        row.rowHeight = 72
         
         let section = GenericTableViewSectionModel(with: [row])
         section.makeHeader(title: Constants.componentText)

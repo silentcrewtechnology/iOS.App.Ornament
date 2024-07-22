@@ -38,6 +38,7 @@ final class ComponentsShowcaseFeature: NSObject, FeatureCoordinatorProtocol {
             tableView: tableViewBuilder.view,
             confirmButtonView: nil
         ))
+        tableViewVCBuilder.view.navigationItem.leftBarButtonItems = []
 
         super.init()
     }
