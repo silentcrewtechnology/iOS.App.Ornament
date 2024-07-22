@@ -23,6 +23,9 @@ final class ComponentsShowcaseCoordinator: RootCoordinatorProtocol {
     private var dividerFeature: FeatureCoordinatorProtocol?
     private var inputAmountFeature: FeatureCoordinatorProtocol?
     private var inputOTPFeature: FeatureCoordinatorProtocol?
+    private var inputPhoneNumberFeature: FeatureCoordinatorProtocol?
+    private var inputSelectFeature: FeatureCoordinatorProtocol?
+    private var inputTextFeature: FeatureCoordinatorProtocol?
     private var toggleFeature: FeatureCoordinatorProtocol?
 
     // MARK: - Life cycle
@@ -38,6 +41,9 @@ final class ComponentsShowcaseCoordinator: RootCoordinatorProtocol {
         dividerFeature: CommonDetailFeature? = nil,
         inputAmountFeature: CommonDetailFeature? = nil,
         inputOTPFeature: CommonDetailFeature? = nil,
+        inputPhoneNumberFeature: CommonDetailFeature? = nil,
+        inputSelectFeature: CommonDetailFeature? = nil,
+        inputTextFeature: CommonDetailFeature? = nil,
         toggleFeature: CommonDetailFeature? = nil
     ) {
         self.routerService = routerService
@@ -50,6 +56,9 @@ final class ComponentsShowcaseCoordinator: RootCoordinatorProtocol {
         self.dividerFeature = dividerFeature
         self.inputAmountFeature = inputAmountFeature
         self.inputOTPFeature = inputOTPFeature
+        self.inputPhoneNumberFeature = inputPhoneNumberFeature
+        self.inputSelectFeature = inputSelectFeature
+        self.inputTextFeature = inputTextFeature
         self.toggleFeature = toggleFeature
     }
     
@@ -136,13 +145,26 @@ final class ComponentsShowcaseCoordinator: RootCoordinatorProtocol {
                 guard let builder = self?.inputOTPFeature?.runFlow(data: nil) else { return }
                 viewController = (builder.view as! UIViewController)
             case .inputPhoneNumber:
-                break
+                self?.inputPhoneNumberFeature = CommonDetailFeature(
+                    cellBuilder: InputPhoneNumberCellBuilder(),
+                    screenTitle: Components.inputPhoneNumber.rawValue
+                )
+                guard let builder = self?.inputPhoneNumberFeature?.runFlow(data: nil) else { return }
+                viewController = (builder.view as! UIViewController)
             case .inputSelect:
-                break
-            case .inputTextField:
-                break
+                self?.inputSelectFeature = CommonDetailFeature(
+                    cellBuilder: InputSelectCellBuilder(),
+                    screenTitle: Components.inputSelect.rawValue
+                )
+                guard let builder = self?.inputSelectFeature?.runFlow(data: nil) else { return }
+                viewController = (builder.view as! UIViewController)
             case .inputTextView:
-                break
+                self?.inputTextFeature = CommonDetailFeature(
+                    cellBuilder: InputTextCellBuilder(),
+                    screenTitle: Components.inputTextView.rawValue
+                )
+                guard let builder = self?.inputTextFeature?.runFlow(data: nil) else { return }
+                viewController = (builder.view as! UIViewController)
             case .inputTextarea:
                 break
             case .label:

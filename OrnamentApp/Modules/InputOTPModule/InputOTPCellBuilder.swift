@@ -150,6 +150,12 @@ final class InputOTPCellBuilder: NSObject, UITextFieldDelegate, CellBuilder {
             itemStyle.update(state: state, viewProperties: &viewProperties.items[i])
         }
         
+        if state == .error {
+            makeHintViewProperties()
+        } else {
+            viewProperties.hint = .init()
+        }
+        
         inputOTPView?.update(with: viewProperties)
     }
     
@@ -165,6 +171,13 @@ final class InputOTPCellBuilder: NSObject, UITextFieldDelegate, CellBuilder {
         return otpItems
     }
     
+    private func makeHintViewProperties() {
+        var hintVP = HintView.ViewProperties()
+        let hintStyle = HintViewStyle()
+        hintStyle.update(variant: .left(hintText), viewProperties: &hintVP)
+        viewProperties.hint = hintVP
+    }
+    
     @objc private func onAmountTextChange(textField: UITextField) {
         guard let count = Int(textField.text ?? "") else { return }
         
@@ -175,18 +188,9 @@ final class InputOTPCellBuilder: NSObject, UITextFieldDelegate, CellBuilder {
     @objc private func onHintTextChange(textField: UITextField) {
         hintText = .init(string: textField.text ?? "")
         
-        switch state {
-        case .error:
-            var hintVP = HintView.ViewProperties()
-            let hintStyle = HintViewStyle()
-            hintStyle.update(variant: .left(hintText), viewProperties: &hintVP)
-            
-            state = .error
-            viewProperties.hint = hintVP
-            updateState(state: .error)
+        if state == .error {
+            makeHintViewProperties()
             inputOTPView?.update(with: viewProperties)
-        default:
-            break
         }
     }
     
