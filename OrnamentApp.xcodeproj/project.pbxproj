@@ -31,6 +31,7 @@
 		CEA336162C36D11000880A1F /* TableHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA336152C36D11000880A1F /* TableHeaderView.swift */; };
 		CEA4E2292C37CF700069707C /* AuthorizationButtonCellBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA4E2282C37CF700069707C /* AuthorizationButtonCellBuilder.swift */; };
 		CEA4E22D2C37DFCE0069707C /* GenericTableViewSectionModel+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA4E22C2C37DFCE0069707C /* GenericTableViewSectionModel+Extensions.swift */; };
+		CEC824B82C4E90F200891643 /* ButtonIconModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC824B72C4E90F200891643 /* ButtonIconModuleBuilder.swift */; };
 		CEE15C4D2C3FD76C008E6D8C /* InputOTPCellBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE15C4C2C3FD76C008E6D8C /* InputOTPCellBuilder.swift */; };
 		CEE15C502C400F66008E6D8C /* InputPhoneNumberCellBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE15C4F2C400F66008E6D8C /* InputPhoneNumberCellBuilder.swift */; };
 		CEEB5E5B2C356246000E0215 /* ArchitectureTableView in Frameworks */ = {isa = PBXBuildFile; productRef = CEEB5E5A2C356246000E0215 /* ArchitectureTableView */; };
@@ -69,6 +70,7 @@
 		CEA336152C36D11000880A1F /* TableHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableHeaderView.swift; sourceTree = "<group>"; };
 		CEA4E2282C37CF700069707C /* AuthorizationButtonCellBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationButtonCellBuilder.swift; sourceTree = "<group>"; };
 		CEA4E22C2C37DFCE0069707C /* GenericTableViewSectionModel+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GenericTableViewSectionModel+Extensions.swift"; sourceTree = "<group>"; };
+		CEC824B72C4E90F200891643 /* ButtonIconModuleBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonIconModuleBuilder.swift; sourceTree = "<group>"; };
 		CEE15C4C2C3FD76C008E6D8C /* InputOTPCellBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputOTPCellBuilder.swift; sourceTree = "<group>"; };
 		CEE15C4F2C400F66008E6D8C /* InputPhoneNumberCellBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputPhoneNumberCellBuilder.swift; sourceTree = "<group>"; };
 		CEEB5E612C356801000E0215 /* ComponentsShowcaseFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComponentsShowcaseFeature.swift; sourceTree = "<group>"; };
@@ -243,6 +245,14 @@
 			path = AuthorizationButtonModule;
 			sourceTree = "<group>";
 		};
+		CEC824B62C4E90BE00891643 /* ButtonIconModuleBuilder */ = {
+			isa = PBXGroup;
+			children = (
+				CEC824B72C4E90F200891643 /* ButtonIconModuleBuilder.swift */,
+			);
+			path = ButtonIconModuleBuilder;
+			sourceTree = "<group>";
+		};
 		CEE15C4B2C3FD759008E6D8C /* InputOTPModule */ = {
 			isa = PBXGroup;
 			children = (
@@ -262,6 +272,7 @@
 		CEEB5E5F2C356788000E0215 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				CEC824B62C4E90BE00891643 /* ButtonIconModuleBuilder */,
 				CEA336072C36B94D00880A1F /* ActivityIndicatorModule */,
 				CEA4E2272C37CF530069707C /* AuthorizationButtonModule */,
 				34FC046F2C400565005DB295 /* BadgeModule */,
@@ -408,6 +419,7 @@
 				CEA336132C36C45F00880A1F /* ActivityIndicatorCellBuilder.swift in Sources */,
 				CE4A7C0F2C3E8FC300AA7EB4 /* Constants.swift in Sources */,
 				CEA336022C36A9B800880A1F /* ChipsViewUpdater.swift in Sources */,
+				CEC824B82C4E90F200891643 /* ButtonIconModuleBuilder.swift in Sources */,
 				CEA3360E2C36C0E100880A1F /* ComponentsShowcaseCoordinator.swift in Sources */,
 				CEF2DE712C4150130065C1BD /* InputTextCellBuilder.swift in Sources */,
 				CE694C372C3D56090064C0C0 /* ChipsCellBuilder.swift in Sources */,
@@ -665,7 +677,7 @@
 			repositoryURL = "https://gitlab.akbars.tech/abo/ios-architecture-table";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 6.0.0;
+				minimumVersion = 7.0.0;
 			};
 		};
 		CEEB5E652C3568B0000E0215 /* XCRemoteSwiftPackageReference "ios-extensions" */ = {

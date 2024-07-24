@@ -27,6 +27,7 @@ final class ComponentsShowcaseCoordinator: RootCoordinatorProtocol {
     private var inputSelectFeature: FeatureCoordinatorProtocol?
     private var inputTextFeature: FeatureCoordinatorProtocol?
     private var toggleFeature: FeatureCoordinatorProtocol?
+    private var buttonIconFeature: FeatureCoordinatorProtocol?
 
     // MARK: - Life cycle
     
@@ -44,7 +45,8 @@ final class ComponentsShowcaseCoordinator: RootCoordinatorProtocol {
         inputPhoneNumberFeature: CommonDetailFeature? = nil,
         inputSelectFeature: CommonDetailFeature? = nil,
         inputTextFeature: CommonDetailFeature? = nil,
-        toggleFeature: CommonDetailFeature? = nil
+        toggleFeature: CommonDetailFeature? = nil,
+        buttonIconFeature: CommonDetailFeature? = nil
     ) {
         self.routerService = routerService
         self.componentsShowcaseFeature = componentsShowcaseFeature
@@ -60,6 +62,7 @@ final class ComponentsShowcaseCoordinator: RootCoordinatorProtocol {
         self.inputSelectFeature = inputSelectFeature
         self.inputTextFeature = inputTextFeature
         self.toggleFeature = toggleFeature
+        self.buttonIconFeature = buttonIconFeature
     }
     
     // MARK: - Methods
@@ -101,6 +104,13 @@ final class ComponentsShowcaseCoordinator: RootCoordinatorProtocol {
                 viewController = (builder.view as! UIViewController)
             case .button:
                 break
+            case .buttonIcon:
+                self?.buttonIconFeature = CommonDetailFeature(
+                    cellBuilder: ButtonIconModuleBuilder(),
+                    screenTitle: Components.buttonIcon.rawValue
+                )
+                guard let builder = self?.buttonIconFeature?.runFlow(data: nil) else { return }
+                viewController = (builder.view as! UIViewController)
             case .cardImage:
                 break
             case .checkbox:
@@ -124,8 +134,6 @@ final class ComponentsShowcaseCoordinator: RootCoordinatorProtocol {
                 )
                 guard let builder = self?.dividerFeature?.runFlow(data: nil) else { return }
                 viewController = (builder.view as! UIViewController)
-            case .iconButton:
-                break
             case .image:
                 break
             case .indicator:

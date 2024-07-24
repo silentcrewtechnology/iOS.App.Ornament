@@ -6,8 +6,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://gitlab.akbars.tech/abo/ios-architecture-table",
       "state" : {
-        "revision" : "0d5c81fc887f84351b5341b99c8ded1094fc7a8d",
-        "version" : "6.0.0"
+        "revision" : "0185943079d8538328f27913b255afd290ed0cf2",
+        "version" : "7.0.0"
       }
     },
     {
@@ -51,8 +51,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://gitlab.akbars.tech/abo/ios-resources-ui-components.git",
       "state" : {
-        "revision" : "638f571772d3569a097ee1158cc743c940345ead",
-        "version" : "6.0.1"
+        "revision" : "3592d563a09b00ffb4709170dc5ba8f1d705ef0d",
+        "version" : "7.0.0"
       }
     },
     {
@@ -78,8 +78,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://gitlab.akbars.tech/abo/ios.designsystem",
       "state" : {
-        "revision" : "2c24ac753f425e3c6cf0747268d22472c2021f3d",
-        "version" : "6.0.1"
+        "revision" : "2d2f4be515757c8d6176ffa89cc763a94fc61ed5",
+        "version" : "7.0.0"
       }
     },
     {

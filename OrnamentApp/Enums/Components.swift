@@ -14,13 +14,12 @@ enum Components: String, CaseIterable {
     case badge = "Badge"
     // TODO: - Actualize
     case button = "Button (not actualized)"
+    case buttonIcon = "Button icon"
     // TODO: - Actualize
     case cardImage = "Card image (not actualized)"
     case checkbox = "Checkbox"
     case chips = "Chips"
     case divider = "Divider"
-    // TODO: - Actualize
-    case iconButton = "Icon button (not actualized)"
     // TODO: - Actualize
     case image = "Image (not actualized)";
     // TODO: - Actualize
