@@ -39,8 +39,7 @@ enum Components: String, CaseIterable {
     case inputAddCard = "Input add card (not realized, not added)"
     // TODO: - Realize, Add
     case inputPIN = "Input PIN (not realized, not added)"
-    // TODO: - Add
-    case image = "Image (not added)"
+    case image = "Image"
     // TODO: - Add
     case label = "Label (not added)"
     case navigationBar = "Navigation bar"
