@@ -152,10 +152,10 @@ final class ComponentsShowcaseCoordinator: RootCoordinatorProtocol {
                 )
                 guard let builder = self?.inputOTPFeature?.runFlow(data: nil) else { return }
                 viewController = (builder.view as! UIViewController)
-            case .inputPhoneNumber:
+            case .inputContryCode:
                 self?.inputPhoneNumberFeature = CommonDetailFeature(
                     cellBuilder: InputPhoneNumberCellBuilder(),
-                    screenTitle: Components.inputPhoneNumber.rawValue
+                    screenTitle: Components.inputContryCode.rawValue
                 )
                 guard let builder = self?.inputPhoneNumberFeature?.runFlow(data: nil) else { return }
                 viewController = (builder.view as! UIViewController)
@@ -174,6 +174,10 @@ final class ComponentsShowcaseCoordinator: RootCoordinatorProtocol {
                 guard let builder = self?.inputTextFeature?.runFlow(data: nil) else { return }
                 viewController = (builder.view as! UIViewController)
             case .inputTextarea:
+                break
+            case .inputAddCard:
+                break
+            case .inputPIN:
                 break
             case .image:
                 break
@@ -200,8 +204,6 @@ final class ComponentsShowcaseCoordinator: RootCoordinatorProtocol {
             case .stepper:
                 break
             case .stories:
-                break
-            case .tabItem:
                 break
             case .tabs:
                 break
