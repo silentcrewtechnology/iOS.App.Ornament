@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "imageView_fillImage.pdf",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

@@ -28,6 +28,7 @@ final class ComponentsShowcaseCoordinator: RootCoordinatorProtocol {
     private var inputTextFeature: FeatureCoordinatorProtocol?
     private var toggleFeature: FeatureCoordinatorProtocol?
     private var buttonIconFeature: FeatureCoordinatorProtocol?
+    private var imageFeature: FeatureCoordinatorProtocol?
 
     // MARK: - Life cycle
     
@@ -46,7 +47,8 @@ final class ComponentsShowcaseCoordinator: RootCoordinatorProtocol {
         inputSelectFeature: CommonDetailFeature? = nil,
         inputTextFeature: CommonDetailFeature? = nil,
         toggleFeature: CommonDetailFeature? = nil,
-        buttonIconFeature: CommonDetailFeature? = nil
+        buttonIconFeature: CommonDetailFeature? = nil,
+        imageFeature: CommonDetailFeature? = nil
     ) {
         self.routerService = routerService
         self.componentsShowcaseFeature = componentsShowcaseFeature
@@ -63,6 +65,7 @@ final class ComponentsShowcaseCoordinator: RootCoordinatorProtocol {
         self.inputTextFeature = inputTextFeature
         self.toggleFeature = toggleFeature
         self.buttonIconFeature = buttonIconFeature
+        self.imageFeature = imageFeature
     }
     
     // MARK: - Methods
@@ -136,6 +139,13 @@ final class ComponentsShowcaseCoordinator: RootCoordinatorProtocol {
                 )
                 guard let builder = self?.dividerFeature?.runFlow(data: nil) else { return }
                 viewController = (builder.view as! UIViewController)
+            case .image:
+                self?.imageFeature = CommonDetailFeature(
+                    cellBuilder: ImageModuleBuilder(),
+                    screenTitle: Components.image.rawValue
+                )
+                guard let builder = self?.imageFeature?.runFlow(data: nil) else { return }
+                viewController = (builder.view as! UIViewController)
             case .indicator:
                 break
             case .inputAmountView:
@@ -178,8 +188,6 @@ final class ComponentsShowcaseCoordinator: RootCoordinatorProtocol {
             case .inputAddCard:
                 break
             case .inputPIN:
-                break
-            case .image:
                 break
             case .label:
                 break
