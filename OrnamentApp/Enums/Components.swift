@@ -9,49 +9,67 @@ import Foundation
 import Extensions
 
 enum Components: String, CaseIterable {
+    // TODO: - Во всех элементах перейти на новую палитру
+    
     case activityIndicator = "Activity indicator"
-    case authorizationButton = "Authorization button"
+    // TODO: - Actualize
+    case authorizationButton = "Authorization button (not actualized)"
     case badge = "Badge"
-    // TODO: - Actualize
-    case button = "Button (not actualized)"
+    // TODO: - Actualize, Add
+    case banner = "Banner (not actualized, not added)"
+    // TODO: - Actualize, Add
+    case button = "Button (not actualized, not added)"
     case buttonIcon = "Button icon"
-    // TODO: - Actualize
-    case cardImage = "Card image (not actualized)"
+    // TODO: - Actualize, Add
+    case cardImage = "Card image (not actualized, not added)"
     case checkbox = "Checkbox"
     case chips = "Chips"
     case divider = "Divider"
+    // TODO: - Specify
+    case indicator = "Indicator (extra?)"
+    // TODO: - Add
+    case inputTextarea = "Input textarea (not added)"
+    case inputTextView = "Input text"
     // TODO: - Actualize
-    case image = "Image (not actualized)";
-    // TODO: - Actualize
-    case indicator = "Indicator (not actualized)"
+    case inputContryCode = "Input country code (not actualized)"
     case inputAmountView = "Input amount view"
-    case inputOTP = "Input OTP"
-    case inputPhoneNumber = "Input phone number"
     case inputSelect = "Input select"
-    // TODO: - Actualize
-    case inputTextView = "Input text (not actualized)"
-    case inputTextarea = "Input textarea"
-    case label = "Label"
-    case pageControl = "Page control"
-    case paper = "Paper"
-    case payCell = "Pay cell"
-    case paymentButton = "Payment button"
-    case pressableView = "Pressable view"
-    case radio = "Radio"
-    case sectionMessage = "Section message"
-    case segmentItem = "Segment item"
-    case segmentSlider = "Segment slider"
-    case segment = "Segment"
-    case snackBar = "Snack bar"
-    case spacer = "Spacer"
-    case stepperItem = "Stepper item"
-    case stepper = "Stepper"
-    case tabItem = "Tab item"
-    case tabs = "Tabs"
-    // TODO: - Actualize
-    case tile = "Tile (not actualized)"
-    // TODO: - Actualize
-    case title = "Title (not actualized)"
+    case inputOTP = "Input OTP"
+    // TODO: - Realize, Add
+    case inputAddCard = "Input add card (not realized, not added)"
+    // TODO: - Realize, Add
+    case inputPIN = "Input PIN (not realized, not added)"
+    // TODO: - Add
+    case image = "Image (not added)"
+    // TODO: - Add
+    case label = "Label (not added)"
+    case navigationBar = "Navigation bar"
+    // TODO: - Actualize, Add
+    case pageControl = "Page control (not actualized, not added)"
+    // TODO: - Specify
+    case paper = "Paper (extra?)"
+    // TODO: - Specify
+    case payCell = "Pay cell (extra?)"
+    // TODO: - Actualize, Add
+    case paymentButton = "Payment button (not actualized, not added)"
+    // TODO: - Add
+    case radio = "Radio (not added)"
+    // TODO: - Actualize, Add
+    case segmentControl = "Segment control (not actualized, not added)"
+    // TODO: - Actualize, Add
+    case snackBar = "Snack bar (not actualized, not added)"
+    // TODO: - Specify
+    case spacer = "Spacer (extra?)"
+    // TODO: - Actualize, Add
+    case stepper = "Stepper (not actualized, not added)"
+    // TODO: - Realize
+    case stories = "Stories (not realized)"
+    // TODO: - Actualize, Add
+    case tabs = "Tabs (not actualized, not added)"
+    // TODO: - Actualize, Add
+    case tile = "Tile (not actualized, not added)"
+    // TODO: - Add
+    case title = "Title (not added)"
     // TODO: - Actualize
     case toggle = "Toggle (not actualized)"
 }
