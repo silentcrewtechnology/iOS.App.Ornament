@@ -102,6 +102,8 @@ final class ComponentsShowcaseCoordinator: RootCoordinatorProtocol {
                 )
                 guard let builder = self?.badgeFeature?.runFlow(data: nil) else { return }
                 viewController = (builder.view as! UIViewController)
+            case .banner:
+                break
             case .button:
                 break
             case .buttonIcon:
@@ -134,8 +136,6 @@ final class ComponentsShowcaseCoordinator: RootCoordinatorProtocol {
                 )
                 guard let builder = self?.dividerFeature?.runFlow(data: nil) else { return }
                 viewController = (builder.view as! UIViewController)
-            case .image:
-                break
             case .indicator:
                 break
             case .inputAmountView:
@@ -175,6 +175,8 @@ final class ComponentsShowcaseCoordinator: RootCoordinatorProtocol {
                 viewController = (builder.view as! UIViewController)
             case .inputTextarea:
                 break
+            case .image:
+                break
             case .label:
                 break
             case .pageControl:
@@ -185,25 +187,19 @@ final class ComponentsShowcaseCoordinator: RootCoordinatorProtocol {
                 break
             case .paymentButton:
                 break
-            case .pressableView:
+            case .navigationBar:
                 break
             case .radio:
                 break
-            case .sectionMessage:
-                break
-            case .segmentItem:
-                break
-            case .segmentSlider:
-                break
-            case .segment:
+            case .segmentControl:
                 break
             case .snackBar:
                 break
             case .spacer:
                 break
-            case .stepperItem:
-                break
             case .stepper:
+                break
+            case .stories:
                 break
             case .tabItem:
                 break
