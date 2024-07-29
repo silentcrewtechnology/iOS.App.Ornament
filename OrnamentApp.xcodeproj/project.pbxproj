@@ -20,6 +20,8 @@
 		CE4A7C0F2C3E8FC300AA7EB4 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4A7C0E2C3E8FC300AA7EB4 /* Constants.swift */; };
 		CE4A7C122C3E9E5900AA7EB4 /* ToggleCellBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4A7C112C3E9E5900AA7EB4 /* ToggleCellBuilder.swift */; };
 		CE4A7C152C3EBBEE00AA7EB4 /* InputAmountCellBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4A7C142C3EBBEE00AA7EB4 /* InputAmountCellBuilder.swift */; };
+		CE5AE5242C53866300DD7BC4 /* NavigationBarCellBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5AE5232C53866300DD7BC4 /* NavigationBarCellBuilder.swift */; };
+		CE5AE5262C53BF6300DD7BC4 /* NavigationBarFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5AE5252C53BF6300DD7BC4 /* NavigationBarFeature.swift */; };
 		CE694C372C3D56090064C0C0 /* ChipsCellBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE694C362C3D56090064C0C0 /* ChipsCellBuilder.swift */; };
 		CEA336002C36A66200880A1F /* CheckboxViewUpdater.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA335FF2C36A66200880A1F /* CheckboxViewUpdater.swift */; };
 		CEA336022C36A9B800880A1F /* ChipsViewUpdater.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA336012C36A9B800880A1F /* ChipsViewUpdater.swift */; };
@@ -60,6 +62,8 @@
 		CE4A7C0E2C3E8FC300AA7EB4 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		CE4A7C112C3E9E5900AA7EB4 /* ToggleCellBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToggleCellBuilder.swift; sourceTree = "<group>"; };
 		CE4A7C142C3EBBEE00AA7EB4 /* InputAmountCellBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputAmountCellBuilder.swift; sourceTree = "<group>"; };
+		CE5AE5232C53866300DD7BC4 /* NavigationBarCellBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBarCellBuilder.swift; sourceTree = "<group>"; };
+		CE5AE5252C53BF6300DD7BC4 /* NavigationBarFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBarFeature.swift; sourceTree = "<group>"; };
 		CE694C362C3D56090064C0C0 /* ChipsCellBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChipsCellBuilder.swift; sourceTree = "<group>"; };
 		CEA335FF2C36A66200880A1F /* CheckboxViewUpdater.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckboxViewUpdater.swift; sourceTree = "<group>"; };
 		CEA336012C36A9B800880A1F /* ChipsViewUpdater.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChipsViewUpdater.swift; sourceTree = "<group>"; };
@@ -128,7 +132,6 @@
 				CEA336142C36D10600880A1F /* Views */,
 				CEA336032C36B18800880A1F /* Enums */,
 				CEA335FE2C36A65100880A1F /* ViewUpdaters */,
-				CEEB5E722C35A994000E0215 /* Cells */,
 				CEEB5E6F2C3596D1000E0215 /* Extensions */,
 				CEEB5E5F2C356788000E0215 /* Modules */,
 				8889558229140FFC00A46293 /* AppDelegate.swift */,
@@ -193,6 +196,15 @@
 				CE4A7C142C3EBBEE00AA7EB4 /* InputAmountCellBuilder.swift */,
 			);
 			path = InputAmountModule;
+			sourceTree = "<group>";
+		};
+		CE5AE5222C5385AD00DD7BC4 /* NavigationBarModule */ = {
+			isa = PBXGroup;
+			children = (
+				CE5AE5232C53866300DD7BC4 /* NavigationBarCellBuilder.swift */,
+				CE5AE5252C53BF6300DD7BC4 /* NavigationBarFeature.swift */,
+			);
+			path = NavigationBarModule;
 			sourceTree = "<group>";
 		};
 		CE694C352C3D4E2A0064C0C0 /* ChipsModule */ = {
@@ -272,10 +284,10 @@
 		CEEB5E5F2C356788000E0215 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
-				CEC824B62C4E90BE00891643 /* ButtonIconModuleBuilder */,
 				CEA336072C36B94D00880A1F /* ActivityIndicatorModule */,
 				CEA4E2272C37CF530069707C /* AuthorizationButtonModule */,
 				34FC046F2C400565005DB295 /* BadgeModule */,
+				CEC824B62C4E90BE00891643 /* ButtonIconModuleBuilder */,
 				CE2827AE2C3C1EBA00156F14 /* CheckboxModule */,
 				CE694C352C3D4E2A0064C0C0 /* ChipsModule */,
 				CE4A7C082C3E8AAA00AA7EB4 /* DividerModule */,
@@ -284,6 +296,7 @@
 				CEE15C4E2C400F48008E6D8C /* InputPhoneNumber */,
 				CEF2DE6C2C41306F0065C1BD /* InputSelectModule */,
 				CEF2DE6F2C414FD00065C1BD /* inputTextModule */,
+				CE5AE5222C5385AD00DD7BC4 /* NavigationBarModule */,
 				CE4A7C102C3E9E4100AA7EB4 /* ToggleModule */,
 				CEEB5E602C35678D000E0215 /* ComponentsShowcaseModule */,
 				CEA3360B2C36C0BE00880A1F /* MainCoordinator.swift */,
@@ -310,13 +323,6 @@
 				CEA4E22C2C37DFCE0069707C /* GenericTableViewSectionModel+Extensions.swift */,
 			);
 			path = Extensions;
-			sourceTree = "<group>";
-		};
-		CEEB5E722C35A994000E0215 /* Cells */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Cells;
 			sourceTree = "<group>";
 		};
 		CEF2DE6C2C41306F0065C1BD /* InputSelectModule */ = {
@@ -421,6 +427,7 @@
 				CEA336022C36A9B800880A1F /* ChipsViewUpdater.swift in Sources */,
 				CEC824B82C4E90F200891643 /* ButtonIconModuleBuilder.swift in Sources */,
 				CEA3360E2C36C0E100880A1F /* ComponentsShowcaseCoordinator.swift in Sources */,
+				CE5AE5262C53BF6300DD7BC4 /* NavigationBarFeature.swift in Sources */,
 				CEF2DE712C4150130065C1BD /* InputTextCellBuilder.swift in Sources */,
 				CE694C372C3D56090064C0C0 /* ChipsCellBuilder.swift in Sources */,
 				CEEB5E642C35681A000E0215 /* ComponentsShowcaseCellBuilder.swift in Sources */,
@@ -437,6 +444,7 @@
 				CEF2DE6E2C4130840065C1BD /* InputSelectCellBuilder.swift in Sources */,
 				CEA4E22D2C37DFCE0069707C /* GenericTableViewSectionModel+Extensions.swift in Sources */,
 				CE28279E2C3BDB2600156F14 /* CommonDetailFeature.swift in Sources */,
+				CE5AE5242C53866300DD7BC4 /* NavigationBarCellBuilder.swift in Sources */,
 				8889558329140FFC00A46293 /* AppDelegate.swift in Sources */,
 				CE4A7C152C3EBBEE00AA7EB4 /* InputAmountCellBuilder.swift in Sources */,
 				888955B72914108700A46293 /* SceneDelegate.swift in Sources */,
@@ -677,7 +685,7 @@
 			repositoryURL = "https://gitlab.akbars.tech/abo/ios-architecture-table";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 7.0.0;
+				minimumVersion = 8.0.0;
 			};
 		};
 		CEEB5E652C3568B0000E0215 /* XCRemoteSwiftPackageReference "ios-extensions" */ = {

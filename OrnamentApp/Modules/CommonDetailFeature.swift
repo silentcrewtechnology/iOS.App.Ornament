@@ -9,6 +9,8 @@ import UIKit
 import Architecture
 import ArchitectureTableView
 import Extensions
+import DesignSystem
+import Components
 
 final class CommonDetailFeature: NSObject, FeatureCoordinatorProtocol {
     
@@ -22,12 +24,14 @@ final class CommonDetailFeature: NSObject, FeatureCoordinatorProtocol {
     private var tableViewVCBuilder: TableViewVCBuilder
     private var tableViewBuilder: TableViewBuilder
     private var dataStorage = GenericTableViewDataStorage.empty
+    private var navigationBarStyle: NavigationBarStyle
     
     // MARK: - Life cycle
     
     init(
         cellBuilder: CellBuilder,
-        screenTitle: String
+        screenTitle: String,
+        backAction: (() -> Void)?
     ) {
         self.cellBuilder = cellBuilder
         
@@ -37,9 +41,19 @@ final class CommonDetailFeature: NSObject, FeatureCoordinatorProtocol {
             delegate: dataStorage.tableViewDelegate
         ))
         dataStorage.registerFor(tableViewBuilder.view)
-
+        
+        var navigationBarVP = NavigationBar.ViewProperties()
+        navigationBarStyle = NavigationBarStyle(
+            variant: .basic(
+                title: screenTitle,
+                subtitle: nil,
+                margins: nil
+            ),
+            color: .primary
+        )
+        navigationBarStyle.update(viewProperties: &navigationBarVP, backAction: backAction)
         tableViewVCBuilder = .init(with: .init(
-            screenTitle: screenTitle,
+            navigationBarViewProperties: navigationBarVP,
             tableView: tableViewBuilder.view,
             confirmButtonView: nil
         ))

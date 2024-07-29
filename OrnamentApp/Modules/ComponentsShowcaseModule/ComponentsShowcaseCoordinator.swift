@@ -8,6 +8,7 @@
 import Architecture
 import Router
 import UIKit
+import Components
 
 final class ComponentsShowcaseCoordinator: RootCoordinatorProtocol {
     
@@ -26,8 +27,10 @@ final class ComponentsShowcaseCoordinator: RootCoordinatorProtocol {
     private var inputPhoneNumberFeature: FeatureCoordinatorProtocol?
     private var inputSelectFeature: FeatureCoordinatorProtocol?
     private var inputTextFeature: FeatureCoordinatorProtocol?
-    private var toggleFeature: FeatureCoordinatorProtocol?
     private var buttonIconFeature: FeatureCoordinatorProtocol?
+    private var navigationBarFeature: NavigationBarFeature?
+    private var toggleFeature: FeatureCoordinatorProtocol?
+    private var navigationBar: NavigationBar?
 
     // MARK: - Life cycle
     
@@ -37,6 +40,7 @@ final class ComponentsShowcaseCoordinator: RootCoordinatorProtocol {
         activityIndicatorFeature: CommonDetailFeature? = nil,
         authorizationButtonFeature: CommonDetailFeature? = nil,
         badgeFeature: CommonDetailFeature? = nil,
+        buttonIconFeature: CommonDetailFeature? = nil,
         checkboxFeature: CommonDetailFeature? = nil,
         chipsFeature: CommonDetailFeature? = nil,
         dividerFeature: CommonDetailFeature? = nil,
@@ -45,14 +49,15 @@ final class ComponentsShowcaseCoordinator: RootCoordinatorProtocol {
         inputPhoneNumberFeature: CommonDetailFeature? = nil,
         inputSelectFeature: CommonDetailFeature? = nil,
         inputTextFeature: CommonDetailFeature? = nil,
-        toggleFeature: CommonDetailFeature? = nil,
-        buttonIconFeature: CommonDetailFeature? = nil
+        navigationBarFeature: NavigationBarFeature? = nil,
+        toggleFeature: CommonDetailFeature? = nil
     ) {
         self.routerService = routerService
         self.componentsShowcaseFeature = componentsShowcaseFeature
         self.activityIndicatorFeature = activityIndicatorFeature
         self.authorizationButtonFeature = authorizationButtonFeature
         self.badgeFeature = badgeFeature
+        self.buttonIconFeature = buttonIconFeature
         self.checkboxFeature = checkboxFeature
         self.chipsFeature = chipsFeature
         self.dividerFeature = dividerFeature
@@ -61,17 +66,20 @@ final class ComponentsShowcaseCoordinator: RootCoordinatorProtocol {
         self.inputPhoneNumberFeature = inputPhoneNumberFeature
         self.inputSelectFeature = inputSelectFeature
         self.inputTextFeature = inputTextFeature
+        self.navigationBarFeature = navigationBarFeature
         self.toggleFeature = toggleFeature
-        self.buttonIconFeature = buttonIconFeature
     }
     
     // MARK: - Methods
     
     func setRoot() {
         guard let vc = componentsShowcaseFeature.runFlow(data: nil)?.view as? UIViewController else { return }
-        let navigationVC = UINavigationController(rootViewController: vc)
         
-        routerService.setRootViewController(viewController: navigationVC)
+        navigationBar = NavigationBar(rootViewController: vc)
+        
+        if let navigationBar {
+            routerService.setRootViewController(viewController: navigationBar)
+        }
     }
     
     func setupFlow(completion: @escaping Architecture.Closure<Any?>) {
@@ -84,21 +92,24 @@ final class ComponentsShowcaseCoordinator: RootCoordinatorProtocol {
             case .activityIndicator:
                 self?.activityIndicatorFeature = CommonDetailFeature(
                     cellBuilder: ActivityIndicatorCellBuilder(),
-                    screenTitle: Components.activityIndicator.rawValue
+                    screenTitle: Components.activityIndicator.rawValue, 
+                    backAction: self?.popVC
                 )
                 guard let builder = self?.activityIndicatorFeature?.runFlow(data: nil) else { return }
                 viewController = (builder.view as! UIViewController)
             case .authorizationButton:
                 self?.authorizationButtonFeature = CommonDetailFeature(
                     cellBuilder: AuthorizationButtonCellBuilder(),
-                    screenTitle: Components.authorizationButton.rawValue
+                    screenTitle: Components.authorizationButton.rawValue,
+                    backAction: self?.popVC
                 )
                 guard let builder = self?.authorizationButtonFeature?.runFlow(data: nil) else { return }
                 viewController = (builder.view as! UIViewController)
             case .badge:
                 self?.badgeFeature = CommonDetailFeature(
                     cellBuilder: BadgeModuleBuilder(),
-                    screenTitle: Components.badge.rawValue
+                    screenTitle: Components.badge.rawValue,
+                    backAction: self?.popVC
                 )
                 guard let builder = self?.badgeFeature?.runFlow(data: nil) else { return }
                 viewController = (builder.view as! UIViewController)
@@ -109,7 +120,8 @@ final class ComponentsShowcaseCoordinator: RootCoordinatorProtocol {
             case .buttonIcon:
                 self?.buttonIconFeature = CommonDetailFeature(
                     cellBuilder: ButtonIconModuleBuilder(),
-                    screenTitle: Components.buttonIcon.rawValue
+                    screenTitle: Components.buttonIcon.rawValue,
+                    backAction: self?.popVC
                 )
                 guard let builder = self?.buttonIconFeature?.runFlow(data: nil) else { return }
                 viewController = (builder.view as! UIViewController)
@@ -118,21 +130,24 @@ final class ComponentsShowcaseCoordinator: RootCoordinatorProtocol {
             case .checkbox:
                 self?.checkboxFeature = CommonDetailFeature(
                     cellBuilder: CheckboxCellBuilder(),
-                    screenTitle: Components.checkbox.rawValue
+                    screenTitle: Components.checkbox.rawValue,
+                    backAction: self?.popVC
                 )
                 guard let builder = self?.checkboxFeature?.runFlow(data: nil) else { return }
                 viewController = (builder.view as! UIViewController)
             case .chips:
                 self?.chipsFeature = CommonDetailFeature(
                     cellBuilder: ChipsCellBuilder(),
-                    screenTitle: Components.chips.rawValue
+                    screenTitle: Components.chips.rawValue,
+                    backAction: self?.popVC
                 )
                 guard let builder = self?.chipsFeature?.runFlow(data: nil) else { return }
                 viewController = (builder.view as! UIViewController)
             case .divider:
                 self?.dividerFeature = CommonDetailFeature(
                     cellBuilder: DividerCellBuilder(),
-                    screenTitle: Components.divider.rawValue
+                    screenTitle: Components.divider.rawValue,
+                    backAction: self?.popVC
                 )
                 guard let builder = self?.dividerFeature?.runFlow(data: nil) else { return }
                 viewController = (builder.view as! UIViewController)
@@ -141,35 +156,40 @@ final class ComponentsShowcaseCoordinator: RootCoordinatorProtocol {
             case .inputAmountView:
                 self?.inputAmountFeature = CommonDetailFeature(
                     cellBuilder: InputAmountCellBuilder(),
-                    screenTitle: Components.inputAmountView.rawValue
+                    screenTitle: Components.inputAmountView.rawValue,
+                    backAction: self?.popVC
                 )
                 guard let builder = self?.inputAmountFeature?.runFlow(data: nil) else { return }
                 viewController = (builder.view as! UIViewController)
             case .inputOTP:
                 self?.inputOTPFeature = CommonDetailFeature(
                     cellBuilder: InputOTPCellBuilder(),
-                    screenTitle: Components.inputOTP.rawValue
+                    screenTitle: Components.inputOTP.rawValue,
+                    backAction: self?.popVC
                 )
                 guard let builder = self?.inputOTPFeature?.runFlow(data: nil) else { return }
                 viewController = (builder.view as! UIViewController)
             case .inputContryCode:
                 self?.inputPhoneNumberFeature = CommonDetailFeature(
                     cellBuilder: InputPhoneNumberCellBuilder(),
-                    screenTitle: Components.inputContryCode.rawValue
+                    screenTitle: Components.inputContryCode.rawValue,
+                    backAction: self?.popVC
                 )
                 guard let builder = self?.inputPhoneNumberFeature?.runFlow(data: nil) else { return }
                 viewController = (builder.view as! UIViewController)
             case .inputSelect:
                 self?.inputSelectFeature = CommonDetailFeature(
                     cellBuilder: InputSelectCellBuilder(),
-                    screenTitle: Components.inputSelect.rawValue
+                    screenTitle: Components.inputSelect.rawValue,
+                    backAction: self?.popVC
                 )
                 guard let builder = self?.inputSelectFeature?.runFlow(data: nil) else { return }
                 viewController = (builder.view as! UIViewController)
             case .inputTextView:
                 self?.inputTextFeature = CommonDetailFeature(
                     cellBuilder: InputTextCellBuilder(),
-                    screenTitle: Components.inputTextView.rawValue
+                    screenTitle: Components.inputTextView.rawValue,
+                    backAction: self?.popVC
                 )
                 guard let builder = self?.inputTextFeature?.runFlow(data: nil) else { return }
                 viewController = (builder.view as! UIViewController)
@@ -192,7 +212,10 @@ final class ComponentsShowcaseCoordinator: RootCoordinatorProtocol {
             case .paymentButton:
                 break
             case .navigationBar:
-                break
+                self?.navigationBarFeature = NavigationBarFeature()
+                guard let builder = self?.navigationBarFeature?.runFlow(data: nil) else { return }
+                self?.navigationBarFeature?.setNavigationBar(navigationBar: self?.navigationBar)
+                viewController = (builder.view as! UIViewController)
             case .radio:
                 break
             case .segmentControl:
@@ -214,7 +237,8 @@ final class ComponentsShowcaseCoordinator: RootCoordinatorProtocol {
             case .toggle:
                 self?.toggleFeature = CommonDetailFeature(
                     cellBuilder: ToggleCellBuilder(),
-                    screenTitle: Components.toggle.rawValue
+                    screenTitle: Components.toggle.rawValue,
+                    backAction: self?.popVC
                 )
                 guard let builder = self?.toggleFeature?.runFlow(data: nil) else { return }
                 viewController = (builder.view as! UIViewController)
@@ -222,5 +246,9 @@ final class ComponentsShowcaseCoordinator: RootCoordinatorProtocol {
             
             self?.routerService.pushMainNavigation(to: viewController, animated: true)
         }
+    }
+    
+    private func popVC() {
+        routerService.popMainNavigation(animated: true)
     }
 }

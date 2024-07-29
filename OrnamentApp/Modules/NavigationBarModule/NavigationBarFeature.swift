@@ -1,8 +1,8 @@
 //
-//  ComponentsShowcaseFeature.swift
+//  NavigationBarFeature.swift
 //  OrnamentApp
 //
-//  Created by user on 03.07.2024.
+//  Created by user on 26.07.2024.
 //
 
 import UIKit
@@ -12,7 +12,7 @@ import Extensions
 import Components
 import DesignSystem
 
-final class ComponentsShowcaseFeature: NSObject, FeatureCoordinatorProtocol {
+final class NavigationBarFeature: NSObject, FeatureCoordinatorProtocol {
     
     // MARK: - Properties
     
@@ -20,7 +20,7 @@ final class ComponentsShowcaseFeature: NSObject, FeatureCoordinatorProtocol {
     
     // MARK: - Private properties
     
-    private let cellBuilder = ComponentsShowcaseCellBuilder()
+    private let cellBuilder = NavigationBarCellBuilder()
     private var tableViewVCBuilder: TableViewVCBuilder
     private var tableViewBuilder: TableViewBuilder
     private var dataStorage = GenericTableViewDataStorage.empty
@@ -37,21 +37,15 @@ final class ComponentsShowcaseFeature: NSObject, FeatureCoordinatorProtocol {
         
         var navigationBarVP = NavigationBar.ViewProperties()
         let navigationBarStyle = NavigationBarStyle(
-            variant: .basic(
-                title: Constants.componentsShowcaseTitle,
-                subtitle: nil,
-                margins: nil
-            ),
-            color: .primary
+            variant: .none,
+            color: .main
         )
         navigationBarStyle.update(viewProperties: &navigationBarVP)
-        navigationBarVP.leftBarButtonItems = nil
         tableViewVCBuilder = .init(with: .init(
             navigationBarViewProperties: navigationBarVP,
             tableView: tableViewBuilder.view,
             confirmButtonView: nil
         ))
-        tableViewVCBuilder.view.navigationItem.leftBarButtonItems = []
 
         super.init()
     }
@@ -64,17 +58,18 @@ final class ComponentsShowcaseFeature: NSObject, FeatureCoordinatorProtocol {
         return tableViewVCBuilder
     }
     
+    func setNavigationBar(navigationBar: NavigationBar?) {
+        cellBuilder.setNavigationBar(navigationBar: navigationBar)
+    }
+    
     // MARK: - Private methods
     
     private func createSections() {
-        let sections = cellBuilder.createSections(onClick: handleComponentTapped)
+        let sections = cellBuilder.createSections()
         dataStorage.update(with: sections)
         dataStorage.registerFor(tableViewBuilder.view)
         
         tableViewBuilder.viewUpdater.state = .reloadData
     }
-    
-    private func handleComponentTapped(component: Components) {
-        runNewFlow?(component)
-    }
 }
+
