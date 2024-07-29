@@ -30,6 +30,7 @@ final class ComponentsShowcaseCoordinator: RootCoordinatorProtocol {
     private var imageFeature: FeatureCoordinatorProtocol?
     private var buttonIconFeature: FeatureCoordinatorProtocol?
     private var navigationBarFeature: NavigationBarFeature?
+    private var titleFeature: FeatureCoordinatorProtocol?
     private var toggleFeature: FeatureCoordinatorProtocol?
     private var navigationBar: NavigationBar?
 
@@ -52,6 +53,7 @@ final class ComponentsShowcaseCoordinator: RootCoordinatorProtocol {
         inputTextFeature: CommonDetailFeature? = nil,
         imageFeature: CommonDetailFeature? = nil,
         navigationBarFeature: NavigationBarFeature? = nil,
+        titleFeature: CommonDetailFeature? = nil,
         toggleFeature: CommonDetailFeature? = nil
     ) {
         self.routerService = routerService
@@ -70,6 +72,7 @@ final class ComponentsShowcaseCoordinator: RootCoordinatorProtocol {
         self.inputTextFeature = inputTextFeature
         self.imageFeature = imageFeature
         self.navigationBarFeature = navigationBarFeature
+        self.titleFeature = titleFeature
         self.toggleFeature = toggleFeature
     }
     
@@ -242,7 +245,13 @@ final class ComponentsShowcaseCoordinator: RootCoordinatorProtocol {
             case .tile:
                 break
             case .title:
-                break
+                self?.titleFeature = CommonDetailFeature(
+                    cellBuilder: TitleCellBuilder(),
+                    screenTitle: Components.title.rawValue,
+                    backAction: self?.popVC
+                )
+                guard let builder = self?.titleFeature?.runFlow(data: nil) else { return }
+                viewController = (builder.view as! UIViewController)
             case .toggle:
                 self?.toggleFeature = CommonDetailFeature(
                     cellBuilder: ToggleCellBuilder(),

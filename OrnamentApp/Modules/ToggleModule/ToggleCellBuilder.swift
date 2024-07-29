@@ -19,7 +19,7 @@ final class ToggleCellBuilder: NSObject, UITextFieldDelegate, CellBuilder {
     private let chipsViewSectionHelper = ChipsViewSectionHelper()
     private var toggleView: ToggleView?
     private var viewProperties = ToggleView.ViewProperties()
-    private var style = ToggleViewStyle.init(state: .default)
+    private var style = ToggleViewStyle(state: .default)
     private var state: ToggleViewStyle.State = .default
     private var isChecked = false
     
@@ -54,6 +54,7 @@ final class ToggleCellBuilder: NSObject, UITextFieldDelegate, CellBuilder {
         
         let section = GenericTableViewSectionModel(with: [row])
         section.makeHeader(title: Constants.componentTitle)
+        
         return section
     }
     
