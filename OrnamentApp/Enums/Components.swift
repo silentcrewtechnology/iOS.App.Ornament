@@ -67,8 +67,7 @@ enum Components: String, CaseIterable {
     case tabs = "Tabs (not actualized, not added)"
     // TODO: - Actualize, Add
     case tile = "Tile (not actualized, not added)"
-    // TODO: - Add
-    case title = "Title (not added)"
+    case title = "Title"
     // TODO: - Actualize
     case toggle = "Toggle (not actualized)"
 }
