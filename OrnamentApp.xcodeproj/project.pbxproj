@@ -34,6 +34,7 @@
 		CEA4E2292C37CF700069707C /* AuthorizationButtonCellBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA4E2282C37CF700069707C /* AuthorizationButtonCellBuilder.swift */; };
 		CEA4E22D2C37DFCE0069707C /* GenericTableViewSectionModel+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA4E22C2C37DFCE0069707C /* GenericTableViewSectionModel+Extensions.swift */; };
 		CEC824B82C4E90F200891643 /* ButtonIconModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC824B72C4E90F200891643 /* ButtonIconModuleBuilder.swift */; };
+		CEC824C22C512D4B00891643 /* ImageModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC824C12C512D4B00891643 /* ImageModuleBuilder.swift */; };
 		CEE15C4D2C3FD76C008E6D8C /* InputOTPCellBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE15C4C2C3FD76C008E6D8C /* InputOTPCellBuilder.swift */; };
 		CEE15C502C400F66008E6D8C /* InputPhoneNumberCellBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE15C4F2C400F66008E6D8C /* InputPhoneNumberCellBuilder.swift */; };
 		CEEB5E5B2C356246000E0215 /* ArchitectureTableView in Frameworks */ = {isa = PBXBuildFile; productRef = CEEB5E5A2C356246000E0215 /* ArchitectureTableView */; };
@@ -75,6 +76,7 @@
 		CEA4E2282C37CF700069707C /* AuthorizationButtonCellBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationButtonCellBuilder.swift; sourceTree = "<group>"; };
 		CEA4E22C2C37DFCE0069707C /* GenericTableViewSectionModel+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GenericTableViewSectionModel+Extensions.swift"; sourceTree = "<group>"; };
 		CEC824B72C4E90F200891643 /* ButtonIconModuleBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonIconModuleBuilder.swift; sourceTree = "<group>"; };
+		CEC824C12C512D4B00891643 /* ImageModuleBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageModuleBuilder.swift; sourceTree = "<group>"; };
 		CEE15C4C2C3FD76C008E6D8C /* InputOTPCellBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputOTPCellBuilder.swift; sourceTree = "<group>"; };
 		CEE15C4F2C400F66008E6D8C /* InputPhoneNumberCellBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputPhoneNumberCellBuilder.swift; sourceTree = "<group>"; };
 		CEEB5E612C356801000E0215 /* ComponentsShowcaseFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComponentsShowcaseFeature.swift; sourceTree = "<group>"; };
@@ -265,6 +267,14 @@
 			path = ButtonIconModuleBuilder;
 			sourceTree = "<group>";
 		};
+		CEC824C02C512D4000891643 /* ImageModuleBuilder */ = {
+			isa = PBXGroup;
+			children = (
+				CEC824C12C512D4B00891643 /* ImageModuleBuilder.swift */,
+			);
+			path = ImageModuleBuilder;
+			sourceTree = "<group>";
+		};
 		CEE15C4B2C3FD759008E6D8C /* InputOTPModule */ = {
 			isa = PBXGroup;
 			children = (
@@ -284,6 +294,7 @@
 		CEEB5E5F2C356788000E0215 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				CEC824C02C512D4000891643 /* ImageModuleBuilder */,
 				CEA336072C36B94D00880A1F /* ActivityIndicatorModule */,
 				CEA4E2272C37CF530069707C /* AuthorizationButtonModule */,
 				34FC046F2C400565005DB295 /* BadgeModule */,
@@ -453,6 +464,7 @@
 				CEA336162C36D11000880A1F /* TableHeaderView.swift in Sources */,
 				CE2827A42C3BDE6600156F14 /* ChipsViewSectionHelper.swift in Sources */,
 				CEEB5E712C3596E6000E0215 /* Components+Reusable.swift in Sources */,
+				CEC824C22C512D4B00891643 /* ImageModuleBuilder.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

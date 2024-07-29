@@ -27,6 +27,7 @@ final class ComponentsShowcaseCoordinator: RootCoordinatorProtocol {
     private var inputPhoneNumberFeature: FeatureCoordinatorProtocol?
     private var inputSelectFeature: FeatureCoordinatorProtocol?
     private var inputTextFeature: FeatureCoordinatorProtocol?
+    private var imageFeature: FeatureCoordinatorProtocol?
     private var buttonIconFeature: FeatureCoordinatorProtocol?
     private var navigationBarFeature: NavigationBarFeature?
     private var toggleFeature: FeatureCoordinatorProtocol?
@@ -49,6 +50,7 @@ final class ComponentsShowcaseCoordinator: RootCoordinatorProtocol {
         inputPhoneNumberFeature: CommonDetailFeature? = nil,
         inputSelectFeature: CommonDetailFeature? = nil,
         inputTextFeature: CommonDetailFeature? = nil,
+        imageFeature: CommonDetailFeature? = nil,
         navigationBarFeature: NavigationBarFeature? = nil,
         toggleFeature: CommonDetailFeature? = nil
     ) {
@@ -66,6 +68,7 @@ final class ComponentsShowcaseCoordinator: RootCoordinatorProtocol {
         self.inputPhoneNumberFeature = inputPhoneNumberFeature
         self.inputSelectFeature = inputSelectFeature
         self.inputTextFeature = inputTextFeature
+        self.imageFeature = imageFeature
         self.navigationBarFeature = navigationBarFeature
         self.toggleFeature = toggleFeature
     }
@@ -151,6 +154,14 @@ final class ComponentsShowcaseCoordinator: RootCoordinatorProtocol {
                 )
                 guard let builder = self?.dividerFeature?.runFlow(data: nil) else { return }
                 viewController = (builder.view as! UIViewController)
+            case .image:
+                self?.imageFeature = CommonDetailFeature(
+                    cellBuilder: ImageModuleBuilder(),
+                    screenTitle: Components.image.rawValue, 
+                    backAction: self?.popVC
+                )
+                guard let builder = self?.imageFeature?.runFlow(data: nil) else { return }
+                viewController = (builder.view as! UIViewController)
             case .indicator:
                 break
             case .inputAmountView:
@@ -198,8 +209,6 @@ final class ComponentsShowcaseCoordinator: RootCoordinatorProtocol {
             case .inputAddCard:
                 break
             case .inputPIN:
-                break
-            case .image:
                 break
             case .label:
                 break
