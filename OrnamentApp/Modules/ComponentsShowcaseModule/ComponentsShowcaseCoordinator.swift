@@ -215,7 +215,7 @@ final class ComponentsShowcaseCoordinator: RootCoordinatorProtocol {
                 break
             case .pageControl:
                 break
-            case .paymentButton:
+            case .buttonPay:
                 break
             case .navigationBar:
                 self?.navigationBarFeature = NavigationBarFeature()
