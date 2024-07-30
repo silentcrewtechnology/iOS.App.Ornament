@@ -25,8 +25,6 @@ enum Components: String, CaseIterable {
     case checkbox = "Checkbox"
     case chips = "Chips"
     case divider = "Divider"
-    // TODO: - Specify
-    case indicator = "Indicator (extra?)"
     // TODO: - Add
     case inputTextarea = "Input textarea (not added)"
     case inputTextView = "Input text"
@@ -45,10 +43,6 @@ enum Components: String, CaseIterable {
     case navigationBar = "Navigation bar"
     // TODO: - Actualize, Add
     case pageControl = "Page control (not actualized, not added)"
-    // TODO: - Specify
-    case paper = "Paper (extra?)"
-    // TODO: - Specify
-    case payCell = "Pay cell (extra?)"
     // TODO: - Actualize, Add
     case paymentButton = "Payment button (not actualized, not added)"
     // TODO: - Add
@@ -57,12 +51,10 @@ enum Components: String, CaseIterable {
     case segmentControl = "Segment control (not actualized, not added)"
     // TODO: - Actualize, Add
     case snackBar = "Snack bar (not actualized, not added)"
-    // TODO: - Specify
-    case spacer = "Spacer (extra?)"
     // TODO: - Actualize, Add
     case stepper = "Stepper (not actualized, not added)"
-    // TODO: - Realize
-    case stories = "Stories (not realized)"
+    // TODO: - Realize, Add
+    case stories = "Stories (not realized, not added)"
     // TODO: - Actualize, Add
     case tabs = "Tabs (not actualized, not added)"
     // TODO: - Actualize, Add

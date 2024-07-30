@@ -165,8 +165,6 @@ final class ComponentsShowcaseCoordinator: RootCoordinatorProtocol {
                 )
                 guard let builder = self?.imageFeature?.runFlow(data: nil) else { return }
                 viewController = (builder.view as! UIViewController)
-            case .indicator:
-                break
             case .inputAmountView:
                 self?.inputAmountFeature = CommonDetailFeature(
                     cellBuilder: InputAmountCellBuilder(),
@@ -217,10 +215,6 @@ final class ComponentsShowcaseCoordinator: RootCoordinatorProtocol {
                 break
             case .pageControl:
                 break
-            case .paper:
-                break
-            case .payCell:
-                break
             case .paymentButton:
                 break
             case .navigationBar:
@@ -233,8 +227,6 @@ final class ComponentsShowcaseCoordinator: RootCoordinatorProtocol {
             case .segmentControl:
                 break
             case .snackBar:
-                break
-            case .spacer:
                 break
             case .stepper:
                 break
