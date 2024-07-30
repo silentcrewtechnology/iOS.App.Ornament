@@ -364,13 +364,13 @@
 			path = ButtonIconModuleBuilder;
 			sourceTree = "<group>";
 		};
-		CEC824C02C512D4000891643 /* ImageModuleBuilder */ = {
+		CEC824C02C512D4000891643 /* ImageModule */ = {
 			isa = PBXGroup;
 			children = (
 				CEC824C12C512D4B00891643 /* ImageModuleBuilder.swift */,
 				CEF1FA0B2C57D7AA00D0D5D2 /* ImageViewExample.swift */,
 			);
-			path = ImageModuleBuilder;
+			path = ImageModule;
 			sourceTree = "<group>";
 		};
 		CEE15C4B2C3FD759008E6D8C /* InputOTPModule */ = {
@@ -412,7 +412,7 @@
 				CE4A7C132C3EBBD300AA7EB4 /* InputAmountModule */,
 				CEF2DE6C2C41306F0065C1BD /* InputSelectModule */,
 				CEE15C4B2C3FD759008E6D8C /* InputOTPModule */,
-				CEC824C02C512D4000891643 /* ImageModuleBuilder */,
+				CEC824C02C512D4000891643 /* ImageModule */,
 				CEF1F9E42C57CD1500D0D5D2 /* LabelModule */,
 				CE5AE5222C5385AD00DD7BC4 /* NavigationBarModule */,
 				CEF1F9E52C57CD2B00D0D5D2 /* PageControlModule */,
