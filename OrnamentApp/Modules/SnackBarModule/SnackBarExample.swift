@@ -9,7 +9,7 @@ import UIKit
 import Components
 import DesignSystem
 
-private class SnackBarViewExampleVC: UIViewController {
+private final class SnackBarViewExampleVC: UIViewController {
     
     // MARK: - Private properties
     
