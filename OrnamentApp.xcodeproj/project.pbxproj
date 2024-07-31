@@ -84,7 +84,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		34C05ED72C5A98540047F4B6 /* ios.designsystem */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = ios.designsystem; path = ../ios.designsystem; sourceTree = "<group>"; };
 		34FC04702C4005A1005DB295 /* BadgeModuleBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeModuleBuilder.swift; sourceTree = "<group>"; };
 		8889557F29140FFC00A46293 /* OrnamentApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OrnamentApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8889558229140FFC00A46293 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -186,7 +185,6 @@
 		8889557629140FFC00A46293 = {
 			isa = PBXGroup;
 			children = (
-				34C05ED72C5A98540047F4B6 /* ios.designsystem */,
 				8889558129140FFC00A46293 /* OrnamentApp */,
 				8889558029140FFC00A46293 /* Products */,
 				888955B82914112F00A46293 /* Frameworks */,
