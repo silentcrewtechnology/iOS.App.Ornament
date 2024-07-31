@@ -28,13 +28,16 @@ private final class TileViewExampleVC: UIViewController {
         let vStack = vStack()
         vStack.addArrangedSubview({
             let view = TileView()
-            let style = TileViewStyle(
-                size: .sizeL,
-                style: .action)
+            let style = TileViewStyle(background: .primary,
+                                      widthType: .s)
+            
+            var imageStyle = ImageViewStyle(type: .icon(.ic24UserFilled),
+                                            color: .main)
+            var imageViewProperties = ImageView.ViewProperties()
+            
             var viewProperties = TileView.ViewProperties(
-                icon: style.centeredIcon(.ic24Book.withTintColor(.Core.Brand.primary150)),
-                text: .init(string: "Example"),
-                action: { print("Example") })
+                imageViewProperties: imageViewProperties,
+                text: "Example".attributed)
             style.update(viewProperties: &viewProperties)
             view.update(with: viewProperties)
             return view
@@ -42,13 +45,17 @@ private final class TileViewExampleVC: UIViewController {
         
         vStack.addArrangedSubview({
             let view = TileView()
-            let style = TileViewStyle(
-                size: .sizeL,
-                style: .main)
+            let style = TileViewStyle(background: .main,
+                                      widthType: .s)
+            
+            var imageStyle = ImageViewStyle(type: .icon(.ic24Car),
+                                            color: .primary)
+            var imageViewProperties = ImageView.ViewProperties()
+            
             var viewProperties = TileView.ViewProperties(
-                icon: style.styledCenteredIcon(.ic24Car),
-                text: .init(string: "Example"),
-                action: { print("Example") })
+                imageViewProperties: imageViewProperties,
+                text: "Example".attributed,
+                onTap: { print("Example") })
             style.update(viewProperties: &viewProperties)
             view.update(with: viewProperties)
             return view
@@ -56,13 +63,17 @@ private final class TileViewExampleVC: UIViewController {
         
         vStack.addArrangedSubview({
             let view = TileView()
-            let style = TileViewStyle(
-                size: .sizeL,
-                style: .primary)
+            let style = TileViewStyle(background: .primary,
+                                      widthType: .m)
+            
+            var imageStyle = ImageViewStyle(type: .icon(.ic24Call),
+                                            color: .primary)
+            var imageViewProperties = ImageView.ViewProperties()
+            
             var viewProperties = TileView.ViewProperties(
-                icon: style.styledCenteredIcon(.ic24Call),
-                text: .init(string: "Example"),
-                action: { print("Example") })
+                imageViewProperties: imageViewProperties,
+                text: "Example".attributed,
+                onTap: { print("Example") })
             style.update(viewProperties: &viewProperties)
             view.update(with: viewProperties)
             return view

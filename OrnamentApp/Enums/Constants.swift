@@ -26,4 +26,11 @@ enum Constants {
     static let componentSet = "Set"
     static let componentRightItemsAmount = "Right items amount"
     static let componentType = "Type"
+    static let componentBackground = "Background"
+}
+
+// MARK: Image
+extension Constants {
+    static let imageType = "Image Type"
+    static let imageColor = "Image Color"
 }

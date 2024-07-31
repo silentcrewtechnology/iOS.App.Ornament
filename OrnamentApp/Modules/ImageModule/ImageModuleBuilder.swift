@@ -129,7 +129,7 @@ extension ImageModuleBuilder {
                     self?.updateStyle(newColor: .additional8)
                 }
             ],
-            headerTitle: Constants.componentType
+            headerTitle: Constants.componentColor
         )
     }
     
