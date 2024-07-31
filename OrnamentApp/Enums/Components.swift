@@ -27,7 +27,7 @@ enum Components: String, CaseIterable {
     case divider = "Divider"
     // TODO: - Add
     case inputTextarea = "Input textarea (not added)"
-    case inputTextView = "Input text"
+    case inputView = "Input view"
     // TODO: - Actualize
     case inputContryCode = "Input country code (not actualized)"
     case inputAmountView = "Input amount view"

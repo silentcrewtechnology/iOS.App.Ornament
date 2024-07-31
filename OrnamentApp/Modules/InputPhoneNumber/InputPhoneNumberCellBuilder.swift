@@ -36,7 +36,7 @@ final class InputPhoneNumberCellBuilder: NSObject, UITextFieldDelegate, CellBuil
     private lazy var dividerViewProperties: DividerView.ViewProperties = {
         var viewProperties = DividerView.ViewProperties()
         let style = DividerViewStyle(
-            orientation: .fixed(.init(width: 1, height: 20)),
+            variant: .fixed(.init(width: 1, height: 20)),
             style: .main
         )
         style.update(viewProperties: &viewProperties)
@@ -126,17 +126,17 @@ final class InputPhoneNumberCellBuilder: NSObject, UITextFieldDelegate, CellBuil
     
     private func createHintInputTextSection() -> GenericTableViewSectionModel {
         let row = GenericTableViewRowModel(
-            with: GenericTableViewCellWrapper<InputTextView>.self,
+            with: GenericTableViewCellWrapper<InputView>.self,
             configuration: { [weak self] cell, _ in
                 guard let self = self else { return }
                 
-                var vp: InputTextView.ViewProperties = .init()
+                var vp: InputView.ViewProperties = .init()
                 vp.textField.text = self.hintText
                 vp.textField.delegateAssigningClosure = { textField in
                     textField.delegate = self
                     textField.addTarget(self, action: #selector(self.onHintTextChange(textField:)), for: .editingChanged)
                 }
-                let inputTextStyle = InputTextViewStyle()
+                let inputTextStyle = InputViewStyle()
                 inputTextStyle.update(state: .default, viewProperties: &vp)
                 cell.containedView.update(with: vp)
 

@@ -17,10 +17,10 @@ final class InputTextCellBuilder: NSObject, UITextFieldDelegate, CellBuilder {
     // MARK: - Private properties
     
     private let chipsViewSectionHelper = ChipsViewSectionHelper()
-    private var inputTextView: InputTextView?
-    private var viewProperties = InputTextView.ViewProperties()
-    private var style = InputTextViewStyle.init()
-    private var state: InputTextViewStyle.State = .default
+    private var inputView: InputView?
+    private var viewProperties = InputView.ViewProperties()
+    private var style = InputViewStyle.init()
+    private var state: InputViewStyle.State = .default
     private var hintText: NSMutableAttributedString = .init(string: "")
     
     // MARK: - Methods
@@ -38,7 +38,7 @@ final class InputTextCellBuilder: NSObject, UITextFieldDelegate, CellBuilder {
     
     private func createInputTextSection() -> GenericTableViewSectionModel {
         let row = GenericTableViewRowModel(
-            with: GenericTableViewCellWrapper<InputTextView>.self,
+            with: GenericTableViewCellWrapper<InputView>.self,
             configuration: { [weak self] cell, _ in
                 guard let self = self else { return }
                 
@@ -59,7 +59,7 @@ final class InputTextCellBuilder: NSObject, UITextFieldDelegate, CellBuilder {
 
                 cell.contentInset = .init(top: .zero, left: 16, bottom: 16, right: 16)
                 cell.selectionStyle = .none
-                self.inputTextView = cell.containedView
+                self.inputView = cell.containedView
                 
                 cell.containedView.snp.remakeConstraints { make in
                     make.top.equalToSuperview()
@@ -78,17 +78,17 @@ final class InputTextCellBuilder: NSObject, UITextFieldDelegate, CellBuilder {
     
     private func createHintInputTextSection() -> GenericTableViewSectionModel {
         let row = GenericTableViewRowModel(
-            with: GenericTableViewCellWrapper<InputTextView>.self,
+            with: GenericTableViewCellWrapper<InputView>.self,
             configuration: { [weak self] cell, _ in
                 guard let self = self else { return }
                 
-                var vp: InputTextView.ViewProperties = .init()
+                var vp: InputView.ViewProperties = .init()
                 vp.textField.text = self.hintText
                 vp.textField.delegateAssigningClosure = { textField in
                     textField.delegate = self
                     textField.addTarget(self, action: #selector(self.onHintTextChange(textField:)), for: .editingChanged)
                 }
-                let inputTextStyle = InputTextViewStyle()
+                let inputTextStyle = InputViewStyle()
                 inputTextStyle.update(state: .default, viewProperties: &vp)
                 cell.containedView.update(with: vp)
 
@@ -108,13 +108,13 @@ final class InputTextCellBuilder: NSObject, UITextFieldDelegate, CellBuilder {
         return chipsViewSectionHelper.makeHorizontalSectionWithScroll(
             titles: ["Default", "Active" ,"Error", "Disabled"],
             actions: [
-                { [weak self] in self?.updateInputTextViewStyle(state: .default) },
-                { [weak self] in self?.updateInputTextViewStyle(state: .active) },
+                { [weak self] in self?.updateInputViewStyle(state: .default) },
+                { [weak self] in self?.updateInputViewStyle(state: .active) },
                 { [weak self] in
                     guard let self = self else { return }
-                    self.updateInputTextViewStyle(state: .error(self.hintText))
+                    self.updateInputViewStyle(state: .error(self.hintText))
                 },
-                { [weak self] in self?.updateInputTextViewStyle(state: .disabled) }
+                { [weak self] in self?.updateInputViewStyle(state: .disabled) }
             ],
             headerTitle: Constants.componentState
         )
@@ -124,15 +124,15 @@ final class InputTextCellBuilder: NSObject, UITextFieldDelegate, CellBuilder {
         return chipsViewSectionHelper.makeHorizontalSectionWithScroll(
             titles: ["None", "Right"],
             actions: [
-                { [weak self] in self?.updateInputTextViewStyle(isImage: false) },
-                { [weak self] in self?.updateInputTextViewStyle(isImage: true) },
+                { [weak self] in self?.updateInputViewStyle(isImage: false) },
+                { [weak self] in self?.updateInputViewStyle(isImage: true) },
             ],
             headerTitle: Constants.componentImage
         )
     }
 
-    private func updateInputTextViewStyle(
-        state: InputTextViewStyle.State? = nil,
+    private func updateInputViewStyle(
+        state: InputViewStyle.State? = nil,
         isImage: Bool = false
     ) {
         if let state = state {
@@ -153,13 +153,13 @@ final class InputTextCellBuilder: NSObject, UITextFieldDelegate, CellBuilder {
         }
         
         style.update(state: self.state, viewProperties: &viewProperties)
-        inputTextView?.update(with: viewProperties)
+        inputView?.update(with: viewProperties)
     }
 
     @objc private func onTextChange(textField: UITextField) {
         viewProperties.textField.text = .init(string: textField.text ?? "")
         style.update(state: state, viewProperties: &viewProperties)
-        inputTextView?.update(with: viewProperties)
+        inputView?.update(with: viewProperties)
     }
     
     @objc private func onHintTextChange(textField: UITextField) {
@@ -174,7 +174,7 @@ final class InputTextCellBuilder: NSObject, UITextFieldDelegate, CellBuilder {
             state = .error(hintText)
             style.update(state: state, viewProperties: &viewProperties)
             viewProperties.hint = hintVP
-            inputTextView?.update(with: viewProperties)
+            inputView?.update(with: viewProperties)
         default:
             break
         }

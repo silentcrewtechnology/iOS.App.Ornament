@@ -61,17 +61,17 @@ final class TitleCellBuilder: NSObject, UITextFieldDelegate, CellBuilder {
     
     private func createInputTextSection() -> GenericTableViewSectionModel {
         let row = GenericTableViewRowModel(
-            with: GenericTableViewCellWrapper<InputTextView>.self,
+            with: GenericTableViewCellWrapper<InputView>.self,
             configuration: { [weak self] cell, _ in
                 guard let self = self else { return }
                 
-                var vp: InputTextView.ViewProperties = .init()
+                var vp: InputView.ViewProperties = .init()
                 vp.textField.text = self.viewProperties.title
                 vp.textField.delegateAssigningClosure = { textField in
                     textField.delegate = self
                     textField.addTarget(self, action: #selector(self.onTextChange(textField:)), for: .editingChanged)
                 }
-                let inputTextStyle = InputTextViewStyle()
+                let inputTextStyle = InputViewStyle()
                 inputTextStyle.update(state: .default, viewProperties: &vp)
                 cell.containedView.update(with: vp)
 

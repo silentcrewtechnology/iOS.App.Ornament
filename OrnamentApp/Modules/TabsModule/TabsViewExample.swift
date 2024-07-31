@@ -51,20 +51,7 @@ private final class TabsViewExampleVC: UIViewController {
         viewProperties = .init(
             items: tabItems,
             selectedTabIndex: initialSelectedIndex)
-        // Добавляем indicator
-        let indicatedIndex: Int = 3
-        viewProperties.items[indicatedIndex].rightView = {
-            let view = IndicatorView()
-            var viewProperties = IndicatorView.ViewProperties()
-            let style = IndicatorViewStyle(style: .danger, size: .sizeS)
-            style.update(viewProperties: &viewProperties)
-            view.update(with: viewProperties)
-            return view
-        }()
         style.update(viewProperties: &viewProperties)
         tabsView.update(with: viewProperties)
-        // ...
-        // тап по элементу, ожидается сброс indicator
-        onSelect(indicatedIndex)
     }
 }

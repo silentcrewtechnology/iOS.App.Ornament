@@ -33,7 +33,7 @@ private final class InputPhoneNumberViewExampleVC: UIViewController {
     private lazy var dividerViewProperties: DividerView.ViewProperties = {
         var viewProperties = DividerView.ViewProperties()
         let style = DividerViewStyle(
-            orientation: .fixed(.init(width: 1, height: 20)),
+            variant: .fixed(.init(width: 1, height: 20)),
             style: .main
         )
         style.update(viewProperties: &viewProperties)

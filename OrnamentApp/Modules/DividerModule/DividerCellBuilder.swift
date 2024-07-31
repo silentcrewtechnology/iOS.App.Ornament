@@ -19,8 +19,8 @@ final class DividerCellBuilder: NSObject, UITextFieldDelegate, CellBuilder {
     private let chipsViewSectionHelper = ChipsViewSectionHelper()
     private var dividerView: DividerView?
     private var viewProperties = DividerView.ViewProperties()
-    private var dividerStyle = DividerViewStyle.init(orientation: .horizontal, style: .secondary)
-    private var orientation: DividerViewStyle.Orientation = .horizontal
+    private var dividerStyle = DividerViewStyle.init(variant: .horizontal, style: .secondary)
+    private var variant: DividerViewStyle.Variant = .horizontal
     private var style: DividerViewStyle.Style = .secondary
     
     // MARK: - Methods
@@ -69,7 +69,7 @@ final class DividerCellBuilder: NSObject, UITextFieldDelegate, CellBuilder {
             actions: [
                 { [weak self] in self?.updateDividerStyle(style: .secondary) },
                 { [weak self] in self?.updateDividerStyle(style: .main) },
-                { [weak self] in self?.updateDividerStyle(style: .action) }
+                { [weak self] in self?.updateDividerStyle(style: .accent) }
             ],
             headerTitle: Constants.componentStyle
         )
@@ -88,17 +88,17 @@ final class DividerCellBuilder: NSObject, UITextFieldDelegate, CellBuilder {
     
     private func updateDividerStyle(
         style: DividerViewStyle.Style? = nil,
-        variant: DividerViewStyle.Orientation? = nil
+        variant: DividerViewStyle.Variant? = nil
     ) {
         if let style = style {
             self.style = style
         }
         
         if let variant = variant {
-            self.orientation = variant
+            self.variant = variant
         }
         
-        dividerStyle = .init(orientation: self.orientation, style: self.style)
+        dividerStyle = .init(variant: self.variant, style: self.style)
         dividerStyle.update(viewProperties: &viewProperties)
         dividerView?.update(with: viewProperties)
     }

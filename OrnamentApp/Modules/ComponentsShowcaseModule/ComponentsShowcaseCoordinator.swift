@@ -197,10 +197,10 @@ final class ComponentsShowcaseCoordinator: RootCoordinatorProtocol {
                 )
                 guard let builder = self?.inputSelectFeature?.runFlow(data: nil) else { return }
                 viewController = (builder.view as! UIViewController)
-            case .inputTextView:
+            case .inputView:
                 self?.inputTextFeature = CommonDetailFeature(
                     cellBuilder: InputTextCellBuilder(),
-                    screenTitle: Components.inputTextView.rawValue,
+                    screenTitle: Components.inputView.rawValue,
                     backAction: self?.popVC
                 )
                 guard let builder = self?.inputTextFeature?.runFlow(data: nil) else { return }

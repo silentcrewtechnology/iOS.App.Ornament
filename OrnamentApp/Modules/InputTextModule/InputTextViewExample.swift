@@ -1,5 +1,5 @@
 //
-//  InputTextViewExampleVC.swift
+//  InputViewExampleVC.swift
 //  OrnamentApp
 //
 //  Created by user on 29.07.2024.
@@ -11,11 +11,11 @@ import DesignSystem
 import Components
 import ImagesService
 
-private final class InputTextViewExampleVC: UIViewController {
+private final class InputViewExampleVC: UIViewController {
     
     // MARK: - Private properties
     
-    private let feature = InputTextViewExampleFeature()
+    private let feature = InputViewExampleFeature()
     
     // MARK: - Life cycle
     
@@ -47,9 +47,9 @@ private final class InputTextViewExampleVC: UIViewController {
     }
 }
 
-// MARK: - InputTextViewExampleFeature
+// MARK: - InputViewExampleFeature
 
-private final class InputTextViewExampleFeature: NSObject, UITextFieldDelegate {
+private final class InputViewExampleFeature: NSObject, UITextFieldDelegate {
     
     // MARK: - Private properties
     
@@ -61,13 +61,13 @@ private final class InputTextViewExampleFeature: NSObject, UITextFieldDelegate {
         return viewProperties
     }()
     
-    private let style = InputTextViewStyle()
+    private let style = InputViewStyle()
     private var isEnabled = true
     
     // MARK: - Properties
     
-    let view = InputTextView()
-    var viewProperties: InputTextView.ViewProperties = .init()
+    let view = InputView()
+    var viewProperties: InputView.ViewProperties = .init()
     
     // MARK: - Life cycle
     

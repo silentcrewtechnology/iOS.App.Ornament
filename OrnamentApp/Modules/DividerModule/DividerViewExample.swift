@@ -20,7 +20,7 @@ private final class DividerViewExampleVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        dividerView = divider(orientation: .horizontal, style: .action)
+        dividerView = divider(variant: .horizontal, style: .accent)
         
         example1()
         example2()
@@ -34,7 +34,7 @@ private final class DividerViewExampleVC: UIViewController {
         stack.axis = .horizontal
         stack.spacing = .zero
         stack.addArrangedSubview(spacer(width: 16))
-        stack.addArrangedSubview(divider(orientation: .vertical, style: .main))
+        stack.addArrangedSubview(divider(variant: .vertical, style: .main))
     }
 
     /// Пример с фиксированным размером
@@ -45,7 +45,7 @@ private final class DividerViewExampleVC: UIViewController {
         stack.alignment = .center
         stack.addArrangedSubview(spacer(width: 16, height: 100))
         // divider меньше по высоте, чем другие arranged subviews
-        stack.addArrangedSubview(divider(orientation: .fixed(.init(width: 1, height: 50)), style: .secondary))
+        stack.addArrangedSubview(divider(variant: .fixed(.init(width: 1, height: 50)), style: .secondary))
         stack.addArrangedSubview(spacer(width: 16, height: 100))
     }
     
@@ -61,12 +61,12 @@ private final class DividerViewExampleVC: UIViewController {
     }
 
     private func divider(
-        orientation: DividerViewStyle.Orientation,
+        variant: DividerViewStyle.Variant,
         style: DividerViewStyle.Style
     ) -> DividerView {
         let divider = DividerView()
         var vp = DividerView.ViewProperties()
-        DividerViewStyle(orientation: orientation, style: style).update( viewProperties: &vp)
+        DividerViewStyle(variant: variant, style: style).update( viewProperties: &vp)
         divider.update(with: vp)
         
         return divider

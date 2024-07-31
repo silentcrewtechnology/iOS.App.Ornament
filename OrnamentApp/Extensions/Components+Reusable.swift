@@ -83,12 +83,6 @@ extension ImageView: Reusable {
     }
 }
 
-extension IndicatorView: Reusable {
-    public func prepareForReuse() {
-        update(with: .init())
-    }
-}
-
 extension InputAmountTextField: Reusable {
     public func prepareForReuse() {
         update(with: .init())
@@ -96,12 +90,6 @@ extension InputAmountTextField: Reusable {
 }
 
 extension InputAmountView: Reusable {
-    public func prepareForReuse() {
-        update(with: .init())
-    }
-}
-
-extension InputMessageView: Reusable {
     public func prepareForReuse() {
         update(with: .init())
     }
@@ -137,12 +125,6 @@ extension InputTextField: Reusable {
     }
 }
 
-extension InputTextView: Reusable {
-    public func prepareForReuse() {
-        update(with: .init())
-    }
-}
-
 extension InputTextareaView: Reusable {
     public func prepareForReuse() {
         update(with: .init())
@@ -156,12 +138,6 @@ extension LabelView: Reusable {
 }
 
 extension PageControl: Reusable {
-    public func prepareForReuse() {
-        update(with: .init())
-    }
-}
-
-extension PaperView: Reusable {
     public func prepareForReuse() {
         update(with: .init())
     }
@@ -239,24 +215,6 @@ extension TabsView: Reusable {
     }
 }
 
-extension TagView: Reusable {
-    public func prepareForReuse() {
-        update(with: .init())
-    }
-}
-
-extension TapInsetView: Reusable {
-    public func prepareForReuse() {
-        update(with: .init())
-    }
-}
-
-extension TextBlockView: Reusable {
-    public func prepareForReuse() {
-        update(with: .init())
-    }
-}
-
 extension TileView: Reusable {
     public func prepareForReuse() {
         update(with: .init())
@@ -281,4 +239,10 @@ extension UIStackView: Reusable {
 
 extension UIScrollView: Reusable {
     public func prepareForReuse() { }
+}
+
+extension InputView: Reusable {
+    public func prepareForReuse() {
+        update(with: .init())
+    }
 }
