@@ -21,6 +21,7 @@
 		CE4A7C0F2C3E8FC300AA7EB4 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4A7C0E2C3E8FC300AA7EB4 /* Constants.swift */; };
 		CE4A7C122C3E9E5900AA7EB4 /* ToggleCellBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4A7C112C3E9E5900AA7EB4 /* ToggleCellBuilder.swift */; };
 		CE4A7C152C3EBBEE00AA7EB4 /* InputAmountCellBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4A7C142C3EBBEE00AA7EB4 /* InputAmountCellBuilder.swift */; };
+		CE51C8D82C593FE20069123F /* TileModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE51C8D72C593FE20069123F /* TileModuleBuilder.swift */; };
 		CE5AE5242C53866300DD7BC4 /* NavigationBarCellBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5AE5232C53866300DD7BC4 /* NavigationBarCellBuilder.swift */; };
 		CE5AE5262C53BF6300DD7BC4 /* NavigationBarFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5AE5252C53BF6300DD7BC4 /* NavigationBarFeature.swift */; };
 		CE6439F32C58FAEE002491EA /* SnackBarExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6439F22C58FAEE002491EA /* SnackBarExample.swift */; };
@@ -100,6 +101,7 @@
 		CE4A7C0E2C3E8FC300AA7EB4 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		CE4A7C112C3E9E5900AA7EB4 /* ToggleCellBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToggleCellBuilder.swift; sourceTree = "<group>"; };
 		CE4A7C142C3EBBEE00AA7EB4 /* InputAmountCellBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputAmountCellBuilder.swift; sourceTree = "<group>"; };
+		CE51C8D72C593FE20069123F /* TileModuleBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TileModuleBuilder.swift; sourceTree = "<group>"; };
 		CE5AE5232C53866300DD7BC4 /* NavigationBarCellBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBarCellBuilder.swift; sourceTree = "<group>"; };
 		CE5AE5252C53BF6300DD7BC4 /* NavigationBarFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBarFeature.swift; sourceTree = "<group>"; };
 		CE6439F22C58FAEE002491EA /* SnackBarExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnackBarExample.swift; sourceTree = "<group>"; };
@@ -546,6 +548,7 @@
 			isa = PBXGroup;
 			children = (
 				CEF1FA242C57D8F900D0D5D2 /* TileViewExample.swift */,
+				CE51C8D72C593FE20069123F /* TileModuleBuilder.swift */,
 			);
 			path = TileModule;
 			sourceTree = "<group>";
@@ -686,6 +689,7 @@
 				CEF1FA212C57D8ED00D0D5D2 /* StepperViewExample.swift in Sources */,
 				CEF1FA132C57D8A100D0D5D2 /* NavigationBarExample.swift in Sources */,
 				CEF1FA112C57D89400D0D5D2 /* LabelViewExample.swift in Sources */,
+				CE51C8D82C593FE20069123F /* TileModuleBuilder.swift in Sources */,
 				CEF1FA252C57D8F900D0D5D2 /* TileViewExample.swift in Sources */,
 				CEE15C502C400F66008E6D8C /* InputPhoneNumberCellBuilder.swift in Sources */,
 				CEA336132C36C45F00880A1F /* ActivityIndicatorCellBuilder.swift in Sources */,

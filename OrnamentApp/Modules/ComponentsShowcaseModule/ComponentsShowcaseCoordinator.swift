@@ -33,6 +33,7 @@ final class ComponentsShowcaseCoordinator: RootCoordinatorProtocol {
     private var titleFeature: FeatureCoordinatorProtocol?
     private var toggleFeature: FeatureCoordinatorProtocol?
     private var navigationBar: NavigationBar?
+    private var tileFeature: FeatureCoordinatorProtocol?
 
     // MARK: - Life cycle
     
@@ -54,7 +55,8 @@ final class ComponentsShowcaseCoordinator: RootCoordinatorProtocol {
         imageFeature: CommonDetailFeature? = nil,
         navigationBarFeature: NavigationBarFeature? = nil,
         titleFeature: CommonDetailFeature? = nil,
-        toggleFeature: CommonDetailFeature? = nil
+        toggleFeature: CommonDetailFeature? = nil,
+        tileFeature: CommonDetailFeature? = nil
     ) {
         self.routerService = routerService
         self.componentsShowcaseFeature = componentsShowcaseFeature
@@ -74,6 +76,7 @@ final class ComponentsShowcaseCoordinator: RootCoordinatorProtocol {
         self.navigationBarFeature = navigationBarFeature
         self.titleFeature = titleFeature
         self.toggleFeature = toggleFeature
+        self.tileFeature = tileFeature
     }
     
     // MARK: - Methods
@@ -235,7 +238,13 @@ final class ComponentsShowcaseCoordinator: RootCoordinatorProtocol {
             case .tabs:
                 break
             case .tile:
-                break
+                self?.tileFeature = CommonDetailFeature(
+                    cellBuilder: TileModuleBuilder(),
+                    screenTitle: Components.tile.rawValue,
+                    backAction: self?.popVC
+                )
+                guard let builder = self?.tileFeature?.runFlow(data: nil) else { return }
+                viewController = (builder.view as! UIViewController)
             case .title:
                 self?.titleFeature = CommonDetailFeature(
                     cellBuilder: TitleCellBuilder(),
