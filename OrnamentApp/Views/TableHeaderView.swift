@@ -37,7 +37,7 @@ final class TableHeaderView: UIView {
     // MARK: - Methods
     
     func update(with viewProperties: ViewProperties) {
-        label.attributedText = viewProperties.text.textXS(color: .contentSecondary)
+        label.attributedText = viewProperties.text.textXS(color: .Core.Brand.neutral500)
     }
     
     // MARK: - Private methods

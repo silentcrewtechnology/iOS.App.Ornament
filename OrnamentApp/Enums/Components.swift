@@ -9,8 +9,6 @@ import Foundation
 import Extensions
 
 enum Components: String, CaseIterable {
-    // TODO: - Во всех элементах перейти на новую палитру
-    
     case activityIndicator = "Activity indicator"
     // TODO: - Actualize
     case authorizationButton = "Authorization button (not actualized)"
@@ -27,10 +25,12 @@ enum Components: String, CaseIterable {
     case divider = "Divider"
     // TODO: - Add
     case inputTextarea = "Input textarea (not added)"
-    case inputView = "Input view"
+    // TODO: - Actualize
+    case inputView = "Input (not actualized)"
     // TODO: - Actualize
     case inputContryCode = "Input country code (not actualized)"
-    case inputAmountView = "Input amount view"
+    // TODO: - Actualize
+    case inputAmountView = "Input amount view (not actualized)"
     case inputSelect = "Input select"
     case inputOTP = "Input OTP"
     // TODO: - Realize, Add
@@ -59,6 +59,5 @@ enum Components: String, CaseIterable {
     case tabs = "Tabs (not actualized, not added)"
     case tile = "Tile"
     case title = "Title"
-    // TODO: - Actualize
-    case toggle = "Toggle (not actualized)"
+    case toggle = "Toggle"
 }

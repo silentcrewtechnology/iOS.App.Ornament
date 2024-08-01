@@ -12,7 +12,7 @@ import DesignSystem
 import ImagesService
 import Extensions
 
-final class InputTextCellBuilder: NSObject, UITextFieldDelegate, CellBuilder {
+final class InputCellBuilder: NSObject, UITextFieldDelegate, CellBuilder {
     
     // MARK: - Private properties
     

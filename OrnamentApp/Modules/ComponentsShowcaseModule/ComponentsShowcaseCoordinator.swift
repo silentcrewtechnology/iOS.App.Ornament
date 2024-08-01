@@ -202,7 +202,7 @@ final class ComponentsShowcaseCoordinator: RootCoordinatorProtocol {
                 viewController = (builder.view as! UIViewController)
             case .inputView:
                 self?.inputTextFeature = CommonDetailFeature(
-                    cellBuilder: InputTextCellBuilder(),
+                    cellBuilder: InputCellBuilder(),
                     screenTitle: Components.inputView.rawValue,
                     backAction: self?.popVC
                 )
