@@ -6,11 +6,10 @@
 //
 
 import UIKit
-import ArchitectureTableView
-import Components
-import DesignSystem
 import ImagesService
-import Extensions
+import DesignSystem
+import Components
+import ArchitectureTableView
 
 final class NavigationBarCellBuilder: NSObject, UITextFieldDelegate, UISearchResultsUpdating, CellBuilder {
 
@@ -51,9 +50,7 @@ final class NavigationBarCellBuilder: NSObject, UITextFieldDelegate, UISearchRes
                 { [weak self] in self?.updateNavigationBarStyle(variant: .basic(title: "Title", subtitle: "Subtitle", margins: nil)) },
                 { [weak self] in self?.updateNavigationBarStyle(variant: .collapsed(title: "Title")) },
                 { [weak self] in self?.updateNavigationBarStyle(variant: .mainScreen(name: "Name", margins: nil, onProfile: { })) },
-                { [weak self] in
-                    guard let self = self else { return }
-                    self.updateNavigationBarStyle(variant: .basicAmount(title: "Title", subtitle: "Subtitle", spacing: nil, updateAction: #selector(self.updateTapped)))
+                { [weak self] in self?.updateNavigationBarStyle(variant: .basicAmount(title: "Title", subtitle: "Subtitle", spacing: nil, updateAction: { print("Update tapped") }))
                 },
                 { [weak self] in self?.updateNavigationBarStyle(variant: .search(updater: self)) }
             ],
@@ -122,6 +119,4 @@ final class NavigationBarCellBuilder: NSObject, UITextFieldDelegate, UISearchRes
         viewProperties.rightBarButtonItems = items
         navigationBar?.update(with: viewProperties)
     }
-    
-    @objc private func updateTapped() { }
 }
