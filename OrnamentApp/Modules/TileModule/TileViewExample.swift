@@ -30,10 +30,7 @@ private final class TileViewExampleVC: UIViewController {
             let view = TileView()
             let style = TileViewStyle(background: .primary,
                                       widthType: .s)
-            
-            var imageStyle = ImageViewStyle(type: .icon(.ic24UserFilled),
-                                            color: .main)
-            var imageViewProperties = ImageView.ViewProperties()
+            let imageViewProperties = ImageView.ViewProperties()
             
             var viewProperties = TileView.ViewProperties(
                 imageViewProperties: imageViewProperties,
@@ -47,10 +44,7 @@ private final class TileViewExampleVC: UIViewController {
             let view = TileView()
             let style = TileViewStyle(background: .main,
                                       widthType: .s)
-            
-            var imageStyle = ImageViewStyle(type: .icon(.ic24Car),
-                                            color: .primary)
-            var imageViewProperties = ImageView.ViewProperties()
+            let imageViewProperties = ImageView.ViewProperties()
             
             var viewProperties = TileView.ViewProperties(
                 imageViewProperties: imageViewProperties,
@@ -65,10 +59,7 @@ private final class TileViewExampleVC: UIViewController {
             let view = TileView()
             let style = TileViewStyle(background: .primary,
                                       widthType: .m)
-            
-            var imageStyle = ImageViewStyle(type: .icon(.ic24Call),
-                                            color: .primary)
-            var imageViewProperties = ImageView.ViewProperties()
+            let imageViewProperties = ImageView.ViewProperties()
             
             var viewProperties = TileView.ViewProperties(
                 imageViewProperties: imageViewProperties,

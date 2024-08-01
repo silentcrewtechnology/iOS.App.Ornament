@@ -86,7 +86,7 @@ final class ActivityIndicatorCellBuilder: CellBuilder {
     
     private func updateActivityIndicatorAnimating(isAnimating: Bool) {
         let viewProperties: ActivityIndicatorView.ViewProperties = .init(
-            icon: .ic24SpinerLoader.withTintColor(.contentAction),
+            icon: .ic24SpinerLoader.withTintColor(.Core.Brand.accent500),
             size: .init(width: 24, height: 24),
             isAnimating: isAnimating
         )

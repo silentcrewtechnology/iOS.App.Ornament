@@ -63,7 +63,7 @@ final class ToggleCellBuilder: NSObject, UITextFieldDelegate, CellBuilder {
             titles: ["Default", "Pressed", "Disabled"],
             actions: [
                 { [weak self] in self?.updateToggleStyle(state: .default) },
-                { [weak self] in self?.updateToggleStyle(state: .default) }, // Заменить на состояние pressed
+                { [weak self] in self?.updateToggleStyle(state: .pressed) },
                 { [weak self] in self?.updateToggleStyle(state: .disabled) }
             ],
             headerTitle: Constants.componentState
