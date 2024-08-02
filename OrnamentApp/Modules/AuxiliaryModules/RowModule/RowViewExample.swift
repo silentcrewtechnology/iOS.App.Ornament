@@ -164,8 +164,8 @@ private final class RowViewExampleVC: UIViewController {
     private func createWithRowsService() -> UIView {
         var radioViewProperties = RadioView.ViewProperties()
         let radioViewStyle = RadioViewStyle(
-            selection: .checked,
-            state: .default
+            state: .default, 
+            selection: .checked
         )
         radioViewStyle.update(viewProperties: &radioViewProperties)
         

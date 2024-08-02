@@ -17,6 +17,7 @@
 		CE2827A12C3BDB6900156F14 /* CellBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2827A02C3BDB6900156F14 /* CellBuilder.swift */; };
 		CE2827A42C3BDE6600156F14 /* ChipsViewSectionHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2827A32C3BDE6600156F14 /* ChipsViewSectionHelper.swift */; };
 		CE2827B02C3C1ECD00156F14 /* CheckboxCellBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2827AF2C3C1ECD00156F14 /* CheckboxCellBuilder.swift */; };
+		CE3D0CD22C5B648A00A9A5C1 /* RadioModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3D0CD12C5B648900A9A5C1 /* RadioModuleBuilder.swift */; };
 		CE4A7C0A2C3E8ABF00AA7EB4 /* DividerCellBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4A7C092C3E8ABF00AA7EB4 /* DividerCellBuilder.swift */; };
 		CE4A7C0F2C3E8FC300AA7EB4 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4A7C0E2C3E8FC300AA7EB4 /* Constants.swift */; };
 		CE4A7C122C3E9E5900AA7EB4 /* ToggleCellBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4A7C112C3E9E5900AA7EB4 /* ToggleCellBuilder.swift */; };
@@ -96,6 +97,7 @@
 		CE2827A02C3BDB6900156F14 /* CellBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellBuilder.swift; sourceTree = "<group>"; };
 		CE2827A32C3BDE6600156F14 /* ChipsViewSectionHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChipsViewSectionHelper.swift; sourceTree = "<group>"; };
 		CE2827AF2C3C1ECD00156F14 /* CheckboxCellBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckboxCellBuilder.swift; sourceTree = "<group>"; };
+		CE3D0CD12C5B648900A9A5C1 /* RadioModuleBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioModuleBuilder.swift; sourceTree = "<group>"; };
 		CE4A7C092C3E8ABF00AA7EB4 /* DividerCellBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DividerCellBuilder.swift; sourceTree = "<group>"; };
 		CE4A7C0E2C3E8FC300AA7EB4 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		CE4A7C112C3E9E5900AA7EB4 /* ToggleCellBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToggleCellBuilder.swift; sourceTree = "<group>"; };
@@ -514,6 +516,7 @@
 			isa = PBXGroup;
 			children = (
 				CEF1FA182C57D8C200D0D5D2 /* RadioViewExample.swift */,
+				CE3D0CD12C5B648900A9A5C1 /* RadioModuleBuilder.swift */,
 			);
 			path = RadioModule;
 			sourceTree = "<group>";
@@ -737,6 +740,7 @@
 				CEF1FA002C57D77700D0D5D2 /* InputViewExample.swift in Sources */,
 				CE4A7C152C3EBBEE00AA7EB4 /* InputAmountCellBuilder.swift in Sources */,
 				CEF1FA302C57D9D700D0D5D2 /* RowCellExample.swift in Sources */,
+				CE3D0CD22C5B648A00A9A5C1 /* RadioModuleBuilder.swift in Sources */,
 				CEF1FA062C57D78F00D0D5D2 /* InputSelectViewExample.swift in Sources */,
 				CEF1FA1B2C57D8C900D0D5D2 /* SegmentViewExample.swift in Sources */,
 				888955B72914108700A46293 /* SceneDelegate.swift in Sources */,
@@ -985,7 +989,7 @@
 			repositoryURL = "https://gitlab.akbars.tech/abo/ios-architecture-table";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 10.0.0;
+				minimumVersion = 11.0.0;
 			};
 		};
 		CEEB5E652C3568B0000E0215 /* XCRemoteSwiftPackageReference "ios-extensions" */ = {

@@ -82,7 +82,7 @@ private final class RadioViewFeature {
             .init(
                 view: view,
                 viewProperties: .init(),
-                style: .init(selection: .default, state: .default))
+                style: .init(state: .default, selection: .default))
         }
         setupActions()
     }
