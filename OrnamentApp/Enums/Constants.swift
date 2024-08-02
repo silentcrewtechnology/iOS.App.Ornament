@@ -37,3 +37,9 @@ extension Constants {
     static let imageType = "Image Type"
     static let imageColor = "Image Color"
 }
+
+// MARK: Stepper
+extension Constants {
+    static let allCount = "all count"
+    static let activeCount = "active count"
+}
