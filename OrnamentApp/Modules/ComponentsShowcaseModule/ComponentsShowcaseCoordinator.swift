@@ -34,6 +34,7 @@ final class ComponentsShowcaseCoordinator: RootCoordinatorProtocol {
     private var toggleFeature: FeatureCoordinatorProtocol?
     private var navigationBar: NavigationBar?
     private var tileFeature: FeatureCoordinatorProtocol?
+    private var radioFeature: FeatureCoordinatorProtocol?
 
     // MARK: - Life cycle
     
@@ -56,7 +57,8 @@ final class ComponentsShowcaseCoordinator: RootCoordinatorProtocol {
         navigationBarFeature: NavigationBarFeature? = nil,
         titleFeature: CommonDetailFeature? = nil,
         toggleFeature: CommonDetailFeature? = nil,
-        tileFeature: CommonDetailFeature? = nil
+        tileFeature: CommonDetailFeature? = nil,
+        radioFeature: CommonDetailFeature? = nil
     ) {
         self.routerService = routerService
         self.componentsShowcaseFeature = componentsShowcaseFeature
@@ -77,6 +79,7 @@ final class ComponentsShowcaseCoordinator: RootCoordinatorProtocol {
         self.titleFeature = titleFeature
         self.toggleFeature = toggleFeature
         self.tileFeature = tileFeature
+        self.radioFeature = radioFeature
     }
     
     // MARK: - Methods
@@ -226,7 +229,13 @@ final class ComponentsShowcaseCoordinator: RootCoordinatorProtocol {
                 self?.navigationBarFeature?.setNavigationBar(navigationBar: self?.navigationBar)
                 viewController = (builder.view as! UIViewController)
             case .radio:
-                break
+                self?.radioFeature = CommonDetailFeature(
+                    cellBuilder: RadioModuleBuilder(),
+                    screenTitle: Components.radio.rawValue,
+                    backAction: self?.popVC
+                )
+                guard let builder = self?.radioFeature?.runFlow(data: nil) else { return }
+                viewController = (builder.view as! UIViewController)
             case .segmentControl:
                 break
             case .snackBar:

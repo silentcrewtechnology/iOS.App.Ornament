@@ -45,8 +45,7 @@ enum Components: String, CaseIterable {
     case pageControl = "Page control (not actualized, not added)"
     // TODO: - Actualize, Add
     case buttonPay = "Button pay (not actualized, not added)"
-    // TODO: - Add
-    case radio = "Radio (not added)"
+    case radio = "Radio"
     // TODO: - Actualize, Add
     case segmentControl = "Segment control (not actualized, not added)"
     // TODO: - Actualize, Add
