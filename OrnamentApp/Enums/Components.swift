@@ -13,8 +13,7 @@ enum Components: String, CaseIterable {
     // TODO: - Actualize
     case authorizationButton = "Authorization button (not actualized)"
     case badge = "Badge"
-    // TODO: - Actualize, Add
-    case banner = "Banner (not actualized, not added)"
+    case banner = "Banner"
     // TODO: - Actualize, Add
     case button = "Button (not actualized, not added)"
     case buttonIcon = "Button icon"

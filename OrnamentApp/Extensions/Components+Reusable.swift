@@ -155,7 +155,7 @@ extension RadioView: Reusable {
     }
 }
 
-extension SectionMessageView: Reusable {
+extension BannerView: Reusable {
     public func prepareForReuse() {
         update(with: .init())
     }

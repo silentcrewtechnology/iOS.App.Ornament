@@ -13,6 +13,7 @@
 		8889558F29140FFE00A46293 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8889558D29140FFE00A46293 /* LaunchScreen.storyboard */; };
 		888955B72914108700A46293 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 888955B62914108700A46293 /* SceneDelegate.swift */; };
 		CE15ECBC2C57A75A00F148B7 /* TitleCellBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE15ECBB2C57A75A00F148B7 /* TitleCellBuilder.swift */; };
+		CE254A5B2C5CDAC20083EF57 /* BannerCellBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE254A5A2C5CDAC20083EF57 /* BannerCellBuilder.swift */; };
 		CE28279E2C3BDB2600156F14 /* CommonDetailFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE28279D2C3BDB2600156F14 /* CommonDetailFeature.swift */; };
 		CE2827A12C3BDB6900156F14 /* CellBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2827A02C3BDB6900156F14 /* CellBuilder.swift */; };
 		CE2827A42C3BDE6600156F14 /* ChipsViewSectionHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2827A32C3BDE6600156F14 /* ChipsViewSectionHelper.swift */; };
@@ -50,7 +51,7 @@
 		CEF1F9DD2C57BC3000D0D5D2 /* ActivityIndicatorExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF1F9DC2C57BC3000D0D5D2 /* ActivityIndicatorExample.swift */; };
 		CEF1F9DF2C57BC4200D0D5D2 /* AuthorizationButtonExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF1F9DE2C57BC4200D0D5D2 /* AuthorizationButtonExample.swift */; };
 		CEF1F9EE2C57D14A00D0D5D2 /* BadgeExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF1F9ED2C57D14A00D0D5D2 /* BadgeExample.swift */; };
-		CEF1F9F02C57D65C00D0D5D2 /* SectionMessageExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF1F9EF2C57D65C00D0D5D2 /* SectionMessageExample.swift */; };
+		CEF1F9F02C57D65C00D0D5D2 /* BannerViewExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF1F9EF2C57D65C00D0D5D2 /* BannerViewExample.swift */; };
 		CEF1F9F22C57D66500D0D5D2 /* ButtonViewExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF1F9F12C57D66500D0D5D2 /* ButtonViewExample.swift */; };
 		CEF1F9F42C57D70D00D0D5D2 /* ButtonIconExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF1F9F32C57D70D00D0D5D2 /* ButtonIconExample.swift */; };
 		CEF1F9F62C57D74900D0D5D2 /* CardImageViewExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF1F9F52C57D74900D0D5D2 /* CardImageViewExample.swift */; };
@@ -93,6 +94,7 @@
 		8889559029140FFE00A46293 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		888955B62914108700A46293 /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		CE15ECBB2C57A75A00F148B7 /* TitleCellBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleCellBuilder.swift; sourceTree = "<group>"; };
+		CE254A5A2C5CDAC20083EF57 /* BannerCellBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerCellBuilder.swift; sourceTree = "<group>"; };
 		CE28279D2C3BDB2600156F14 /* CommonDetailFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonDetailFeature.swift; sourceTree = "<group>"; };
 		CE2827A02C3BDB6900156F14 /* CellBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellBuilder.swift; sourceTree = "<group>"; };
 		CE2827A32C3BDE6600156F14 /* ChipsViewSectionHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChipsViewSectionHelper.swift; sourceTree = "<group>"; };
@@ -127,7 +129,7 @@
 		CEF1F9DC2C57BC3000D0D5D2 /* ActivityIndicatorExample.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityIndicatorExample.swift; sourceTree = "<group>"; };
 		CEF1F9DE2C57BC4200D0D5D2 /* AuthorizationButtonExample.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthorizationButtonExample.swift; sourceTree = "<group>"; };
 		CEF1F9ED2C57D14A00D0D5D2 /* BadgeExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeExample.swift; sourceTree = "<group>"; };
-		CEF1F9EF2C57D65C00D0D5D2 /* SectionMessageExample.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SectionMessageExample.swift; sourceTree = "<group>"; };
+		CEF1F9EF2C57D65C00D0D5D2 /* BannerViewExample.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BannerViewExample.swift; sourceTree = "<group>"; };
 		CEF1F9F12C57D66500D0D5D2 /* ButtonViewExample.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonViewExample.swift; sourceTree = "<group>"; };
 		CEF1F9F32C57D70D00D0D5D2 /* ButtonIconExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonIconExample.swift; sourceTree = "<group>"; };
 		CEF1F9F52C57D74900D0D5D2 /* CardImageViewExample.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardImageViewExample.swift; sourceTree = "<group>"; };
@@ -459,7 +461,8 @@
 		CEF1F9E02C57BC5A00D0D5D2 /* BannerModule */ = {
 			isa = PBXGroup;
 			children = (
-				CEF1F9EF2C57D65C00D0D5D2 /* SectionMessageExample.swift */,
+				CE254A5A2C5CDAC20083EF57 /* BannerCellBuilder.swift */,
+				CEF1F9EF2C57D65C00D0D5D2 /* BannerViewExample.swift */,
 			);
 			path = BannerModule;
 			sourceTree = "<group>";
@@ -515,8 +518,8 @@
 		CEF1F9E72C57D02F00D0D5D2 /* RadioModule */ = {
 			isa = PBXGroup;
 			children = (
-				CEF1FA182C57D8C200D0D5D2 /* RadioViewExample.swift */,
 				CE3D0CD12C5B648900A9A5C1 /* RadioModuleBuilder.swift */,
+				CEF1FA182C57D8C200D0D5D2 /* RadioViewExample.swift */,
 			);
 			path = RadioModule;
 			sourceTree = "<group>";
@@ -699,6 +702,7 @@
 				CEF1FA152C57D8AA00D0D5D2 /* PageControlExample.swift in Sources */,
 				CEA336022C36A9B800880A1F /* ChipsViewUpdater.swift in Sources */,
 				CEC824B82C4E90F200891643 /* ButtonIconModuleBuilder.swift in Sources */,
+				CE254A5B2C5CDAC20083EF57 /* BannerCellBuilder.swift in Sources */,
 				CEA3360E2C36C0E100880A1F /* ComponentsShowcaseCoordinator.swift in Sources */,
 				CEF1FA192C57D8C200D0D5D2 /* RadioViewExample.swift in Sources */,
 				CEF1F9DD2C57BC3000D0D5D2 /* ActivityIndicatorExample.swift in Sources */,
@@ -751,7 +755,7 @@
 				CEA336162C36D11000880A1F /* TableHeaderView.swift in Sources */,
 				CEF1FA292C57D90600D0D5D2 /* ToggleViewExample.swift in Sources */,
 				CEF1F9F42C57D70D00D0D5D2 /* ButtonIconExample.swift in Sources */,
-				CEF1F9F02C57D65C00D0D5D2 /* SectionMessageExample.swift in Sources */,
+				CEF1F9F02C57D65C00D0D5D2 /* BannerViewExample.swift in Sources */,
 				CEF1FA082C57D79B00D0D5D2 /* InputOTPViewExample.swift in Sources */,
 				CEF1FA0A2C57D7A400D0D5D2 /* InputOTPItemExample.swift in Sources */,
 				CE2827A42C3BDE6600156F14 /* ChipsViewSectionHelper.swift in Sources */,
@@ -989,7 +993,7 @@
 			repositoryURL = "https://gitlab.akbars.tech/abo/ios-architecture-table";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 11.0.0;
+				minimumVersion = 12.0.0;
 			};
 		};
 		CEEB5E652C3568B0000E0215 /* XCRemoteSwiftPackageReference "ios-extensions" */ = {

@@ -19,6 +19,7 @@ final class ComponentsShowcaseCoordinator: RootCoordinatorProtocol {
     private var activityIndicatorFeature: FeatureCoordinatorProtocol?
     private var authorizationButtonFeature: FeatureCoordinatorProtocol?
     private var badgeFeature: FeatureCoordinatorProtocol?
+    private var bannerFeature: FeatureCoordinatorProtocol?
     private var checkboxFeature: FeatureCoordinatorProtocol?
     private var chipsFeature: FeatureCoordinatorProtocol?
     private var dividerFeature: FeatureCoordinatorProtocol?
@@ -44,6 +45,7 @@ final class ComponentsShowcaseCoordinator: RootCoordinatorProtocol {
         activityIndicatorFeature: CommonDetailFeature? = nil,
         authorizationButtonFeature: CommonDetailFeature? = nil,
         badgeFeature: CommonDetailFeature? = nil,
+        bannerFeature: CommonDetailFeature? = nil,
         buttonIconFeature: CommonDetailFeature? = nil,
         checkboxFeature: CommonDetailFeature? = nil,
         chipsFeature: CommonDetailFeature? = nil,
@@ -65,6 +67,7 @@ final class ComponentsShowcaseCoordinator: RootCoordinatorProtocol {
         self.activityIndicatorFeature = activityIndicatorFeature
         self.authorizationButtonFeature = authorizationButtonFeature
         self.badgeFeature = badgeFeature
+        self.bannerFeature = bannerFeature
         self.buttonIconFeature = buttonIconFeature
         self.checkboxFeature = checkboxFeature
         self.chipsFeature = chipsFeature
@@ -126,7 +129,13 @@ final class ComponentsShowcaseCoordinator: RootCoordinatorProtocol {
                 guard let builder = self?.badgeFeature?.runFlow(data: nil) else { return }
                 viewController = (builder.view as! UIViewController)
             case .banner:
-                break
+                self?.bannerFeature = CommonDetailFeature(
+                    cellBuilder: BannerCellBuilder(),
+                    screenTitle: Components.banner.rawValue,
+                    backAction: self?.popVC
+                )
+                guard let builder = self?.bannerFeature?.runFlow(data: nil) else { return }
+                viewController = (builder.view as! UIViewController)
             case .button:
                 break
             case .buttonIcon:
