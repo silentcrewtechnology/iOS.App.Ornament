@@ -47,8 +47,7 @@ enum Components: String, CaseIterable {
     case radio = "Radio"
     // TODO: - Actualize, Add
     case segmentControl = "Segment control (not actualized, not added)"
-    // TODO: - Actualize, Add
-    case snackBar = "Snack bar (not actualized, not added)"
+    case snackBar = "SnackBar"
     case stepper = "Stepper"
     // TODO: - Realize, Add
     case stories = "Stories (not realized, not added)"

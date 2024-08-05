@@ -13,6 +13,7 @@
 		8889558F29140FFE00A46293 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8889558D29140FFE00A46293 /* LaunchScreen.storyboard */; };
 		888955B72914108700A46293 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 888955B62914108700A46293 /* SceneDelegate.swift */; };
 		CE15ECBC2C57A75A00F148B7 /* TitleCellBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE15ECBB2C57A75A00F148B7 /* TitleCellBuilder.swift */; };
+		CE2130B72C60C90000AB69BE /* SnackBarCellBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2130B62C60C90000AB69BE /* SnackBarCellBuilder.swift */; };
 		CE254A5B2C5CDAC20083EF57 /* BannerCellBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE254A5A2C5CDAC20083EF57 /* BannerCellBuilder.swift */; };
 		CE28279E2C3BDB2600156F14 /* CommonDetailFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE28279D2C3BDB2600156F14 /* CommonDetailFeature.swift */; };
 		CE2827A12C3BDB6900156F14 /* CellBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2827A02C3BDB6900156F14 /* CellBuilder.swift */; };
@@ -95,6 +96,7 @@
 		8889559029140FFE00A46293 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		888955B62914108700A46293 /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		CE15ECBB2C57A75A00F148B7 /* TitleCellBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleCellBuilder.swift; sourceTree = "<group>"; };
+		CE2130B62C60C90000AB69BE /* SnackBarCellBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnackBarCellBuilder.swift; sourceTree = "<group>"; };
 		CE254A5A2C5CDAC20083EF57 /* BannerCellBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerCellBuilder.swift; sourceTree = "<group>"; };
 		CE28279D2C3BDB2600156F14 /* CommonDetailFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonDetailFeature.swift; sourceTree = "<group>"; };
 		CE2827A02C3BDB6900156F14 /* CellBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellBuilder.swift; sourceTree = "<group>"; };
@@ -305,6 +307,7 @@
 		CE6439F12C58FAD8002491EA /* SnackBarModule */ = {
 			isa = PBXGroup;
 			children = (
+				CE2130B62C60C90000AB69BE /* SnackBarCellBuilder.swift */,
 				CE6439F22C58FAEE002491EA /* SnackBarExample.swift */,
 			);
 			path = SnackBarModule;
@@ -713,6 +716,7 @@
 				CEF1F9EE2C57D14A00D0D5D2 /* BadgeExample.swift in Sources */,
 				CEF1FA022C57D78000D0D5D2 /* InputPhoneNumberViewExample.swift in Sources */,
 				CE6439F32C58FAEE002491EA /* SnackBarExample.swift in Sources */,
+				CE2130B72C60C90000AB69BE /* SnackBarCellBuilder.swift in Sources */,
 				CEF2DE712C4150130065C1BD /* InputCellBuilder.swift in Sources */,
 				CEF1F9F82C57D75000D0D5D2 /* CheckboxViewExample.swift in Sources */,
 				CE694C372C3D56090064C0C0 /* ChipsCellBuilder.swift in Sources */,

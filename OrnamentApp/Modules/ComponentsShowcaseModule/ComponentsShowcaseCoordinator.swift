@@ -37,6 +37,7 @@ final class ComponentsShowcaseCoordinator: RootCoordinatorProtocol {
     private var tileFeature: FeatureCoordinatorProtocol?
     private var radioFeature: FeatureCoordinatorProtocol?
     private var stepperFeature: FeatureCoordinatorProtocol?
+    private var snackBarFeature: FeatureCoordinatorProtocol?
 
     // MARK: - Life cycle
     
@@ -62,7 +63,8 @@ final class ComponentsShowcaseCoordinator: RootCoordinatorProtocol {
         toggleFeature: CommonDetailFeature? = nil,
         tileFeature: CommonDetailFeature? = nil,
         radioFeature: CommonDetailFeature? = nil,
-        stepperFeature: CommonDetailFeature? = nil
+        stepperFeature: CommonDetailFeature? = nil,
+        snackBarFeature: CommonDetailFeature? = nil
     ) {
         self.routerService = routerService
         self.componentsShowcaseFeature = componentsShowcaseFeature
@@ -86,6 +88,7 @@ final class ComponentsShowcaseCoordinator: RootCoordinatorProtocol {
         self.tileFeature = tileFeature
         self.radioFeature = radioFeature
         self.stepperFeature = stepperFeature
+        self.snackBarFeature = snackBarFeature
     }
     
     // MARK: - Methods
@@ -251,7 +254,13 @@ final class ComponentsShowcaseCoordinator: RootCoordinatorProtocol {
             case .segmentControl:
                 break
             case .snackBar:
-                break
+                self?.snackBarFeature = CommonDetailFeature(
+                    cellBuilder: SnackBarCellBuilder(),
+                    screenTitle: Components.snackBar.rawValue,
+                    backAction: self?.popVC
+                )
+                guard let builder = self?.snackBarFeature?.runFlow(data: nil) else { return }
+                viewController = (builder.view as! UIViewController)
             case .stepper:
                 self?.stepperFeature = CommonDetailFeature(
                     cellBuilder: StepperModuleBuilder(),
