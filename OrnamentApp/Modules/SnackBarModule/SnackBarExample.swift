@@ -17,7 +17,7 @@ private final class SnackBarViewExampleVC: UIViewController {
         let view = SnackBarView()
         var viewProperties = SnackBarView.ViewProperties(
             title: "Title".attributed,
-            content: "Content".attributed,
+            subtitle: "Content".attributed,
             closeButton: .init(),
             bottomButton: .init(
                 title: "Button".attributed,
@@ -26,7 +26,6 @@ private final class SnackBarViewExampleVC: UIViewController {
         )
         
         let style = SnackBarViewStyle(
-            color: .light,
             variant: .success,
             delay: .infinite
         )
