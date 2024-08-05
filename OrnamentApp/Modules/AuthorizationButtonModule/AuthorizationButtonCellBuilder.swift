@@ -18,16 +18,15 @@ final class AuthorizationButtonCellBuilder: NSObject, UITextFieldDelegate, CellB
     
     private let chipsViewSectionHelper = ChipsViewSectionHelper()
     private var authorizationButton: AuthorizationButton?
-    private var variant: AuthorizationButtonStyle.Variant = .gosuslugi
-    private var isInversed = false
     private var viewProperties: AuthorizationButton.ViewProperties = .init(
-        image: .ic24Book,
+        image: .init(resource: .authorizationButtonGosuslugi),
         title: NSMutableAttributedString(string: "Войти через Госуслуги"),
         onTap: { }
     )
     private var style: AuthorizationButtonStyle = .init(
         variant: .gosuslugi,
-        isInversed: false
+        state: .default,
+        color: .accent
     )
     
     // MARK: - Methods
@@ -37,24 +36,33 @@ final class AuthorizationButtonCellBuilder: NSObject, UITextFieldDelegate, CellB
             createAuthorizationButtonSection(),
             createInputTextSection(),
             createVariantSection(),
-            createInversionSection()
+            createStateSection(),
+            createColorSection()
         ]
     }
+}
     
-    // MARK: - Private methods
-    
+    // MARK: - AuthorizationButton
+extension AuthorizationButtonCellBuilder {
     private func createAuthorizationButtonSection() -> GenericTableViewSectionModel {
         let row = GenericTableViewRowModel(
             with: GenericTableViewCellWrapper<AuthorizationButton>.self,
             configuration: { [weak self] cell, _ in
                 guard let self = self else { return }
-
-                self.style.update(viewProperties: &self.viewProperties)
-                cell.containedView.update(with: self.viewProperties)
                 
-                cell.contentInset = .init(top: .zero, left: 16, bottom: 16, right: 16)
-                cell.selectionStyle = .none
                 self.authorizationButton = cell.containedView
+                
+                self.style.update(viewProperties: &self.viewProperties)
+                self.authorizationButton?.update(with: self.viewProperties)
+ 
+                cell.selectionStyle = .none
+                
+                self.authorizationButton?.snp.remakeConstraints{
+                    $0.top.equalToSuperview()
+                    $0.leading.equalToSuperview().offset(16)
+                    $0.trailing.equalToSuperview().offset(-16)
+                    $0.bottom.equalToSuperview().offset(-16)
+                }
             },
             initializesFromNib: false
         )
@@ -64,7 +72,10 @@ final class AuthorizationButtonCellBuilder: NSObject, UITextFieldDelegate, CellB
         section.makeHeader(title: Constants.componentTitle)
         return section
     }
+}
     
+// MARK: - InputText
+extension AuthorizationButtonCellBuilder {
     private func createInputTextSection() -> GenericTableViewSectionModel {
         let row = GenericTableViewRowModel(
             with: GenericTableViewCellWrapper<InputView>.self,
@@ -92,48 +103,74 @@ final class AuthorizationButtonCellBuilder: NSObject, UITextFieldDelegate, CellB
         return section
     }
     
+    @objc private func onTextChange(textField: UITextField) {
+        viewProperties.title = NSMutableAttributedString(string: textField.text ?? "")
+        style.update(viewProperties: &viewProperties)
+        authorizationButton?.update(with: viewProperties)
+    }
+}
+    
+// MARK: Styles
+extension AuthorizationButtonCellBuilder {
     private func createVariantSection() -> GenericTableViewSectionModel {
         return chipsViewSectionHelper.makeHorizontalSectionWithScroll(
-            titles: ["Gosuslugi", "Standart"],
+            titles: ["gosuslugi", "akbars"],
             actions: [
-                { [weak self] in self?.updateButtonStyle(variant: .gosuslugi, isInversed: nil) },
-                { [weak self] in self?.updateButtonStyle(variant: .standart, isInversed: nil) }
+                { [weak self] in
+                    self?.viewProperties.image = .init(resource: .authorizationButtonGosuslugi)
+                    self?.viewProperties.title = NSMutableAttributedString(string: "Войти через Госуслуги")
+                    self?.updateStyle(newVariant: .gosuslugi)
+                },
+                { [weak self] in
+                    self?.viewProperties.image = .init(resource: .authorizationButtonAB)
+                    self?.viewProperties.title = NSMutableAttributedString(string: "Войти через личный кабинет")
+                    self?.updateStyle(newVariant: .akbars)
+                }
             ],
             headerTitle: Constants.componentVariant
         )
     }
     
-    private func createInversionSection() -> GenericTableViewSectionModel {
+    private func createStateSection() -> GenericTableViewSectionModel {
         return chipsViewSectionHelper.makeHorizontalSectionWithScroll(
-            titles: ["False", "True"],
+            titles: ["default", "pressed"],
             actions: [
-                { [weak self] in self?.updateButtonStyle(variant: nil, isInversed: false) },
-                { [weak self] in self?.updateButtonStyle(variant: nil, isInversed: true) }
+                { [weak self] in
+                    self?.updateStyle(newState: .default)
+                },
+                { [weak self] in
+                    self?.updateStyle(newState: .pressed)
+                }
             ],
-            headerTitle: Constants.componentInversion
+            headerTitle: Constants.componentState
         )
     }
     
-    private func updateButtonStyle(
-        variant: AuthorizationButtonStyle.Variant?,
-        isInversed: Bool?
-    ) {
-        if let variant = variant {
-            self.variant = variant
-        }
-        
-        if let isInversed = isInversed {
-            self.isInversed = isInversed
-        }
-        
-        style = .init(variant: self.variant, isInversed: self.isInversed)
-        style.update(viewProperties: &viewProperties)
-        authorizationButton?.update(with: viewProperties)
+    private func createColorSection() -> GenericTableViewSectionModel {
+        return chipsViewSectionHelper.makeHorizontalSectionWithScroll(
+            titles: ["accent", "light"],
+            actions: [
+                { [weak self] in
+                    self?.updateStyle(newColor: .accent)
+                },
+                { [weak self] in
+                    self?.updateStyle(newColor: .light)
+                }
+            ],
+            headerTitle: Constants.componentColor
+        )
     }
     
-    @objc private func onTextChange(textField: UITextField) {
-        viewProperties.title = NSMutableAttributedString(string: textField.text ?? "")
-        style.update(viewProperties: &viewProperties)
+    private func updateStyle(
+        newVariant: AuthorizationButtonStyle.Variant? = nil,
+        newState: AuthorizationButtonStyle.State? = nil,
+        newColor: AuthorizationButtonStyle.Color? = nil
+    ) {
+        style.update(
+            variant: newVariant,
+            state: newState,
+            color: newColor,
+            viewProperties: &viewProperties)
         authorizationButton?.update(with: viewProperties)
     }
 }

@@ -22,7 +22,8 @@ private final class AuthorizationButtonExampleVC: UIViewController {
         
         let style = AuthorizationButtonStyle(
             variant: .gosuslugi,
-            isInversed: true
+            state: .default,
+            color: .accent
         )
         var viewProperties = AuthorizationButton.ViewProperties(
             image: .ic24Book,
