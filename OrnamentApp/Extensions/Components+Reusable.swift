@@ -143,7 +143,7 @@ extension PageControl: Reusable {
     }
 }
 
-extension PaymentButton: Reusable {
+extension ButtonPay: Reusable {
     public func prepareForReuse() {
         update(with: .init())
     }

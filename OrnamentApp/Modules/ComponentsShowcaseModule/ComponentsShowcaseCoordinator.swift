@@ -38,6 +38,7 @@ final class ComponentsShowcaseCoordinator: RootCoordinatorProtocol {
     private var radioFeature: FeatureCoordinatorProtocol?
     private var stepperFeature: FeatureCoordinatorProtocol?
     private var snackBarFeature: FeatureCoordinatorProtocol?
+    private var buttonPayFeature: FeatureCoordinatorProtocol?
 
     // MARK: - Life cycle
     
@@ -64,7 +65,8 @@ final class ComponentsShowcaseCoordinator: RootCoordinatorProtocol {
         tileFeature: CommonDetailFeature? = nil,
         radioFeature: CommonDetailFeature? = nil,
         stepperFeature: CommonDetailFeature? = nil,
-        snackBarFeature: CommonDetailFeature? = nil
+        snackBarFeature: CommonDetailFeature? = nil,
+        buttonPayFeature: CommonDetailFeature? = nil
     ) {
         self.routerService = routerService
         self.componentsShowcaseFeature = componentsShowcaseFeature
@@ -89,6 +91,7 @@ final class ComponentsShowcaseCoordinator: RootCoordinatorProtocol {
         self.radioFeature = radioFeature
         self.stepperFeature = stepperFeature
         self.snackBarFeature = snackBarFeature
+        self.buttonPayFeature = buttonPayFeature
     }
     
     // MARK: - Methods
@@ -237,7 +240,13 @@ final class ComponentsShowcaseCoordinator: RootCoordinatorProtocol {
             case .pageControl:
                 break
             case .buttonPay:
-                break
+                self?.buttonPayFeature = CommonDetailFeature(
+                    cellBuilder: ButtonPayCellBuilder(),
+                    screenTitle: Components.buttonPay.rawValue,
+                    backAction: self?.popVC
+                )
+                guard let builder = self?.buttonPayFeature?.runFlow(data: nil) else { return }
+                viewController = (builder.view as! UIViewController)
             case .navigationBar:
                 self?.navigationBarFeature = NavigationBarFeature()
                 guard let builder = self?.navigationBarFeature?.runFlow(data: nil) else { return }
