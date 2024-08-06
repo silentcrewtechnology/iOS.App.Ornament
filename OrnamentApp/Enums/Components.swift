@@ -16,6 +16,7 @@ enum Components: String, CaseIterable {
     // TODO: - Actualize, Add
     case button = "Button (not actualized, not added)"
     case buttonIcon = "Button icon"
+    case buttonPay = "Button pay"
     // TODO: - Actualize, Add
     case cardImage = "Card image (not actualized, not added)"
     case checkbox = "Checkbox"
@@ -41,8 +42,6 @@ enum Components: String, CaseIterable {
     case navigationBar = "Navigation bar"
     // TODO: - Actualize, Add
     case pageControl = "Page control (not actualized, not added)"
-    // TODO: - Actualize, Add
-    case buttonPay = "Button pay (not actualized, not added)"
     case radio = "Radio"
     // TODO: - Actualize, Add
     case segmentControl = "Segment control (not actualized, not added)"

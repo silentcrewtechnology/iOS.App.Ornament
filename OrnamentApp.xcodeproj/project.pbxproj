@@ -72,7 +72,7 @@
 		CEF1FA112C57D89400D0D5D2 /* LabelViewExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF1FA102C57D89400D0D5D2 /* LabelViewExample.swift */; };
 		CEF1FA132C57D8A100D0D5D2 /* NavigationBarExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF1FA122C57D8A100D0D5D2 /* NavigationBarExample.swift */; };
 		CEF1FA152C57D8AA00D0D5D2 /* PageControlExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF1FA142C57D8AA00D0D5D2 /* PageControlExample.swift */; };
-		CEF1FA172C57D8BB00D0D5D2 /* PaymentButtonExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF1FA162C57D8BB00D0D5D2 /* PaymentButtonExample.swift */; };
+		CEF1FA172C57D8BB00D0D5D2 /* ButtonPayExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF1FA162C57D8BB00D0D5D2 /* ButtonPayExample.swift */; };
 		CEF1FA192C57D8C200D0D5D2 /* RadioViewExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF1FA182C57D8C200D0D5D2 /* RadioViewExample.swift */; };
 		CEF1FA1B2C57D8C900D0D5D2 /* SegmentViewExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF1FA1A2C57D8C900D0D5D2 /* SegmentViewExample.swift */; };
 		CEF1FA212C57D8ED00D0D5D2 /* StepperViewExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF1FA202C57D8ED00D0D5D2 /* StepperViewExample.swift */; };
@@ -85,6 +85,7 @@
 		CEF1FA322C57D9DE00D0D5D2 /* RowViewExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF1FA312C57D9DE00D0D5D2 /* RowViewExample.swift */; };
 		CEF2DE6E2C4130840065C1BD /* InputSelectCellBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF2DE6D2C4130840065C1BD /* InputSelectCellBuilder.swift */; };
 		CEF2DE712C4150130065C1BD /* InputCellBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF2DE702C4150130065C1BD /* InputCellBuilder.swift */; };
+		CEF8CD762C622F55009B8409 /* ButtonPayCellBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF8CD752C622F55009B8409 /* ButtonPayCellBuilder.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -152,7 +153,7 @@
 		CEF1FA102C57D89400D0D5D2 /* LabelViewExample.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LabelViewExample.swift; sourceTree = "<group>"; };
 		CEF1FA122C57D8A100D0D5D2 /* NavigationBarExample.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationBarExample.swift; sourceTree = "<group>"; };
 		CEF1FA142C57D8AA00D0D5D2 /* PageControlExample.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageControlExample.swift; sourceTree = "<group>"; };
-		CEF1FA162C57D8BB00D0D5D2 /* PaymentButtonExample.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaymentButtonExample.swift; sourceTree = "<group>"; };
+		CEF1FA162C57D8BB00D0D5D2 /* ButtonPayExample.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonPayExample.swift; sourceTree = "<group>"; };
 		CEF1FA182C57D8C200D0D5D2 /* RadioViewExample.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RadioViewExample.swift; sourceTree = "<group>"; };
 		CEF1FA1A2C57D8C900D0D5D2 /* SegmentViewExample.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SegmentViewExample.swift; sourceTree = "<group>"; };
 		CEF1FA202C57D8ED00D0D5D2 /* StepperViewExample.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StepperViewExample.swift; sourceTree = "<group>"; };
@@ -165,6 +166,7 @@
 		CEF1FA312C57D9DE00D0D5D2 /* RowViewExample.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RowViewExample.swift; sourceTree = "<group>"; };
 		CEF2DE6D2C4130840065C1BD /* InputSelectCellBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputSelectCellBuilder.swift; sourceTree = "<group>"; };
 		CEF2DE702C4150130065C1BD /* InputCellBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputCellBuilder.swift; sourceTree = "<group>"; };
+		CEF8CD752C622F55009B8409 /* ButtonPayCellBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonPayCellBuilder.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -413,6 +415,7 @@
 				CEF1F9E02C57BC5A00D0D5D2 /* BannerModule */,
 				CEF1F9E12C57BC6A00D0D5D2 /* ButtonModule */,
 				CEC824B62C4E90BE00891643 /* ButtonIconModuleBuilder */,
+				CEF1F9E62C57D01A00D0D5D2 /* ButtonPayModule */,
 				CEF1F9E22C57BC7900D0D5D2 /* CardImageModule */,
 				CE2827AE2C3C1EBA00156F14 /* CheckboxModule */,
 				CE694C352C3D4E2A0064C0C0 /* ChipsModule */,
@@ -427,7 +430,6 @@
 				CEF1F9E42C57CD1500D0D5D2 /* LabelModule */,
 				CE5AE5222C5385AD00DD7BC4 /* NavigationBarModule */,
 				CEF1F9E52C57CD2B00D0D5D2 /* PageControlModule */,
-				CEF1F9E62C57D01A00D0D5D2 /* PayementButtonModule */,
 				CEF1F9E72C57D02F00D0D5D2 /* RadioModule */,
 				CEF1F9E82C57D04200D0D5D2 /* SegmentControlModule */,
 				CE6439F12C58FAD8002491EA /* SnackBarModule */,
@@ -512,12 +514,13 @@
 			path = PageControlModule;
 			sourceTree = "<group>";
 		};
-		CEF1F9E62C57D01A00D0D5D2 /* PayementButtonModule */ = {
+		CEF1F9E62C57D01A00D0D5D2 /* ButtonPayModule */ = {
 			isa = PBXGroup;
 			children = (
-				CEF1FA162C57D8BB00D0D5D2 /* PaymentButtonExample.swift */,
+				CEF8CD752C622F55009B8409 /* ButtonPayCellBuilder.swift */,
+				CEF1FA162C57D8BB00D0D5D2 /* ButtonPayExample.swift */,
 			);
-			path = PayementButtonModule;
+			path = ButtonPayModule;
 			sourceTree = "<group>";
 		};
 		CEF1F9E72C57D02F00D0D5D2 /* RadioModule */ = {
@@ -722,7 +725,7 @@
 				CE694C372C3D56090064C0C0 /* ChipsCellBuilder.swift in Sources */,
 				CEEB5E642C35681A000E0215 /* ComponentsShowcaseCellBuilder.swift in Sources */,
 				CEF1FA322C57D9DE00D0D5D2 /* RowViewExample.swift in Sources */,
-				CEF1FA172C57D8BB00D0D5D2 /* PaymentButtonExample.swift in Sources */,
+				CEF1FA172C57D8BB00D0D5D2 /* ButtonPayExample.swift in Sources */,
 				CE4A7C0A2C3E8ABF00AA7EB4 /* DividerCellBuilder.swift in Sources */,
 				CEF1FA0F2C57D88C00D0D5D2 /* HintViewExample.swift in Sources */,
 				CEF1FA0C2C57D7AA00D0D5D2 /* ImageViewExample.swift in Sources */,
@@ -766,6 +769,7 @@
 				CEF1F9F02C57D65C00D0D5D2 /* BannerViewExample.swift in Sources */,
 				CEF1FA082C57D79B00D0D5D2 /* InputOTPViewExample.swift in Sources */,
 				CEF1FA0A2C57D7A400D0D5D2 /* InputOTPItemExample.swift in Sources */,
+				CEF8CD762C622F55009B8409 /* ButtonPayCellBuilder.swift in Sources */,
 				CE2827A42C3BDE6600156F14 /* ChipsViewSectionHelper.swift in Sources */,
 				CEEB5E712C3596E6000E0215 /* Components+Reusable.swift in Sources */,
 				CEC824C22C512D4B00891643 /* ImageModuleBuilder.swift in Sources */,
@@ -1001,7 +1005,7 @@
 			repositoryURL = "https://gitlab.akbars.tech/abo/ios-architecture-table";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 13.0.0;
+				minimumVersion = 14.0.0;
 			};
 		};
 		CEEB5E652C3568B0000E0215 /* XCRemoteSwiftPackageReference "ios-extensions" */ = {

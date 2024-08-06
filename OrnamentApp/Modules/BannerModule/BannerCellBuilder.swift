@@ -54,7 +54,7 @@ final class BannerCellBuilder: NSObject, UITextFieldDelegate, CellBuilder {
         row.rowHeight = 88
         
         let section = GenericTableViewSectionModel(with: [row])
-        section.makeHeader(title: Constants.componentText.localized)
+        section.makeHeader(title: Constants.componentTitle)
         return section
     }
     
