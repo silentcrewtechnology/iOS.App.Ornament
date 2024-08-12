@@ -38,6 +38,7 @@ final class ComponentsShowcaseCoordinator: RootCoordinatorProtocol {
     private var radioFeature: FeatureCoordinatorProtocol?
     private var stepperFeature: FeatureCoordinatorProtocol?
     private var snackBarFeature: FeatureCoordinatorProtocol?
+    private var buttonFeature: FeatureCoordinatorProtocol?
     private var buttonPayFeature: FeatureCoordinatorProtocol?
 
     // MARK: - Life cycle
@@ -66,6 +67,7 @@ final class ComponentsShowcaseCoordinator: RootCoordinatorProtocol {
         radioFeature: CommonDetailFeature? = nil,
         stepperFeature: CommonDetailFeature? = nil,
         snackBarFeature: CommonDetailFeature? = nil,
+        buttonFeature: CommonDetailFeature? = nil,
         buttonPayFeature: CommonDetailFeature? = nil
     ) {
         self.routerService = routerService
@@ -91,6 +93,7 @@ final class ComponentsShowcaseCoordinator: RootCoordinatorProtocol {
         self.radioFeature = radioFeature
         self.stepperFeature = stepperFeature
         self.snackBarFeature = snackBarFeature
+        self.buttonFeature = buttonFeature
         self.buttonPayFeature = buttonPayFeature
     }
     
@@ -146,7 +149,13 @@ final class ComponentsShowcaseCoordinator: RootCoordinatorProtocol {
                 guard let builder = self?.bannerFeature?.runFlow(data: nil) else { return }
                 viewController = (builder.view as! UIViewController)
             case .button:
-                break
+                self?.buttonFeature = CommonDetailFeature(
+                    cellBuilder: ButtonModuleBuilder(),
+                    screenTitle: Components.button.rawValue,
+                    backAction: self?.popVC
+                )
+                guard let builder = self?.buttonFeature?.runFlow(data: nil) else { return }
+                viewController = (builder.view as! UIViewController)
             case .buttonIcon:
                 self?.buttonIconFeature = CommonDetailFeature(
                     cellBuilder: ButtonIconModuleBuilder(),
