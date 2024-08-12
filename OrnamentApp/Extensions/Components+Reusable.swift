@@ -41,7 +41,7 @@ extension ButtonIcon: Reusable {
     }
 }
 
-extension CardImageView: Reusable {
+extension CardView: Reusable {
     public func prepareForReuse() {
         update(with: .init())
     }

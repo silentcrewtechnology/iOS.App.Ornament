@@ -30,6 +30,7 @@ enum Constants {
     static let componentTitleText = "Title text"
     static let componentSubtitleText = "Subtitle text"
     static let componentButtonText = "Button text"
+    static let componentStack = "Stack"
     static let componentIcon = "Icon"
 }
 

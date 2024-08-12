@@ -12,6 +12,7 @@
 		8889558C29140FFE00A46293 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8889558B29140FFE00A46293 /* Assets.xcassets */; };
 		8889558F29140FFE00A46293 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8889558D29140FFE00A46293 /* LaunchScreen.storyboard */; };
 		888955B72914108700A46293 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 888955B62914108700A46293 /* SceneDelegate.swift */; };
+		CE1170A82C636CB60032D933 /* CardCellBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1170A72C636CB60032D933 /* CardCellBuilder.swift */; };
 		CE15ECBC2C57A75A00F148B7 /* TitleCellBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE15ECBB2C57A75A00F148B7 /* TitleCellBuilder.swift */; };
 		CE2130B72C60C90000AB69BE /* SnackBarCellBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2130B62C60C90000AB69BE /* SnackBarCellBuilder.swift */; };
 		CE254A5B2C5CDAC20083EF57 /* BannerCellBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE254A5A2C5CDAC20083EF57 /* BannerCellBuilder.swift */; };
@@ -57,7 +58,7 @@
 		CEF1F9F02C57D65C00D0D5D2 /* BannerViewExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF1F9EF2C57D65C00D0D5D2 /* BannerViewExample.swift */; };
 		CEF1F9F22C57D66500D0D5D2 /* ButtonViewExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF1F9F12C57D66500D0D5D2 /* ButtonViewExample.swift */; };
 		CEF1F9F42C57D70D00D0D5D2 /* ButtonIconExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF1F9F32C57D70D00D0D5D2 /* ButtonIconExample.swift */; };
-		CEF1F9F62C57D74900D0D5D2 /* CardImageViewExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF1F9F52C57D74900D0D5D2 /* CardImageViewExample.swift */; };
+		CEF1F9F62C57D74900D0D5D2 /* CardViewExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF1F9F52C57D74900D0D5D2 /* CardViewExample.swift */; };
 		CEF1F9F82C57D75000D0D5D2 /* CheckboxViewExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF1F9F72C57D75000D0D5D2 /* CheckboxViewExample.swift */; };
 		CEF1F9FA2C57D75900D0D5D2 /* ChipsViewExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF1F9F92C57D75900D0D5D2 /* ChipsViewExample.swift */; };
 		CEF1F9FC2C57D76200D0D5D2 /* DividerViewExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF1F9FB2C57D76200D0D5D2 /* DividerViewExample.swift */; };
@@ -97,6 +98,7 @@
 		8889558E29140FFE00A46293 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8889559029140FFE00A46293 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		888955B62914108700A46293 /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		CE1170A72C636CB60032D933 /* CardCellBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardCellBuilder.swift; sourceTree = "<group>"; };
 		CE15ECBB2C57A75A00F148B7 /* TitleCellBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleCellBuilder.swift; sourceTree = "<group>"; };
 		CE2130B62C60C90000AB69BE /* SnackBarCellBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnackBarCellBuilder.swift; sourceTree = "<group>"; };
 		CE254A5A2C5CDAC20083EF57 /* BannerCellBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerCellBuilder.swift; sourceTree = "<group>"; };
@@ -139,7 +141,7 @@
 		CEF1F9EF2C57D65C00D0D5D2 /* BannerViewExample.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BannerViewExample.swift; sourceTree = "<group>"; };
 		CEF1F9F12C57D66500D0D5D2 /* ButtonViewExample.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonViewExample.swift; sourceTree = "<group>"; };
 		CEF1F9F32C57D70D00D0D5D2 /* ButtonIconExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonIconExample.swift; sourceTree = "<group>"; };
-		CEF1F9F52C57D74900D0D5D2 /* CardImageViewExample.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardImageViewExample.swift; sourceTree = "<group>"; };
+		CEF1F9F52C57D74900D0D5D2 /* CardViewExample.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardViewExample.swift; sourceTree = "<group>"; };
 		CEF1F9F72C57D75000D0D5D2 /* CheckboxViewExample.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckboxViewExample.swift; sourceTree = "<group>"; };
 		CEF1F9F92C57D75900D0D5D2 /* ChipsViewExample.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChipsViewExample.swift; sourceTree = "<group>"; };
 		CEF1F9FB2C57D76200D0D5D2 /* DividerViewExample.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DividerViewExample.swift; sourceTree = "<group>"; };
@@ -214,6 +216,7 @@
 		8889558129140FFC00A46293 /* OrnamentApp */ = {
 			isa = PBXGroup;
 			children = (
+				CE98EE772C6A4C7000B78577 /* Cells */,
 				CE2827A22C3BDE5400156F14 /* Helpers */,
 				CE28279F2C3BDB5A00156F14 /* Protocols */,
 				CEA336142C36D10600880A1F /* Views */,
@@ -326,6 +329,14 @@
 			path = ChipsModule;
 			sourceTree = "<group>";
 		};
+		CE98EE772C6A4C7000B78577 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				CEEB5E732C35A9A1000E0215 /* TableComponentViewCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
 		CEA335FE2C36A65100880A1F /* ViewUpdaters */ = {
 			isa = PBXGroup;
 			children = (
@@ -418,7 +429,7 @@
 				CEF1F9E12C57BC6A00D0D5D2 /* ButtonModule */,
 				CEC824B62C4E90BE00891643 /* ButtonIconModuleBuilder */,
 				CEF1F9E62C57D01A00D0D5D2 /* ButtonPayModule */,
-				CEF1F9E22C57BC7900D0D5D2 /* CardImageModule */,
+				CEF1F9E22C57BC7900D0D5D2 /* CardModule */,
 				CE2827AE2C3C1EBA00156F14 /* CheckboxModule */,
 				CE694C352C3D4E2A0064C0C0 /* ChipsModule */,
 				CE4A7C082C3E8AAA00AA7EB4 /* DividerModule */,
@@ -460,7 +471,6 @@
 		CEEB5E6F2C3596D1000E0215 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				CEEB5E732C35A9A1000E0215 /* TableComponentViewCell.swift */,
 				CEEB5E702C3596E6000E0215 /* Components+Reusable.swift */,
 				CEA4E22C2C37DFCE0069707C /* GenericTableViewSectionModel+Extensions.swift */,
 			);
@@ -485,12 +495,13 @@
 			path = ButtonModule;
 			sourceTree = "<group>";
 		};
-		CEF1F9E22C57BC7900D0D5D2 /* CardImageModule */ = {
+		CEF1F9E22C57BC7900D0D5D2 /* CardModule */ = {
 			isa = PBXGroup;
 			children = (
-				CEF1F9F52C57D74900D0D5D2 /* CardImageViewExample.swift */,
+				CE1170A72C636CB60032D933 /* CardCellBuilder.swift */,
+				CEF1F9F52C57D74900D0D5D2 /* CardViewExample.swift */,
 			);
-			path = CardImageModule;
+			path = CardModule;
 			sourceTree = "<group>";
 		};
 		CEF1F9E32C57CCD300D0D5D2 /* InputTextAreaModule */ = {
@@ -734,6 +745,7 @@
 				CEF1FA0C2C57D7AA00D0D5D2 /* ImageViewExample.swift in Sources */,
 				CEA336002C36A66200880A1F /* CheckboxViewUpdater.swift in Sources */,
 				CEF1FA272C57D90000D0D5D2 /* TitleViewExample.swift in Sources */,
+				CE1170A82C636CB60032D933 /* CardCellBuilder.swift in Sources */,
 				CE2827B02C3C1ECD00156F14 /* CheckboxCellBuilder.swift in Sources */,
 				CEEB5E742C35A9A1000E0215 /* TableComponentViewCell.swift in Sources */,
 				CE4A7C122C3E9E5900AA7EB4 /* ToggleCellBuilder.swift in Sources */,
@@ -752,7 +764,7 @@
 				CE28279E2C3BDB2600156F14 /* CommonDetailFeature.swift in Sources */,
 				CE5AE5242C53866300DD7BC4 /* NavigationBarCellBuilder.swift in Sources */,
 				8889558329140FFC00A46293 /* AppDelegate.swift in Sources */,
-				CEF1F9F62C57D74900D0D5D2 /* CardImageViewExample.swift in Sources */,
+				CEF1F9F62C57D74900D0D5D2 /* CardViewExample.swift in Sources */,
 				CEF1FA232C57D8F400D0D5D2 /* TabsViewExample.swift in Sources */,
 				CEF1FA042C57D78700D0D5D2 /* InputAmountViewExample.swift in Sources */,
 				CE3D0CDE2C622EDC00A9A5C1 /* ButtonModuleBuilder.swift in Sources */,
@@ -1009,7 +1021,7 @@
 			repositoryURL = "https://gitlab.akbars.tech/abo/ios-architecture-table";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 15.0.0;
+				minimumVersion = 16.0.0;
 			};
 		};
 		CEEB5E652C3568B0000E0215 /* XCRemoteSwiftPackageReference "ios-extensions" */ = {

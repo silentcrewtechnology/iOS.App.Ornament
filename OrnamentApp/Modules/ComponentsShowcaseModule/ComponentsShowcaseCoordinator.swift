@@ -40,6 +40,7 @@ final class ComponentsShowcaseCoordinator: RootCoordinatorProtocol {
     private var snackBarFeature: FeatureCoordinatorProtocol?
     private var buttonFeature: FeatureCoordinatorProtocol?
     private var buttonPayFeature: FeatureCoordinatorProtocol?
+    private var cardFeature: FeatureCoordinatorProtocol?
 
     // MARK: - Life cycle
     
@@ -67,8 +68,9 @@ final class ComponentsShowcaseCoordinator: RootCoordinatorProtocol {
         radioFeature: CommonDetailFeature? = nil,
         stepperFeature: CommonDetailFeature? = nil,
         snackBarFeature: CommonDetailFeature? = nil,
-        buttonFeature: CommonDetailFeature? = nil,
-        buttonPayFeature: CommonDetailFeature? = nil
+        buttonPayFeature: CommonDetailFeature? = nil,
+        cardFeature: CommonDetailFeature? = nil,
+        buttonFeature: CommonDetailFeature? = nil
     ) {
         self.routerService = routerService
         self.componentsShowcaseFeature = componentsShowcaseFeature
@@ -95,6 +97,7 @@ final class ComponentsShowcaseCoordinator: RootCoordinatorProtocol {
         self.snackBarFeature = snackBarFeature
         self.buttonFeature = buttonFeature
         self.buttonPayFeature = buttonPayFeature
+        self.cardFeature = cardFeature
     }
     
     // MARK: - Methods
@@ -164,8 +167,14 @@ final class ComponentsShowcaseCoordinator: RootCoordinatorProtocol {
                 )
                 guard let builder = self?.buttonIconFeature?.runFlow(data: nil) else { return }
                 viewController = (builder.view as! UIViewController)
-            case .cardImage:
-                break
+            case .card:
+                self?.cardFeature = CommonDetailFeature(
+                    cellBuilder: CardCellBuilder(),
+                    screenTitle: Components.card.rawValue,
+                    backAction: self?.popVC
+                )
+                guard let builder = self?.cardFeature?.runFlow(data: nil) else { return }
+                viewController = (builder.view as! UIViewController)
             case .checkbox:
                 self?.checkboxFeature = CommonDetailFeature(
                     cellBuilder: CheckboxCellBuilder(),
