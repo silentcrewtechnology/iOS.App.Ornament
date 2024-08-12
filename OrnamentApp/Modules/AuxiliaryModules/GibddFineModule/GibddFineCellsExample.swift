@@ -62,7 +62,13 @@ private final class GibddFineCellsExampleVC: UIViewController, UITableViewDataSo
     }
     
     private func create1GibddRow(_ tableView: UITableView, indexPath: IndexPath) -> UITableViewCell {
-        let buttonStyle = ButtonViewStyle(context: .action(.contained), state: .disabled, size: .sizeXS)
+        let buttonStyle = ButtonViewStyle(
+            size: .small,
+            color: .accent,
+            variant: .primary,
+            state: .disabled,
+            icon: .without
+        )
         let labelStyle = LabelViewStyle(variant: .subindex, alignment: .center)
         let onTap: () -> Void = { }
         
@@ -81,7 +87,13 @@ private final class GibddFineCellsExampleVC: UIViewController, UITableViewDataSo
     }
     
     private func create2GibddRow(_ tableView: UITableView, indexPath: IndexPath) -> UITableViewCell {
-        let buttonStyle = ButtonViewStyle(context: .action(.contained), state: .disabled, size: .sizeXS)
+        let buttonStyle = ButtonViewStyle(
+            size: .small,
+            color: .accent,
+            variant: .primary,
+            state: .disabled,
+            icon: .without
+        )
         let labelStyle = LabelViewStyle(variant: .subindex, alignment: .center)
         let onTap: () -> Void = { }
         
@@ -100,7 +112,13 @@ private final class GibddFineCellsExampleVC: UIViewController, UITableViewDataSo
     }
     
     private func create3GibddRow(_ tableView: UITableView, indexPath: IndexPath) -> UITableViewCell {
-        let buttonStyle = ButtonViewStyle(context: .action(.contained), state: .disabled, size: .sizeXS)
+        let buttonStyle = ButtonViewStyle(
+            size: .small,
+            color: .accent,
+            variant: .primary,
+            state: .disabled,
+            icon: .without
+        )
         let labelStyle = LabelViewStyle(variant: .subindex, alignment: .center)
         let onTap: () -> Void = { }
         
@@ -119,7 +137,13 @@ private final class GibddFineCellsExampleVC: UIViewController, UITableViewDataSo
     }
     
     private func create4GibddRow(_ tableView: UITableView, indexPath: IndexPath) -> UITableViewCell {
-        let buttonStyle = ButtonViewStyle(context: .action(.contained), state: .default, size: .sizeXS)
+        let buttonStyle = ButtonViewStyle(
+            size: .small,
+            color: .accent,
+            variant: .primary,
+            state: .disabled,
+            icon: .without
+        )
         let onTap: () -> Void = {
             print("Tapped 4 row!")
         }
@@ -135,7 +159,13 @@ private final class GibddFineCellsExampleVC: UIViewController, UITableViewDataSo
     }
     
     private func create5GibddRow(_ tableView: UITableView, indexPath: IndexPath) -> UITableViewCell {
-        let buttonStyle = ButtonViewStyle(context: .action(.contained), state: .default, size: .sizeXS)
+        let buttonStyle = ButtonViewStyle(
+            size: .small,
+            color: .accent,
+            variant: .primary,
+            state: .default,
+            icon: .without
+        )
         let onTap: () -> Void = {
             print("Tapped 5 row!")
         }
@@ -150,7 +180,13 @@ private final class GibddFineCellsExampleVC: UIViewController, UITableViewDataSo
     }
     
     private func create6GibddRow(_ tableView: UITableView, indexPath: IndexPath) -> UITableViewCell {
-        let buttonStyle = ButtonViewStyle(context: .action(.contained), state: .default, size: .sizeXS)
+        let buttonStyle = ButtonViewStyle(
+            size: .small,
+            color: .accent,
+            variant: .primary,
+            state: .default,
+            icon: .without
+        )
         let onTap: () -> Void = {
             print("Tapped 6 row!")
         }
