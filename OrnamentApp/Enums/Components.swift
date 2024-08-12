@@ -17,8 +17,7 @@ enum Components: String, CaseIterable {
     case button = "Button (not actualized, not added)"
     case buttonIcon = "Button icon"
     case buttonPay = "Button pay"
-    // TODO: - Actualize, Add
-    case cardImage = "Card image (not actualized, not added)"
+    case card = "Card"
     case checkbox = "Checkbox"
     case chips = "Chips"
     case divider = "Divider"

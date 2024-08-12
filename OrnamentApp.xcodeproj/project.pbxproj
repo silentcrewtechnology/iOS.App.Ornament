@@ -12,6 +12,7 @@
 		8889558C29140FFE00A46293 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8889558B29140FFE00A46293 /* Assets.xcassets */; };
 		8889558F29140FFE00A46293 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8889558D29140FFE00A46293 /* LaunchScreen.storyboard */; };
 		888955B72914108700A46293 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 888955B62914108700A46293 /* SceneDelegate.swift */; };
+		CE1170A82C636CB60032D933 /* CardCellBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1170A72C636CB60032D933 /* CardCellBuilder.swift */; };
 		CE15ECBC2C57A75A00F148B7 /* TitleCellBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE15ECBB2C57A75A00F148B7 /* TitleCellBuilder.swift */; };
 		CE2130B72C60C90000AB69BE /* SnackBarCellBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2130B62C60C90000AB69BE /* SnackBarCellBuilder.swift */; };
 		CE254A5B2C5CDAC20083EF57 /* BannerCellBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE254A5A2C5CDAC20083EF57 /* BannerCellBuilder.swift */; };
@@ -96,6 +97,7 @@
 		8889558E29140FFE00A46293 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8889559029140FFE00A46293 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		888955B62914108700A46293 /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		CE1170A72C636CB60032D933 /* CardCellBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardCellBuilder.swift; sourceTree = "<group>"; };
 		CE15ECBB2C57A75A00F148B7 /* TitleCellBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleCellBuilder.swift; sourceTree = "<group>"; };
 		CE2130B62C60C90000AB69BE /* SnackBarCellBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnackBarCellBuilder.swift; sourceTree = "<group>"; };
 		CE254A5A2C5CDAC20083EF57 /* BannerCellBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerCellBuilder.swift; sourceTree = "<group>"; };
@@ -416,7 +418,7 @@
 				CEF1F9E12C57BC6A00D0D5D2 /* ButtonModule */,
 				CEC824B62C4E90BE00891643 /* ButtonIconModuleBuilder */,
 				CEF1F9E62C57D01A00D0D5D2 /* ButtonPayModule */,
-				CEF1F9E22C57BC7900D0D5D2 /* CardImageModule */,
+				CEF1F9E22C57BC7900D0D5D2 /* CardModule */,
 				CE2827AE2C3C1EBA00156F14 /* CheckboxModule */,
 				CE694C352C3D4E2A0064C0C0 /* ChipsModule */,
 				CE4A7C082C3E8AAA00AA7EB4 /* DividerModule */,
@@ -482,12 +484,13 @@
 			path = ButtonModule;
 			sourceTree = "<group>";
 		};
-		CEF1F9E22C57BC7900D0D5D2 /* CardImageModule */ = {
+		CEF1F9E22C57BC7900D0D5D2 /* CardModule */ = {
 			isa = PBXGroup;
 			children = (
+				CE1170A72C636CB60032D933 /* CardCellBuilder.swift */,
 				CEF1F9F52C57D74900D0D5D2 /* CardImageViewExample.swift */,
 			);
-			path = CardImageModule;
+			path = CardModule;
 			sourceTree = "<group>";
 		};
 		CEF1F9E32C57CCD300D0D5D2 /* InputTextAreaModule */ = {
@@ -731,6 +734,7 @@
 				CEF1FA0C2C57D7AA00D0D5D2 /* ImageViewExample.swift in Sources */,
 				CEA336002C36A66200880A1F /* CheckboxViewUpdater.swift in Sources */,
 				CEF1FA272C57D90000D0D5D2 /* TitleViewExample.swift in Sources */,
+				CE1170A82C636CB60032D933 /* CardCellBuilder.swift in Sources */,
 				CE2827B02C3C1ECD00156F14 /* CheckboxCellBuilder.swift in Sources */,
 				CEEB5E742C35A9A1000E0215 /* TableComponentViewCell.swift in Sources */,
 				CE4A7C122C3E9E5900AA7EB4 /* ToggleCellBuilder.swift in Sources */,
