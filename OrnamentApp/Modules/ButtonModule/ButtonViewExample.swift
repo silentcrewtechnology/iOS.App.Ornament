@@ -24,24 +24,20 @@ private final class ButtonViewExampleVC: UIViewController {
         
         var viewProperties = ButtonView.ViewProperties()
         var style = ButtonViewStyle(
-            context: .action(.contained),
+            size: .large,
+            color: .accent,
+            variant: .primary,
             state: .default,
-            size: .sizeM
+            icon: .without
         )
         viewProperties.attributedText = "Example".attributed
         viewProperties.leftIcon = .ic24Book
-        viewProperties.rightIcon = .ic24FilledBook
-        viewProperties.onHighlighted = { [weak self] isHighlighted in
-            style.state = isHighlighted ? .pressed : .default
-            style.update(viewProperties: &viewProperties)
-            self?.buttonView.update(with: viewProperties)
-        }
-        viewProperties.onTap = { print("Example") }
-        
-        style.state = .disabled
         style.update(viewProperties: &viewProperties)
         buttonView.update(with: viewProperties)
-        
+        viewProperties.onTap = { print("Example") }
+        style.update(color: .accent,
+                     state: .disabled,
+                     viewProperties: &viewProperties)
         viewProperties.activityIndicator.isAnimating = true
         buttonView.update(with: viewProperties)
         DispatchQueue.main.asyncAfter(deadline: .now() + 5) {

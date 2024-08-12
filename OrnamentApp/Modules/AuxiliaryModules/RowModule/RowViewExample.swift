@@ -177,9 +177,11 @@ private final class RowViewExampleVC: UIViewController {
         var buttonViewProperties = ButtonView.ViewProperties()
         buttonViewProperties.attributedText = "Button".attributed
         let buttonViewStyle = ButtonViewStyle(
-            context: .action(.ghost),
+            size: .small,
+            color: .light,
+            variant: .primary,
             state: .default,
-            size: .sizeM
+            icon: .without
         )
         buttonViewStyle.update(viewProperties: &buttonViewProperties)
         
