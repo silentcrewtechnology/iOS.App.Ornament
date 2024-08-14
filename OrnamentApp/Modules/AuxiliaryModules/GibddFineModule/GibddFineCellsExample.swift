@@ -69,7 +69,7 @@ private final class GibddFineCellsExampleVC: UIViewController, UITableViewDataSo
             state: .disabled,
             icon: .without
         )
-        let labelStyle = LabelViewStyle(variant: .subindex, alignment: .center)
+        let labelStyle = LabelViewStyle(variant: .rowSubtitle, alignment: .center)
         let onTap: () -> Void = { }
         
         return DSCreationRowsViewService().createCellRowWithBlocks(

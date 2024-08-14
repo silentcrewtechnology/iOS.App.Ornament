@@ -42,6 +42,7 @@ final class ComponentsShowcaseCoordinator: RootCoordinatorProtocol {
     private var buttonPayFeature: FeatureCoordinatorProtocol?
     private var cardFeature: FeatureCoordinatorProtocol?
     private var hintFeature: FeatureCoordinatorProtocol?
+    private var labelFeature: FeatureCoordinatorProtocol?
 
     // MARK: - Life cycle
     
@@ -72,7 +73,8 @@ final class ComponentsShowcaseCoordinator: RootCoordinatorProtocol {
         buttonPayFeature: CommonDetailFeature? = nil,
         cardFeature: CommonDetailFeature? = nil,
         buttonFeature: CommonDetailFeature? = nil,
-        hintFeature: CommonDetailFeature? = nil
+        hintFeature: CommonDetailFeature? = nil,
+        labelFeature: CommonDetailFeature? = nil
     ) {
         self.routerService = routerService
         self.componentsShowcaseFeature = componentsShowcaseFeature
@@ -101,6 +103,7 @@ final class ComponentsShowcaseCoordinator: RootCoordinatorProtocol {
         self.buttonPayFeature = buttonPayFeature
         self.cardFeature = cardFeature
         self.hintFeature = hintFeature
+        self.labelFeature = labelFeature
     }
     
     // MARK: - Methods
@@ -130,10 +133,10 @@ final class ComponentsShowcaseCoordinator: RootCoordinatorProtocol {
                 )
                 guard let builder = self?.activityIndicatorFeature?.runFlow(data: nil) else { return }
                 viewController = (builder.view as! UIViewController)
-            case .authorizationButton:
+            case .buttonAuth:
                 self?.authorizationButtonFeature = CommonDetailFeature(
-                    cellBuilder: AuthorizationButtonCellBuilder(),
-                    screenTitle: Components.authorizationButton.rawValue,
+                    cellBuilder: ButtonAuthCellBuilder(),
+                    screenTitle: Components.buttonAuth.rawValue,
                     backAction: self?.popVC
                 )
                 guard let builder = self?.authorizationButtonFeature?.runFlow(data: nil) else { return }
@@ -250,10 +253,10 @@ final class ComponentsShowcaseCoordinator: RootCoordinatorProtocol {
                 )
                 guard let builder = self?.inputSelectFeature?.runFlow(data: nil) else { return }
                 viewController = (builder.view as! UIViewController)
-            case .inputView:
+            case .input:
                 self?.inputTextFeature = CommonDetailFeature(
                     cellBuilder: InputCellBuilder(),
-                    screenTitle: Components.inputView.rawValue,
+                    screenTitle: Components.input.rawValue,
                     backAction: self?.popVC
                 )
                 guard let builder = self?.inputTextFeature?.runFlow(data: nil) else { return }
@@ -265,7 +268,13 @@ final class ComponentsShowcaseCoordinator: RootCoordinatorProtocol {
             case .inputPIN:
                 break
             case .label:
-                break
+                self?.labelFeature = CommonDetailFeature(
+                    cellBuilder: LabelCellBuilder(),
+                    screenTitle: Components.label.rawValue,
+                    backAction: self?.popVC
+                )
+                guard let builder = self?.labelFeature?.runFlow(data: nil) else { return }
+                viewController = (builder.view as! UIViewController)
             case .pageControl:
                 break
             case .buttonPay:

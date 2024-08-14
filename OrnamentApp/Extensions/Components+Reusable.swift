@@ -17,7 +17,7 @@ extension ActivityIndicatorView: Reusable {
     }
 }
 
-extension AuthorizationButton: Reusable {
+extension ButtonAuth: Reusable {
     public func prepareForReuse() {
         update(with: .init())
     }

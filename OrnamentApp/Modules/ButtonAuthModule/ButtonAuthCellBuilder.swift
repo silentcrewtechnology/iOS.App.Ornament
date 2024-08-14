@@ -1,5 +1,5 @@
 //
-//  AuthorizationButtonCellBuilder.swift
+//  ButtonAuthCellBuilder.swift
 //  OrnamentApp
 //
 //  Created by user on 05.07.2024.
@@ -12,18 +12,18 @@ import DesignSystem
 import ImagesService
 import Extensions
 
-final class AuthorizationButtonCellBuilder: NSObject, UITextFieldDelegate, CellBuilder {
+final class ButtonAuthCellBuilder: NSObject, UITextFieldDelegate, CellBuilder {
     
     // MARK: - Private properties
     
     private let chipsViewSectionHelper = ChipsViewSectionHelper()
-    private var authorizationButton: AuthorizationButton?
-    private var viewProperties: AuthorizationButton.ViewProperties = .init(
+    private var authorizationButton: ButtonAuth?
+    private var viewProperties: ButtonAuth.ViewProperties = .init(
         image: .init(resource: .authorizationButtonGosuslugi),
         title: NSMutableAttributedString(string: "Войти через Госуслуги"),
         onTap: { }
     )
-    private var style: AuthorizationButtonStyle = .init(
+    private var style: ButtonAuthStyle = .init(
         variant: .gosuslugi,
         state: .default,
         color: .accent
@@ -42,11 +42,11 @@ final class AuthorizationButtonCellBuilder: NSObject, UITextFieldDelegate, CellB
     }
 }
     
-    // MARK: - AuthorizationButton
-extension AuthorizationButtonCellBuilder {
+    // MARK: - ButtonAuth
+extension ButtonAuthCellBuilder {
     private func createAuthorizationButtonSection() -> GenericTableViewSectionModel {
         let row = GenericTableViewRowModel(
-            with: GenericTableViewCellWrapper<AuthorizationButton>.self,
+            with: GenericTableViewCellWrapper<ButtonAuth>.self,
             configuration: { [weak self] cell, _ in
                 guard let self = self else { return }
                 
@@ -75,7 +75,7 @@ extension AuthorizationButtonCellBuilder {
 }
     
 // MARK: - InputText
-extension AuthorizationButtonCellBuilder {
+extension ButtonAuthCellBuilder {
     private func createInputTextSection() -> GenericTableViewSectionModel {
         let row = GenericTableViewRowModel(
             with: GenericTableViewCellWrapper<InputView>.self,
@@ -111,7 +111,7 @@ extension AuthorizationButtonCellBuilder {
 }
     
 // MARK: Styles
-extension AuthorizationButtonCellBuilder {
+extension ButtonAuthCellBuilder {
     private func createVariantSection() -> GenericTableViewSectionModel {
         return chipsViewSectionHelper.makeHorizontalSectionWithScroll(
             titles: ["gosuslugi", "akbars"],
@@ -162,9 +162,9 @@ extension AuthorizationButtonCellBuilder {
     }
     
     private func updateStyle(
-        newVariant: AuthorizationButtonStyle.Variant? = nil,
-        newState: AuthorizationButtonStyle.State? = nil,
-        newColor: AuthorizationButtonStyle.Color? = nil
+        newVariant: ButtonAuthStyle.Variant? = nil,
+        newState: ButtonAuthStyle.State? = nil,
+        newColor: ButtonAuthStyle.Color? = nil
     ) {
         style.update(
             variant: newVariant,
