@@ -20,6 +20,7 @@ enum Components: String, CaseIterable {
     case checkbox = "Checkbox"
     case chips = "Chips"
     case divider = "Divider"
+    case hint = "Hint"
     // TODO: - Add
     case inputTextarea = "Input textarea (not added)"
     // TODO: - Actualize

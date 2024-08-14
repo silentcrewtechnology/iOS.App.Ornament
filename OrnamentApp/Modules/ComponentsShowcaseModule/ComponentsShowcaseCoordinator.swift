@@ -41,6 +41,7 @@ final class ComponentsShowcaseCoordinator: RootCoordinatorProtocol {
     private var buttonFeature: FeatureCoordinatorProtocol?
     private var buttonPayFeature: FeatureCoordinatorProtocol?
     private var cardFeature: FeatureCoordinatorProtocol?
+    private var hintFeature: FeatureCoordinatorProtocol?
 
     // MARK: - Life cycle
     
@@ -70,7 +71,8 @@ final class ComponentsShowcaseCoordinator: RootCoordinatorProtocol {
         snackBarFeature: CommonDetailFeature? = nil,
         buttonPayFeature: CommonDetailFeature? = nil,
         cardFeature: CommonDetailFeature? = nil,
-        buttonFeature: CommonDetailFeature? = nil
+        buttonFeature: CommonDetailFeature? = nil,
+        hintFeature: CommonDetailFeature? = nil
     ) {
         self.routerService = routerService
         self.componentsShowcaseFeature = componentsShowcaseFeature
@@ -98,6 +100,7 @@ final class ComponentsShowcaseCoordinator: RootCoordinatorProtocol {
         self.buttonFeature = buttonFeature
         self.buttonPayFeature = buttonPayFeature
         self.cardFeature = cardFeature
+        self.hintFeature = hintFeature
     }
     
     // MARK: - Methods
@@ -198,6 +201,14 @@ final class ComponentsShowcaseCoordinator: RootCoordinatorProtocol {
                     backAction: self?.popVC
                 )
                 guard let builder = self?.dividerFeature?.runFlow(data: nil) else { return }
+                viewController = (builder.view as! UIViewController)
+            case .hint:
+                self?.hintFeature = CommonDetailFeature(
+                    cellBuilder: HintViewBuilder(),
+                    screenTitle: Components.hint.rawValue,
+                    backAction: self?.popVC
+                )
+                guard let builder = self?.hintFeature?.runFlow(data: nil) else { return }
                 viewController = (builder.view as! UIViewController)
             case .image:
                 self?.imageFeature = CommonDetailFeature(

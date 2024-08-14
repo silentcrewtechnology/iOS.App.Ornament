@@ -40,9 +40,9 @@ private final class InputOTPViewExampleVC: UIViewController {
         }
     }
 
-    private func hintProperties() -> HintView.ViewProperties {
-        var viewProperties = HintView.ViewProperties()
-        HintViewStyle().update(
+    private func hintProperties() -> OldHintView.ViewProperties {
+        var viewProperties = OldHintView.ViewProperties()
+        OldHintViewStyle().update(
             variant: .right("Hint".attributed),
             viewProperties: &viewProperties)
         
@@ -58,7 +58,7 @@ private final class InputOTPFeature: NSObject, UITextFieldDelegate {
     
     private var maxCount: Int = 5
     private let itemStyle = InputOTPItemViewStyle()
-    private let hintStyle = HintViewStyle()
+    private let hintStyle = OldHintViewStyle()
     private lazy var viewProperties = InputOTPView.ViewProperties(
         items: (0..<maxCount).map { _ in .init() },
         hint: .init())

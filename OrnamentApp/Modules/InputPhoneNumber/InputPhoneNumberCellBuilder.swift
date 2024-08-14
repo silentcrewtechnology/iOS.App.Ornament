@@ -22,9 +22,9 @@ final class InputPhoneNumberCellBuilder: NSObject, UITextFieldDelegate, CellBuil
     private var style = InputPhoneNumberViewStyle.init(state: .default)
     private var state: InputPhoneNumberViewStyle.State = .default
     private var hintText: NSMutableAttributedString = .init(string: "")
-    private lazy var hintViewProperties: HintView.ViewProperties = {
-        var viewProperties = HintView.ViewProperties()
-        let style = HintViewStyle()
+    private lazy var hintViewProperties: OldHintView.ViewProperties = {
+        var viewProperties = OldHintView.ViewProperties()
+        let style = OldHintViewStyle()
         style.update(
             variant: .empty,
             viewProperties: &viewProperties
@@ -252,8 +252,8 @@ final class InputPhoneNumberCellBuilder: NSObject, UITextFieldDelegate, CellBuil
     }
     
     private func makeHintViewProperties() {
-        var hintVP = HintView.ViewProperties()
-        let hintStyle = HintViewStyle()
+        var hintVP = OldHintView.ViewProperties()
+        let hintStyle = OldHintViewStyle()
         hintStyle.update(variant: .left(hintText), viewProperties: &hintVP)
         viewProperties.hint = hintVP
     }

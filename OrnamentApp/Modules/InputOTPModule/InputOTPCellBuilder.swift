@@ -172,8 +172,8 @@ final class InputOTPCellBuilder: NSObject, UITextFieldDelegate, CellBuilder {
     }
     
     private func makeHintViewProperties() {
-        var hintVP = HintView.ViewProperties()
-        let hintStyle = HintViewStyle()
+        var hintVP = OldHintView.ViewProperties()
+        let hintStyle = OldHintViewStyle()
         hintStyle.update(variant: .left(hintText), viewProperties: &hintVP)
         viewProperties.hint = hintVP
     }

@@ -22,8 +22,8 @@ private final class InputTextareaViewExampleVC: UIViewController {
         return viewProperties
     }()
     
-    private lazy var hintViewProperties: HintView.ViewProperties = {
-        var viewProperties = HintView.ViewProperties()
+    private lazy var hintViewProperties: OldHintView.ViewProperties = {
+        var viewProperties = OldHintView.ViewProperties()
         return viewProperties
     }()
     
@@ -118,7 +118,7 @@ private final class InputTextareaViewExampleVC: UIViewController {
         characterCount: Int,
         viewProperties: inout InputTextareaView.ViewProperties
     ) {
-        let hintStyle = HintViewStyle()
+        let hintStyle = OldHintViewStyle()
         
         switch state {
         case .default, .disabled:
