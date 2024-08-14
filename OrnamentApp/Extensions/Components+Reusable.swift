@@ -71,6 +71,12 @@ extension DotView: Reusable {
     }
 }
 
+extension OldHintView: Reusable {
+    public func prepareForReuse() {
+        update(with: .init())
+    }
+}
+
 extension HintView: Reusable {
     public func prepareForReuse() {
         update(with: .init())

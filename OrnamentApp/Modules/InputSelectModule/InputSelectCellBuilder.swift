@@ -42,9 +42,9 @@ final class InputSelectCellBuilder: NSObject, UITextFieldDelegate, CellBuilder {
             configuration: { [weak self] cell, _ in
                 guard let self = self else { return }
                 
-                let hintViewProperties: HintView.ViewProperties = {
-                    var viewProperties = HintView.ViewProperties()
-                    let style = HintViewStyle()
+                let hintViewProperties: OldHintView.ViewProperties = {
+                    var viewProperties = OldHintView.ViewProperties()
+                    let style = OldHintViewStyle()
                     style.update(
                         variant: .empty,
                         viewProperties: &viewProperties
@@ -194,8 +194,8 @@ final class InputSelectCellBuilder: NSObject, UITextFieldDelegate, CellBuilder {
     }
     
     private func makeHintViewProperties() {
-        var hintVP = HintView.ViewProperties()
-        let hintStyle = HintViewStyle()
+        var hintVP = OldHintView.ViewProperties()
+        let hintStyle = OldHintViewStyle()
         hintStyle.update(variant: .left(hintText), viewProperties: &hintVP)
         viewProperties.hint = hintVP
     }

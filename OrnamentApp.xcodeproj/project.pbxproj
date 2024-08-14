@@ -32,6 +32,7 @@
 		CE5AE5262C53BF6300DD7BC4 /* NavigationBarFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5AE5252C53BF6300DD7BC4 /* NavigationBarFeature.swift */; };
 		CE6439F32C58FAEE002491EA /* SnackBarExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6439F22C58FAEE002491EA /* SnackBarExample.swift */; };
 		CE694C372C3D56090064C0C0 /* ChipsCellBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE694C362C3D56090064C0C0 /* ChipsCellBuilder.swift */; };
+		CE8994672C6B44B20019D130 /* HintViewBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8994662C6B44B20019D130 /* HintViewBuilder.swift */; };
 		CEA336002C36A66200880A1F /* CheckboxViewUpdater.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA335FF2C36A66200880A1F /* CheckboxViewUpdater.swift */; };
 		CEA336022C36A9B800880A1F /* ChipsViewUpdater.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA336012C36A9B800880A1F /* ChipsViewUpdater.swift */; };
 		CEA336052C36B1A400880A1F /* Components.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA336042C36B1A400880A1F /* Components.swift */; };
@@ -118,6 +119,7 @@
 		CE5AE5252C53BF6300DD7BC4 /* NavigationBarFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBarFeature.swift; sourceTree = "<group>"; };
 		CE6439F22C58FAEE002491EA /* SnackBarExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnackBarExample.swift; sourceTree = "<group>"; };
 		CE694C362C3D56090064C0C0 /* ChipsCellBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChipsCellBuilder.swift; sourceTree = "<group>"; };
+		CE8994662C6B44B20019D130 /* HintViewBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HintViewBuilder.swift; sourceTree = "<group>"; };
 		CEA335FF2C36A66200880A1F /* CheckboxViewUpdater.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckboxViewUpdater.swift; sourceTree = "<group>"; };
 		CEA336012C36A9B800880A1F /* ChipsViewUpdater.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChipsViewUpdater.swift; sourceTree = "<group>"; };
 		CEA336042C36B1A400880A1F /* Components.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Components.swift; sourceTree = "<group>"; };
@@ -329,6 +331,14 @@
 			path = ChipsModule;
 			sourceTree = "<group>";
 		};
+		CE8994652C6B44370019D130 /* HintModule */ = {
+			isa = PBXGroup;
+			children = (
+				CE8994662C6B44B20019D130 /* HintViewBuilder.swift */,
+			);
+			path = HintModule;
+			sourceTree = "<group>";
+		};
 		CE98EE772C6A4C7000B78577 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
@@ -433,6 +443,7 @@
 				CE2827AE2C3C1EBA00156F14 /* CheckboxModule */,
 				CE694C352C3D4E2A0064C0C0 /* ChipsModule */,
 				CE4A7C082C3E8AAA00AA7EB4 /* DividerModule */,
+				CE8994652C6B44370019D130 /* HintModule */,
 				CEF1F9E32C57CCD300D0D5D2 /* InputTextAreaModule */,
 				CEF2DE6F2C414FD00065C1BD /* InputModule */,
 				CEE15C4E2C400F48008E6D8C /* InputPhoneNumber */,
@@ -783,6 +794,7 @@
 				CEF1FA292C57D90600D0D5D2 /* ToggleViewExample.swift in Sources */,
 				CEF1F9F42C57D70D00D0D5D2 /* ButtonIconExample.swift in Sources */,
 				CEF1F9F02C57D65C00D0D5D2 /* BannerViewExample.swift in Sources */,
+				CE8994672C6B44B20019D130 /* HintViewBuilder.swift in Sources */,
 				CEF1FA082C57D79B00D0D5D2 /* InputOTPViewExample.swift in Sources */,
 				CEF1FA0A2C57D7A400D0D5D2 /* InputOTPItemExample.swift in Sources */,
 				CEF8CD762C622F55009B8409 /* ButtonPayCellBuilder.swift in Sources */,
@@ -1021,7 +1033,7 @@
 			repositoryURL = "https://gitlab.akbars.tech/abo/ios-architecture-table";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 16.0.0;
+				minimumVersion = 18.0.0;
 			};
 		};
 		CEEB5E652C3568B0000E0215 /* XCRemoteSwiftPackageReference "ios-extensions" */ = {

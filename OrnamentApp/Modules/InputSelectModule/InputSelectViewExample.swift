@@ -20,9 +20,9 @@ private final class InputSelectViewExampleVC: UIViewController {
         return viewProperties
     }()
     
-    private lazy var hintViewProperties: HintView.ViewProperties = {
-        var viewProperties = HintView.ViewProperties()
-        let style = HintViewStyle()
+    private lazy var hintViewProperties: OldHintView.ViewProperties = {
+        var viewProperties = OldHintView.ViewProperties()
+        let style = OldHintViewStyle()
         style.update(
             variant: .empty,
             viewProperties: &viewProperties

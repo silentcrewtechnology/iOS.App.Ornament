@@ -45,3 +45,9 @@ extension Constants {
     static let allCount = "all count"
     static let activeCount = "active count"
 }
+
+// MARK: Hint
+extension Constants {
+    static let hintText = "Text"
+    static let hintAdditionalText = "Additional text"
+}

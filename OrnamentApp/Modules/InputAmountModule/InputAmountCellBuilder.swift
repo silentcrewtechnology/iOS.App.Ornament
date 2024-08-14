@@ -152,8 +152,8 @@ final class InputAmountCellBuilder: NSObject, UITextFieldDelegate, CellBuilder {
         
         switch state {
         case .error(_):
-            var hintVP = HintView.ViewProperties()
-            let hintStyle = HintViewStyle()
+            var hintVP = OldHintView.ViewProperties()
+            let hintStyle = OldHintViewStyle()
             hintStyle.update(variant: .left(hintText), viewProperties: &hintVP)
             
             state = .error(hintText)

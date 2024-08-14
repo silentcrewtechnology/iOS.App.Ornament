@@ -14,7 +14,7 @@ private final class HintViewExampleVC: UIViewController {
     
     // MARK: - Private propertes
     
-    private lazy var hintView = HintView()
+    private lazy var hintView = OldHintView()
     
     // MARK: - Life cycle
     
@@ -22,8 +22,8 @@ private final class HintViewExampleVC: UIViewController {
         super.viewDidLoad()
         
         view.addSubview(hintView)
-        var viewProperties = HintView.ViewProperties()
-        let style = HintViewStyle()
+        var viewProperties = OldHintView.ViewProperties()
+        let style = OldHintViewStyle()
         
         style.update(
             variant: .empty,
