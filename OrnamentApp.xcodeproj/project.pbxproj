@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		34C3999E2C5B85D400C98DBC /* BadgeModuleFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34C3999D2C5B85D400C98DBC /* BadgeModuleFeature.swift */; };
+		34C399A02C5BF40000C98DBC /* BadgeModuleDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34C3999F2C5BF40000C98DBC /* BadgeModuleDataSource.swift */; };
+		34C399A22C5BF5CA00C98DBC /* BadgeModuleTableDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34C399A12C5BF5CA00C98DBC /* BadgeModuleTableDelegate.swift */; };
 		34FC04712C4005A1005DB295 /* BadgeModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34FC04702C4005A1005DB295 /* BadgeModuleBuilder.swift */; };
 		8889558329140FFC00A46293 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8889558229140FFC00A46293 /* AppDelegate.swift */; };
 		8889558C29140FFE00A46293 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8889558B29140FFE00A46293 /* Assets.xcassets */; };
@@ -84,6 +87,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3465A1852C60C33100D56668 /* ios-resources-ui-components */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = "ios-resources-ui-components"; path = "../ios-resources-ui-components"; sourceTree = "<group>"; };
+		3465A1862C60C33400D56668 /* ios.designsystem */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = ios.designsystem; path = ../ios.designsystem; sourceTree = "<group>"; };
+		3465A1872C60C34100D56668 /* ios-extensions */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = "ios-extensions"; path = "../ios-extensions"; sourceTree = "<group>"; };
+		34C3999D2C5B85D400C98DBC /* BadgeModuleFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeModuleFeature.swift; sourceTree = "<group>"; };
+		34C3999F2C5BF40000C98DBC /* BadgeModuleDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeModuleDataSource.swift; sourceTree = "<group>"; };
+		34C399A12C5BF5CA00C98DBC /* BadgeModuleTableDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeModuleTableDelegate.swift; sourceTree = "<group>"; };
 		34FC04702C4005A1005DB295 /* BadgeModuleBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeModuleBuilder.swift; sourceTree = "<group>"; };
 		8889557F29140FFC00A46293 /* OrnamentApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OrnamentApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8889558229140FFC00A46293 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -178,6 +187,9 @@
 			children = (
 				34FC04702C4005A1005DB295 /* BadgeModuleBuilder.swift */,
 				CEF1F9ED2C57D14A00D0D5D2 /* BadgeExample.swift */,
+				34C3999D2C5B85D400C98DBC /* BadgeModuleFeature.swift */,
+				34C3999F2C5BF40000C98DBC /* BadgeModuleDataSource.swift */,
+				34C399A12C5BF5CA00C98DBC /* BadgeModuleTableDelegate.swift */,
 			);
 			path = BadgeModule;
 			sourceTree = "<group>";
@@ -185,6 +197,9 @@
 		8889557629140FFC00A46293 = {
 			isa = PBXGroup;
 			children = (
+				3465A1872C60C34100D56668 /* ios-extensions */,
+				3465A1862C60C33400D56668 /* ios.designsystem */,
+				3465A1852C60C33100D56668 /* ios-resources-ui-components */,
 				8889558129140FFC00A46293 /* OrnamentApp */,
 				8889558029140FFC00A46293 /* Products */,
 				888955B82914112F00A46293 /* Frameworks */,
@@ -703,14 +718,17 @@
 				CEF1F9EE2C57D14A00D0D5D2 /* BadgeExample.swift in Sources */,
 				CEF1FA022C57D78000D0D5D2 /* InputPhoneNumberViewExample.swift in Sources */,
 				CE6439F32C58FAEE002491EA /* SnackBarExample.swift in Sources */,
+				34C399A02C5BF40000C98DBC /* BadgeModuleDataSource.swift in Sources */,
 				CEF2DE712C4150130065C1BD /* InputTextCellBuilder.swift in Sources */,
 				CEF1F9F82C57D75000D0D5D2 /* CheckboxViewExample.swift in Sources */,
 				CE694C372C3D56090064C0C0 /* ChipsCellBuilder.swift in Sources */,
+				34C3999E2C5B85D400C98DBC /* BadgeModuleFeature.swift in Sources */,
 				CEEB5E642C35681A000E0215 /* ComponentsShowcaseCellBuilder.swift in Sources */,
 				CEF1FA322C57D9DE00D0D5D2 /* RowViewExample.swift in Sources */,
 				CEF1FA172C57D8BB00D0D5D2 /* PaymentButtonExample.swift in Sources */,
 				CE4A7C0A2C3E8ABF00AA7EB4 /* DividerCellBuilder.swift in Sources */,
 				CEF1FA0F2C57D88C00D0D5D2 /* HintViewExample.swift in Sources */,
+				34C399A22C5BF5CA00C98DBC /* BadgeModuleTableDelegate.swift in Sources */,
 				CEF1FA0C2C57D7AA00D0D5D2 /* ImageViewExample.swift in Sources */,
 				CEA336002C36A66200880A1F /* CheckboxViewUpdater.swift in Sources */,
 				CEF1FA272C57D90000D0D5D2 /* TitleViewExample.swift in Sources */,
@@ -893,7 +911,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = NM6255M99C;
+				DEVELOPMENT_TEAM = KB3C698SC6;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = OrnamentApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -924,7 +942,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = NM6255M99C;
+				DEVELOPMENT_TEAM = KB3C698SC6;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = OrnamentApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;

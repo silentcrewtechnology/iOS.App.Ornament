@@ -42,7 +42,7 @@ final class ComponentsShowcaseCoordinator: RootCoordinatorProtocol {
         componentsShowcaseFeature: ComponentsShowcaseFeature,
         activityIndicatorFeature: CommonDetailFeature? = nil,
         authorizationButtonFeature: CommonDetailFeature? = nil,
-        badgeFeature: CommonDetailFeature? = nil,
+        badgeFeature: BadgeModuleFeature? = nil,
         buttonIconFeature: CommonDetailFeature? = nil,
         checkboxFeature: CommonDetailFeature? = nil,
         chipsFeature: CommonDetailFeature? = nil,
@@ -115,12 +115,12 @@ final class ComponentsShowcaseCoordinator: RootCoordinatorProtocol {
                 guard let builder = self?.authorizationButtonFeature?.runFlow(data: nil) else { return }
                 viewController = (builder.view as! UIViewController)
             case .badge:
-                self?.badgeFeature = CommonDetailFeature(
-                    cellBuilder: BadgeModuleBuilder(),
-                    screenTitle: Components.badge.rawValue,
-                    backAction: self?.popVC
-                )
+                // TODO Добавить DI для фичи
+                if self?.badgeFeature == nil {
+                    self?.badgeFeature = BadgeModuleFeature.init(screenTitle: Components.badge.rawValue, backAction: self?.popVC)
+                }
                 guard let builder = self?.badgeFeature?.runFlow(data: nil) else { return }
+                
                 viewController = (builder.view as! UIViewController)
             case .banner:
                 break
@@ -145,13 +145,15 @@ final class ComponentsShowcaseCoordinator: RootCoordinatorProtocol {
                 guard let builder = self?.checkboxFeature?.runFlow(data: nil) else { return }
                 viewController = (builder.view as! UIViewController)
             case .chips:
-                self?.chipsFeature = CommonDetailFeature(
-                    cellBuilder: ChipsCellBuilder(),
-                    screenTitle: Components.chips.rawValue,
-                    backAction: self?.popVC
-                )
-                guard let builder = self?.chipsFeature?.runFlow(data: nil) else { return }
-                viewController = (builder.view as! UIViewController)
+                break
+                // TODO Восстановить chipsView
+//                self?.chipsFeature = CommonDetailFeature(
+//                    cellBuilder: ChipsCellBuilder(),
+//                    screenTitle: Components.chips.rawValue,
+//                    backAction: self?.popVC
+//                )
+//                guard let builder = self?.chipsFeature?.runFlow(data: nil) else { return }
+//                viewController = (builder.view as! UIViewController)
             case .divider:
                 self?.dividerFeature = CommonDetailFeature(
                     cellBuilder: DividerCellBuilder(),

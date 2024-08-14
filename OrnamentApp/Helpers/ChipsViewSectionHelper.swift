@@ -41,19 +41,15 @@ struct ChipsViewSectionHelper {
                         .init(
                             view: chipsView,
                             viewProperties: chipsViewProperties,
-                            style: .init(
-                                selection: i == .zero ? .selected : .default,
-                                state: .default,
-                                size: .small
-                            ),
+                            style: .init(),
                             onActive: {
                                 for j in 0..<updaters.count {
                                     if j == i {
-                                        updaters[j].handle(state: .selection(.selected))
+                                        updaters[j].handle(state: .selection(.on))
                                         continue
                                     }
                                     
-                                    updaters[j].handle(state: .selection(.default))
+                                    updaters[j].handle(state: .selection(.off))
                                 }
                                 
                                 actions[i]()
