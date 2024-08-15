@@ -83,11 +83,11 @@ private final class RowCellExampleVC: UIViewController, UITableViewDataSource, U
     }
     
     private func createTitleRow(_ tableView: UITableView, indexPath: IndexPath) -> UITableViewCell {
-        let titleStyle = LabelViewStyle(variant: .title(isCopied: false))
+        let titleStyle = LabelViewStyle(variant: .rowTitle(recognizer: nil))
         return DSCreationRowsViewService().createCellRowWithBlocks(
             tableView: tableView,
             indexPath: indexPath,
-            leading: .atom(.title("Title", titleStyle))
+            leading: .atom(.title("Title", titleStyle, nil))
         )
     }
     
@@ -96,7 +96,7 @@ private final class RowCellExampleVC: UIViewController, UITableViewDataSource, U
             tableView: tableView,
             indexPath: indexPath,
             leading: .atom(.image40(.ic24UserFilled, nil)),
-            center: .atom(.title("Title", nil))
+            center: .atom(.title("Title", nil, nil))
         )
     }
     
@@ -105,7 +105,7 @@ private final class RowCellExampleVC: UIViewController, UITableViewDataSource, U
             tableView: tableView,
             indexPath: indexPath,
             leading: .atom(.image40(.ic24UserFilled, nil)),
-            center: .molecule(.titleWithSubtitle(("Title", nil), ("Subtitle", nil)))
+            center: .molecule(.titleWithSubtitle(("Title", nil, nil), ("Subtitle", nil)))
         )
     }
     
@@ -114,7 +114,7 @@ private final class RowCellExampleVC: UIViewController, UITableViewDataSource, U
             tableView: tableView,
             indexPath: indexPath,
             leading: .atom(.image40(.ic24UserFilled, nil)),
-            center: .molecule(.subtitleWithTitle(("Subtitle", nil), ("Title", nil))),
+            center: .molecule(.subtitleWithTitle(("Subtitle", nil), ("Title", nil, nil))),
             trailing: .atom(.button("Label", { }, nil))
         )
     }
@@ -124,7 +124,7 @@ private final class RowCellExampleVC: UIViewController, UITableViewDataSource, U
             tableView: tableView,
             indexPath: indexPath,
             leading: .atom(.image40(.ic24UserFilled, nil)),
-            center: .molecule(.subtitleWithTitle(("Subtitle", nil), ("Title", nil))),
+            center: .molecule(.subtitleWithTitle(("Subtitle", nil), ("Title", nil, nil))),
             trailing: .atom(.toggle(true, { _ in }, nil))
         )
     }
@@ -134,7 +134,7 @@ private final class RowCellExampleVC: UIViewController, UITableViewDataSource, U
             tableView: tableView,
             indexPath: indexPath,
             leading: .atom(.image40(.ic24UserFilled, nil)),
-            center: .molecule(.subtitleWithTitle(("Subtitle", nil), ("Title", nil))),
+            center: .molecule(.subtitleWithTitle(("Subtitle", nil), ("Title", nil, nil))),
             trailing: .atom(.checkbox(true, { _ in }, nil))
         )
     }
@@ -144,7 +144,7 @@ private final class RowCellExampleVC: UIViewController, UITableViewDataSource, U
             tableView: tableView,
             indexPath: indexPath,
             leading: .atom(.image40(.ic24UserFilled, nil)),
-            center: .molecule(.subtitleWithTitle(("Subtitle", nil), ("Title", nil))),
+            center: .molecule(.subtitleWithTitle(("Subtitle", nil), ("Title", nil, nil))),
             trailing: .molecule(.indexWithIcon24(("Index", nil), (.ic24ChevronSmallRight, nil)))
         )
     }
@@ -154,7 +154,7 @@ private final class RowCellExampleVC: UIViewController, UITableViewDataSource, U
             tableView: tableView,
             indexPath: indexPath,
             leading: .atom(.image40(.ic24UserFilled, nil)),
-            center: .molecule(.subtitleWithTitle(("Subtitle", nil), ("Title", nil))),
+            center: .molecule(.subtitleWithTitle(("Subtitle", nil), ("Title", nil, nil))),
             trailing: .molecule(.indexWithIcons20(("Index", nil), [(.ic24BoxFilled, nil), (.ic24BoxFilled, nil)]))
         )
     }
@@ -164,18 +164,18 @@ private final class RowCellExampleVC: UIViewController, UITableViewDataSource, U
             tableView: tableView,
             indexPath: indexPath,
             leading: .atom(.card(.ic24CardMirLight, nil)),
-            center: .atom(.title("Title", nil)),
+            center: .atom(.title("Title", nil, nil)),
             trailing: .atom(.button("Label", { }, nil))
         )
     }
     
     // примеры с текстом на несколько строк
     private func createLongTitleRow(_ tableView: UITableView, indexPath: IndexPath) -> UITableViewCell {
-        let titleStyle = LabelViewStyle(variant: .title(isCopied: false))
+        let titleStyle = LabelViewStyle(variant: .rowTitle(recognizer: nil))
         return DSCreationRowsViewService().createCellRowWithBlocks(
             tableView: tableView,
             indexPath: indexPath,
-            leading: .atom(.title("Передаем для тестирования очень длинный текст. Передаем для тестирования очень длинный текст. Передаем для тестирования очень длинный текст. Передаем для тестирования очень длинный текст. Передаем для тестирования очень длинный текст. Передаем для тестирования очень длинный текст. Передаем для тестирования очень длинный текст.", titleStyle))
+            leading: .atom(.title("Передаем для тестирования очень длинный текст. Передаем для тестирования очень длинный текст. Передаем для тестирования очень длинный текст. Передаем для тестирования очень длинный текст. Передаем для тестирования очень длинный текст. Передаем для тестирования очень длинный текст. Передаем для тестирования очень длинный текст.", titleStyle, nil))
         )
     }
     
@@ -184,7 +184,7 @@ private final class RowCellExampleVC: UIViewController, UITableViewDataSource, U
             tableView: tableView,
             indexPath: indexPath,
             leading: .atom(.image40(.ic24UserFilled, nil)),
-            center: .molecule(.subtitleWithTitle(("Передаем для тестирования очень длинный текст. Передаем для тестирования очень длинный текст.", nil), ("Title", nil))),
+            center: .molecule(.subtitleWithTitle(("Передаем для тестирования очень длинный текст. Передаем для тестирования очень длинный текст.", nil), ("Title", nil, nil))),
             trailing: .atom(.button("Label", { }, nil))
         )
     }
@@ -194,7 +194,7 @@ private final class RowCellExampleVC: UIViewController, UITableViewDataSource, U
             tableView: tableView,
             indexPath: indexPath,
             leading: .atom(.image40(.ic24UserFilled, nil)),
-            center: .molecule(.subtitleWithTitle(("Передаем для тестирования очень длинный текст. Передаем для тестирования очень длинный текст.", nil), ("Title", nil))),
+            center: .molecule(.subtitleWithTitle(("Передаем для тестирования очень длинный текст. Передаем для тестирования очень длинный текст.", nil), ("Title", nil, nil))),
             trailing: .atom(.radio(true, { }, nil))
         )
     }
@@ -204,7 +204,7 @@ private final class RowCellExampleVC: UIViewController, UITableViewDataSource, U
             tableView: tableView,
             indexPath: indexPath,
             leading: .atom(.image40(.ic24UserFilled, nil)),
-            center: .molecule(.subtitleWithTitle(("Передаем для тестирования очень длинный текст. Передаем для тестирования очень длинный текст.", nil), ("Title", nil)))
+            center: .molecule(.subtitleWithTitle(("Передаем для тестирования очень длинный текст. Передаем для тестирования очень длинный текст.", nil), ("Title", nil, nil)))
         )
     }
     
@@ -213,7 +213,7 @@ private final class RowCellExampleVC: UIViewController, UITableViewDataSource, U
             tableView: tableView,
             indexPath: indexPath,
             leading: .atom(.image40(.ic24UserFilled, nil)),
-            trailing: .atom(.title("Передаем для тестирования очень длинный текст. Передаем для тестирования очень длинный текст.", nil))
+            trailing: .atom(.title("Передаем для тестирования очень длинный текст. Передаем для тестирования очень длинный текст.", nil, nil))
         )
     }
 }

@@ -20,6 +20,7 @@
 		CE2827A12C3BDB6900156F14 /* CellBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2827A02C3BDB6900156F14 /* CellBuilder.swift */; };
 		CE2827A42C3BDE6600156F14 /* ChipsViewSectionHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2827A32C3BDE6600156F14 /* ChipsViewSectionHelper.swift */; };
 		CE2827B02C3C1ECD00156F14 /* CheckboxCellBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2827AF2C3C1ECD00156F14 /* CheckboxCellBuilder.swift */; };
+		CE32AC4B2C6CD561006969F2 /* Services in Frameworks */ = {isa = PBXBuildFile; productRef = CE32AC4A2C6CD561006969F2 /* Services */; };
 		CE3D0CD22C5B648A00A9A5C1 /* RadioModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3D0CD12C5B648900A9A5C1 /* RadioModuleBuilder.swift */; };
 		CE3D0CD82C5CC90C00A9A5C1 /* StepperModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3D0CD72C5CC90C00A9A5C1 /* StepperModuleBuilder.swift */; };
 		CE3D0CDE2C622EDC00A9A5C1 /* ButtonModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3D0CDD2C622EDC00A9A5C1 /* ButtonModuleBuilder.swift */; };
@@ -33,6 +34,7 @@
 		CE6439F32C58FAEE002491EA /* SnackBarExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6439F22C58FAEE002491EA /* SnackBarExample.swift */; };
 		CE694C372C3D56090064C0C0 /* ChipsCellBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE694C362C3D56090064C0C0 /* ChipsCellBuilder.swift */; };
 		CE8994672C6B44B20019D130 /* HintViewBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8994662C6B44B20019D130 /* HintViewBuilder.swift */; };
+		CE9E8C5A2C6B4D3B0034A37E /* LabelCellBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9E8C592C6B4D3B0034A37E /* LabelCellBuilder.swift */; };
 		CEA336002C36A66200880A1F /* CheckboxViewUpdater.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA335FF2C36A66200880A1F /* CheckboxViewUpdater.swift */; };
 		CEA336022C36A9B800880A1F /* ChipsViewUpdater.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA336012C36A9B800880A1F /* ChipsViewUpdater.swift */; };
 		CEA336052C36B1A400880A1F /* Components.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA336042C36B1A400880A1F /* Components.swift */; };
@@ -41,7 +43,7 @@
 		CEA336112C36C17100880A1F /* Router in Frameworks */ = {isa = PBXBuildFile; productRef = CEA336102C36C17100880A1F /* Router */; };
 		CEA336132C36C45F00880A1F /* ActivityIndicatorCellBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA336122C36C45F00880A1F /* ActivityIndicatorCellBuilder.swift */; };
 		CEA336162C36D11000880A1F /* TableHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA336152C36D11000880A1F /* TableHeaderView.swift */; };
-		CEA4E2292C37CF700069707C /* AuthorizationButtonCellBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA4E2282C37CF700069707C /* AuthorizationButtonCellBuilder.swift */; };
+		CEA4E2292C37CF700069707C /* ButtonAuthCellBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA4E2282C37CF700069707C /* ButtonAuthCellBuilder.swift */; };
 		CEA4E22D2C37DFCE0069707C /* GenericTableViewSectionModel+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA4E22C2C37DFCE0069707C /* GenericTableViewSectionModel+Extensions.swift */; };
 		CEC824B82C4E90F200891643 /* ButtonIconModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC824B72C4E90F200891643 /* ButtonIconModuleBuilder.swift */; };
 		CEC824C22C512D4B00891643 /* ImageModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC824C12C512D4B00891643 /* ImageModuleBuilder.swift */; };
@@ -54,7 +56,7 @@
 		CEEB5E712C3596E6000E0215 /* Components+Reusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEB5E702C3596E6000E0215 /* Components+Reusable.swift */; };
 		CEEB5E742C35A9A1000E0215 /* TableComponentViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEB5E732C35A9A1000E0215 /* TableComponentViewCell.swift */; };
 		CEF1F9DD2C57BC3000D0D5D2 /* ActivityIndicatorExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF1F9DC2C57BC3000D0D5D2 /* ActivityIndicatorExample.swift */; };
-		CEF1F9DF2C57BC4200D0D5D2 /* AuthorizationButtonExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF1F9DE2C57BC4200D0D5D2 /* AuthorizationButtonExample.swift */; };
+		CEF1F9DF2C57BC4200D0D5D2 /* ButtonAuthExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF1F9DE2C57BC4200D0D5D2 /* ButtonAuthExample.swift */; };
 		CEF1F9EE2C57D14A00D0D5D2 /* BadgeExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF1F9ED2C57D14A00D0D5D2 /* BadgeExample.swift */; };
 		CEF1F9F02C57D65C00D0D5D2 /* BannerViewExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF1F9EF2C57D65C00D0D5D2 /* BannerViewExample.swift */; };
 		CEF1F9F22C57D66500D0D5D2 /* ButtonViewExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF1F9F12C57D66500D0D5D2 /* ButtonViewExample.swift */; };
@@ -120,6 +122,7 @@
 		CE6439F22C58FAEE002491EA /* SnackBarExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnackBarExample.swift; sourceTree = "<group>"; };
 		CE694C362C3D56090064C0C0 /* ChipsCellBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChipsCellBuilder.swift; sourceTree = "<group>"; };
 		CE8994662C6B44B20019D130 /* HintViewBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HintViewBuilder.swift; sourceTree = "<group>"; };
+		CE9E8C592C6B4D3B0034A37E /* LabelCellBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelCellBuilder.swift; sourceTree = "<group>"; };
 		CEA335FF2C36A66200880A1F /* CheckboxViewUpdater.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckboxViewUpdater.swift; sourceTree = "<group>"; };
 		CEA336012C36A9B800880A1F /* ChipsViewUpdater.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChipsViewUpdater.swift; sourceTree = "<group>"; };
 		CEA336042C36B1A400880A1F /* Components.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Components.swift; sourceTree = "<group>"; };
@@ -127,7 +130,7 @@
 		CEA3360D2C36C0E100880A1F /* ComponentsShowcaseCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComponentsShowcaseCoordinator.swift; sourceTree = "<group>"; };
 		CEA336122C36C45F00880A1F /* ActivityIndicatorCellBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicatorCellBuilder.swift; sourceTree = "<group>"; };
 		CEA336152C36D11000880A1F /* TableHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableHeaderView.swift; sourceTree = "<group>"; };
-		CEA4E2282C37CF700069707C /* AuthorizationButtonCellBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationButtonCellBuilder.swift; sourceTree = "<group>"; };
+		CEA4E2282C37CF700069707C /* ButtonAuthCellBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonAuthCellBuilder.swift; sourceTree = "<group>"; };
 		CEA4E22C2C37DFCE0069707C /* GenericTableViewSectionModel+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GenericTableViewSectionModel+Extensions.swift"; sourceTree = "<group>"; };
 		CEC824B72C4E90F200891643 /* ButtonIconModuleBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonIconModuleBuilder.swift; sourceTree = "<group>"; };
 		CEC824C12C512D4B00891643 /* ImageModuleBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageModuleBuilder.swift; sourceTree = "<group>"; };
@@ -138,7 +141,7 @@
 		CEEB5E702C3596E6000E0215 /* Components+Reusable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Components+Reusable.swift"; sourceTree = "<group>"; };
 		CEEB5E732C35A9A1000E0215 /* TableComponentViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableComponentViewCell.swift; sourceTree = "<group>"; };
 		CEF1F9DC2C57BC3000D0D5D2 /* ActivityIndicatorExample.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityIndicatorExample.swift; sourceTree = "<group>"; };
-		CEF1F9DE2C57BC4200D0D5D2 /* AuthorizationButtonExample.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthorizationButtonExample.swift; sourceTree = "<group>"; };
+		CEF1F9DE2C57BC4200D0D5D2 /* ButtonAuthExample.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonAuthExample.swift; sourceTree = "<group>"; };
 		CEF1F9ED2C57D14A00D0D5D2 /* BadgeExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeExample.swift; sourceTree = "<group>"; };
 		CEF1F9EF2C57D65C00D0D5D2 /* BannerViewExample.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BannerViewExample.swift; sourceTree = "<group>"; };
 		CEF1F9F12C57D66500D0D5D2 /* ButtonViewExample.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonViewExample.swift; sourceTree = "<group>"; };
@@ -180,6 +183,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE32AC4B2C6CD561006969F2 /* Services in Frameworks */,
 				CEEB5E672C3568B0000E0215 /* Extensions in Frameworks */,
 				CEEB5E5B2C356246000E0215 /* ArchitectureTableView in Frameworks */,
 				CEA336112C36C17100880A1F /* Router in Frameworks */,
@@ -382,13 +386,13 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
-		CEA4E2272C37CF530069707C /* AuthorizationButtonModule */ = {
+		CEA4E2272C37CF530069707C /* ButtonAuthModule */ = {
 			isa = PBXGroup;
 			children = (
-				CEA4E2282C37CF700069707C /* AuthorizationButtonCellBuilder.swift */,
-				CEF1F9DE2C57BC4200D0D5D2 /* AuthorizationButtonExample.swift */,
+				CEA4E2282C37CF700069707C /* ButtonAuthCellBuilder.swift */,
+				CEF1F9DE2C57BC4200D0D5D2 /* ButtonAuthExample.swift */,
 			);
-			path = AuthorizationButtonModule;
+			path = ButtonAuthModule;
 			sourceTree = "<group>";
 		};
 		CEC824B62C4E90BE00891643 /* ButtonIconModuleBuilder */ = {
@@ -433,7 +437,7 @@
 			children = (
 				CEF1FA2A2C57D97D00D0D5D2 /* AuxiliaryModules */,
 				CEA336072C36B94D00880A1F /* ActivityIndicatorModule */,
-				CEA4E2272C37CF530069707C /* AuthorizationButtonModule */,
+				CEA4E2272C37CF530069707C /* ButtonAuthModule */,
 				34FC046F2C400565005DB295 /* BadgeModule */,
 				CEF1F9E02C57BC5A00D0D5D2 /* BannerModule */,
 				CEF1F9E12C57BC6A00D0D5D2 /* ButtonModule */,
@@ -526,6 +530,7 @@
 		CEF1F9E42C57CD1500D0D5D2 /* LabelModule */ = {
 			isa = PBXGroup;
 			children = (
+				CE9E8C592C6B4D3B0034A37E /* LabelCellBuilder.swift */,
 				CEF1FA102C57D89400D0D5D2 /* LabelViewExample.swift */,
 			);
 			path = LabelModule;
@@ -664,6 +669,7 @@
 				CEEB5E5A2C356246000E0215 /* ArchitectureTableView */,
 				CEEB5E662C3568B0000E0215 /* Extensions */,
 				CEA336102C36C17100880A1F /* Router */,
+				CE32AC4A2C6CD561006969F2 /* Services */,
 			);
 			productName = OrnamentApp;
 			productReference = 8889557F29140FFC00A46293 /* OrnamentApp.app */;
@@ -697,6 +703,7 @@
 				CEEB5E592C356246000E0215 /* XCRemoteSwiftPackageReference "ios-architecture-table" */,
 				CEEB5E652C3568B0000E0215 /* XCRemoteSwiftPackageReference "ios-extensions" */,
 				CEA3360F2C36C17100880A1F /* XCRemoteSwiftPackageReference "ios-service-routing" */,
+				CE32AC492C6CD561006969F2 /* XCRemoteSwiftPackageReference "ios-services" */,
 			);
 			productRefGroup = 8889558029140FFC00A46293 /* Products */;
 			projectDirPath = "";
@@ -764,8 +771,8 @@
 				CEA3360C2C36C0BE00880A1F /* MainCoordinator.swift in Sources */,
 				CEEB5E622C356802000E0215 /* ComponentsShowcaseFeature.swift in Sources */,
 				CE2827A12C3BDB6900156F14 /* CellBuilder.swift in Sources */,
-				CEF1F9DF2C57BC4200D0D5D2 /* AuthorizationButtonExample.swift in Sources */,
-				CEA4E2292C37CF700069707C /* AuthorizationButtonCellBuilder.swift in Sources */,
+				CEF1F9DF2C57BC4200D0D5D2 /* ButtonAuthExample.swift in Sources */,
+				CEA4E2292C37CF700069707C /* ButtonAuthCellBuilder.swift in Sources */,
 				CEF2DE6E2C4130840065C1BD /* InputSelectCellBuilder.swift in Sources */,
 				CEF1F9FC2C57D76200D0D5D2 /* DividerViewExample.swift in Sources */,
 				CE3D0CD82C5CC90C00A9A5C1 /* StepperModuleBuilder.swift in Sources */,
@@ -784,6 +791,7 @@
 				CEF1FA302C57D9D700D0D5D2 /* RowCellExample.swift in Sources */,
 				CE3D0CD22C5B648A00A9A5C1 /* RadioModuleBuilder.swift in Sources */,
 				CEF1FA062C57D78F00D0D5D2 /* InputSelectViewExample.swift in Sources */,
+				CE9E8C5A2C6B4D3B0034A37E /* LabelCellBuilder.swift in Sources */,
 				CEF1FA1B2C57D8C900D0D5D2 /* SegmentViewExample.swift in Sources */,
 				888955B72914108700A46293 /* SceneDelegate.swift in Sources */,
 				CEA336052C36B1A400880A1F /* Components.swift in Sources */,
@@ -1020,6 +1028,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		CE32AC492C6CD561006969F2 /* XCRemoteSwiftPackageReference "ios-services" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://gitlab.akbars.tech/abo/ios-services";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.3.0;
+			};
+		};
 		CEA3360F2C36C17100880A1F /* XCRemoteSwiftPackageReference "ios-service-routing" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://gitlab.akbars.tech/abo/ios-service-routing";
@@ -1033,7 +1049,7 @@
 			repositoryURL = "https://gitlab.akbars.tech/abo/ios-architecture-table";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 18.0.0;
+				minimumVersion = 19.0.0;
 			};
 		};
 		CEEB5E652C3568B0000E0215 /* XCRemoteSwiftPackageReference "ios-extensions" */ = {
@@ -1047,6 +1063,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		CE32AC4A2C6CD561006969F2 /* Services */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CE32AC492C6CD561006969F2 /* XCRemoteSwiftPackageReference "ios-services" */;
+			productName = Services;
+		};
 		CEA336102C36C17100880A1F /* Router */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = CEA3360F2C36C17100880A1F /* XCRemoteSwiftPackageReference "ios-service-routing" */;

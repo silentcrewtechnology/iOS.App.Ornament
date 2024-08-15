@@ -69,16 +69,16 @@ private final class GibddFineCellsExampleVC: UIViewController, UITableViewDataSo
             state: .disabled,
             icon: .without
         )
-        let labelStyle = LabelViewStyle(variant: .subindex, alignment: .center)
+        let labelStyle = LabelViewStyle(variant: .rowSubtitle, alignment: .center)
         let onTap: () -> Void = { }
         
         return DSCreationRowsViewService().createCellRowWithBlocks(
             tableView: tableView,
             indexPath: indexPath,
             leading: .molecule(
-                .titleWithSubtitles(("АО «Татэнергосбыт»", nil), [("За апрель", nil), ("Автоплатеж подключен", nil)])),
+                .titleWithSubtitles(("АО «Татэнергосбыт»", nil, nil), [("За апрель", nil), ("Автоплатеж подключен", nil)])),
             trailing: .molecule(
-                .buttonWithSubindex(
+                .buttonWithSubtitle(
                     ("4 158,40 ₽", onTap, buttonStyle),
                     ("Оплачено", labelStyle)
                 )
@@ -94,16 +94,16 @@ private final class GibddFineCellsExampleVC: UIViewController, UITableViewDataSo
             state: .disabled,
             icon: .without
         )
-        let labelStyle = LabelViewStyle(variant: .subindex, alignment: .center)
+        let labelStyle = LabelViewStyle(variant: .rowSubtitle, alignment: .center)
         let onTap: () -> Void = { }
         
         return DSCreationRowsViewService().createCellRowWithBlocks(
             tableView: tableView,
             indexPath: indexPath,
             leading: .molecule(
-                .titleWithSubtitle(("АО «Татэнергосбыт»", nil), ("За апрель", nil))),
+                .titleWithSubtitle(("АО «Татэнергосбыт»", nil, nil), ("За апрель", nil))),
             trailing: .molecule(
-                .buttonWithSubindex(
+                .buttonWithSubtitle(
                     ("4 158,40 ₽", onTap, buttonStyle),
                     ("Оплачено", labelStyle)
                 )
@@ -119,16 +119,16 @@ private final class GibddFineCellsExampleVC: UIViewController, UITableViewDataSo
             state: .disabled,
             icon: .without
         )
-        let labelStyle = LabelViewStyle(variant: .subindex, alignment: .center)
+        let labelStyle = LabelViewStyle(variant: .rowSubtitle, alignment: .center)
         let onTap: () -> Void = { }
         
         return DSCreationRowsViewService().createCellRowWithBlocks(
             tableView: tableView,
             indexPath: indexPath,
             leading: .molecule(
-                .titleWithSubtitle(("АО «Татэнергосбыт»", nil), ("За апрель", nil))),
+                .titleWithSubtitle(("АО «Татэнергосбыт»", nil, nil), ("За апрель", nil))),
             trailing: .molecule(
-                .buttonWithSubindex(
+                .buttonWithSubtitle(
                     ("150 ₽", onTap, buttonStyle),
                     ("Оплачено", labelStyle)
                 )
@@ -152,7 +152,7 @@ private final class GibddFineCellsExampleVC: UIViewController, UITableViewDataSo
             tableView: tableView,
             indexPath: indexPath,
             leading: .molecule(
-                .titleWithSubtitle(("Штраф от 21.05", nil), ("Скидка до 21.09", nil))),
+                .titleWithSubtitle(("Штраф от 21.05", nil, nil), ("Скидка до 21.09", nil))),
             center: .atom(.index("3 000 ₽", nil)),
             trailing: .atom(.button("1 500 ₽", onTap, buttonStyle))
         )
@@ -174,7 +174,7 @@ private final class GibddFineCellsExampleVC: UIViewController, UITableViewDataSo
             tableView: tableView,
             indexPath: indexPath,
             leading: .molecule(
-                .titleWithSubtitles(("АО «Татэнергосбыт»", nil), [("За март", nil), ("Автоплатеж подключен", nil)])),
+                .titleWithSubtitles(("АО «Татэнергосбыт»", nil, nil), [("За март", nil), ("Автоплатеж подключен", nil)])),
             trailing: .atom(.button("308,52 ₽", onTap, buttonStyle))
         )
     }
@@ -195,7 +195,7 @@ private final class GibddFineCellsExampleVC: UIViewController, UITableViewDataSo
             tableView: tableView,
             indexPath: indexPath,
             leading: .molecule(
-                .titleWithSubtitle(("РО Капитального ремонта", nil), ("За март", nil))),
+                .titleWithSubtitle(("РО Капитального ремонта", nil, nil), ("За март", nil))),
             trailing: .atom(.button("308,52 ₽", onTap, buttonStyle))
         )
     }

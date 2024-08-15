@@ -32,6 +32,8 @@ enum Constants {
     static let componentButtonText = "Button text"
     static let componentStack = "Stack"
     static let componentIcon = "Icon"
+    static let componentAlignment = "Alignment"
+    static let componentCopy = "Copy"
 }
 
 // MARK: Image

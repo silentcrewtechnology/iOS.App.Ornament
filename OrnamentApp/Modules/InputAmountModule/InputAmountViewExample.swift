@@ -25,7 +25,7 @@ private final class InputAmountViewExampleVC: UIViewController {
         
         lazy var headerViewProperties: LabelView.ViewProperties = {
             var viewProperties = LabelView.ViewProperties(text: .init(string: "Header"))
-            let style = LabelViewStyle(variant: .default)
+            let style = LabelViewStyle(variant: .default(customColor: nil))
             style.update(viewProperties: &viewProperties)
             
             return viewProperties
