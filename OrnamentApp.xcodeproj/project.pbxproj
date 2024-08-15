@@ -1033,7 +1033,7 @@
 			repositoryURL = "https://gitlab.akbars.tech/abo/ios-services";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 0.3.1;
+				minimumVersion = 0.3.0;
 			};
 		};
 		CEA3360F2C36C17100880A1F /* XCRemoteSwiftPackageReference "ios-service-routing" */ = {

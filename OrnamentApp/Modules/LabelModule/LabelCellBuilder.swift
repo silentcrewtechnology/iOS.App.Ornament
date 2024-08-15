@@ -29,7 +29,7 @@ final class LabelCellBuilder: NSObject, UITextFieldDelegate, CellBuilder {
     // MARK: - Methods
     
     func createSections() -> [GenericTableViewSectionModel] {
-        gestureRecognizer = recognizerService.createRecognizerForCopy { [weak self] in
+        gestureRecognizer = recognizerService.createRecognizerForCopy(menuTitle: "Скопировать") { [weak self] in
             self?.viewProperties.text.string
         }
         
