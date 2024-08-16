@@ -23,8 +23,7 @@ enum Components: String, CaseIterable {
     case hint = "Hint"
     // TODO: - Add
     case inputTextarea = "Input textarea (not added)"
-    // TODO: - Actualize
-    case input = "Input (not actualized)"
+    case input = "Input"
     // TODO: - Actualize
     case inputContryCode = "Input country code (not actualized)"
     // TODO: - Actualize
