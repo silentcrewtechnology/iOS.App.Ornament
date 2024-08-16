@@ -74,16 +74,15 @@ extension HintViewBuilder {
                 guard let self = self else { return }
                 
                 var vp: InputView.ViewProperties = .init()
-                
-                if let text = self.viewProperties.text {
-                    vp.textField.text = text
-                    vp.textField.delegateAssigningClosure = { textField in
+                vp.textFieldViewProperties = .init(
+                    text: self.viewProperties.text ?? .init(string: ""),
+                    delegateAssigningClosure: { textField in
                         textField.delegate = self
                         textField.addTarget(self, action: #selector(self.onTextChange(textField:)), for: .editingChanged)
                     }
-                }
-                let inputTextStyle = InputViewStyle()
-                inputTextStyle.update(state: .default, viewProperties: &vp)
+                )
+                let inputTextStyle = InputViewStyle(state: .default, set: .simple)
+                inputTextStyle.update(viewProperties: &vp)
                 cell.containedView.update(with: vp)
 
                 cell.contentInset = .init(top: .zero, left: 16, bottom: 16, right: 16)
@@ -113,16 +112,15 @@ extension HintViewBuilder {
                 guard let self = self else { return }
                 
                 var vp: InputView.ViewProperties = .init()
-                
-                if let additionalText = self.viewProperties.additionalText {
-                    vp.textField.text = additionalText
-                    vp.textField.delegateAssigningClosure = { textField in
+                vp.textFieldViewProperties = .init(
+                    text: self.viewProperties.additionalText ?? .init(string: ""),
+                    delegateAssigningClosure: { textField in
                         textField.delegate = self
                         textField.addTarget(self, action: #selector(self.onAdditionalTextChange(textField:)), for: .editingChanged)
                     }
-                }
-                let inputTextStyle = InputViewStyle()
-                inputTextStyle.update(state: .default, viewProperties: &vp)
+                )
+                let inputTextStyle = InputViewStyle(state: .default, set: .simple)
+                inputTextStyle.update(viewProperties: &vp)
                 cell.containedView.update(with: vp)
 
                 cell.contentInset = .init(top: .zero, left: 16, bottom: 16, right: 16)

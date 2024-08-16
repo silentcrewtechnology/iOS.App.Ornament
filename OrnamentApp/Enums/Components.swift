@@ -27,7 +27,7 @@ enum Components: String, CaseIterable {
     // TODO: - Actualize
     case inputContryCode = "Input country code (not actualized)"
     // TODO: - Actualize
-    case inputAmountView = "Input amount view (not actualized)"
+    case inputAmount = "Input amount (not actualized)"
     case inputSelect = "Input select"
     case inputOTP = "Input OTP"
     // TODO: - Realize, Add

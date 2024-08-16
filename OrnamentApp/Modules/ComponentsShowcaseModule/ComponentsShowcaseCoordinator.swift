@@ -221,10 +221,10 @@ final class ComponentsShowcaseCoordinator: RootCoordinatorProtocol {
                 )
                 guard let builder = self?.imageFeature?.runFlow(data: nil) else { return }
                 viewController = (builder.view as! UIViewController)
-            case .inputAmountView:
+            case .inputAmount:
                 self?.inputAmountFeature = CommonDetailFeature(
                     cellBuilder: InputAmountCellBuilder(),
-                    screenTitle: Components.inputAmountView.rawValue,
+                    screenTitle: Components.inputAmount.rawValue,
                     backAction: self?.popVC
                 )
                 guard let builder = self?.inputAmountFeature?.runFlow(data: nil) else { return }

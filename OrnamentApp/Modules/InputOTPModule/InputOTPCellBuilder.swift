@@ -109,13 +109,15 @@ final class InputOTPCellBuilder: NSObject, UITextFieldDelegate, CellBuilder {
                 guard let self = self else { return }
                 
                 var vp: InputView.ViewProperties = .init()
-                vp.textField.text = self.hintText
-                vp.textField.delegateAssigningClosure = { textField in
-                    textField.delegate = self
-                    textField.addTarget(self, action: #selector(self.onHintTextChange(textField:)), for: .editingChanged)
-                }
-                let inputTextStyle = InputViewStyle()
-                inputTextStyle.update(state: .default, viewProperties: &vp)
+                vp.textFieldViewProperties = .init(
+                    text: self.hintText,
+                    delegateAssigningClosure: { textField in
+                        textField.delegate = self
+                        textField.addTarget(self, action: #selector(self.onHintTextChange(textField:)), for: .editingChanged)
+                    }
+                )
+                let inputTextStyle = InputViewStyle(state: .default, set: .simple)
+                inputTextStyle.update(viewProperties: &vp)
                 cell.containedView.update(with: vp)
 
                 cell.contentInset = .init(top: .zero, left: 16, bottom: 16, right: 16)

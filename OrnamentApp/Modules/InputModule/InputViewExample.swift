@@ -61,7 +61,7 @@ private final class InputViewExampleFeature: NSObject, UITextFieldDelegate {
         return viewProperties
     }()
     
-    private let style = InputViewStyle()
+    private var style = InputViewStyle(state: .default, set: .simple)
     private var isEnabled = true
     
     // MARK: - Properties
@@ -80,37 +80,32 @@ private final class InputViewExampleFeature: NSObject, UITextFieldDelegate {
     // MARK: - Methods
     
     func showLeftError(message: String) {
-        style.update(state: .error(message.attributed), viewProperties: &viewProperties)
+        style = .init(state: .error(.init(text: message.attributed)), set: .simple)
+        style.update(viewProperties: &viewProperties)
         view.update(with: viewProperties)
     }
     
     // MARK: - Private methods
     
     private func setupView() {
-        viewProperties.header = headerViewProperties
-        viewProperties.textField.text = "Content".attributed
-        viewProperties.textField.placeholder = "Placeholder".attributed
-        viewProperties.rightViews = [
-            {
-                let view = UIImageView(image: .ic24Car)
-                view.snp.makeConstraints { $0.size.equalTo(24) }
-                view.isUserInteractionEnabled = true
-                view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(iconTapped)))
-                return view
-            }()
-        ]
-        viewProperties.textField.delegateAssigningClosure = { [weak self] textField in
-            guard let self else { return }
-            textField.delegate = self
-            textField.addTarget(self, action: #selector(self.onTextChange(textField:)), for: .editingChanged)
-        }
-        style.update(state: .default, viewProperties: &viewProperties)
+        viewProperties.labelViewProperties = headerViewProperties
+        viewProperties.textFieldViewProperties.text = "Content".attributed
+        viewProperties.textFieldViewProperties.placeholder = "Placeholder".attributed
+        viewProperties.rightView = {
+            let view = UIImageView(image: .ic24Car)
+            view.snp.makeConstraints { $0.size.equalTo(24) }
+            view.isUserInteractionEnabled = true
+            view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(iconTapped)))
+            return view
+        }()
+        
+        style.update(viewProperties: &viewProperties)
         view.update(with: viewProperties)
     }
     
     @objc private func onTextChange(textField: UITextField) {
-        viewProperties.textField.text = (textField.text ?? "").attributed
-        style.update(state: .default, viewProperties: &viewProperties)
+        viewProperties.textFieldViewProperties.text = (textField.text ?? "").attributed
+        style.update(viewProperties: &viewProperties)
     }
     
     @objc private func iconTapped() {
