@@ -1,190 +1,199 @@
+// TODO Восстановить chipsView
+
+//import UIKit
+//import ArchitectureTableView
+//import Components
+//import DesignSystem
+//import ImagesService
+//import Extensions
 //
-//  ChipsCellBuilder.swift
-//  OrnamentApp
+//final class ChipsCellBuilder: NSObject, UITextFieldDelegate, CellBuilder {
+//    
+//    // MARK: - Private properties
+//    
+//    private let chipsViewSectionHelper = ChipsViewSectionHelper()
+//    private var chipsView: ChipsView?
+//    private var viewProperties = ChipsView.ViewProperties(text: .init(string: "ChipsView"))
+//    private var style = ChipsViewStyle(
+//        set: .leftIcon,
+//        size: .small,
+//        state: .default,
+//        selected: .off,
+//        label: .true,
+//        icon: .false)
+//    private var selected: ChipsViewStyle.Selected = .off
+//    private var state: ChipsViewStyle.State = .default
+//    private var size: ChipsViewStyle.Size = .small
+//    
+//    // MARK: - Methods
+//    
+//    func createSections() -> [GenericTableViewSectionModel] {
+//        return [
+//            createChipsSection(),
+//            createInputTextSection(),
+//            createSelectionSection(),
+//            createStateSection(),
+//            createSizeSection(),
+//            createImageSection()
+//        ]
+//    }
+//    
+//    // MARK: - Private methods
+//    
+//    private func createChipsSection() -> GenericTableViewSectionModel {
+//        let row = GenericTableViewRowModel(
+//            with: GenericTableViewCellWrapper<ChipsView>.self,
+//            configuration: { [weak self] cell, _ in
+//                guard let self = self else { return }
 //
-//  Created by user on 09.07.2024.
+//                self.style.update(viewProperties: &self.viewProperties)
+//                cell.containedView.update(with: self.viewProperties)
+//                
+//                cell.contentInset = .init(top: .zero, left: 16, bottom: 16, right: 16)
+//                cell.selectionStyle = .none
+//                self.chipsView = cell.containedView
+//                
+//                cell.containedView.snp.remakeConstraints { make in
+//                    make.top.equalToSuperview().inset(8)
+//                    make.leading.equalToSuperview().inset(16)
+//                }
+//            },
+//            initializesFromNib: false
+//        )
+//        row.rowHeight = 72
+//        
+//        let section = GenericTableViewSectionModel(with: [row])
+//        section.makeHeader(title: Constants.componentTitle.localized)
+//        return section
+//    }
+//    
+//    private func createInputTextSection() -> GenericTableViewSectionModel {
+//        let row = GenericTableViewRowModel(
+//            with: GenericTableViewCellWrapper<InputView>.self,
+//            configuration: { [weak self] cell, _ in
+//                guard let self = self else { return }
+//                
+//                var vp: InputView.ViewProperties = .init()
+//                vp.textFieldViewProperties = .init(
+//                    text: self.viewProperties.text,
+//                    delegateAssigningClosure: { textField in
+//                        textField.delegate = self
+//                        textField.addTarget(self, action: #selector(self.onTextChange(textField:)), for: .editingChanged)
+//                    }
+//                )
+//                let inputTextStyle = InputViewStyle(state: .default, set: .simple)
+//                inputTextStyle.update(viewProperties: &vp)
+//                cell.containedView.update(with: vp)
 //
-
-import UIKit
-import ArchitectureTableView
-import Components
-import DesignSystem
-import ImagesService
-import Extensions
-
-final class ChipsCellBuilder: NSObject, UITextFieldDelegate, CellBuilder {
-    
-    // MARK: - Private properties
-    
-    private let chipsViewSectionHelper = ChipsViewSectionHelper()
-    private var chipsView: ChipsView?
-    private var viewProperties = ChipsView.ViewProperties(text: .init(string: "ChipsView"))
-    private var style = ChipsViewStyle(selection: .default, state: .default, size: .small)
-    private var selection: ChipsViewStyle.Selection = .default
-    private var state: ChipsViewStyle.State = .default
-    private var size: ChipsViewStyle.Size = .small
-    
-    // MARK: - Methods
-    
-    func createSections() -> [GenericTableViewSectionModel] {
-        return [
-            createChipsSection(),
-            createInputTextSection(),
-            createSelectionSection(),
-            createStateSection(),
-            createSizeSection(),
-            createImageSection()
-        ]
-    }
-    
-    // MARK: - Private methods
-    
-    private func createChipsSection() -> GenericTableViewSectionModel {
-        let row = GenericTableViewRowModel(
-            with: GenericTableViewCellWrapper<ChipsView>.self,
-            configuration: { [weak self] cell, _ in
-                guard let self = self else { return }
-
-                self.style.update(viewProperties: &self.viewProperties)
-                cell.containedView.update(with: self.viewProperties)
-                
-                cell.contentInset = .init(top: .zero, left: 16, bottom: 16, right: 16)
-                cell.selectionStyle = .none
-                self.chipsView = cell.containedView
-                
-                cell.containedView.snp.remakeConstraints { make in
-                    make.top.equalToSuperview().inset(8)
-                    make.leading.equalToSuperview().inset(16)
-                }
-            },
-            initializesFromNib: false
-        )
-        row.rowHeight = 72
-        
-        let section = GenericTableViewSectionModel(with: [row])
-        section.makeHeader(title: Constants.componentTitle.localized)
-        return section
-    }
-    
-    private func createInputTextSection() -> GenericTableViewSectionModel {
-        let row = GenericTableViewRowModel(
-            with: GenericTableViewCellWrapper<InputView>.self,
-            configuration: { [weak self] cell, _ in
-                guard let self = self else { return }
-                
-                var vp: InputView.ViewProperties = .init()
-                vp.textFieldViewProperties = .init(
-                    text: self.viewProperties.text,
-                    delegateAssigningClosure: { textField in
-                        textField.delegate = self
-                        textField.addTarget(self, action: #selector(self.onTextChange(textField:)), for: .editingChanged)
-                    }
-                )
-                let inputTextStyle = InputViewStyle(state: .default, set: .simple)
-                inputTextStyle.update(viewProperties: &vp)
-                cell.containedView.update(with: vp)
-
-                cell.contentInset = .init(top: .zero, left: 16, bottom: 16, right: 16)
-                cell.selectionStyle = .none
-            },
-            initializesFromNib: false
-        )
-        row.rowHeight = 72
-        
-        let section = GenericTableViewSectionModel(with: [row])
-        section.makeHeader(title: Constants.componentText.localized)
-        return section
-    }
-    
-    private func createSelectionSection() -> GenericTableViewSectionModel {
-        return chipsViewSectionHelper.makeHorizontalSectionWithScroll(
-            titles: ["Off", "On"],
-            actions: [
-                { [weak self] in self?.updateChipsStyle(selection: .default) },
-                { [weak self] in self?.updateChipsStyle(selection: .selected) }
-            ],
-            headerTitle: Constants.componentSelection
-        )
-    }
-    
-    private func createStateSection() -> GenericTableViewSectionModel {
-        return chipsViewSectionHelper.makeHorizontalSectionWithScroll(
-            titles: ["Default", "Pressed", "Disabled"],
-            actions: [
-                { [weak self] in self?.updateChipsStyle(state: .default) },
-                { [weak self] in self?.updateChipsStyle(state: .pressed) },
-                { [weak self] in self?.updateChipsStyle(state: .disabled) }
-            ],
-            headerTitle: Constants.componentState
-        )
-    }
-    
-    private func createSizeSection() -> GenericTableViewSectionModel {
-        return chipsViewSectionHelper.makeHorizontalSectionWithScroll(
-            titles: ["Small", "Large"],
-            actions: [
-                { [weak self] in self?.updateChipsStyle(size: .small) },
-                { [weak self] in self?.updateChipsStyle(size: .large) }
-            ],
-            headerTitle: Constants.componentSize
-        )
-    }
-    
-    private func createImageSection() -> GenericTableViewSectionModel {
-        return chipsViewSectionHelper.makeHorizontalSectionWithScroll(
-            titles: ["None", "Left", "Right"],
-            actions: [
-                { [weak self] in self?.addIconView(view: nil) },
-                { [weak self] in self?.addIconView(view: UIImageView(image: .ic16Tick), inRight: false) },
-                { [weak self] in self?.addIconView(view: UIImageView(image: .ic16Close), inRight: true) }
-            ],
-            headerTitle: Constants.componentImage
-        )
-    }
-    
-    private func updateChipsStyle(
-        selection: ChipsViewStyle.Selection? = nil,
-        state: ChipsViewStyle.State? = nil,
-        size: ChipsViewStyle.Size? = nil
-    ) {
-        if let selection = selection {
-            self.selection = selection
-        }
-        
-        if let state = state {
-            self.state = state
-        }
-        
-        if let size = size {
-            self.size = size
-        }
-        
-        style = .init(selection: self.selection, state: self.state, size: self.size)
-        style.update(viewProperties: &viewProperties)
-        chipsView?.update(with: viewProperties)
-    }
-    
-    private func addIconView(view: UIView?, inRight: Bool = true) {
-        if let view = view {
-            if inRight {
-                viewProperties.rightView = view
-                viewProperties.leftView = nil
-            } else {
-                viewProperties.leftView = view
-                viewProperties.rightView = nil
-            }
-        } else {
-            viewProperties.leftView = nil
-            viewProperties.rightView = nil
-        }
-        
-        style.update(viewProperties: &viewProperties)
-        chipsView?.update(with: viewProperties)
-    }
-    
-    @objc private func onTextChange(textField: UITextField) {
-        viewProperties.text = NSMutableAttributedString(string: textField.text ?? "")
-        style.update(viewProperties: &viewProperties)
-        chipsView?.update(with: viewProperties)
-    }
-}
+//                cell.contentInset = .init(top: .zero, left: 16, bottom: 16, right: 16)
+//                cell.selectionStyle = .none
+//            },
+//            initializesFromNib: false
+//        )
+//        row.rowHeight = 72
+//        
+//        let section = GenericTableViewSectionModel(with: [row])
+//        section.makeHeader(title: Constants.componentText.localized)
+//        return section
+//    }
+//    
+//    private func createSelectionSection() -> GenericTableViewSectionModel {
+//        return chipsViewSectionHelper.makeHorizontalSectionWithScroll(
+//            titles: ["Off", "On"],
+//            actions: [
+//                { [weak self] in self?.updateChipsStyle(selection: .default) },
+//                { [weak self] in self?.updateChipsStyle(selection: .selected) }
+//            ],
+//            headerTitle: Constants.componentSelection
+//        )
+//    }
+//    
+//    private func createStateSection() -> GenericTableViewSectionModel {
+//        return chipsViewSectionHelper.makeHorizontalSectionWithScroll(
+//            titles: ["Default", "Pressed", "Disabled"],
+//            actions: [
+//                { [weak self] in self?.updateChipsStyle(state: .default) },
+//                { [weak self] in self?.updateChipsStyle(state: .pressed) },
+//                { [weak self] in self?.updateChipsStyle(state: .disabled) }
+//            ],
+//            headerTitle: Constants.componentState
+//        )
+//    }
+//    
+//    private func createSizeSection() -> GenericTableViewSectionModel {
+//        return chipsViewSectionHelper.makeHorizontalSectionWithScroll(
+//            titles: ["Small", "Large"],
+//            actions: [
+//                { [weak self] in self?.updateChipsStyle(size: .small) },
+//                { [weak self] in self?.updateChipsStyle(size: .large) }
+//            ],
+//            headerTitle: Constants.componentSize
+//        )
+//    }
+//    
+//    private func createImageSection() -> GenericTableViewSectionModel {
+//        return chipsViewSectionHelper.makeHorizontalSectionWithScroll(
+//            titles: ["None", "Left", "Right"],
+//            actions: [
+//                { [weak self] in self?.addIconView(view: nil) },
+//                { [weak self] in self?.addIconView(view: UIImageView(image: .ic16Tick), inRight: false) },
+//                { [weak self] in self?.addIconView(view: UIImageView(image: .ic16Close), inRight: true) }
+//            ],
+//            headerTitle: Constants.componentImage
+//        )
+//    }
+//    
+//    private func updateChipsStyle(
+//        selected: ChipsViewStyle.Selected? = nil,
+//        state: ChipsViewStyle.State? = nil,
+//        size: ChipsViewStyle.Size? = nil
+//    ) {
+//        if let selected = selected {
+//            self.selected = selected
+//        }
+//        
+//        if let state = state {
+//            self.state = state
+//        }
+//        
+//        if let size = size {
+//            self.size = size
+//        }
+//        
+//        style = .init(selected: self.selected, state: self.state, size: self.size)
+//        
+//        style = .init(
+//            set: .leftIcon,
+//            size: .small,
+//            state: self.state,
+//            selected: self.selected,
+//            label: .true,
+//            icon: .false)
+//        style.update(viewProperties: &viewProperties)
+//        chipsView?.update(with: viewProperties)
+//    }
+//    
+//    private func addIconView(view: UIView?, inRight: Bool = true) {
+//        if let view = view {
+//            if inRight {
+//                viewProperties.rightView = view
+//                viewProperties.leftView = nil
+//            } else {
+//                viewProperties.leftView = view
+//                viewProperties.rightView = nil
+//            }
+//        } else {
+//            viewProperties.leftView = nil
+//            viewProperties.rightView = nil
+//        }
+//        
+//        style.update(viewProperties: &viewProperties)
+//        chipsView?.update(with: viewProperties)
+//    }
+//    
+//    @objc private func onTextChange(textField: UITextField) {
+//        viewProperties.text = NSMutableAttributedString(string: textField.text ?? "")
+//        style.update(viewProperties: &viewProperties)
+//        chipsView?.update(with: viewProperties)
+//    }
+//}

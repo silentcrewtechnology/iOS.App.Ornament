@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3477B69A2C734EB400C6C059 /* ChipsViewUpdater.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3477B6992C734EB400C6C059 /* ChipsViewUpdater.swift */; };
+		34C3999E2C5B85D400C98DBC /* BadgeModuleFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34C3999D2C5B85D400C98DBC /* BadgeModuleFeature.swift */; };
+		34C399A02C5BF40000C98DBC /* BadgeModuleDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34C3999F2C5BF40000C98DBC /* BadgeModuleDataSource.swift */; };
+		34C399A22C5BF5CA00C98DBC /* BadgeModuleTableDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34C399A12C5BF5CA00C98DBC /* BadgeModuleTableDelegate.swift */; };
 		34FC04712C4005A1005DB295 /* BadgeModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34FC04702C4005A1005DB295 /* BadgeModuleBuilder.swift */; };
 		8889558329140FFC00A46293 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8889558229140FFC00A46293 /* AppDelegate.swift */; };
 		8889558C29140FFE00A46293 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8889558B29140FFE00A46293 /* Assets.xcassets */; };
@@ -36,7 +40,6 @@
 		CE8994672C6B44B20019D130 /* HintViewBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8994662C6B44B20019D130 /* HintViewBuilder.swift */; };
 		CE9E8C5A2C6B4D3B0034A37E /* LabelCellBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9E8C592C6B4D3B0034A37E /* LabelCellBuilder.swift */; };
 		CEA336002C36A66200880A1F /* CheckboxViewUpdater.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA335FF2C36A66200880A1F /* CheckboxViewUpdater.swift */; };
-		CEA336022C36A9B800880A1F /* ChipsViewUpdater.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA336012C36A9B800880A1F /* ChipsViewUpdater.swift */; };
 		CEA336052C36B1A400880A1F /* Components.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA336042C36B1A400880A1F /* Components.swift */; };
 		CEA3360C2C36C0BE00880A1F /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA3360B2C36C0BE00880A1F /* MainCoordinator.swift */; };
 		CEA3360E2C36C0E100880A1F /* ComponentsShowcaseCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA3360D2C36C0E100880A1F /* ComponentsShowcaseCoordinator.swift */; };
@@ -94,6 +97,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3477B6992C734EB400C6C059 /* ChipsViewUpdater.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChipsViewUpdater.swift; sourceTree = "<group>"; };
+		34C3999D2C5B85D400C98DBC /* BadgeModuleFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeModuleFeature.swift; sourceTree = "<group>"; };
+		34C3999F2C5BF40000C98DBC /* BadgeModuleDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeModuleDataSource.swift; sourceTree = "<group>"; };
+		34C399A12C5BF5CA00C98DBC /* BadgeModuleTableDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeModuleTableDelegate.swift; sourceTree = "<group>"; };
 		34FC04702C4005A1005DB295 /* BadgeModuleBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeModuleBuilder.swift; sourceTree = "<group>"; };
 		8889557F29140FFC00A46293 /* OrnamentApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OrnamentApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8889558229140FFC00A46293 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -124,7 +131,6 @@
 		CE8994662C6B44B20019D130 /* HintViewBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HintViewBuilder.swift; sourceTree = "<group>"; };
 		CE9E8C592C6B4D3B0034A37E /* LabelCellBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelCellBuilder.swift; sourceTree = "<group>"; };
 		CEA335FF2C36A66200880A1F /* CheckboxViewUpdater.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckboxViewUpdater.swift; sourceTree = "<group>"; };
-		CEA336012C36A9B800880A1F /* ChipsViewUpdater.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChipsViewUpdater.swift; sourceTree = "<group>"; };
 		CEA336042C36B1A400880A1F /* Components.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Components.swift; sourceTree = "<group>"; };
 		CEA3360B2C36C0BE00880A1F /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
 		CEA3360D2C36C0E100880A1F /* ComponentsShowcaseCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComponentsShowcaseCoordinator.swift; sourceTree = "<group>"; };
@@ -198,6 +204,9 @@
 			children = (
 				34FC04702C4005A1005DB295 /* BadgeModuleBuilder.swift */,
 				CEF1F9ED2C57D14A00D0D5D2 /* BadgeExample.swift */,
+				34C3999D2C5B85D400C98DBC /* BadgeModuleFeature.swift */,
+				34C3999F2C5BF40000C98DBC /* BadgeModuleDataSource.swift */,
+				34C399A12C5BF5CA00C98DBC /* BadgeModuleTableDelegate.swift */,
 			);
 			path = BadgeModule;
 			sourceTree = "<group>";
@@ -355,7 +364,7 @@
 			isa = PBXGroup;
 			children = (
 				CEA335FF2C36A66200880A1F /* CheckboxViewUpdater.swift */,
-				CEA336012C36A9B800880A1F /* ChipsViewUpdater.swift */,
+				3477B6992C734EB400C6C059 /* ChipsViewUpdater.swift */,
 			);
 			path = ViewUpdaters;
 			sourceTree = "<group>";
@@ -741,7 +750,6 @@
 				CEF1FA2D2C57D9A500D0D5D2 /* GibddFineCellsExample.swift in Sources */,
 				CE4A7C0F2C3E8FC300AA7EB4 /* Constants.swift in Sources */,
 				CEF1FA152C57D8AA00D0D5D2 /* PageControlExample.swift in Sources */,
-				CEA336022C36A9B800880A1F /* ChipsViewUpdater.swift in Sources */,
 				CEC824B82C4E90F200891643 /* ButtonIconModuleBuilder.swift in Sources */,
 				CE254A5B2C5CDAC20083EF57 /* BannerCellBuilder.swift in Sources */,
 				CEA3360E2C36C0E100880A1F /* ComponentsShowcaseCoordinator.swift in Sources */,
@@ -751,15 +759,19 @@
 				CEF1F9EE2C57D14A00D0D5D2 /* BadgeExample.swift in Sources */,
 				CEF1FA022C57D78000D0D5D2 /* InputPhoneNumberViewExample.swift in Sources */,
 				CE6439F32C58FAEE002491EA /* SnackBarExample.swift in Sources */,
+				34C399A02C5BF40000C98DBC /* BadgeModuleDataSource.swift in Sources */,
 				CE2130B72C60C90000AB69BE /* SnackBarCellBuilder.swift in Sources */,
 				CEF2DE712C4150130065C1BD /* InputCellBuilder.swift in Sources */,
+				3477B69A2C734EB400C6C059 /* ChipsViewUpdater.swift in Sources */,
 				CEF1F9F82C57D75000D0D5D2 /* CheckboxViewExample.swift in Sources */,
 				CE694C372C3D56090064C0C0 /* ChipsCellBuilder.swift in Sources */,
+				34C3999E2C5B85D400C98DBC /* BadgeModuleFeature.swift in Sources */,
 				CEEB5E642C35681A000E0215 /* ComponentsShowcaseCellBuilder.swift in Sources */,
 				CEF1FA322C57D9DE00D0D5D2 /* RowViewExample.swift in Sources */,
 				CEF1FA172C57D8BB00D0D5D2 /* ButtonPayExample.swift in Sources */,
 				CE4A7C0A2C3E8ABF00AA7EB4 /* DividerCellBuilder.swift in Sources */,
 				CEF1FA0F2C57D88C00D0D5D2 /* HintViewExample.swift in Sources */,
+				34C399A22C5BF5CA00C98DBC /* BadgeModuleTableDelegate.swift in Sources */,
 				CEF1FA0C2C57D7AA00D0D5D2 /* ImageViewExample.swift in Sources */,
 				CEA336002C36A66200880A1F /* CheckboxViewUpdater.swift in Sources */,
 				CEF1FA272C57D90000D0D5D2 /* TitleViewExample.swift in Sources */,
@@ -949,7 +961,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = NM6255M99C;
+				DEVELOPMENT_TEAM = KB3C698SC6;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = OrnamentApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -980,7 +992,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = NM6255M99C;
+				DEVELOPMENT_TEAM = KB3C698SC6;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = OrnamentApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -1049,7 +1061,7 @@
 			repositoryURL = "https://gitlab.akbars.tech/abo/ios-architecture-table";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 20.0.0;
+				minimumVersion = 21.0.0;
 			};
 		};
 		CEEB5E652C3568B0000E0215 /* XCRemoteSwiftPackageReference "ios-extensions" */ = {
