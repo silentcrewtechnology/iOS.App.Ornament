@@ -14,6 +14,7 @@ import SnapKit
 
 struct ChipsViewSectionHelper { 
     
+    @available(*, deprecated, message: "Use feature + viewService")
     func makeHorizontalSectionWithScroll(
         titles: [String],
         actions: [() -> Void],
@@ -23,7 +24,7 @@ struct ChipsViewSectionHelper {
         let row = GenericTableViewRowModel(
             with: GenericTableViewCellWrapper<UIScrollView>.self,
             configuration: { cell, _ in
-                var updaters = [ChipsViewUpdater]()
+                var chipsServices = [ChipsViewService]()
                 var views = [UIView]()
                 let stackView = UIStackView()
                 cell.containedView.addSubview(stackView)
@@ -32,31 +33,42 @@ struct ChipsViewSectionHelper {
                 }
                 
                 for i in 0..<titles.count {
-                    let chipsViewProperties = ChipsView.ViewProperties(text: NSMutableAttributedString(string: titles[i]))
+                    let chipsViewProperties = ChipsView.ViewProperties(
+                        text: titles[i].attributed,
+                        onChipsTap: { _ in
+                            for j in 0..<chipsServices.count {
+                                if j == i {
+                                    chipsServices[j].update(selected: .on)
+                                    continue
+                                }
+                                
+                                chipsServices[j].update(selected: .off)
+                            }
+                            
+                            actions[i]()
+                        }
+                    )
+                    
                     let chipsView = ChipsView()
                     stackView.addArrangedSubview(chipsView)
                     views.append(chipsView)
                     
-                    updaters.append(
-                        .init(
-                            view: chipsView,
-                            viewProperties: chipsViewProperties,
-                            style: .init(),
-                            onActive: {
-                                for j in 0..<updaters.count {
-                                    if j == i {
-                                        updaters[j].handle(state: .selection(.on))
-                                        continue
-                                    }
-                                    
-                                    updaters[j].handle(state: .selection(.off))
-                                }
-                                
-                                actions[i]()
-                            },
-                            onInactive: {}
-                        )
-                    )
+                    
+                    let chipsStyle = ChipsViewStyle(
+                        set: .leftIcon,
+                        size: .large,
+                        state: .default,
+                        selected: .off,
+                        label: .true,
+                        icon: .false)
+                    
+                    let chipsService = ChipsViewService(
+                        view: chipsView,
+                        viewProperties: chipsViewProperties,
+                        style: chipsStyle,
+                        isSelected: false)
+                    
+                    chipsServices.append(chipsService)
                 }
                 
                 stackView.axis = .horizontal

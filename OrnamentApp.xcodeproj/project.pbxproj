@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3477B69A2C734EB400C6C059 /* ChipsViewUpdater.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3477B6992C734EB400C6C059 /* ChipsViewUpdater.swift */; };
 		34C3999E2C5B85D400C98DBC /* BadgeModuleFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34C3999D2C5B85D400C98DBC /* BadgeModuleFeature.swift */; };
 		34C399A02C5BF40000C98DBC /* BadgeModuleDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34C3999F2C5BF40000C98DBC /* BadgeModuleDataSource.swift */; };
 		34C399A22C5BF5CA00C98DBC /* BadgeModuleTableDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34C399A12C5BF5CA00C98DBC /* BadgeModuleTableDelegate.swift */; };
@@ -96,8 +97,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		3465A1852C60C33100D56668 /* ios-resources-ui-components */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = "ios-resources-ui-components"; path = "../ios-resources-ui-components"; sourceTree = "<group>"; };
-		3465A1862C60C33400D56668 /* ios.designsystem */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = ios.designsystem; path = ../ios.designsystem; sourceTree = "<group>"; };
+		3477B6992C734EB400C6C059 /* ChipsViewUpdater.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChipsViewUpdater.swift; sourceTree = "<group>"; };
 		34C3999D2C5B85D400C98DBC /* BadgeModuleFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeModuleFeature.swift; sourceTree = "<group>"; };
 		34C3999F2C5BF40000C98DBC /* BadgeModuleDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeModuleDataSource.swift; sourceTree = "<group>"; };
 		34C399A12C5BF5CA00C98DBC /* BadgeModuleTableDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeModuleTableDelegate.swift; sourceTree = "<group>"; };
@@ -214,8 +214,6 @@
 		8889557629140FFC00A46293 = {
 			isa = PBXGroup;
 			children = (
-				3465A1862C60C33400D56668 /* ios.designsystem */,
-				3465A1852C60C33100D56668 /* ios-resources-ui-components */,
 				8889558129140FFC00A46293 /* OrnamentApp */,
 				8889558029140FFC00A46293 /* Products */,
 				888955B82914112F00A46293 /* Frameworks */,
@@ -366,6 +364,7 @@
 			isa = PBXGroup;
 			children = (
 				CEA335FF2C36A66200880A1F /* CheckboxViewUpdater.swift */,
+				3477B6992C734EB400C6C059 /* ChipsViewUpdater.swift */,
 			);
 			path = ViewUpdaters;
 			sourceTree = "<group>";
@@ -763,6 +762,7 @@
 				34C399A02C5BF40000C98DBC /* BadgeModuleDataSource.swift in Sources */,
 				CE2130B72C60C90000AB69BE /* SnackBarCellBuilder.swift in Sources */,
 				CEF2DE712C4150130065C1BD /* InputCellBuilder.swift in Sources */,
+				3477B69A2C734EB400C6C059 /* ChipsViewUpdater.swift in Sources */,
 				CEF1F9F82C57D75000D0D5D2 /* CheckboxViewExample.swift in Sources */,
 				CE694C372C3D56090064C0C0 /* ChipsCellBuilder.swift in Sources */,
 				34C3999E2C5B85D400C98DBC /* BadgeModuleFeature.swift in Sources */,
@@ -1061,7 +1061,7 @@
 			repositoryURL = "https://gitlab.akbars.tech/abo/ios-architecture-table";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 20.0.0;
+				minimumVersion = 21.0.0;
 			};
 		};
 		CEEB5E652C3568B0000E0215 /* XCRemoteSwiftPackageReference "ios-extensions" */ = {
