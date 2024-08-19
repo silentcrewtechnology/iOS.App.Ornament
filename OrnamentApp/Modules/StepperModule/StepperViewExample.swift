@@ -53,7 +53,7 @@ private final class StepperViewExampleVC: UIViewController {
         if index < activeCount {
             state = .success
         } else if index == activeCount {
-            state = .active
+            state = .current
         } else {
             state = .next
         }

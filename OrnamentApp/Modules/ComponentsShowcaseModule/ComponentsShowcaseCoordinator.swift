@@ -19,6 +19,7 @@ final class ComponentsShowcaseCoordinator: RootCoordinatorProtocol {
     private var activityIndicatorFeature: FeatureCoordinatorProtocol?
     private var authorizationButtonFeature: FeatureCoordinatorProtocol?
     private var badgeFeature: FeatureCoordinatorProtocol?
+    private var bannerFeature: FeatureCoordinatorProtocol?
     private var checkboxFeature: FeatureCoordinatorProtocol?
     private var chipsFeature: FeatureCoordinatorProtocol?
     private var dividerFeature: FeatureCoordinatorProtocol?
@@ -34,6 +35,14 @@ final class ComponentsShowcaseCoordinator: RootCoordinatorProtocol {
     private var toggleFeature: FeatureCoordinatorProtocol?
     private var navigationBar: NavigationBar?
     private var tileFeature: FeatureCoordinatorProtocol?
+    private var radioFeature: FeatureCoordinatorProtocol?
+    private var stepperFeature: FeatureCoordinatorProtocol?
+    private var snackBarFeature: FeatureCoordinatorProtocol?
+    private var buttonFeature: FeatureCoordinatorProtocol?
+    private var buttonPayFeature: FeatureCoordinatorProtocol?
+    private var cardFeature: FeatureCoordinatorProtocol?
+    private var hintFeature: FeatureCoordinatorProtocol?
+    private var labelFeature: FeatureCoordinatorProtocol?
 
     // MARK: - Life cycle
     
@@ -43,6 +52,7 @@ final class ComponentsShowcaseCoordinator: RootCoordinatorProtocol {
         activityIndicatorFeature: CommonDetailFeature? = nil,
         authorizationButtonFeature: CommonDetailFeature? = nil,
         badgeFeature: BadgeModuleFeature? = nil,
+        bannerFeature: CommonDetailFeature? = nil,
         buttonIconFeature: CommonDetailFeature? = nil,
         checkboxFeature: CommonDetailFeature? = nil,
         chipsFeature: CommonDetailFeature? = nil,
@@ -56,13 +66,22 @@ final class ComponentsShowcaseCoordinator: RootCoordinatorProtocol {
         navigationBarFeature: NavigationBarFeature? = nil,
         titleFeature: CommonDetailFeature? = nil,
         toggleFeature: CommonDetailFeature? = nil,
-        tileFeature: CommonDetailFeature? = nil
+        tileFeature: CommonDetailFeature? = nil,
+        radioFeature: CommonDetailFeature? = nil,
+        stepperFeature: CommonDetailFeature? = nil,
+        snackBarFeature: CommonDetailFeature? = nil,
+        buttonPayFeature: CommonDetailFeature? = nil,
+        cardFeature: CommonDetailFeature? = nil,
+        buttonFeature: CommonDetailFeature? = nil,
+        hintFeature: CommonDetailFeature? = nil,
+        labelFeature: CommonDetailFeature? = nil
     ) {
         self.routerService = routerService
         self.componentsShowcaseFeature = componentsShowcaseFeature
         self.activityIndicatorFeature = activityIndicatorFeature
         self.authorizationButtonFeature = authorizationButtonFeature
         self.badgeFeature = badgeFeature
+        self.bannerFeature = bannerFeature
         self.buttonIconFeature = buttonIconFeature
         self.checkboxFeature = checkboxFeature
         self.chipsFeature = chipsFeature
@@ -77,6 +96,14 @@ final class ComponentsShowcaseCoordinator: RootCoordinatorProtocol {
         self.titleFeature = titleFeature
         self.toggleFeature = toggleFeature
         self.tileFeature = tileFeature
+        self.radioFeature = radioFeature
+        self.stepperFeature = stepperFeature
+        self.snackBarFeature = snackBarFeature
+        self.buttonFeature = buttonFeature
+        self.buttonPayFeature = buttonPayFeature
+        self.cardFeature = cardFeature
+        self.hintFeature = hintFeature
+        self.labelFeature = labelFeature
     }
     
     // MARK: - Methods
@@ -106,10 +133,10 @@ final class ComponentsShowcaseCoordinator: RootCoordinatorProtocol {
                 )
                 guard let builder = self?.activityIndicatorFeature?.runFlow(data: nil) else { return }
                 viewController = (builder.view as! UIViewController)
-            case .authorizationButton:
+            case .buttonAuth:
                 self?.authorizationButtonFeature = CommonDetailFeature(
-                    cellBuilder: AuthorizationButtonCellBuilder(),
-                    screenTitle: Components.authorizationButton.rawValue,
+                    cellBuilder: ButtonAuthCellBuilder(),
+                    screenTitle: Components.buttonAuth.rawValue,
                     backAction: self?.popVC
                 )
                 guard let builder = self?.authorizationButtonFeature?.runFlow(data: nil) else { return }
@@ -121,9 +148,21 @@ final class ComponentsShowcaseCoordinator: RootCoordinatorProtocol {
                 
                 viewController = (builder.view as! UIViewController)
             case .banner:
-                break
+                self?.bannerFeature = CommonDetailFeature(
+                    cellBuilder: BannerCellBuilder(),
+                    screenTitle: Components.banner.rawValue,
+                    backAction: self?.popVC
+                )
+                guard let builder = self?.bannerFeature?.runFlow(data: nil) else { return }
+                viewController = (builder.view as! UIViewController)
             case .button:
-                break
+                self?.buttonFeature = CommonDetailFeature(
+                    cellBuilder: ButtonModuleBuilder(),
+                    screenTitle: Components.button.rawValue,
+                    backAction: self?.popVC
+                )
+                guard let builder = self?.buttonFeature?.runFlow(data: nil) else { return }
+                viewController = (builder.view as! UIViewController)
             case .buttonIcon:
                 self?.buttonIconFeature = CommonDetailFeature(
                     cellBuilder: ButtonIconModuleBuilder(),
@@ -132,8 +171,14 @@ final class ComponentsShowcaseCoordinator: RootCoordinatorProtocol {
                 )
                 guard let builder = self?.buttonIconFeature?.runFlow(data: nil) else { return }
                 viewController = (builder.view as! UIViewController)
-            case .cardImage:
-                break
+            case .card:
+                self?.cardFeature = CommonDetailFeature(
+                    cellBuilder: CardCellBuilder(),
+                    screenTitle: Components.card.rawValue,
+                    backAction: self?.popVC
+                )
+                guard let builder = self?.cardFeature?.runFlow(data: nil) else { return }
+                viewController = (builder.view as! UIViewController)
             case .checkbox:
                 self?.checkboxFeature = CommonDetailFeature(
                     cellBuilder: CheckboxCellBuilder(),
@@ -160,6 +205,14 @@ final class ComponentsShowcaseCoordinator: RootCoordinatorProtocol {
                 )
                 guard let builder = self?.dividerFeature?.runFlow(data: nil) else { return }
                 viewController = (builder.view as! UIViewController)
+            case .hint:
+                self?.hintFeature = CommonDetailFeature(
+                    cellBuilder: HintViewBuilder(),
+                    screenTitle: Components.hint.rawValue,
+                    backAction: self?.popVC
+                )
+                guard let builder = self?.hintFeature?.runFlow(data: nil) else { return }
+                viewController = (builder.view as! UIViewController)
             case .image:
                 self?.imageFeature = CommonDetailFeature(
                     cellBuilder: ImageModuleBuilder(),
@@ -168,10 +221,10 @@ final class ComponentsShowcaseCoordinator: RootCoordinatorProtocol {
                 )
                 guard let builder = self?.imageFeature?.runFlow(data: nil) else { return }
                 viewController = (builder.view as! UIViewController)
-            case .inputAmountView:
+            case .inputAmount:
                 self?.inputAmountFeature = CommonDetailFeature(
                     cellBuilder: InputAmountCellBuilder(),
-                    screenTitle: Components.inputAmountView.rawValue,
+                    screenTitle: Components.inputAmount.rawValue,
                     backAction: self?.popVC
                 )
                 guard let builder = self?.inputAmountFeature?.runFlow(data: nil) else { return }
@@ -200,10 +253,10 @@ final class ComponentsShowcaseCoordinator: RootCoordinatorProtocol {
                 )
                 guard let builder = self?.inputSelectFeature?.runFlow(data: nil) else { return }
                 viewController = (builder.view as! UIViewController)
-            case .inputView:
+            case .input:
                 self?.inputTextFeature = CommonDetailFeature(
-                    cellBuilder: InputTextCellBuilder(),
-                    screenTitle: Components.inputView.rawValue,
+                    cellBuilder: InputCellBuilder(),
+                    screenTitle: Components.input.rawValue,
                     backAction: self?.popVC
                 )
                 guard let builder = self?.inputTextFeature?.runFlow(data: nil) else { return }
@@ -215,24 +268,54 @@ final class ComponentsShowcaseCoordinator: RootCoordinatorProtocol {
             case .inputPIN:
                 break
             case .label:
-                break
+                self?.labelFeature = CommonDetailFeature(
+                    cellBuilder: LabelCellBuilder(),
+                    screenTitle: Components.label.rawValue,
+                    backAction: self?.popVC
+                )
+                guard let builder = self?.labelFeature?.runFlow(data: nil) else { return }
+                viewController = (builder.view as! UIViewController)
             case .pageControl:
                 break
             case .buttonPay:
-                break
+                self?.buttonPayFeature = CommonDetailFeature(
+                    cellBuilder: ButtonPayCellBuilder(),
+                    screenTitle: Components.buttonPay.rawValue,
+                    backAction: self?.popVC
+                )
+                guard let builder = self?.buttonPayFeature?.runFlow(data: nil) else { return }
+                viewController = (builder.view as! UIViewController)
             case .navigationBar:
                 self?.navigationBarFeature = NavigationBarFeature()
                 guard let builder = self?.navigationBarFeature?.runFlow(data: nil) else { return }
                 self?.navigationBarFeature?.setNavigationBar(navigationBar: self?.navigationBar)
                 viewController = (builder.view as! UIViewController)
             case .radio:
-                break
+                self?.radioFeature = CommonDetailFeature(
+                    cellBuilder: RadioModuleBuilder(),
+                    screenTitle: Components.radio.rawValue,
+                    backAction: self?.popVC
+                )
+                guard let builder = self?.radioFeature?.runFlow(data: nil) else { return }
+                viewController = (builder.view as! UIViewController)
             case .segmentControl:
                 break
             case .snackBar:
-                break
+                self?.snackBarFeature = CommonDetailFeature(
+                    cellBuilder: SnackBarCellBuilder(),
+                    screenTitle: Components.snackBar.rawValue,
+                    backAction: self?.popVC
+                )
+                guard let builder = self?.snackBarFeature?.runFlow(data: nil) else { return }
+                viewController = (builder.view as! UIViewController)
             case .stepper:
-                break
+                self?.stepperFeature = CommonDetailFeature(
+                    cellBuilder: StepperModuleBuilder(),
+                    screenTitle: Components.stepper.rawValue,
+                    backAction: self?.popVC
+                )
+                guard let builder = self?.stepperFeature?.runFlow(data: nil) else { return }
+                viewController = (builder.view as! UIViewController)
             case .stories:
                 break
             case .tabs:

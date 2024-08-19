@@ -15,14 +15,14 @@ private final class InputSelectViewExampleVC: UIViewController {
     
     private lazy var headerViewProperties: LabelView.ViewProperties = {
         var viewProperties = LabelView.ViewProperties(text: .init(string: "Header"))
-        let style = LabelViewStyle(variant: .default)
+        let style = LabelViewStyle(variant: .default(customColor: nil))
         style.update(viewProperties: &viewProperties)
         return viewProperties
     }()
     
-    private lazy var hintViewProperties: HintView.ViewProperties = {
-        var viewProperties = HintView.ViewProperties()
-        let style = HintViewStyle()
+    private lazy var hintViewProperties: OldHintView.ViewProperties = {
+        var viewProperties = OldHintView.ViewProperties()
+        let style = OldHintViewStyle()
         style.update(
             variant: .empty,
             viewProperties: &viewProperties

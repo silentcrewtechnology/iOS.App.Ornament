@@ -1,5 +1,5 @@
 //
-//  SectionMessageExample.swift
+//  BannerViewExample.swift
 //  OrnamentApp
 //
 //  Created by user on 29.07.2024.
@@ -10,7 +10,7 @@ import SnapKit
 import Components
 import DesignSystem
 
-private final class SectionMessageExampleVC: UIViewController {
+private final class BannerViewExampleVC: UIViewController {
     
     // MARK: - Life cycle
     
@@ -20,9 +20,9 @@ private final class SectionMessageExampleVC: UIViewController {
         let vStack = vStack()
         
         vStack.addArrangedSubview({
-            let view = SectionMessageView()
-            let style = SectionMessageStyle(style: .info, size: .sizeS)
-            var viewProperties = SectionMessageView.ViewProperties(
+            let view = BannerView()
+            let style = BannerViewStyle(variant: .neutral)
+            var viewProperties = BannerView.ViewProperties(
                 title: "Label".attributed,
                 subtitle: "Content".attributed,
                 bottomButton: .init(
@@ -34,9 +34,9 @@ private final class SectionMessageExampleVC: UIViewController {
         }())
         
         vStack.addArrangedSubview({
-            let view = SectionMessageView()
-            let style = SectionMessageStyle(style: .warning, size: .sizeS)
-            var viewProperties = SectionMessageView.ViewProperties(
+            let view = BannerView()
+            let style = BannerViewStyle(variant: .warning)
+            var viewProperties = BannerView.ViewProperties(
                 title: "Label".attributed)
             style.update(with: &viewProperties)
             view.update(with: viewProperties)
@@ -44,9 +44,9 @@ private final class SectionMessageExampleVC: UIViewController {
         }())
         
         vStack.addArrangedSubview({
-            let view = SectionMessageView()
-            let style = SectionMessageStyle(style: .success, size: .sizeS)
-            var viewProperties = SectionMessageView.ViewProperties(
+            let view = BannerView()
+            let style = BannerViewStyle(variant: .success)
+            var viewProperties = BannerView.ViewProperties(
                 subtitle: "Content".attributed)
             style.update(with: &viewProperties)
             view.update(with: viewProperties)
@@ -54,9 +54,9 @@ private final class SectionMessageExampleVC: UIViewController {
         }())
         
         vStack.addArrangedSubview({
-            let view = SectionMessageView()
-            let style = SectionMessageStyle(style: .error, size: .sizeS)
-            var viewProperties = SectionMessageView.ViewProperties(
+            let view = BannerView()
+            let style = BannerViewStyle(variant: .error)
+            var viewProperties = BannerView.ViewProperties(
                 bottomButton: .init(
                     text: "Label".attributed,
                     action: { print("action") }))

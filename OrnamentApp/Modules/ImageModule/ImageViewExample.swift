@@ -48,10 +48,10 @@ private final class ImageViewExampleVC: UIViewController {
                 let view = ImageView()
                 let style = ImageViewStyle(
                     type: .fillImage(.ic24Euro
-                        .withTintColor(.contentInfo)
+                        .withTintColor(.Core.Brand.neutral200)
                         .centered(in:
                                 .circle(
-                                    backgroundColor: .backgroundInfoLight, 
+                                    backgroundColor: .Core.Brand.neutral50, 
                                     diameter: 40
                                 )
                         )

@@ -17,13 +17,13 @@ private final class InputTextareaViewExampleVC: UIViewController {
     
     private lazy var headerViewProperties: LabelView.ViewProperties = {
         var viewProperties = LabelView.ViewProperties(text: .init(string: "Header"))
-        let style = LabelViewStyle(variant: .default)
+        let style = LabelViewStyle(variant: .default(customColor: nil))
         style.update(viewProperties: &viewProperties)
         return viewProperties
     }()
     
-    private lazy var hintViewProperties: HintView.ViewProperties = {
-        var viewProperties = HintView.ViewProperties()
+    private lazy var hintViewProperties: OldHintView.ViewProperties = {
+        var viewProperties = OldHintView.ViewProperties()
         return viewProperties
     }()
     
@@ -118,7 +118,7 @@ private final class InputTextareaViewExampleVC: UIViewController {
         characterCount: Int,
         viewProperties: inout InputTextareaView.ViewProperties
     ) {
-        let hintStyle = HintViewStyle()
+        let hintStyle = OldHintViewStyle()
         
         switch state {
         case .default, .disabled:

@@ -17,7 +17,7 @@ extension ActivityIndicatorView: Reusable {
     }
 }
 
-extension AuthorizationButton: Reusable {
+extension ButtonAuth: Reusable {
     public func prepareForReuse() {
         update(with: .init())
     }
@@ -41,7 +41,7 @@ extension ButtonIcon: Reusable {
     }
 }
 
-extension CardImageView: Reusable {
+extension CardView: Reusable {
     public func prepareForReuse() {
         update(with: .init())
     }
@@ -66,6 +66,12 @@ extension DividerView: Reusable {
 }
 
 extension DotView: Reusable {
+    public func prepareForReuse() {
+        update(with: .init())
+    }
+}
+
+extension OldHintView: Reusable {
     public func prepareForReuse() {
         update(with: .init())
     }
@@ -143,7 +149,7 @@ extension PageControl: Reusable {
     }
 }
 
-extension PaymentButton: Reusable {
+extension ButtonPay: Reusable {
     public func prepareForReuse() {
         update(with: .init())
     }
@@ -155,7 +161,7 @@ extension RadioView: Reusable {
     }
 }
 
-extension SectionMessageView: Reusable {
+extension BannerView: Reusable {
     public func prepareForReuse() {
         update(with: .init())
     }

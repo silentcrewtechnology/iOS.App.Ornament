@@ -9,28 +9,25 @@ import Foundation
 import Extensions
 
 enum Components: String, CaseIterable {
-    // TODO: - Во всех элементах перейти на новую палитру
-    
     case activityIndicator = "Activity indicator"
-    // TODO: - Actualize
-    case authorizationButton = "Authorization button (not actualized)"
     case badge = "Badge"
-    // TODO: - Actualize, Add
-    case banner = "Banner (not actualized, not added)"
-    // TODO: - Actualize, Add
-    case button = "Button (not actualized, not added)"
+    case banner = "Banner"
+    case button = "Button"
     case buttonIcon = "Button icon"
-    // TODO: - Actualize, Add
-    case cardImage = "Card image (not actualized, not added)"
+    case buttonPay = "Button pay"
+    case buttonAuth = "Button auth"
+    case card = "Card"
     case checkbox = "Checkbox"
     case chips = "Chips"
     case divider = "Divider"
+    case hint = "Hint"
     // TODO: - Add
     case inputTextarea = "Input textarea (not added)"
-    case inputView = "Input view"
+    case input = "Input"
     // TODO: - Actualize
     case inputContryCode = "Input country code (not actualized)"
-    case inputAmountView = "Input amount view"
+    // TODO: - Actualize
+    case inputAmount = "Input amount (not actualized)"
     case inputSelect = "Input select"
     case inputOTP = "Input OTP"
     // TODO: - Realize, Add
@@ -38,27 +35,20 @@ enum Components: String, CaseIterable {
     // TODO: - Realize, Add
     case inputPIN = "Input PIN (not realized, not added)"
     case image = "Image"
-    // TODO: - Add
-    case label = "Label (not added)"
+    case label = "Label"
     case navigationBar = "Navigation bar"
     // TODO: - Actualize, Add
     case pageControl = "Page control (not actualized, not added)"
-    // TODO: - Actualize, Add
-    case buttonPay = "Button pay (not actualized, not added)"
-    // TODO: - Add
-    case radio = "Radio (not added)"
+    case radio = "Radio"
     // TODO: - Actualize, Add
     case segmentControl = "Segment control (not actualized, not added)"
-    // TODO: - Actualize, Add
-    case snackBar = "Snack bar (not actualized, not added)"
-    // TODO: - Actualize, Add
-    case stepper = "Stepper (not actualized, not added)"
+    case snackBar = "SnackBar"
+    case stepper = "Stepper"
     // TODO: - Realize, Add
     case stories = "Stories (not realized, not added)"
     // TODO: - Actualize, Add
     case tabs = "Tabs (not actualized, not added)"
     case tile = "Tile"
     case title = "Title"
-    // TODO: - Actualize
-    case toggle = "Toggle (not actualized)"
+    case toggle = "Toggle"
 }

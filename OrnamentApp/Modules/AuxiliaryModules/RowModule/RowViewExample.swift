@@ -85,30 +85,30 @@ private final class RowViewExampleVC: UIViewController {
     }
     
     private func createTitleRow() -> UIView {
-        let titleStyle = LabelViewStyle(variant: .title(isCopied: false))
+        let titleStyle = LabelViewStyle(variant: .rowTitle(recognizer: nil))
         return DSCreationRowsViewService().createViewRowWithBlocks(
-            leading: .atom(.title("Title", titleStyle))
+            leading: .atom(.title("Title", titleStyle, nil))
         )
     }
     
     private func createImageWithTitleRow() -> UIView {
         return DSCreationRowsViewService().createViewRowWithBlocks(
             leading: .atom(.image40(.ic24UserFilled, nil)),
-            center: .atom(.title("Title", nil))
+            center: .atom(.title("Title", nil, nil))
         )
     }
     
     private func createImageWithTitleSubtitleRow() -> UIView {
         return DSCreationRowsViewService().createViewRowWithBlocks(
             leading: .atom(.image40(.ic24UserFilled, nil)),
-            center: .molecule(.titleWithSubtitle(("Title", nil), ("Subtitle", nil)))
+            center: .molecule(.titleWithSubtitle(("Title", nil, nil), ("Subtitle", nil)))
         )
     }
     
     private func createImageWithButtonRow() -> UIView {
         return DSCreationRowsViewService().createViewRowWithBlocks(
             leading: .atom(.image40(.ic24UserFilled, nil)),
-            center: .molecule(.subtitleWithTitle(("Subtitle", nil), ("Title", nil))),
+            center: .molecule(.subtitleWithTitle(("Subtitle", nil), ("Title", nil, nil))),
             trailing: .atom(.button("Label", { }, nil))
         )
     }
@@ -116,7 +116,7 @@ private final class RowViewExampleVC: UIViewController {
     private func createImageWithToggleRow() -> UIView {
         return DSCreationRowsViewService().createViewRowWithBlocks(
             leading: .atom(.image40(.ic24UserFilled, nil)),
-            center: .molecule(.subtitleWithTitle(("Subtitle", nil), ("Title", nil))),
+            center: .molecule(.subtitleWithTitle(("Subtitle", nil), ("Title", nil, nil))),
             trailing: .atom(.toggle(true, { _ in }, nil))
         )
     }
@@ -124,7 +124,7 @@ private final class RowViewExampleVC: UIViewController {
     private func createImageWithCheckboxRow() -> UIView {
         return DSCreationRowsViewService().createViewRowWithBlocks(
             leading: .atom(.image40(.ic24UserFilled, nil)),
-            center: .molecule(.subtitleWithTitle(("Subtitle", nil), ("Title", nil))),
+            center: .molecule(.subtitleWithTitle(("Subtitle", nil), ("Title", nil, nil))),
             trailing: .atom(.checkbox(true, { _ in }, nil))
         )
     }
@@ -132,7 +132,7 @@ private final class RowViewExampleVC: UIViewController {
     private func createImageWithIndexRow() -> UIView {
         return DSCreationRowsViewService().createViewRowWithBlocks(
             leading: .atom(.image40(.ic24UserFilled, nil)),
-            center: .molecule(.subtitleWithTitle(("Subtitle", nil), ("Title", nil))),
+            center: .molecule(.subtitleWithTitle(("Subtitle", nil), ("Title", nil, nil))),
             trailing: .molecule(.indexWithIcon24(("Index", nil), (.ic24ChevronSmallRight, nil)))
         )
     }
@@ -140,7 +140,7 @@ private final class RowViewExampleVC: UIViewController {
     private func createImageWithIndexIcons20Row() -> UIView {
         return DSCreationRowsViewService().createViewRowWithBlocks(
             leading: .atom(.image40(.ic24UserFilled, nil)),
-            center: .molecule(.subtitleWithTitle(("Subtitle", nil), ("Title", nil))),
+            center: .molecule(.subtitleWithTitle(("Subtitle", nil), ("Title", nil, nil))),
             trailing: .molecule(.indexWithIcons20(("Index", nil), [(.ic24BoxFilled, nil), (.ic24BoxFilled, nil)]))
         )
     }
@@ -148,15 +148,15 @@ private final class RowViewExampleVC: UIViewController {
     private func createCardWithTitleButtonRow() -> UIView {
         return DSCreationRowsViewService().createViewRowWithBlocks(
             leading: .atom(.card(.ic24CardMirLight, nil)),
-            center: .atom(.title("Title", nil)),
+            center: .atom(.title("Title", nil, nil)),
             trailing: .atom(.button("Label", { }, nil))
         )
     }
     
     private func createCopiedTitleRow() -> UIView {
-        let titleStyle = LabelViewStyle(variant: .title(isCopied: true))
+        let titleStyle = LabelViewStyle(variant: .rowTitle(recognizer: nil))
         return DSCreationRowsViewService().createViewRowWithBlocks(
-            leading: .atom(.title("Title", titleStyle))
+            leading: .atom(.title("Title", titleStyle, nil))
         )
     }
     
@@ -164,22 +164,24 @@ private final class RowViewExampleVC: UIViewController {
     private func createWithRowsService() -> UIView {
         var radioViewProperties = RadioView.ViewProperties()
         let radioViewStyle = RadioViewStyle(
-            selection: .checked,
-            state: .default
+            state: .default, 
+            selection: .checked
         )
         radioViewStyle.update(viewProperties: &radioViewProperties)
         
         var titleViewProperties = LabelView.ViewProperties(text: "Title".attributed)
-        let titleViewStyle = LabelViewStyle(variant: .title(isCopied: false))
+        let titleViewStyle = LabelViewStyle(variant: .rowTitle(recognizer: nil))
         titleViewStyle.update(viewProperties: &titleViewProperties)
         
         
         var buttonViewProperties = ButtonView.ViewProperties()
         buttonViewProperties.attributedText = "Button".attributed
         let buttonViewStyle = ButtonViewStyle(
-            context: .action(.ghost),
+            size: .small,
+            color: .light,
+            variant: .primary,
             state: .default,
-            size: .sizeM
+            icon: .without
         )
         buttonViewStyle.update(viewProperties: &buttonViewProperties)
         

@@ -42,9 +42,9 @@ final class InputSelectCellBuilder: NSObject, UITextFieldDelegate, CellBuilder {
             configuration: { [weak self] cell, _ in
                 guard let self = self else { return }
                 
-                let hintViewProperties: HintView.ViewProperties = {
-                    var viewProperties = HintView.ViewProperties()
-                    let style = HintViewStyle()
+                let hintViewProperties: OldHintView.ViewProperties = {
+                    var viewProperties = OldHintView.ViewProperties()
+                    let style = OldHintViewStyle()
                     style.update(
                         variant: .empty,
                         viewProperties: &viewProperties
@@ -92,13 +92,15 @@ final class InputSelectCellBuilder: NSObject, UITextFieldDelegate, CellBuilder {
                 guard let self = self else { return }
                 
                 var vp: InputView.ViewProperties = .init()
-                vp.textField.text = self.viewProperties.text
-                vp.textField.delegateAssigningClosure = { textField in
-                    textField.delegate = self
-                    textField.addTarget(self, action: #selector(self.onTextChange(textField:)), for: .editingChanged)
-                }
-                let inputTextStyle = InputViewStyle()
-                inputTextStyle.update(state: .default, viewProperties: &vp)
+                vp.textFieldViewProperties = .init(
+                    text: self.viewProperties.text,
+                    delegateAssigningClosure: { textField in
+                        textField.delegate = self
+                        textField.addTarget(self, action: #selector(self.onTextChange(textField:)), for: .editingChanged)
+                    }
+                )
+                let inputTextStyle = InputViewStyle(state: .default, set: .simple)
+                inputTextStyle.update(viewProperties: &vp)
                 cell.containedView.update(with: vp)
 
                 cell.contentInset = .init(top: .zero, left: 16, bottom: 16, right: 16)
@@ -120,13 +122,15 @@ final class InputSelectCellBuilder: NSObject, UITextFieldDelegate, CellBuilder {
                 guard let self = self else { return }
                 
                 var vp: InputView.ViewProperties = .init()
-                vp.textField.text = self.hintText
-                vp.textField.delegateAssigningClosure = { textField in
-                    textField.delegate = self
-                    textField.addTarget(self, action: #selector(self.onHintTextChange(textField:)), for: .editingChanged)
-                }
-                let inputTextStyle = InputViewStyle()
-                inputTextStyle.update(state: .default, viewProperties: &vp)
+                vp.textFieldViewProperties = .init(
+                    text: self.hintText,
+                    delegateAssigningClosure: { textField in
+                        textField.delegate = self
+                        textField.addTarget(self, action: #selector(self.onHintTextChange(textField:)), for: .editingChanged)
+                    }
+                )
+                let inputTextStyle = InputViewStyle(state: .default, set: .simple)
+                inputTextStyle.update(viewProperties: &vp)
                 cell.containedView.update(with: vp)
 
                 cell.contentInset = .init(top: .zero, left: 16, bottom: 16, right: 16)
@@ -194,8 +198,8 @@ final class InputSelectCellBuilder: NSObject, UITextFieldDelegate, CellBuilder {
     }
     
     private func makeHintViewProperties() {
-        var hintVP = HintView.ViewProperties()
-        let hintStyle = HintViewStyle()
+        var hintVP = OldHintView.ViewProperties()
+        let hintStyle = OldHintViewStyle()
         hintStyle.update(variant: .left(hintText), viewProperties: &hintVP)
         viewProperties.hint = hintVP
     }

@@ -27,10 +27,30 @@ enum Constants {
     static let componentRightItemsAmount = "Right items amount"
     static let componentType = "Type"
     static let componentBackground = "Background"
+    static let componentTitleText = "Title text"
+    static let componentSubtitleText = "Subtitle text"
+    static let componentButtonText = "Button text"
+    static let componentStack = "Stack"
+    static let componentIcon = "Icon"
+    static let componentAlignment = "Alignment"
+    static let componentCopy = "Copy"
+    static let componentLabel = "Label"
 }
 
 // MARK: Image
 extension Constants {
     static let imageType = "Image Type"
     static let imageColor = "Image Color"
+}
+
+// MARK: Stepper
+extension Constants {
+    static let allCount = "all count"
+    static let activeCount = "active count"
+}
+
+// MARK: Hint
+extension Constants {
+    static let hintText = "Text"
+    static let hintAdditionalText = "Additional text"
 }
