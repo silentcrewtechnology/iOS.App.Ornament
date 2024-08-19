@@ -65,15 +65,17 @@ extension BadgeModuleBuilder {
             configuration: { [weak self] cell, _ in
                 guard let self = self else { return }
                 
-                var viewProperty: InputView.ViewProperties = .init()
-                viewProperty.textField.text = self.viewProperties.text ?? "".attributed
-                viewProperty.textField.delegateAssigningClosure = { textField in
-                    textField.delegate = self
-                    textField.addTarget(self, action: #selector(self.onTextChange(textField:)), for: .editingChanged)
-                }
-                let inputTextStyle = InputViewStyle()
-                inputTextStyle.update(state: .default, viewProperties: &viewProperty)
-                cell.containedView.update(with: viewProperty)
+                var vp: InputView.ViewProperties = .init()
+                vp.textFieldViewProperties = .init(
+                    text: self.viewProperties.text ?? .init(string: ""),
+                    delegateAssigningClosure: { textField in
+                        textField.delegate = self
+                        textField.addTarget(self, action: #selector(self.onTextChange(textField:)), for: .editingChanged)
+                    }
+                )
+                let inputTextStyle = InputViewStyle(state: .default, set: .simple)
+                inputTextStyle.update(viewProperties: &vp)
+                cell.containedView.update(with: vp)
 
                 cell.contentInset = .init(top: .zero, left: 16, bottom: 16, right: 16)
                 cell.selectionStyle = .none

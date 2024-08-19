@@ -23,7 +23,7 @@ private final class ButtonViewExampleVC: UIViewController {
         super.viewDidLoad()
         
         var viewProperties = ButtonView.ViewProperties()
-        var style = ButtonViewStyle(
+        let style = ButtonViewStyle(
             size: .large,
             color: .accent,
             variant: .primary,

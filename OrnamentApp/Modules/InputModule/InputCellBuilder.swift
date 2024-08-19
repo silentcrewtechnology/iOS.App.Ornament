@@ -19,9 +19,11 @@ final class InputCellBuilder: NSObject, UITextFieldDelegate, CellBuilder {
     private let chipsViewSectionHelper = ChipsViewSectionHelper()
     private var inputView: InputView?
     private var viewProperties = InputView.ViewProperties()
-    private var style = InputViewStyle.init()
+    private var style = InputViewStyle.init(state: .default, set: .simple)
     private var state: InputViewStyle.State = .default
-    private var hintText: NSMutableAttributedString = .init(string: "")
+    private var set: InputViewStyle.Set = .simple
+    private var hintViewProperties = HintView.ViewProperties()
+    private var labelViewProperties: LabelView.ViewProperties? = .init()
     
     // MARK: - Methods
     
@@ -30,7 +32,8 @@ final class InputCellBuilder: NSObject, UITextFieldDelegate, CellBuilder {
             createInputTextSection(),
             createHintInputTextSection(),
             createStateSection(),
-            createImageSection()
+            createSetSection(),
+            createLabelSection()
         ]
     }
     
@@ -42,19 +45,8 @@ final class InputCellBuilder: NSObject, UITextFieldDelegate, CellBuilder {
             configuration: { [weak self] cell, _ in
                 guard let self = self else { return }
                 
-                let hintViewProperties: OldHintView.ViewProperties = {
-                    var viewProperties = OldHintView.ViewProperties()
-                    let style = OldHintViewStyle()
-                    style.update(
-                        variant: .empty,
-                        viewProperties: &viewProperties
-                    )
-                    return viewProperties
-                }()
-                self.viewProperties = .init(hint: hintViewProperties)
-                self.viewProperties.textField.placeholder = .init(string: "Placeholder")
-                
-                self.style.update(state: .default, viewProperties: &self.viewProperties)
+                self.viewProperties.textFieldViewProperties = .init(placeholder: .init(string: "Placeholder"))
+                self.style.update(viewProperties: &self.viewProperties)
                 cell.containedView.update(with: self.viewProperties)
 
                 cell.contentInset = .init(top: .zero, left: 16, bottom: 16, right: 16)
@@ -62,17 +54,17 @@ final class InputCellBuilder: NSObject, UITextFieldDelegate, CellBuilder {
                 self.inputView = cell.containedView
                 
                 cell.containedView.snp.remakeConstraints { make in
-                    make.top.equalToSuperview()
-                    make.leading.trailing.equalToSuperview().inset(16)
-                    make.bottom.equalToSuperview().offset(16)
+                    make.top.leading.trailing.equalToSuperview()
+                    make.height.greaterThanOrEqualTo(80)
                 }
             },
             initializesFromNib: false
         )
-        row.rowHeight = 72
+        row.rowHeight = 104
         
         let section = GenericTableViewSectionModel(with: [row])
-        section.makeHeader(title: Constants.componentText.localized)
+        section.makeHeader(title: Constants.componentTitle)
+        
         return section
     }
     
@@ -83,16 +75,18 @@ final class InputCellBuilder: NSObject, UITextFieldDelegate, CellBuilder {
                 guard let self = self else { return }
                 
                 var vp: InputView.ViewProperties = .init()
-                vp.textField.text = self.hintText
-                vp.textField.delegateAssigningClosure = { textField in
-                    textField.delegate = self
-                    textField.addTarget(self, action: #selector(self.onHintTextChange(textField:)), for: .editingChanged)
-                }
-                let inputTextStyle = InputViewStyle()
-                inputTextStyle.update(state: .default, viewProperties: &vp)
+                vp.textFieldViewProperties = .init(
+                    text: self.hintViewProperties.text ?? .init(string: ""),
+                    delegateAssigningClosure: { textField in
+                        textField.delegate = self
+                        textField.addTarget(self, action: #selector(self.onHintTextChange(textField:)), for: .editingChanged)
+                    }
+                )
+                let inputTextStyle = InputViewStyle(state: .default, set: .simple)
+                inputTextStyle.update(viewProperties: &vp)
                 cell.containedView.update(with: vp)
 
-                cell.contentInset = .init(top: .zero, left: 16, bottom: 16, right: 16)
+                cell.contentInset = .init(top: .zero, left: .zero, bottom: 16, right: .zero)
                 cell.selectionStyle = .none
             },
             initializesFromNib: false
@@ -108,73 +102,86 @@ final class InputCellBuilder: NSObject, UITextFieldDelegate, CellBuilder {
         return chipsViewSectionHelper.makeHorizontalSectionWithScroll(
             titles: ["Default", "Active" ,"Error", "Disabled"],
             actions: [
-                { [weak self] in self?.updateInputViewStyle(state: .default) },
-                { [weak self] in self?.updateInputViewStyle(state: .active) },
+                { [weak self] in self?.updateInputViewStyle(state: .default, labelViewProperties: self?.labelViewProperties) },
+                { [weak self] in self?.updateInputViewStyle(state: .active, labelViewProperties: self?.labelViewProperties) },
                 { [weak self] in
                     guard let self = self else { return }
-                    self.updateInputViewStyle(state: .error(self.hintText))
+                    self.updateInputViewStyle(state: .error(self.hintViewProperties), labelViewProperties: self.labelViewProperties)
                 },
-                { [weak self] in self?.updateInputViewStyle(state: .disabled) }
+                { [weak self] in self?.updateInputViewStyle(state: .disabled, labelViewProperties: self?.labelViewProperties) }
             ],
             headerTitle: Constants.componentState
         )
     }
     
-    private func createImageSection() -> GenericTableViewSectionModel {
+    private func createSetSection() -> GenericTableViewSectionModel {
         return chipsViewSectionHelper.makeHorizontalSectionWithScroll(
-            titles: ["None", "Right"],
+            titles: ["Simple", "Icon", "Prefix"],
             actions: [
-                { [weak self] in self?.updateInputViewStyle(isImage: false) },
-                { [weak self] in self?.updateInputViewStyle(isImage: true) },
+                { [weak self] in self?.updateInputViewStyle(set: .simple, labelViewProperties: self?.labelViewProperties)},
+                { [weak self] in self?.updateInputViewStyle(set: .icon(.ic24Frame), labelViewProperties: self?.labelViewProperties)},
+                { [weak self] in self?.updateInputViewStyle(set: .prefix(.init(string: "Prefix")), labelViewProperties: self?.labelViewProperties)}
             ],
-            headerTitle: Constants.componentImage
+            headerTitle: Constants.componentSet
+        )
+    }
+    
+    private func createLabelSection() -> GenericTableViewSectionModel {
+        return chipsViewSectionHelper.makeHorizontalSectionWithScroll(
+            titles: ["Off", "On"],
+            actions: [
+                { [weak self] in self?.updateInputViewStyle(labelViewProperties: nil)},
+                { [weak self] in
+                    var viewProperties = LabelView.ViewProperties(text: .init(string: "Label"))
+                    let style = LabelViewStyle(variant: .default(customColor: nil), alignment: .left)
+                    style.update(viewProperties: &viewProperties)
+                    
+                    self?.updateInputViewStyle(labelViewProperties: viewProperties)
+                }
+            ],
+            headerTitle: Constants.componentLabel
         )
     }
 
     private func updateInputViewStyle(
         state: InputViewStyle.State? = nil,
-        isImage: Bool = false
+        set: InputViewStyle.Set? = nil,
+        labelViewProperties: LabelView.ViewProperties? = nil
     ) {
-        if let state = state {
+        if let state {
             self.state = state
         }
         
-        if isImage {
-            viewProperties.rightViews = [
-                {
-                    let view = UIImageView(image: .ic24Car)
-                    view.snp.makeConstraints { $0.size.equalTo(24) }
-          
-                    return view
-                }()
-            ]
-        } else {
-            viewProperties.rightViews = []
+        if let set {
+            self.set = set
         }
         
-        style.update(state: self.state, viewProperties: &viewProperties)
+        if let labelViewProperties {
+            self.labelViewProperties = labelViewProperties
+        } else {
+            self.labelViewProperties = nil
+        }
+        
+        viewProperties.labelViewProperties = self.labelViewProperties
+        style = .init(state: self.state, set: self.set)
+        style.update(viewProperties: &viewProperties)
         inputView?.update(with: viewProperties)
     }
 
     @objc private func onTextChange(textField: UITextField) {
-        viewProperties.textField.text = .init(string: textField.text ?? "")
-        style.update(state: state, viewProperties: &viewProperties)
+        viewProperties.textFieldViewProperties.text = .init(string: textField.text ?? "")
+        style.update(viewProperties: &viewProperties)
         inputView?.update(with: viewProperties)
     }
     
     @objc private func onHintTextChange(textField: UITextField) {
-        hintText = .init(string: textField.text ?? "")
+        hintViewProperties.text = .init(string: textField.text ?? "")
         
         switch state {
         case .error(_):
-            var hintVP = OldHintView.ViewProperties()
-            let hintStyle = OldHintViewStyle()
-            hintStyle.update(variant: .left(hintText), viewProperties: &hintVP)
-            
-            state = .error(hintText)
-            style.update(state: state, viewProperties: &viewProperties)
-            viewProperties.hint = hintVP
-            inputView?.update(with: viewProperties)
+            let hintStyle = HintViewStyle(variant: .left, color: .error)
+            hintStyle.update(viewProperties: &hintViewProperties)
+            updateInputViewStyle(state: .error(hintViewProperties))
         default:
             break
         }

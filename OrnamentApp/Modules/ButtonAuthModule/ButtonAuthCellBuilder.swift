@@ -83,13 +83,15 @@ extension ButtonAuthCellBuilder {
                 guard let self = self else { return }
                 
                 var vp: InputView.ViewProperties = .init()
-                vp.textField.text = self.viewProperties.title
-                vp.textField.delegateAssigningClosure = { textField in
-                    textField.delegate = self
-                    textField.addTarget(self, action: #selector(self.onTextChange(textField:)), for: .editingChanged)
-                }
-                let inputTextStyle = InputViewStyle()
-                inputTextStyle.update(state: .default, viewProperties: &vp)
+                vp.textFieldViewProperties = .init(
+                    text: self.viewProperties.title,
+                    delegateAssigningClosure: { textField in
+                        textField.delegate = self
+                        textField.addTarget(self, action: #selector(self.onTextChange(textField:)), for: .editingChanged)
+                    }
+                )
+                let inputTextStyle = InputViewStyle(state: .default, set: .simple)
+                inputTextStyle.update(viewProperties: &vp)
                 cell.containedView.update(with: vp)
 
                 cell.contentInset = .init(top: .zero, left: 16, bottom: 16, right: 16)
