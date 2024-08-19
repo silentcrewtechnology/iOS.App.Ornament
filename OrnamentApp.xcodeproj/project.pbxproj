@@ -30,7 +30,6 @@
 		CE6439F32C58FAEE002491EA /* SnackBarExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6439F22C58FAEE002491EA /* SnackBarExample.swift */; };
 		CE694C372C3D56090064C0C0 /* ChipsCellBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE694C362C3D56090064C0C0 /* ChipsCellBuilder.swift */; };
 		CEA336002C36A66200880A1F /* CheckboxViewUpdater.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA335FF2C36A66200880A1F /* CheckboxViewUpdater.swift */; };
-		CEA336022C36A9B800880A1F /* ChipsViewUpdater.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA336012C36A9B800880A1F /* ChipsViewUpdater.swift */; };
 		CEA336052C36B1A400880A1F /* Components.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA336042C36B1A400880A1F /* Components.swift */; };
 		CEA3360C2C36C0BE00880A1F /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA3360B2C36C0BE00880A1F /* MainCoordinator.swift */; };
 		CEA3360E2C36C0E100880A1F /* ComponentsShowcaseCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA3360D2C36C0E100880A1F /* ComponentsShowcaseCoordinator.swift */; };
@@ -89,7 +88,6 @@
 /* Begin PBXFileReference section */
 		3465A1852C60C33100D56668 /* ios-resources-ui-components */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = "ios-resources-ui-components"; path = "../ios-resources-ui-components"; sourceTree = "<group>"; };
 		3465A1862C60C33400D56668 /* ios.designsystem */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = ios.designsystem; path = ../ios.designsystem; sourceTree = "<group>"; };
-		3465A1872C60C34100D56668 /* ios-extensions */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = "ios-extensions"; path = "../ios-extensions"; sourceTree = "<group>"; };
 		34C3999D2C5B85D400C98DBC /* BadgeModuleFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeModuleFeature.swift; sourceTree = "<group>"; };
 		34C3999F2C5BF40000C98DBC /* BadgeModuleDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeModuleDataSource.swift; sourceTree = "<group>"; };
 		34C399A12C5BF5CA00C98DBC /* BadgeModuleTableDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeModuleTableDelegate.swift; sourceTree = "<group>"; };
@@ -115,7 +113,6 @@
 		CE6439F22C58FAEE002491EA /* SnackBarExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnackBarExample.swift; sourceTree = "<group>"; };
 		CE694C362C3D56090064C0C0 /* ChipsCellBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChipsCellBuilder.swift; sourceTree = "<group>"; };
 		CEA335FF2C36A66200880A1F /* CheckboxViewUpdater.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckboxViewUpdater.swift; sourceTree = "<group>"; };
-		CEA336012C36A9B800880A1F /* ChipsViewUpdater.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChipsViewUpdater.swift; sourceTree = "<group>"; };
 		CEA336042C36B1A400880A1F /* Components.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Components.swift; sourceTree = "<group>"; };
 		CEA3360B2C36C0BE00880A1F /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
 		CEA3360D2C36C0E100880A1F /* ComponentsShowcaseCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComponentsShowcaseCoordinator.swift; sourceTree = "<group>"; };
@@ -197,7 +194,6 @@
 		8889557629140FFC00A46293 = {
 			isa = PBXGroup;
 			children = (
-				3465A1872C60C34100D56668 /* ios-extensions */,
 				3465A1862C60C33400D56668 /* ios.designsystem */,
 				3465A1852C60C33100D56668 /* ios-resources-ui-components */,
 				8889558129140FFC00A46293 /* OrnamentApp */,
@@ -332,7 +328,6 @@
 			isa = PBXGroup;
 			children = (
 				CEA335FF2C36A66200880A1F /* CheckboxViewUpdater.swift */,
-				CEA336012C36A9B800880A1F /* ChipsViewUpdater.swift */,
 			);
 			path = ViewUpdaters;
 			sourceTree = "<group>";
@@ -709,7 +704,6 @@
 				CEF1FA2D2C57D9A500D0D5D2 /* GibddFineCellsExample.swift in Sources */,
 				CE4A7C0F2C3E8FC300AA7EB4 /* Constants.swift in Sources */,
 				CEF1FA152C57D8AA00D0D5D2 /* PageControlExample.swift in Sources */,
-				CEA336022C36A9B800880A1F /* ChipsViewUpdater.swift in Sources */,
 				CEC824B82C4E90F200891643 /* ButtonIconModuleBuilder.swift in Sources */,
 				CEA3360E2C36C0E100880A1F /* ComponentsShowcaseCoordinator.swift in Sources */,
 				CEF1FA192C57D8C200D0D5D2 /* RadioViewExample.swift in Sources */,

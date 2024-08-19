@@ -116,9 +116,7 @@ final class ComponentsShowcaseCoordinator: RootCoordinatorProtocol {
                 viewController = (builder.view as! UIViewController)
             case .badge:
                 // TODO Добавить DI для фичи
-                if self?.badgeFeature == nil {
-                    self?.badgeFeature = BadgeModuleFeature.init(screenTitle: Components.badge.rawValue, backAction: self?.popVC)
-                }
+                self?.badgeFeature = BadgeModuleFeature.init(screenTitle: Components.badge.rawValue, backAction: self?.popVC)
                 guard let builder = self?.badgeFeature?.runFlow(data: nil) else { return }
                 
                 viewController = (builder.view as! UIViewController)

@@ -27,9 +27,10 @@ final class BadgeModuleFeature: NSObject, FeatureCoordinatorProtocol {
     private var tableDataSource: BadgeModuleDataSource
     private var tableDelegate: BadgeModuleTableDelegate
     
-    private var badgeStyle: BadgeStyle
-    private var badgeViewProperties: BadgeView.ViewProperties
-    private let badgeImage: UIImage = .ic16Tick
+    private var badgeUpdater: BadgeViewService
+    private var colorChipsUpdaters: [ChipsViewService] = []
+    private var sizeChipsUpdaters: [ChipsViewService] = []
+    private var setChipsUpdaters: [ChipsViewService] = []
     
     private var selectedColorIndex: Int = 0
     private var selectedSizeIndex: Int = 0
@@ -64,8 +65,14 @@ final class BadgeModuleFeature: NSObject, FeatureCoordinatorProtocol {
             confirmButtonView: nil
         ))
         
-        badgeStyle = BadgeStyle(color: .neutral, size: .large, set: .full)
-        badgeViewProperties = BadgeView.ViewProperties(text: "23 +".attributed, image: .ic16Tick)
+        // MARK: Badge
+        let badgeStyle = BadgeStyle(color: .neutral, size: .large, set: .full)
+        let badgeViewProperties = BadgeView.ViewProperties(text: "23 +".attributed, image: .ic16Tick)
+        
+        badgeUpdater = BadgeViewService(
+            viewProperties: badgeViewProperties,
+            style: badgeStyle
+        )
         
         super.init()
     }
@@ -93,97 +100,111 @@ final class BadgeModuleFeature: NSObject, FeatureCoordinatorProtocol {
 // MARK: Create Rows
 
 extension BadgeModuleFeature {
-    
     private func createBadgeRow() -> DSRowModel {
-        return DSRowModel(leading: .atom(.badgeView(badgeViewProperties, badgeStyle)))
+        return DSRowModel(leading: .atom(.view(badgeUpdater.view)))
     }
     
-    // TODO: Добавить InputView в атомы
-    //    private func createInputTextRow() -> DSRowModel {
-    //
-    //    }
-    
     private func createColorRow() -> DSRowModel {
+        colorChipsUpdaters = []
         let chipTitles = ["neutral", "accent", "accentBrand", "accentInfo"]
         let chipColors: [BadgeStyle.Color] = [.neutral, .accent, .accentBrand, .accentInfo]
         
-        let chips = chipTitles.enumerated().map { (index, title) -> (ChipsView.ViewProperties, ChipsViewStyle) in
-            let chipsStyle = ChipsViewStyle()
+        let chips = chipTitles.enumerated().map { (index, title) -> (ChipsView) in
             let isSelected = selectedColorIndex == index
+            
             let chipsViewProperties = ChipsView.ViewProperties(
                 text: .init(string: title),
-                isSelected: isSelected,
                 onChipsTap: { [weak self] _ in
-                    self?.selectedColorIndex = index
-                    self?.updateStyle(newColor: chipColors[index])
+                    guard let self else { return }
+                    badgeUpdater.update(newColor: chipColors[index])
+                    for (i, updater) in colorChipsUpdaters.enumerated() {
+                        let selected: ChipsViewStyle.Selected = index == i ? .on : .off
+                        updater.update(selected: selected)
+                    }
                 })
-            return (chipsViewProperties, chipsStyle)
+            
+            let selected: ChipsViewStyle.Selected = isSelected ? .on :.off
+            let chipsStyle = ChipsViewStyle(selected: selected)
+            
+            let chipsUpdater = ChipsViewService(
+                viewProperties: chipsViewProperties,
+                style: chipsStyle
+            )
+            colorChipsUpdaters.append(chipsUpdater)
+            
+            return chipsUpdater.view
         }
         
-        return DSRowModel(leading: .molecule(.horizontalChipses(chips)))
+        return DSRowModel(leading: .molecule(.horizontalChipseViews(chips)))
     }
     
     private func createSizeRow() -> DSRowModel {
+        sizeChipsUpdaters = []
         let chipTitles = ["large", "small"]
         let chipSizes: [BadgeStyle.Size] = [.large, .small]
         
-        let chips = chipTitles.enumerated().map { (index, title) -> (ChipsView.ViewProperties, ChipsViewStyle) in
-            let chipsStyle = ChipsViewStyle()
+        let chips = chipTitles.enumerated().map { (index, title) -> (ChipsView) in
             let isSelected = selectedSizeIndex == index
+            
             let chipsViewProperties = ChipsView.ViewProperties(
                 text: .init(string: title),
-                isSelected: isSelected,
                 onChipsTap: { [weak self] _ in
-                    self?.selectedSizeIndex = index
-                    self?.updateStyle(newSize: chipSizes[index])
+                    guard let self else { return }
+                    badgeUpdater.update(newSize: chipSizes[index])
+                    
+                    for (i, updater) in sizeChipsUpdaters.enumerated() {
+                        let selected: ChipsViewStyle.Selected = index == i ? .on : .off
+                        updater.update(selected: selected)
+                    }
                 })
-            return (chipsViewProperties, chipsStyle)
+            
+            let selected: ChipsViewStyle.Selected = isSelected ? .on :.off
+            let chipsStyle = ChipsViewStyle(selected: selected)
+            
+            let chipsUpdater = ChipsViewService(
+                viewProperties: chipsViewProperties,
+                style: chipsStyle
+            )
+            sizeChipsUpdaters.append(chipsUpdater)
+            
+            return chipsUpdater.view
         }
         
-        return DSRowModel(leading: .molecule(.horizontalChipses(chips)))
+        return DSRowModel(leading: .molecule(.horizontalChipseViews(chips)))
     }
     
     private func createSetRow() -> DSRowModel {
+        setChipsUpdaters = []
         let chipTitles = ["full", "basic", "simple"]
         let chipSets: [BadgeStyle.Set] = [.full, .basic, .simple]
         
-        let chips = chipTitles.enumerated().map { (index, title) -> (ChipsView.ViewProperties, ChipsViewStyle) in
-            let chipsStyle = ChipsViewStyle()
-            let isSelected = selectedSetIndex == index
+        let chips = chipTitles.enumerated().map { (index, title) -> (ChipsView) in
+            let isSelected = selectedSizeIndex == index
+            
             let chipsViewProperties = ChipsView.ViewProperties(
                 text: .init(string: title),
-                isSelected: isSelected,
                 onChipsTap: { [weak self] _ in
-                    self?.selectedSetIndex = index
-                    self?.updateStyle(newSet: chipSets[index])
+                    guard let self else { return }
+                    badgeUpdater.update(newSet: chipSets[index])
+                    
+                    for (i, updater) in setChipsUpdaters.enumerated() {
+                        let selected: ChipsViewStyle.Selected = index == i ? .on : .off
+                        updater.update(selected: selected)
+                    }
                 })
-            return (chipsViewProperties, chipsStyle)
+            
+            let selected: ChipsViewStyle.Selected = isSelected ? .on :.off
+            let chipsStyle = ChipsViewStyle(selected: selected)
+            
+            let chipsUpdater = ChipsViewService(
+                viewProperties: chipsViewProperties,
+                style: chipsStyle
+            )
+            setChipsUpdaters.append(chipsUpdater)
+            
+            return chipsUpdater.view
         }
         
-        return DSRowModel(leading: .molecule(.horizontalChipses(chips)))
-    }
-}
-
-// MARK: Update Badge
-
-extension BadgeModuleFeature {
-    
-    private func updateStyle(
-        newColor: BadgeStyle.Color? = nil,
-        newSize: BadgeStyle.Size? = nil,
-        newSet: BadgeStyle.Set? = nil
-    ) {
-        badgeViewProperties.text = "99+".attributed
-        badgeViewProperties.image = badgeImage
-        badgeStyle.update(
-            newColor: newColor,
-            newSize: newSize,
-            newSet: newSet,
-            viewProperties: &badgeViewProperties)
-        
-        // TODO: конфликты в констрейнтах при обновлении ячееек с чипсами
-        // TODO: Сделать обновление так, чтобы ячейка с chips не скролилась в начало
-        setCell()
-        tableViewBuilder.viewUpdater.state = .reloadData
+        return DSRowModel(leading: .molecule(.horizontalChipseViews(chips)))
     }
 }
