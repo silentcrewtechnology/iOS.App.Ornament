@@ -36,6 +36,8 @@ final class ComponentsShowcaseCoordinator: RootCoordinatorProtocol {
     private var navigationBar: NavigationBar?
     private var tileFeature: FeatureCoordinatorProtocol?
     private var radioFeature: FeatureCoordinatorProtocol?
+    private var segmentControlFeature: FeatureCoordinatorProtocol?
+    private var segmentItemFeature: FeatureCoordinatorProtocol?
     private var stepperFeature: FeatureCoordinatorProtocol?
     private var snackBarFeature: FeatureCoordinatorProtocol?
     private var buttonFeature: FeatureCoordinatorProtocol?
@@ -56,7 +58,7 @@ final class ComponentsShowcaseCoordinator: RootCoordinatorProtocol {
         buttonIconFeature: CommonDetailFeature? = nil,
         checkboxFeature: CommonDetailFeature? = nil,
         chipsFeature: CommonDetailFeature? = nil,
-        dividerFeature: CommonDetailFeature? = nil,
+        dividerFeature: DividerModuleFeature? = nil,
         inputAmountFeature: CommonDetailFeature? = nil,
         inputOTPFeature: CommonDetailFeature? = nil,
         inputPhoneNumberFeature: CommonDetailFeature? = nil,
@@ -68,6 +70,8 @@ final class ComponentsShowcaseCoordinator: RootCoordinatorProtocol {
         toggleFeature: CommonDetailFeature? = nil,
         tileFeature: CommonDetailFeature? = nil,
         radioFeature: CommonDetailFeature? = nil,
+        segmentControlFeature: SegmentControlModuleFeature? = nil,
+        segmentItemFeature: SegmentItemFeature? = nil,
         stepperFeature: CommonDetailFeature? = nil,
         snackBarFeature: CommonDetailFeature? = nil,
         buttonPayFeature: CommonDetailFeature? = nil,
@@ -97,6 +101,8 @@ final class ComponentsShowcaseCoordinator: RootCoordinatorProtocol {
         self.toggleFeature = toggleFeature
         self.tileFeature = tileFeature
         self.radioFeature = radioFeature
+        self.segmentControlFeature = segmentControlFeature
+        self.segmentItemFeature = segmentItemFeature
         self.stepperFeature = stepperFeature
         self.snackBarFeature = snackBarFeature
         self.buttonFeature = buttonFeature
@@ -198,12 +204,11 @@ final class ComponentsShowcaseCoordinator: RootCoordinatorProtocol {
 //                guard let builder = self?.chipsFeature?.runFlow(data: nil) else { return }
 //                viewController = (builder.view as! UIViewController)
             case .divider:
-                self?.dividerFeature = CommonDetailFeature(
-                    cellBuilder: DividerCellBuilder(),
+                self?.dividerFeature = DividerModuleFeature(
                     screenTitle: Components.divider.rawValue,
-                    backAction: self?.popVC
-                )
+                    backAction: self?.popVC)
                 guard let builder = self?.dividerFeature?.runFlow(data: nil) else { return }
+                
                 viewController = (builder.view as! UIViewController)
             case .hint:
                 self?.hintFeature = CommonDetailFeature(
@@ -299,7 +304,13 @@ final class ComponentsShowcaseCoordinator: RootCoordinatorProtocol {
                 guard let builder = self?.radioFeature?.runFlow(data: nil) else { return }
                 viewController = (builder.view as! UIViewController)
             case .segmentControl:
-                break
+                self?.segmentControlFeature = SegmentControlModuleFeature.init(screenTitle: Components.segmentControl.rawValue, backAction: self?.popVC)
+                guard let builder = self?.segmentControlFeature?.runFlow(data: nil) else { return }
+                viewController = (builder.view as! UIViewController)
+            case .segmentItem:
+                self?.segmentItemFeature = SegmentItemFeature.init(screenTitle: Components.segmentItem.rawValue, backAction: self?.popVC)
+                guard let builder = self?.segmentItemFeature?.runFlow(data: nil) else { return }
+                viewController = (builder.view as! UIViewController)
             case .snackBar:
                 self?.snackBarFeature = CommonDetailFeature(
                     cellBuilder: SnackBarCellBuilder(),

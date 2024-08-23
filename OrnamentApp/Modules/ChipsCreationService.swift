@@ -6,7 +6,7 @@ struct ChipsCreationService {
     
     func createChipsUpdaters(
         chipTitles: [String],
-        selectedIndex: Int,
+        selectedIndex: Int = 0,
         onChipTap: @escaping (Int) -> Void
     ) -> [ChipsViewService] {
         return chipTitles.enumerated().map { (index, title) -> ChipsViewService in
