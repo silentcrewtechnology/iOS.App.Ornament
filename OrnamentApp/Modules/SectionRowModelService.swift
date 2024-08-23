@@ -3,10 +3,10 @@ import DesignSystem
 import ArchitectureTableView
 
 struct SectionRowModelService {
-
+    
     func createSections(from rows: [DSRowModel],
-                        rowsHeight: CGFloat? = nil
-    ) -> [SectionModel] {
+                        rowsHeight: CGFloat? = nil,
+                        cellBackgroundColor: UIColor = .white) -> [SectionModel] {
         return rows.map { row in
             let cell = DSCreationRowsViewService().createViewRowWithBlocks(
                 leading: row.leading,
@@ -18,7 +18,8 @@ struct SectionRowModelService {
                 view: cell,
                 selectionStyle: .none,
                 height: rowsHeight,
-                didTap: nil
+                didTap: nil,
+                backgroundColor: cellBackgroundColor
             )
             return SectionModel(cells: [cellModel])
         }
