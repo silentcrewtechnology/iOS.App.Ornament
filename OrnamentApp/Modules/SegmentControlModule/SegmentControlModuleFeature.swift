@@ -26,7 +26,7 @@ final class SegmentControlModuleFeature: NSObject, FeatureCoordinatorProtocol {
     private var countChipsServices: [ChipsViewService] = []
     
     private var chipsCreationService: ChipsCreationService
-    private var sectionModelService: BadgeSectionModelService
+    private var sectionRowModelService: SectionRowModelService
     private var navigationBarVP = NavigationBar.ViewProperties()
     
     init(
@@ -37,7 +37,7 @@ final class SegmentControlModuleFeature: NSObject, FeatureCoordinatorProtocol {
     ) {
         self.tableDataSource = tableDataSource
         self.tableDelegate = tableDelegate
-        self.sectionModelService = BadgeSectionModelService()
+        self.sectionRowModelService = SectionRowModelService()
         self.chipsCreationService = ChipsCreationService()
         
         // MARK: segmentControl
@@ -98,9 +98,9 @@ final class SegmentControlModuleFeature: NSObject, FeatureCoordinatorProtocol {
         let segmentControlSection = SectionModel(cells: [segmentControlCell])
         
         let chipsCells = createRowModels()
-        let chipsSections = sectionModelService.createSections(
+        let chipsSections = sectionRowModelService.createSections(
             from: chipsCells,
-            height: 72,
+            rowsHeight: 72,
             cellBackgroundColor: .lightGray
         )
         

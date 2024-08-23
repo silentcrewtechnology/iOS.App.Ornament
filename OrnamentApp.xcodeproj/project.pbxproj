@@ -105,7 +105,6 @@
 		348C53922C7621BE00ACEA5C /* SegmentControlModuleFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentControlModuleFeature.swift; sourceTree = "<group>"; };
 		348C53952C774FC000ACEA5C /* SegmentItemFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentItemFeature.swift; sourceTree = "<group>"; };
 		34C3999D2C5B85D400C98DBC /* BadgeModuleFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeModuleFeature.swift; sourceTree = "<group>"; };
-		34C3BB9E2C78CBB700FE2A2B /* ios-architecture-table */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = "ios-architecture-table"; path = "../ios-architecture-table"; sourceTree = "<group>"; };
 		8889557F29140FFC00A46293 /* OrnamentApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OrnamentApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8889558229140FFC00A46293 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8889558B29140FFE00A46293 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -222,7 +221,6 @@
 		8889557629140FFC00A46293 = {
 			isa = PBXGroup;
 			children = (
-				34C3BB9E2C78CBB700FE2A2B /* ios-architecture-table */,
 				8889558129140FFC00A46293 /* OrnamentApp */,
 				8889558029140FFC00A46293 /* Products */,
 				888955B82914112F00A46293 /* Frameworks */,
@@ -1075,7 +1073,7 @@
 			repositoryURL = "https://gitlab.akbars.tech/abo/ios-architecture-table";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 22.0.0;
+				minimumVersion = 23.0.0;
 			};
 		};
 		CEEB5E652C3568B0000E0215 /* XCRemoteSwiftPackageReference "ios-extensions" */ = {

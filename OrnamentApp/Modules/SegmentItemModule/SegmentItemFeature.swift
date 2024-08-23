@@ -27,7 +27,7 @@ final class SegmentItemFeature: NSObject, FeatureCoordinatorProtocol {
     private var showDividerChipsServices: [ChipsViewService] = []
     
     private var chipsCreationService: ChipsCreationService
-    private var sectionModelService: BadgeSectionModelService
+    private var sectionRowModelService: SectionRowModelService
     private var navigationBarVP = NavigationBar.ViewProperties()
     
     init(
@@ -38,7 +38,7 @@ final class SegmentItemFeature: NSObject, FeatureCoordinatorProtocol {
     ) {
         self.tableDataSource = tableDataSource
         self.tableDelegate = tableDelegate
-        self.sectionModelService = BadgeSectionModelService()
+        self.sectionRowModelService = SectionRowModelService()
         self.chipsCreationService = ChipsCreationService()
         
         
@@ -78,9 +78,9 @@ final class SegmentItemFeature: NSObject, FeatureCoordinatorProtocol {
         createUpdaters()
         
         let cells = createRowModels()
-        let sections = sectionModelService.createSections(
+        let sections = sectionRowModelService.createSections(
             from: cells,
-            height: 72,
+            rowsHeight: 72,
             cellBackgroundColor: .lightGray
         )
         tableDelegate.update(with: sections)

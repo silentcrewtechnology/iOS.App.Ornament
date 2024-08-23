@@ -24,7 +24,7 @@ final class DividerModuleFeature: NSObject, FeatureCoordinatorProtocol {
     private var styleChipsServices: [ChipsViewService] = []
     
     private var chipsCreationService: ChipsCreationService
-    private var sectionModelService: BadgeSectionModelService
+    private var sectionRowModelService: SectionRowModelService
     
     init(
         screenTitle: String,
@@ -32,12 +32,12 @@ final class DividerModuleFeature: NSObject, FeatureCoordinatorProtocol {
         tableDataSource: TableDataSource = .init(),
         tableDelegate: TableDelegate = .init(),
         chipsCreationService: ChipsCreationService = ChipsCreationService(),
-        sectionModelService: BadgeSectionModelService = BadgeSectionModelService()
+        sectionRowModelService: SectionRowModelService = SectionRowModelService()
     ) {
         self.tableDataSource = tableDataSource
         self.tableDelegate = tableDelegate
         self.chipsCreationService = chipsCreationService
-        self.sectionModelService = sectionModelService
+        self.sectionRowModelService = sectionRowModelService
         
         tableViewBuilder = .init(with: .init(
             backgroundColor: .white,
@@ -88,9 +88,9 @@ final class DividerModuleFeature: NSObject, FeatureCoordinatorProtocol {
         let dividerView = dividerServise.view
         let dividerCell = CellModel(view: dividerView, height: 72)
         let dividerSection = SectionModel(cells: [dividerCell])
-        let chipsSetcions = sectionModelService.createSections(
+        let chipsSetcions = sectionRowModelService.createSections(
             from: cells,
-            height: 72)
+            rowsHeight: 72)
         let sections = [dividerSection] + chipsSetcions
         
         tableDelegate.update(with: sections)
