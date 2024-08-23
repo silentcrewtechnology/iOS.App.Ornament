@@ -28,4 +28,14 @@ struct ChipsCreationService {
             )
         }
     }
+    
+    func updateChipsSelection(
+        for updaters: inout [ChipsViewService],
+        selectedIndex: Int
+    ) {
+        for (index, updater) in updaters.enumerated() {
+            let selected: ChipsViewStyle.Selected = selectedIndex == index ? .on : .off
+            updater.update(selected: selected)
+        }
+    }
 }
