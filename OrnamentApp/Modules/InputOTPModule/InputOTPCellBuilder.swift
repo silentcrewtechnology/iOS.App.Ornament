@@ -86,8 +86,22 @@ final class InputOTPCellBuilder: NSObject, UITextFieldDelegate, CellBuilder {
                         }),
                     isUserInteractionEnabled: true
                 )
-                let style = InputAmountViewStyle()
-                style.update(state: .default, viewProperties: &viewProperties)
+                
+                let hintStyle = HintViewStyle(
+                    variant: .left,
+                    color: .default
+                )
+                
+                let style = InputAmountViewStyle(
+                    state: .default,
+                    hintStyle: hintStyle
+                )
+                
+                style.update(
+                    state: .default,
+                    viewProperties: &viewProperties
+                )
+                
                 cell.containedView.update(with: viewProperties)
 
                 cell.contentInset = .init(top: .zero, left: 16, bottom: 16, right: 16)

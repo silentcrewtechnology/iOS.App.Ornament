@@ -5,7 +5,7 @@ import Extensions
 import DesignSystem
 import Components
 
-final class BadgeModuleFeature: NSObject, FeatureCoordinatorProtocol {
+final class HintModuleFeature: NSObject, FeatureCoordinatorProtocol {
     
     // MARK: Properties
     
@@ -20,10 +20,9 @@ final class BadgeModuleFeature: NSObject, FeatureCoordinatorProtocol {
     private var tableDataSource: TableDataSource
     private var tableDelegate: TableDelegate
     
-    private var badgeUpdater: BadgeViewService
-    private var colorChipsUpdaters: [ChipsViewService] = []
-    private var sizeChipsUpdaters: [ChipsViewService] = []
-    private var setChipsUpdaters: [ChipsViewService] = []
+    private var hintService: HintViewService
+    private var variantChipsService: [ChipsViewService] = []
+    private var colorChipsService: [ChipsViewService] = []
     
     private var chipsCreationService: ChipsCreationService
     private var sectionModelService: SectionRowModelService
@@ -54,7 +53,10 @@ final class BadgeModuleFeature: NSObject, FeatureCoordinatorProtocol {
             ),
             color: .primary
         )
-        navigationBarStyle.update(viewProperties: &navigationBarVP, backAction: backAction)
+        navigationBarStyle.update(
+            viewProperties: &navigationBarVP,
+            backAction: backAction
+        )
         
         tableViewVCBuilder = .init(with: .init(
             navigationBarViewProperties: navigationBarVP,
@@ -62,13 +64,21 @@ final class BadgeModuleFeature: NSObject, FeatureCoordinatorProtocol {
             confirmButtonView: nil
         ))
         
-        // MARK: Badge
-        let badgeStyle = BadgeStyle(color: .neutral, size: .large, set: .full)
-        let badgeViewProperties = BadgeView.ViewProperties(text: "23 +".attributed, image: .ic16Tick)
+        // MARK: HintView
         
-        badgeUpdater = BadgeViewService(
-            viewProperties: badgeViewProperties,
-            style: badgeStyle
+        let hintViewStyle = HintViewStyle(
+            variant: .both,
+            color: .default
+        )
+        
+        let hintViewProperties = HintView.ViewProperties(
+            text: "Hint".attributed,
+            additionalText: "Hint".attributed
+        )
+        
+        hintService = HintViewService(
+            viewProperties: hintViewProperties,
+            style: hintViewStyle
         )
         
         super.init()
@@ -88,53 +98,61 @@ final class BadgeModuleFeature: NSObject, FeatureCoordinatorProtocol {
         createUpdaters()
         
         let cells = createRowModels()
-        let sections = sectionModelService.createSections(from: cells)
+        
+        let hintCell = CellModel(
+            view: hintService.view,
+            height: 72,
+            insets: .init(top: 0, left: 16, bottom: 0, right: 16)
+        )
+        
+        let hintSection = SectionModel(cells: [hintCell])
+        
+        let chipsSections = sectionModelService.createSections(
+            from: cells,
+            rowsHeight: 72
+        )
+        
+        let sections = [hintSection] + chipsSections
+        
         tableDelegate.update(with: sections)
         tableDataSource.update(with: sections)
     }
     
     private func createUpdaters() {
-        colorChipsUpdaters = chipsCreationService.createChipsUpdaters(
-            chipTitles: ["neutral", "accent", "accentBrand", "accentInfo"],
+        variantChipsService = chipsCreationService.createChipsUpdaters(
+            chipTitles: ["both", "center", "left", "right", "empty"],
             selectedIndex: 0,
             onChipTap: { [weak self] index in
                 guard let self = self else { return }
-                self.badgeUpdater.update(newColor: [.neutral, .accent, .accentBrand, .accentInfo][index])
-                self.chipsCreationService.updateChipsSelection(for: &self.colorChipsUpdaters, selectedIndex: index)
+                self.hintService.update(newVariant: [.both, .center, .left, .right, .empty][index])
+                self.chipsCreationService.updateChipsSelection(
+                    for: &self.variantChipsService,
+                    selectedIndex: index
+                )
             }
         )
         
-        sizeChipsUpdaters = chipsCreationService.createChipsUpdaters(
-            chipTitles: ["large", "small"],
+        colorChipsService = chipsCreationService.createChipsUpdaters(
+            chipTitles: ["default", "active", "error", "disabled"],
             selectedIndex: 0,
             onChipTap: { [weak self] index in
                 guard let self = self else { return }
-                self.badgeUpdater.update(newSize: [.large, .small][index])
-                self.chipsCreationService.updateChipsSelection(for: &self.sizeChipsUpdaters, selectedIndex: index)
-            }
-        )
-        
-        setChipsUpdaters = chipsCreationService.createChipsUpdaters(
-            chipTitles: ["full", "basic", "simple"],
-            selectedIndex: 0,
-            onChipTap: { [weak self] index in
-                guard let self = self else { return }
-                self.badgeUpdater.update(newSet: [.full, .basic, .simple][index])
-                self.chipsCreationService.updateChipsSelection(for: &self.setChipsUpdaters, selectedIndex: index)
+                self.hintService.update(newColor: [.default, .active, .error, .disabled][index])
+                self.chipsCreationService.updateChipsSelection(
+                    for: &self.colorChipsService,
+                    selectedIndex: index
+                )
             }
         )
     }
     
     private func createRowModels() -> [DSRowModel] {
-        let colorChips = colorChipsUpdaters.map { updater -> (ChipsView) in updater.view }
-        let sizeChips = sizeChipsUpdaters.map { updater -> (ChipsView) in updater.view }
-        let setChips = setChipsUpdaters.map { updater -> (ChipsView) in updater.view }
+        let variantChips = variantChipsService.map { updater -> (ChipsView) in updater.view }
+        let colorChips = colorChipsService.map { updater -> (ChipsView) in updater.view }
         
         let rowModels: [DSRowModel] = [
-            DSRowModel(leading: .atom(.view(badgeUpdater.view))),
+            DSRowModel(leading: .molecule(.horizontalChipseViews(variantChips))),
             DSRowModel(leading: .molecule(.horizontalChipseViews(colorChips))),
-            DSRowModel(leading: .molecule(.horizontalChipseViews(sizeChips))),
-            DSRowModel(leading: .molecule(.horizontalChipseViews(setChips))),
         ]
         
         return rowModels

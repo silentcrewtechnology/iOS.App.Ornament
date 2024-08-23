@@ -54,3 +54,9 @@ extension Constants {
     static let hintText = "Text"
     static let hintAdditionalText = "Additional text"
 }
+
+// MARK: InputAmount
+extension Constants {
+    static let hintVariant = "Hint variant"
+    static let labelVariant = "Label variant"
+}
