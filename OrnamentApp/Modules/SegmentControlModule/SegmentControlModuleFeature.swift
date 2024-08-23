@@ -121,10 +121,10 @@ final class SegmentControlModuleFeature: NSObject, FeatureCoordinatorProtocol {
         )
         
         sizeChipsServices = chipsCreationService.createChipsUpdaters(
-            chipTitles: ["small", "large"],
+            chipTitles: ["large", "small"],
             onChipTap: { [weak self] index in
                 guard let self = self else { return }
-                self.segmentControlService.update(size: [.small, .large][index])
+                self.segmentControlService.update(size: [.large, .small][index])
                 self.updateChipsSelection(for: &self.sizeChipsServices, selectedIndex: index)
             }
         )
