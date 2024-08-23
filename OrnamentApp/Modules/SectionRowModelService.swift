@@ -2,10 +2,10 @@ import UIKit
 import DesignSystem
 import ArchitectureTableView
 
-struct BadgeSectionModelService {
-
+struct SectionRowModelService {
+    
     func createSections(from rows: [DSRowModel],
-                        height: CGFloat? = nil,
+                        rowsHeight: CGFloat? = nil,
                         cellBackgroundColor: UIColor = .white) -> [SectionModel] {
         return rows.map { row in
             let cell = DSCreationRowsViewService().createViewRowWithBlocks(
@@ -17,7 +17,7 @@ struct BadgeSectionModelService {
             let cellModel = CellModel(
                 view: cell,
                 selectionStyle: .none,
-                height: height,
+                height: rowsHeight,
                 didTap: nil,
                 backgroundColor: cellBackgroundColor
             )

@@ -59,7 +59,7 @@ final class ComponentsShowcaseCoordinator: RootCoordinatorProtocol {
         checkboxFeature: CommonDetailFeature? = nil,
         chipsFeature: CommonDetailFeature? = nil,
         dividerFeature: DividerModuleFeature? = nil,
-        inputAmountFeature: CommonDetailFeature? = nil,
+        inputAmountFeature: InputAmountModuleFeature? = nil,
         inputOTPFeature: CommonDetailFeature? = nil,
         inputPhoneNumberFeature: CommonDetailFeature? = nil,
         inputSelectFeature: CommonDetailFeature? = nil,
@@ -77,7 +77,7 @@ final class ComponentsShowcaseCoordinator: RootCoordinatorProtocol {
         buttonPayFeature: CommonDetailFeature? = nil,
         cardFeature: CommonDetailFeature? = nil,
         buttonFeature: CommonDetailFeature? = nil,
-        hintFeature: CommonDetailFeature? = nil,
+        hintFeature: HintModuleFeature? = nil,
         labelFeature: CommonDetailFeature? = nil
     ) {
         self.routerService = routerService
@@ -211,8 +211,7 @@ final class ComponentsShowcaseCoordinator: RootCoordinatorProtocol {
                 
                 viewController = (builder.view as! UIViewController)
             case .hint:
-                self?.hintFeature = CommonDetailFeature(
-                    cellBuilder: HintViewBuilder(),
+                self?.hintFeature = HintModuleFeature.init(
                     screenTitle: Components.hint.rawValue,
                     backAction: self?.popVC
                 )
@@ -227,11 +226,7 @@ final class ComponentsShowcaseCoordinator: RootCoordinatorProtocol {
                 guard let builder = self?.imageFeature?.runFlow(data: nil) else { return }
                 viewController = (builder.view as! UIViewController)
             case .inputAmount:
-                self?.inputAmountFeature = CommonDetailFeature(
-                    cellBuilder: InputAmountCellBuilder(),
-                    screenTitle: Components.inputAmount.rawValue,
-                    backAction: self?.popVC
-                )
+                self?.inputAmountFeature = InputAmountModuleFeature.init(screenTitle: Components.badge.rawValue, backAction: self?.popVC)
                 guard let builder = self?.inputAmountFeature?.runFlow(data: nil) else { return }
                 viewController = (builder.view as! UIViewController)
             case .inputOTP:

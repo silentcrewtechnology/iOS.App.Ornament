@@ -166,8 +166,14 @@ final class BannerCellBuilder: NSObject, UITextFieldDelegate, CellBuilder {
     ) {
         self.variant = variant
         style = .init(variant: self.variant)
+        resetButtonTextAttributes()
         style.update(with: &viewProperties)
         bannerView?.update(with: viewProperties)
+    }
+    
+    private func resetButtonTextAttributes() {
+        guard let button = viewProperties.bottomButton else { return }
+        viewProperties.bottomButton?.text = button.text?.string.attributed
     }
     
     @objc private func onTitleTextChange(textField: UITextField) {
