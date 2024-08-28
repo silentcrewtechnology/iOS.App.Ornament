@@ -116,7 +116,7 @@ extension ButtonAuthCellBuilder {
 extension ButtonAuthCellBuilder {
     private func createVariantSection() -> GenericTableViewSectionModel {
         return chipsViewSectionHelper.makeHorizontalSectionWithScroll(
-            titles: ["gosuslugi", "akbars"],
+            titles: ["gosuslugi", "abb"],
             actions: [
                 { [weak self] in
                     self?.viewProperties.image = .init(resource: .authorizationButtonGosuslugi)
@@ -124,9 +124,9 @@ extension ButtonAuthCellBuilder {
                     self?.updateStyle(newVariant: .gosuslugi)
                 },
                 { [weak self] in
-                    self?.viewProperties.image = .init(resource: .authorizationButtonAB)
+                    self?.viewProperties.image = .init(resource: .authorizationButtonAbb)
                     self?.viewProperties.title = NSMutableAttributedString(string: "Войти через личный кабинет")
-                    self?.updateStyle(newVariant: .akbars)
+                    self?.updateStyle(newVariant: .abb)
                 }
             ],
             headerTitle: Constants.componentVariant
