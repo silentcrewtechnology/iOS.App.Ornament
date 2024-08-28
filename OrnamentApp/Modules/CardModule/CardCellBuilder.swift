@@ -42,7 +42,7 @@ final class CardCellBuilder: NSObject, CellBuilder {
             configuration: { [weak self] cell, _ in
                 guard let self = self else { return }
             
-                self.style.update(viewProperties: &self.viewProperties, backgroundImage: .init(named: "akbars"))
+                self.style.update(viewProperties: &self.viewProperties, backgroundImage: .init(named: "abb"))
                 cell.containedView.update(with: self.viewProperties)
                 
                 cell.selectionStyle = .none
@@ -99,7 +99,7 @@ final class CardCellBuilder: NSObject, CellBuilder {
                     
                     var stackViewProperties = CardView.ViewProperties()
                     let stackStyle = CardViewStyle(set: self.set, size: self.size, stack: .false)
-                    stackStyle.update(viewProperties: &stackViewProperties, backgroundImage: .init(named: "akbars"))
+                    stackStyle.update(viewProperties: &stackViewProperties, backgroundImage: .init(named: "abb"))
                     self.updateCardViewStyle(stack: .true(stackViewProperties))
                 }
             ],
@@ -120,7 +120,7 @@ final class CardCellBuilder: NSObject, CellBuilder {
         var backgroundImage: UIImage?
         switch self.set {
         case .visa, .mir, .mastercard:
-            backgroundImage = .init(named: "akbars")
+            backgroundImage = .init(named: "abb")
         default:
             backgroundImage = nil
         }
