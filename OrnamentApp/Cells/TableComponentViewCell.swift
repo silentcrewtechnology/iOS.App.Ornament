@@ -41,7 +41,9 @@ final class TableComponentViewCell: UITableViewCell {
     // MARK: - Methods
     
     func update(with viewProperties: ViewProperties) {
-        label.attributedText = viewProperties.text.textL(color: .Core.Brand.neutral900)
+        label.attributedText = viewProperties.text
+            .fontStyle(.textL)
+            .foregroundColor(.Core.Brand.neutral900)
     }
     
     // MARK: - Private methods
