@@ -9,15 +9,19 @@ import UIKit
 import Components
 import DesignSystem
 import ArchitectureTableView
+import ImagesService
 
 final class ButtonIconModuleBuilder: NSObject, CellBuilder {
     
-    private var buttonIcon: ButtonIcon?
-    private var style = ButtonIconStyle(variant: .primary,
-                                        size: .large,
-                                        state: .default,
-                                        color: .accent)
-    private var viewProperties = ButtonIcon.ViewProperties(image: .ic24PlayFilled)
+    private lazy var buttonIconService: ButtonIconService = .init(
+        viewProperties: .init(image: .ic24PlayFilled),
+        style: .init(
+            variant: .primary,
+            size: .large,
+            state: .default,
+            color: .accent
+        )
+    )
     
     private let chipsViewSectionHelper = ChipsViewSectionHelper()
     
@@ -36,19 +40,13 @@ final class ButtonIconModuleBuilder: NSObject, CellBuilder {
 extension ButtonIconModuleBuilder {
     private func createButtonIconSection() -> GenericTableViewSectionModel {
         let row = GenericTableViewRowModel(
-            with: GenericTableViewCellWrapper<ButtonIcon>.self,
+            with: UITableViewCell.self,
             configuration: { [weak self] cell, _ in
                 guard let self = self else { return }
-                self.style.update(variant: .primary,
-                                  size: .large,
-                                  state: .default,
-                                  color: .accent,
-                                  viewProperties: &self.viewProperties)
-                cell.containedView.update(with: self.viewProperties)
+                cell.contentView.subviews.forEach { $0.removeFromSuperview() }
+                cell.contentView.addSubview(buttonIconService.view)
                 cell.selectionStyle = .none
-                self.buttonIcon = cell.containedView
-                
-                cell.containedView.snp.remakeConstraints {
+                buttonIconService.view.snp.remakeConstraints {
                     $0.top.equalToSuperview()
                     $0.leading.equalToSuperview().offset(16)
                 }
@@ -85,10 +83,10 @@ extension ButtonIconModuleBuilder {
             titles: ["large", "small"],
             actions: [
                 { [weak self] in
-                    self?.updateStyle(newSize: .large)
+                    self?.updateStyle(newSize: .large, newImage: .ic24PlayFilled)
                 },
                 { [weak self] in
-                    self?.updateStyle(newSize: .small)
+                    self?.updateStyle(newSize: .small, newImage: .ic16Close)
                 }
             ],
             headerTitle: Constants.componentSize
@@ -135,18 +133,15 @@ extension ButtonIconModuleBuilder {
         newVariant: ButtonIconStyle.Variant? = nil,
         newSize: ButtonIconStyle.Size? = nil,
         newState: ButtonIconStyle.State? = nil,
-        newColor: ButtonIconStyle.Color? = nil
+        newColor: ButtonIconStyle.Color? = nil,
+        newImage: UIImage? = nil
     ) {
-        style.update(
-            variant: newVariant,
-            size: newSize,
-            state: newState,
-            color: newColor,
-            viewProperties: &viewProperties)
-        buttonIcon?.update(with: viewProperties)
-        buttonIcon?.snp.remakeConstraints {
-            $0.top.equalToSuperview()
-            $0.leading.equalToSuperview().offset(16)
-        }
+        buttonIconService.update(
+            newSize: newSize,
+            newColor: newColor,
+            newVariant: newVariant,
+            newState: newState,
+            newImage: newImage
+        )
     }
 }
