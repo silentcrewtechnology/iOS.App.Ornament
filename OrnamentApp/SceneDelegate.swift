@@ -12,7 +12,7 @@ import Router
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
-    let mainCoordinator = MainCoordinator(
+    private lazy var mainCoordinator = MainCoordinator(
         componentsShowcaseCoordinator: ComponentsShowcaseCoordinator(
             routerService: .init(),
             componentsShowcaseFeature: .init()
@@ -23,7 +23,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         FontService.registerFonts()
         window = UIWindow(windowScene: windowScene)
-        mainCoordinator.setRoot()
         mainCoordinator.setupCoordinatorsFlow()
+        mainCoordinator.setRoot()
     }
 }

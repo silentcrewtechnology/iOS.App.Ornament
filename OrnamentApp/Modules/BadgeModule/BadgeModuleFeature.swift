@@ -5,7 +5,7 @@ import Extensions
 import DesignSystem
 import Components
 
-final class BadgeModuleFeature: NSObject, FeatureCoordinatorProtocol {
+final class BadgeModuleFeature: FeatureCoordinatorProtocol {
     
     // MARK: Properties
     
@@ -15,68 +15,65 @@ final class BadgeModuleFeature: NSObject, FeatureCoordinatorProtocol {
     
     private var tableViewVCBuilder: TableViewVCBuilder
     private var tableViewBuilder: TableViewBuilder
-    private var navigationBarStyle: NavigationBarStyle
     
     private var tableDataSource: TableDataSource
     private var tableDelegate: TableDelegate
     
-    private var badgeUpdater: BadgeViewService
+    private var badgeService: BadgeViewService
     private var colorChipsUpdaters: [ChipsViewService] = []
     private var sizeChipsUpdaters: [ChipsViewService] = []
     private var setChipsUpdaters: [ChipsViewService] = []
     
     private var chipsCreationService: ChipsCreationService
     private var sectionModelService: SectionRowModelService
+    private let navigationBarViewPropertiesService: NavigationBarViewPropertiesService
+    
+    // MARK: - Init
     
     init(
-        screenTitle: String,
-        backAction: (() -> Void)?,
         tableDataSource: TableDataSource = .init(),
-        tableDelegate: TableDelegate = .init()
+        tableDelegate: TableDelegate = .init(),
+        navigationBarViewPropertiesService: NavigationBarViewPropertiesService = .init()
     ) {
         self.tableDataSource = tableDataSource
         self.tableDelegate = tableDelegate
         self.sectionModelService = SectionRowModelService()
         self.chipsCreationService = ChipsCreationService()
+        self.navigationBarViewPropertiesService = navigationBarViewPropertiesService
         
         tableViewBuilder = .init(with: .init(
             backgroundColor: .white,
             dataSources: self.tableDataSource,
             delegate: self.tableDelegate
         ))
-        
-        var navigationBarVP = NavigationBar.ViewProperties()
-        navigationBarStyle = NavigationBarStyle(
-            variant: .basic(
-                title: screenTitle,
-                subtitle: nil,
-                margins: nil
-            ),
-            color: .primary
-        )
-        navigationBarStyle.update(viewProperties: &navigationBarVP, backAction: backAction)
-        
         tableViewVCBuilder = .init(with: .init(
-            navigationBarViewProperties: navigationBarVP,
-            tableView: tableViewBuilder.view,
-            confirmButtonView: nil
+            tableView: tableViewBuilder.view
         ))
-        
-        // MARK: Badge
+    
         let badgeStyle = BadgeStyle(color: .neutral, size: .large, set: .full)
-        let badgeViewProperties = BadgeView.ViewProperties(text: "23 +".attributed, image: .ic16Tick)
-        
-        badgeUpdater = BadgeViewService(
+        let badgeViewProperties = BadgeView.ViewProperties(text: "23+".attributed, image: .ic16Tick)
+        badgeService = BadgeViewService(
             viewProperties: badgeViewProperties,
             style: badgeStyle
         )
-        
-        super.init()
     }
     
     // MARK: Methods
     
     func runFlow(data: Any?) -> (any Architecture.BuilderProtocol)? {
+        guard let screenTitle = data as? String else { return nil }
+        
+        tableViewVCBuilder.viewUpdater.state = .updateViewProperties(
+            .init(
+                navigationBarViewProperties: navigationBarViewPropertiesService.createBasicVP(
+                    title: screenTitle,
+                    backAction: { [weak self] in self?.runNewFlow?(ModuleFlow.back) }
+                ),
+                tableView: tableViewBuilder.view
+            )
+        )
+        tableViewVCBuilder.view.hidesBottomBarWhenPushed = true
+        
         setCell()
         return tableViewVCBuilder
     }
@@ -84,7 +81,6 @@ final class BadgeModuleFeature: NSObject, FeatureCoordinatorProtocol {
     // MARK: Private methods
     
     private func setCell() {
-        
         createUpdaters()
         
         let cells = createRowModels()
@@ -99,7 +95,7 @@ final class BadgeModuleFeature: NSObject, FeatureCoordinatorProtocol {
             selectedIndex: 0,
             onChipTap: { [weak self] index in
                 guard let self = self else { return }
-                self.badgeUpdater.update(newColor: [.neutral, .accent, .accentBrand, .accentInfo][index])
+                self.badgeService.update(newColor: [.neutral, .accent, .accentBrand, .accentInfo][index])
                 self.chipsCreationService.updateChipsSelection(for: &self.colorChipsUpdaters, selectedIndex: index)
             }
         )
@@ -109,7 +105,7 @@ final class BadgeModuleFeature: NSObject, FeatureCoordinatorProtocol {
             selectedIndex: 0,
             onChipTap: { [weak self] index in
                 guard let self = self else { return }
-                self.badgeUpdater.update(newSize: [.large, .small][index])
+                self.badgeService.update(newSize: [.large, .small][index])
                 self.chipsCreationService.updateChipsSelection(for: &self.sizeChipsUpdaters, selectedIndex: index)
             }
         )
@@ -119,7 +115,7 @@ final class BadgeModuleFeature: NSObject, FeatureCoordinatorProtocol {
             selectedIndex: 0,
             onChipTap: { [weak self] index in
                 guard let self = self else { return }
-                self.badgeUpdater.update(newSet: [.full, .basic, .simple][index])
+                self.badgeService.update(newSet: [.full, .basic, .simple][index])
                 self.chipsCreationService.updateChipsSelection(for: &self.setChipsUpdaters, selectedIndex: index)
             }
         )
@@ -131,7 +127,7 @@ final class BadgeModuleFeature: NSObject, FeatureCoordinatorProtocol {
         let setChips = setChipsUpdaters.map { updater -> (ChipsView) in updater.view }
         
         let rowModels: [DSRowModel] = [
-            DSRowModel(leading: .atom(.view(badgeUpdater.view))),
+            DSRowModel(leading: .atom(.view(badgeService.view))),
             DSRowModel(leading: .molecule(.horizontalChipseViews(colorChips))),
             DSRowModel(leading: .molecule(.horizontalChipseViews(sizeChips))),
             DSRowModel(leading: .molecule(.horizontalChipseViews(setChips))),
