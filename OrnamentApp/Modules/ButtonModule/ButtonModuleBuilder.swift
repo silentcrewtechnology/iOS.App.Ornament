@@ -12,14 +12,16 @@ import ArchitectureTableView
 
 final class ButtonModuleBuilder: NSObject, CellBuilder {
     
-    private var buttonView: ButtonView?
-    private var style = ButtonViewStyle(size: .large,
-                                        color: .accent,
-                                        variant: .primary,
-                                        state: .default,
-                                        icon: .without)
-    
-    private var viewProperties = ButtonView.ViewProperties(attributedText: "Label".attributed)
+    private lazy var buttonViewService: ButtonViewService = .init(
+        viewProperties: .init(attributedText: "Label".attributed),
+        style: .init(
+            size: .large,
+            color: .accent,
+            variant: .primary,
+            state: .default,
+            icon: .without
+        )
+    )
     
     private let chipsViewSectionHelper = ChipsViewSectionHelper()
     
@@ -39,18 +41,13 @@ final class ButtonModuleBuilder: NSObject, CellBuilder {
 extension ButtonModuleBuilder {
     private func createButtonViewSection() -> GenericTableViewSectionModel {
         let row = GenericTableViewRowModel(
-            with: GenericTableViewCellWrapper<ButtonView>.self,
+            with: UITableViewCell.self,
             configuration: { [weak self] cell, _ in
                 guard let self = self else { return }
-                
-                self.buttonView = cell.containedView
-                
-                self.style.update(viewProperties: &self.viewProperties)
-                self.buttonView?.update(with: self.viewProperties)
-                
+                cell.contentView.subviews.forEach { $0.removeFromSuperview() }
+                cell.contentView.addSubview(buttonViewService.view)
                 cell.selectionStyle = .none
-                
-                self.buttonView?.snp.remakeConstraints {
+                buttonViewService.view.snp.remakeConstraints {
                     $0.top.equalToSuperview()
                     $0.leading.equalToSuperview().offset(16)
                 }
@@ -123,15 +120,12 @@ extension ButtonModuleBuilder {
             titles: ["default", "pressed", "disabled", "loading"],
             actions: [
                 { [weak self] in
-                    self?.viewProperties.attributedText = "Label".attributed
                     self?.updateStyle(newState: .default)
                 },
                 { [weak self] in
-                    self?.viewProperties.attributedText = "Label".attributed
                     self?.updateStyle(newState: .pressed)
                 },
                 { [weak self] in
-                    self?.viewProperties.attributedText = "Label".attributed
                     self?.updateStyle(newState: .disabled)
                 },
                 { [weak self] in
@@ -147,7 +141,6 @@ extension ButtonModuleBuilder {
             titles: ["without", "with"],
             actions: [
                 { [weak self] in
-                    self?.viewProperties.leftIcon = nil
                     self?.updateStyle(newIcon: .without)
                 },
                 { [weak self] in
@@ -163,15 +156,16 @@ extension ButtonModuleBuilder {
         newColor: ButtonViewStyle.Color? = nil,
         newVariant: ButtonViewStyle.Variant? = nil,
         newState: ButtonViewStyle.State? = nil,
-        newIcon: ButtonViewStyle.Icon? = nil
+        newIcon: ButtonViewStyle.Icon? = nil,
+        newText: NSMutableAttributedString? = nil
     ) {
-        style.update(
-            size: newSize,
-            color: newColor,
-            variant: newVariant,
-            state: newState,
-            icon: newIcon,
-            viewProperties: &viewProperties)
-        buttonView?.update(with: viewProperties)
+        buttonViewService.update(
+            newSize: newSize,
+            newColor: newColor,
+            newVariant: newVariant,
+            newState: newState,
+            newIcon: newIcon,
+            newText: newText
+        )
     }
 }
