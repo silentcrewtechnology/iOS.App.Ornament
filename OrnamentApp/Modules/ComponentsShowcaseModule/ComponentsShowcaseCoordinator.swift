@@ -18,7 +18,7 @@ final class ComponentsShowcaseCoordinator: RootCoordinatorProtocol {
     private var componentsShowcaseFeature: FeatureCoordinatorProtocol
     private var activityIndicatorFeature: FeatureCoordinatorProtocol?
     private var authorizationButtonFeature: FeatureCoordinatorProtocol?
-    private var badgeFeature: FeatureCoordinatorProtocol?
+    private var badgeFeature: BadgeModuleFeature?
     private var bannerFeature: FeatureCoordinatorProtocol?
     private var checkboxFeature: FeatureCoordinatorProtocol?
     private var chipsFeature: FeatureCoordinatorProtocol?
@@ -50,66 +50,10 @@ final class ComponentsShowcaseCoordinator: RootCoordinatorProtocol {
     
     init(
         routerService: RouterService,
-        componentsShowcaseFeature: ComponentsShowcaseFeature,
-        activityIndicatorFeature: CommonDetailFeature? = nil,
-        authorizationButtonFeature: CommonDetailFeature? = nil,
-        badgeFeature: BadgeModuleFeature? = nil,
-        bannerFeature: CommonDetailFeature? = nil,
-        buttonIconFeature: CommonDetailFeature? = nil,
-        checkboxFeature: CommonDetailFeature? = nil,
-        chipsFeature: CommonDetailFeature? = nil,
-        dividerFeature: DividerModuleFeature? = nil,
-        inputAmountFeature: InputAmountModuleFeature? = nil,
-        inputOTPFeature: CommonDetailFeature? = nil,
-        inputPhoneNumberFeature: CommonDetailFeature? = nil,
-        inputSelectFeature: CommonDetailFeature? = nil,
-        inputTextFeature: CommonDetailFeature? = nil,
-        imageFeature: CommonDetailFeature? = nil,
-        navigationBarFeature: NavigationBarFeature? = nil,
-        titleFeature: CommonDetailFeature? = nil,
-        toggleFeature: CommonDetailFeature? = nil,
-        tileFeature: CommonDetailFeature? = nil,
-        radioFeature: CommonDetailFeature? = nil,
-        segmentControlFeature: SegmentControlModuleFeature? = nil,
-        segmentItemFeature: SegmentItemFeature? = nil,
-        stepperFeature: CommonDetailFeature? = nil,
-        snackBarFeature: CommonDetailFeature? = nil,
-        buttonPayFeature: CommonDetailFeature? = nil,
-        cardFeature: CommonDetailFeature? = nil,
-        buttonFeature: CommonDetailFeature? = nil,
-        hintFeature: HintModuleFeature? = nil,
-        labelFeature: CommonDetailFeature? = nil
+        componentsShowcaseFeature: ComponentsShowcaseFeature
     ) {
         self.routerService = routerService
         self.componentsShowcaseFeature = componentsShowcaseFeature
-        self.activityIndicatorFeature = activityIndicatorFeature
-        self.authorizationButtonFeature = authorizationButtonFeature
-        self.badgeFeature = badgeFeature
-        self.bannerFeature = bannerFeature
-        self.buttonIconFeature = buttonIconFeature
-        self.checkboxFeature = checkboxFeature
-        self.chipsFeature = chipsFeature
-        self.dividerFeature = dividerFeature
-        self.inputAmountFeature = inputAmountFeature
-        self.inputOTPFeature = inputOTPFeature
-        self.inputPhoneNumberFeature = inputPhoneNumberFeature
-        self.inputSelectFeature = inputSelectFeature
-        self.inputTextFeature = inputTextFeature
-        self.imageFeature = imageFeature
-        self.navigationBarFeature = navigationBarFeature
-        self.titleFeature = titleFeature
-        self.toggleFeature = toggleFeature
-        self.tileFeature = tileFeature
-        self.radioFeature = radioFeature
-        self.segmentControlFeature = segmentControlFeature
-        self.segmentItemFeature = segmentItemFeature
-        self.stepperFeature = stepperFeature
-        self.snackBarFeature = snackBarFeature
-        self.buttonFeature = buttonFeature
-        self.buttonPayFeature = buttonPayFeature
-        self.cardFeature = cardFeature
-        self.hintFeature = hintFeature
-        self.labelFeature = labelFeature
     }
     
     // MARK: - Methods
@@ -125,6 +69,14 @@ final class ComponentsShowcaseCoordinator: RootCoordinatorProtocol {
     }
     
     func setupFlow(completion: @escaping Architecture.Closure<Any?>) {
+        let moduleRunNewFlow: ((Any) -> Void)? = { [weak self] flow in
+            guard let moduleFlow = flow as? ModuleFlow else { return }
+            
+            switch moduleFlow {
+            case .back: self?.routerService.popMainNavigation(animated: true)
+            }
+        }
+        
         componentsShowcaseFeature.runNewFlow = { [weak self] flow in
             guard let component = flow as? Components else { return }
             
@@ -148,9 +100,9 @@ final class ComponentsShowcaseCoordinator: RootCoordinatorProtocol {
                 guard let builder = self?.authorizationButtonFeature?.runFlow(data: nil) else { return }
                 viewController = (builder.view as! UIViewController)
             case .badge:
-                // TODO Добавить DI для фичи
-                self?.badgeFeature = BadgeModuleFeature.init(screenTitle: Components.badge.rawValue, backAction: self?.popVC)
-                guard let builder = self?.badgeFeature?.runFlow(data: nil) else { return }
+                self?.badgeFeature = .init()
+                self?.badgeFeature?.runNewFlow = moduleRunNewFlow
+                guard let builder = self?.badgeFeature?.runFlow(data: Components.badge.rawValue) else { return }
                 
                 viewController = (builder.view as! UIViewController)
             case .banner:

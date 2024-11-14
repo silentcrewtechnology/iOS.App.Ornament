@@ -37,7 +37,6 @@
 		CE51C8D82C593FE20069123F /* TileModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE51C8D72C593FE20069123F /* TileModuleBuilder.swift */; };
 		CE5AE5242C53866300DD7BC4 /* NavigationBarCellBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5AE5232C53866300DD7BC4 /* NavigationBarCellBuilder.swift */; };
 		CE5AE5262C53BF6300DD7BC4 /* NavigationBarFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5AE5252C53BF6300DD7BC4 /* NavigationBarFeature.swift */; };
-		CE6439F32C58FAEE002491EA /* SnackBarExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6439F22C58FAEE002491EA /* SnackBarExample.swift */; };
 		CE694C372C3D56090064C0C0 /* ChipsCellBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE694C362C3D56090064C0C0 /* ChipsCellBuilder.swift */; };
 		CE8994672C6B44B20019D130 /* HintViewBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8994662C6B44B20019D130 /* HintViewBuilder.swift */; };
 		CE9121D42C73CA7400ACDB72 /* InputAmountModuleFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9121D32C73CA7400ACDB72 /* InputAmountModuleFeature.swift */; };
@@ -53,6 +52,7 @@
 		CEA4E22D2C37DFCE0069707C /* GenericTableViewSectionModel+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA4E22C2C37DFCE0069707C /* GenericTableViewSectionModel+Extensions.swift */; };
 		CEC824B82C4E90F200891643 /* ButtonIconModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC824B72C4E90F200891643 /* ButtonIconModuleBuilder.swift */; };
 		CEC824C22C512D4B00891643 /* ImageModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC824C12C512D4B00891643 /* ImageModuleBuilder.swift */; };
+		CED4CA9C2CE625A2009019A8 /* ModuleFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED4CA9B2CE62593009019A8 /* ModuleFlow.swift */; };
 		CEE15C4D2C3FD76C008E6D8C /* InputOTPCellBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE15C4C2C3FD76C008E6D8C /* InputOTPCellBuilder.swift */; };
 		CEE15C502C400F66008E6D8C /* InputPhoneNumberCellBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE15C4F2C400F66008E6D8C /* InputPhoneNumberCellBuilder.swift */; };
 		CEEB5E5B2C356246000E0215 /* ArchitectureTableView in Frameworks */ = {isa = PBXBuildFile; productRef = CEEB5E5A2C356246000E0215 /* ArchitectureTableView */; };
@@ -61,34 +61,6 @@
 		CEEB5E672C3568B0000E0215 /* Extensions in Frameworks */ = {isa = PBXBuildFile; productRef = CEEB5E662C3568B0000E0215 /* Extensions */; };
 		CEEB5E712C3596E6000E0215 /* Components+Reusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEB5E702C3596E6000E0215 /* Components+Reusable.swift */; };
 		CEEB5E742C35A9A1000E0215 /* TableComponentViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEB5E732C35A9A1000E0215 /* TableComponentViewCell.swift */; };
-		CEF1F9DD2C57BC3000D0D5D2 /* ActivityIndicatorExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF1F9DC2C57BC3000D0D5D2 /* ActivityIndicatorExample.swift */; };
-		CEF1F9DF2C57BC4200D0D5D2 /* ButtonAuthExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF1F9DE2C57BC4200D0D5D2 /* ButtonAuthExample.swift */; };
-		CEF1F9EE2C57D14A00D0D5D2 /* BadgeExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF1F9ED2C57D14A00D0D5D2 /* BadgeExample.swift */; };
-		CEF1F9F02C57D65C00D0D5D2 /* BannerViewExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF1F9EF2C57D65C00D0D5D2 /* BannerViewExample.swift */; };
-		CEF1F9F22C57D66500D0D5D2 /* ButtonViewExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF1F9F12C57D66500D0D5D2 /* ButtonViewExample.swift */; };
-		CEF1F9F42C57D70D00D0D5D2 /* ButtonIconExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF1F9F32C57D70D00D0D5D2 /* ButtonIconExample.swift */; };
-		CEF1F9F62C57D74900D0D5D2 /* CardViewExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF1F9F52C57D74900D0D5D2 /* CardViewExample.swift */; };
-		CEF1F9F82C57D75000D0D5D2 /* CheckboxViewExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF1F9F72C57D75000D0D5D2 /* CheckboxViewExample.swift */; };
-		CEF1F9FA2C57D75900D0D5D2 /* ChipsViewExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF1F9F92C57D75900D0D5D2 /* ChipsViewExample.swift */; };
-		CEF1F9FC2C57D76200D0D5D2 /* DividerViewExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF1F9FB2C57D76200D0D5D2 /* DividerViewExample.swift */; };
-		CEF1F9FE2C57D77000D0D5D2 /* InputTextareaViewExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF1F9FD2C57D77000D0D5D2 /* InputTextareaViewExample.swift */; };
-		CEF1FA002C57D77700D0D5D2 /* InputViewExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF1F9FF2C57D77700D0D5D2 /* InputViewExample.swift */; };
-		CEF1FA022C57D78000D0D5D2 /* InputPhoneNumberViewExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF1FA012C57D78000D0D5D2 /* InputPhoneNumberViewExample.swift */; };
-		CEF1FA062C57D78F00D0D5D2 /* InputSelectViewExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF1FA052C57D78F00D0D5D2 /* InputSelectViewExample.swift */; };
-		CEF1FA082C57D79B00D0D5D2 /* InputOTPViewExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF1FA072C57D79B00D0D5D2 /* InputOTPViewExample.swift */; };
-		CEF1FA0A2C57D7A400D0D5D2 /* InputOTPItemExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF1FA092C57D7A400D0D5D2 /* InputOTPItemExample.swift */; };
-		CEF1FA0C2C57D7AA00D0D5D2 /* ImageViewExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF1FA0B2C57D7AA00D0D5D2 /* ImageViewExample.swift */; };
-		CEF1FA0F2C57D88C00D0D5D2 /* HintViewExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF1FA0E2C57D88C00D0D5D2 /* HintViewExample.swift */; };
-		CEF1FA112C57D89400D0D5D2 /* LabelViewExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF1FA102C57D89400D0D5D2 /* LabelViewExample.swift */; };
-		CEF1FA132C57D8A100D0D5D2 /* NavigationBarExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF1FA122C57D8A100D0D5D2 /* NavigationBarExample.swift */; };
-		CEF1FA152C57D8AA00D0D5D2 /* PageControlExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF1FA142C57D8AA00D0D5D2 /* PageControlExample.swift */; };
-		CEF1FA172C57D8BB00D0D5D2 /* ButtonPayExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF1FA162C57D8BB00D0D5D2 /* ButtonPayExample.swift */; };
-		CEF1FA192C57D8C200D0D5D2 /* RadioViewExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF1FA182C57D8C200D0D5D2 /* RadioViewExample.swift */; };
-		CEF1FA212C57D8ED00D0D5D2 /* StepperViewExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF1FA202C57D8ED00D0D5D2 /* StepperViewExample.swift */; };
-		CEF1FA232C57D8F400D0D5D2 /* TabsViewExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF1FA222C57D8F400D0D5D2 /* TabsViewExample.swift */; };
-		CEF1FA252C57D8F900D0D5D2 /* TileViewExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF1FA242C57D8F900D0D5D2 /* TileViewExample.swift */; };
-		CEF1FA272C57D90000D0D5D2 /* TitleViewExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF1FA262C57D90000D0D5D2 /* TitleViewExample.swift */; };
-		CEF1FA292C57D90600D0D5D2 /* ToggleViewExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF1FA282C57D90600D0D5D2 /* ToggleViewExample.swift */; };
 		CEF1FA2D2C57D9A500D0D5D2 /* GibddFineCellsExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF1FA2C2C57D9A500D0D5D2 /* GibddFineCellsExample.swift */; };
 		CEF1FA302C57D9D700D0D5D2 /* RowCellExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF1FA2F2C57D9D700D0D5D2 /* RowCellExample.swift */; };
 		CEF1FA322C57D9DE00D0D5D2 /* RowViewExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF1FA312C57D9DE00D0D5D2 /* RowViewExample.swift */; };
@@ -129,7 +101,6 @@
 		CE51C8D72C593FE20069123F /* TileModuleBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TileModuleBuilder.swift; sourceTree = "<group>"; };
 		CE5AE5232C53866300DD7BC4 /* NavigationBarCellBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBarCellBuilder.swift; sourceTree = "<group>"; };
 		CE5AE5252C53BF6300DD7BC4 /* NavigationBarFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBarFeature.swift; sourceTree = "<group>"; };
-		CE6439F22C58FAEE002491EA /* SnackBarExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnackBarExample.swift; sourceTree = "<group>"; };
 		CE694C362C3D56090064C0C0 /* ChipsCellBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChipsCellBuilder.swift; sourceTree = "<group>"; };
 		CE8994662C6B44B20019D130 /* HintViewBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HintViewBuilder.swift; sourceTree = "<group>"; };
 		CE9121D32C73CA7400ACDB72 /* InputAmountModuleFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputAmountModuleFeature.swift; sourceTree = "<group>"; };
@@ -144,40 +115,13 @@
 		CEA4E22C2C37DFCE0069707C /* GenericTableViewSectionModel+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GenericTableViewSectionModel+Extensions.swift"; sourceTree = "<group>"; };
 		CEC824B72C4E90F200891643 /* ButtonIconModuleBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonIconModuleBuilder.swift; sourceTree = "<group>"; };
 		CEC824C12C512D4B00891643 /* ImageModuleBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageModuleBuilder.swift; sourceTree = "<group>"; };
+		CED4CA9B2CE62593009019A8 /* ModuleFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModuleFlow.swift; sourceTree = "<group>"; };
 		CEE15C4C2C3FD76C008E6D8C /* InputOTPCellBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputOTPCellBuilder.swift; sourceTree = "<group>"; };
 		CEE15C4F2C400F66008E6D8C /* InputPhoneNumberCellBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputPhoneNumberCellBuilder.swift; sourceTree = "<group>"; };
 		CEEB5E612C356801000E0215 /* ComponentsShowcaseFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComponentsShowcaseFeature.swift; sourceTree = "<group>"; };
 		CEEB5E632C35681A000E0215 /* ComponentsShowcaseCellBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComponentsShowcaseCellBuilder.swift; sourceTree = "<group>"; };
 		CEEB5E702C3596E6000E0215 /* Components+Reusable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Components+Reusable.swift"; sourceTree = "<group>"; };
 		CEEB5E732C35A9A1000E0215 /* TableComponentViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableComponentViewCell.swift; sourceTree = "<group>"; };
-		CEF1F9DC2C57BC3000D0D5D2 /* ActivityIndicatorExample.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityIndicatorExample.swift; sourceTree = "<group>"; };
-		CEF1F9DE2C57BC4200D0D5D2 /* ButtonAuthExample.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonAuthExample.swift; sourceTree = "<group>"; };
-		CEF1F9ED2C57D14A00D0D5D2 /* BadgeExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeExample.swift; sourceTree = "<group>"; };
-		CEF1F9EF2C57D65C00D0D5D2 /* BannerViewExample.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BannerViewExample.swift; sourceTree = "<group>"; };
-		CEF1F9F12C57D66500D0D5D2 /* ButtonViewExample.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonViewExample.swift; sourceTree = "<group>"; };
-		CEF1F9F32C57D70D00D0D5D2 /* ButtonIconExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonIconExample.swift; sourceTree = "<group>"; };
-		CEF1F9F52C57D74900D0D5D2 /* CardViewExample.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardViewExample.swift; sourceTree = "<group>"; };
-		CEF1F9F72C57D75000D0D5D2 /* CheckboxViewExample.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckboxViewExample.swift; sourceTree = "<group>"; };
-		CEF1F9F92C57D75900D0D5D2 /* ChipsViewExample.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChipsViewExample.swift; sourceTree = "<group>"; };
-		CEF1F9FB2C57D76200D0D5D2 /* DividerViewExample.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DividerViewExample.swift; sourceTree = "<group>"; };
-		CEF1F9FD2C57D77000D0D5D2 /* InputTextareaViewExample.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InputTextareaViewExample.swift; sourceTree = "<group>"; };
-		CEF1F9FF2C57D77700D0D5D2 /* InputViewExample.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InputViewExample.swift; sourceTree = "<group>"; };
-		CEF1FA012C57D78000D0D5D2 /* InputPhoneNumberViewExample.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InputPhoneNumberViewExample.swift; sourceTree = "<group>"; };
-		CEF1FA052C57D78F00D0D5D2 /* InputSelectViewExample.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InputSelectViewExample.swift; sourceTree = "<group>"; };
-		CEF1FA072C57D79B00D0D5D2 /* InputOTPViewExample.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InputOTPViewExample.swift; sourceTree = "<group>"; };
-		CEF1FA092C57D7A400D0D5D2 /* InputOTPItemExample.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InputOTPItemExample.swift; sourceTree = "<group>"; };
-		CEF1FA0B2C57D7AA00D0D5D2 /* ImageViewExample.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageViewExample.swift; sourceTree = "<group>"; };
-		CEF1FA0E2C57D88C00D0D5D2 /* HintViewExample.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HintViewExample.swift; sourceTree = "<group>"; };
-		CEF1FA102C57D89400D0D5D2 /* LabelViewExample.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LabelViewExample.swift; sourceTree = "<group>"; };
-		CEF1FA122C57D8A100D0D5D2 /* NavigationBarExample.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationBarExample.swift; sourceTree = "<group>"; };
-		CEF1FA142C57D8AA00D0D5D2 /* PageControlExample.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageControlExample.swift; sourceTree = "<group>"; };
-		CEF1FA162C57D8BB00D0D5D2 /* ButtonPayExample.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonPayExample.swift; sourceTree = "<group>"; };
-		CEF1FA182C57D8C200D0D5D2 /* RadioViewExample.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RadioViewExample.swift; sourceTree = "<group>"; };
-		CEF1FA202C57D8ED00D0D5D2 /* StepperViewExample.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StepperViewExample.swift; sourceTree = "<group>"; };
-		CEF1FA222C57D8F400D0D5D2 /* TabsViewExample.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabsViewExample.swift; sourceTree = "<group>"; };
-		CEF1FA242C57D8F900D0D5D2 /* TileViewExample.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TileViewExample.swift; sourceTree = "<group>"; };
-		CEF1FA262C57D90000D0D5D2 /* TitleViewExample.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TitleViewExample.swift; sourceTree = "<group>"; };
-		CEF1FA282C57D90600D0D5D2 /* ToggleViewExample.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToggleViewExample.swift; sourceTree = "<group>"; };
 		CEF1FA2C2C57D9A500D0D5D2 /* GibddFineCellsExample.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GibddFineCellsExample.swift; sourceTree = "<group>"; };
 		CEF1FA2F2C57D9D700D0D5D2 /* RowCellExample.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RowCellExample.swift; sourceTree = "<group>"; };
 		CEF1FA312C57D9DE00D0D5D2 /* RowViewExample.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RowViewExample.swift; sourceTree = "<group>"; };
@@ -212,7 +156,6 @@
 		34FC046F2C400565005DB295 /* BadgeModule */ = {
 			isa = PBXGroup;
 			children = (
-				CEF1F9ED2C57D14A00D0D5D2 /* BadgeExample.swift */,
 				34C3999D2C5B85D400C98DBC /* BadgeModuleFeature.swift */,
 			);
 			path = BadgeModule;
@@ -266,7 +209,6 @@
 			isa = PBXGroup;
 			children = (
 				CE15ECBB2C57A75A00F148B7 /* TitleCellBuilder.swift */,
-				CEF1FA262C57D90000D0D5D2 /* TitleViewExample.swift */,
 			);
 			path = TitleModule;
 			sourceTree = "<group>";
@@ -291,7 +233,6 @@
 			isa = PBXGroup;
 			children = (
 				CE2827AF2C3C1ECD00156F14 /* CheckboxCellBuilder.swift */,
-				CEF1F9F72C57D75000D0D5D2 /* CheckboxViewExample.swift */,
 			);
 			path = CheckboxModule;
 			sourceTree = "<group>";
@@ -300,7 +241,6 @@
 			isa = PBXGroup;
 			children = (
 				CE4A7C092C3E8ABF00AA7EB4 /* DividerCellBuilder.swift */,
-				CEF1F9FB2C57D76200D0D5D2 /* DividerViewExample.swift */,
 				348C53902C74AA3F00ACEA5C /* DividerModuleFeature.swift */,
 			);
 			path = DividerModule;
@@ -310,7 +250,6 @@
 			isa = PBXGroup;
 			children = (
 				CE4A7C112C3E9E5900AA7EB4 /* ToggleCellBuilder.swift */,
-				CEF1FA282C57D90600D0D5D2 /* ToggleViewExample.swift */,
 			);
 			path = ToggleModule;
 			sourceTree = "<group>";
@@ -328,7 +267,6 @@
 			children = (
 				CE5AE5232C53866300DD7BC4 /* NavigationBarCellBuilder.swift */,
 				CE5AE5252C53BF6300DD7BC4 /* NavigationBarFeature.swift */,
-				CEF1FA122C57D8A100D0D5D2 /* NavigationBarExample.swift */,
 			);
 			path = NavigationBarModule;
 			sourceTree = "<group>";
@@ -337,7 +275,6 @@
 			isa = PBXGroup;
 			children = (
 				CE2130B62C60C90000AB69BE /* SnackBarCellBuilder.swift */,
-				CE6439F22C58FAEE002491EA /* SnackBarExample.swift */,
 			);
 			path = SnackBarModule;
 			sourceTree = "<group>";
@@ -346,7 +283,6 @@
 			isa = PBXGroup;
 			children = (
 				CE694C362C3D56090064C0C0 /* ChipsCellBuilder.swift */,
-				CEF1F9F92C57D75900D0D5D2 /* ChipsViewExample.swift */,
 			);
 			path = ChipsModule;
 			sourceTree = "<group>";
@@ -390,7 +326,6 @@
 			isa = PBXGroup;
 			children = (
 				CEA336122C36C45F00880A1F /* ActivityIndicatorCellBuilder.swift */,
-				CEF1F9DC2C57BC3000D0D5D2 /* ActivityIndicatorExample.swift */,
 			);
 			path = ActivityIndicatorModule;
 			sourceTree = "<group>";
@@ -407,7 +342,6 @@
 			isa = PBXGroup;
 			children = (
 				CEA4E2282C37CF700069707C /* ButtonAuthCellBuilder.swift */,
-				CEF1F9DE2C57BC4200D0D5D2 /* ButtonAuthExample.swift */,
 			);
 			path = ButtonAuthModule;
 			sourceTree = "<group>";
@@ -416,7 +350,6 @@
 			isa = PBXGroup;
 			children = (
 				CEC824B72C4E90F200891643 /* ButtonIconModuleBuilder.swift */,
-				CEF1F9F32C57D70D00D0D5D2 /* ButtonIconExample.swift */,
 			);
 			path = ButtonIconModuleBuilder;
 			sourceTree = "<group>";
@@ -425,7 +358,6 @@
 			isa = PBXGroup;
 			children = (
 				CEC824C12C512D4B00891643 /* ImageModuleBuilder.swift */,
-				CEF1FA0B2C57D7AA00D0D5D2 /* ImageViewExample.swift */,
 			);
 			path = ImageModule;
 			sourceTree = "<group>";
@@ -434,8 +366,6 @@
 			isa = PBXGroup;
 			children = (
 				CEE15C4C2C3FD76C008E6D8C /* InputOTPCellBuilder.swift */,
-				CEF1FA072C57D79B00D0D5D2 /* InputOTPViewExample.swift */,
-				CEF1FA092C57D7A400D0D5D2 /* InputOTPItemExample.swift */,
 			);
 			path = InputOTPModule;
 			sourceTree = "<group>";
@@ -444,7 +374,6 @@
 			isa = PBXGroup;
 			children = (
 				CEE15C4F2C400F66008E6D8C /* InputPhoneNumberCellBuilder.swift */,
-				CEF1FA012C57D78000D0D5D2 /* InputPhoneNumberViewExample.swift */,
 			);
 			path = InputPhoneNumber;
 			sourceTree = "<group>";
@@ -485,6 +414,7 @@
 				CE15ECBA2C57A74400F148B7 /* TitleModule */,
 				CE4A7C102C3E9E4100AA7EB4 /* ToggleModule */,
 				CEEB5E602C35678D000E0215 /* ComponentsShowcaseModule */,
+				CED4CA9B2CE62593009019A8 /* ModuleFlow.swift */,
 				CEA3360B2C36C0BE00880A1F /* MainCoordinator.swift */,
 				348C538B2C73BCF900ACEA5C /* ChipsCreationService.swift */,
 				348C53892C73BC9C00ACEA5C /* SectionRowModelService.swift */,
@@ -516,7 +446,6 @@
 			isa = PBXGroup;
 			children = (
 				CE254A5A2C5CDAC20083EF57 /* BannerCellBuilder.swift */,
-				CEF1F9EF2C57D65C00D0D5D2 /* BannerViewExample.swift */,
 			);
 			path = BannerModule;
 			sourceTree = "<group>";
@@ -524,7 +453,6 @@
 		CEF1F9E12C57BC6A00D0D5D2 /* ButtonModule */ = {
 			isa = PBXGroup;
 			children = (
-				CEF1F9F12C57D66500D0D5D2 /* ButtonViewExample.swift */,
 				CE3D0CDD2C622EDC00A9A5C1 /* ButtonModuleBuilder.swift */,
 			);
 			path = ButtonModule;
@@ -534,7 +462,6 @@
 			isa = PBXGroup;
 			children = (
 				CE1170A72C636CB60032D933 /* CardCellBuilder.swift */,
-				CEF1F9F52C57D74900D0D5D2 /* CardViewExample.swift */,
 			);
 			path = CardModule;
 			sourceTree = "<group>";
@@ -542,7 +469,6 @@
 		CEF1F9E32C57CCD300D0D5D2 /* InputTextAreaModule */ = {
 			isa = PBXGroup;
 			children = (
-				CEF1F9FD2C57D77000D0D5D2 /* InputTextareaViewExample.swift */,
 			);
 			path = InputTextAreaModule;
 			sourceTree = "<group>";
@@ -551,7 +477,6 @@
 			isa = PBXGroup;
 			children = (
 				CE9E8C592C6B4D3B0034A37E /* LabelCellBuilder.swift */,
-				CEF1FA102C57D89400D0D5D2 /* LabelViewExample.swift */,
 			);
 			path = LabelModule;
 			sourceTree = "<group>";
@@ -559,7 +484,6 @@
 		CEF1F9E52C57CD2B00D0D5D2 /* PageControlModule */ = {
 			isa = PBXGroup;
 			children = (
-				CEF1FA142C57D8AA00D0D5D2 /* PageControlExample.swift */,
 			);
 			path = PageControlModule;
 			sourceTree = "<group>";
@@ -568,7 +492,6 @@
 			isa = PBXGroup;
 			children = (
 				CEF8CD752C622F55009B8409 /* ButtonPayCellBuilder.swift */,
-				CEF1FA162C57D8BB00D0D5D2 /* ButtonPayExample.swift */,
 			);
 			path = ButtonPayModule;
 			sourceTree = "<group>";
@@ -577,7 +500,6 @@
 			isa = PBXGroup;
 			children = (
 				CE3D0CD12C5B648900A9A5C1 /* RadioModuleBuilder.swift */,
-				CEF1FA182C57D8C200D0D5D2 /* RadioViewExample.swift */,
 			);
 			path = RadioModule;
 			sourceTree = "<group>";
@@ -593,7 +515,6 @@
 		CEF1F9EA2C57D08300D0D5D2 /* StepperModule */ = {
 			isa = PBXGroup;
 			children = (
-				CEF1FA202C57D8ED00D0D5D2 /* StepperViewExample.swift */,
 				CE3D0CD72C5CC90C00A9A5C1 /* StepperModuleBuilder.swift */,
 			);
 			path = StepperModule;
@@ -602,7 +523,6 @@
 		CEF1F9EB2C57D0A000D0D5D2 /* TabsModule */ = {
 			isa = PBXGroup;
 			children = (
-				CEF1FA222C57D8F400D0D5D2 /* TabsViewExample.swift */,
 			);
 			path = TabsModule;
 			sourceTree = "<group>";
@@ -611,17 +531,8 @@
 			isa = PBXGroup;
 			children = (
 				CE51C8D72C593FE20069123F /* TileModuleBuilder.swift */,
-				CEF1FA242C57D8F900D0D5D2 /* TileViewExample.swift */,
 			);
 			path = TileModule;
-			sourceTree = "<group>";
-		};
-		CEF1FA0D2C57D87E00D0D5D2 /* HintModule */ = {
-			isa = PBXGroup;
-			children = (
-				CEF1FA0E2C57D88C00D0D5D2 /* HintViewExample.swift */,
-			);
-			path = HintModule;
 			sourceTree = "<group>";
 		};
 		CEF1FA2A2C57D97D00D0D5D2 /* AuxiliaryModules */ = {
@@ -629,7 +540,6 @@
 			children = (
 				CEF1FA2E2C57D9CE00D0D5D2 /* RowModule */,
 				CEF1FA2B2C57D98B00D0D5D2 /* GibddFineModule */,
-				CEF1FA0D2C57D87E00D0D5D2 /* HintModule */,
 			);
 			path = AuxiliaryModules;
 			sourceTree = "<group>";
@@ -655,7 +565,6 @@
 			isa = PBXGroup;
 			children = (
 				CEF2DE6D2C4130840065C1BD /* InputSelectCellBuilder.swift */,
-				CEF1FA052C57D78F00D0D5D2 /* InputSelectViewExample.swift */,
 			);
 			path = InputSelectModule;
 			sourceTree = "<group>";
@@ -664,7 +573,6 @@
 			isa = PBXGroup;
 			children = (
 				CEF2DE702C4150130065C1BD /* InputCellBuilder.swift */,
-				CEF1F9FF2C57D77700D0D5D2 /* InputViewExample.swift */,
 			);
 			path = InputModule;
 			sourceTree = "<group>";
@@ -751,42 +659,28 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CEF1FA212C57D8ED00D0D5D2 /* StepperViewExample.swift in Sources */,
-				CEF1FA132C57D8A100D0D5D2 /* NavigationBarExample.swift in Sources */,
-				CEF1FA112C57D89400D0D5D2 /* LabelViewExample.swift in Sources */,
 				CE51C8D82C593FE20069123F /* TileModuleBuilder.swift in Sources */,
-				CEF1FA252C57D8F900D0D5D2 /* TileViewExample.swift in Sources */,
 				CEE15C502C400F66008E6D8C /* InputPhoneNumberCellBuilder.swift in Sources */,
 				CEA336132C36C45F00880A1F /* ActivityIndicatorCellBuilder.swift in Sources */,
 				CEF1FA2D2C57D9A500D0D5D2 /* GibddFineCellsExample.swift in Sources */,
 				CE4A7C0F2C3E8FC300AA7EB4 /* Constants.swift in Sources */,
-				CEF1FA152C57D8AA00D0D5D2 /* PageControlExample.swift in Sources */,
 				CEC824B82C4E90F200891643 /* ButtonIconModuleBuilder.swift in Sources */,
 				CE254A5B2C5CDAC20083EF57 /* BannerCellBuilder.swift in Sources */,
 				CEA3360E2C36C0E100880A1F /* ComponentsShowcaseCoordinator.swift in Sources */,
-				CEF1FA192C57D8C200D0D5D2 /* RadioViewExample.swift in Sources */,
-				CEF1F9DD2C57BC3000D0D5D2 /* ActivityIndicatorExample.swift in Sources */,
 				CE5AE5262C53BF6300DD7BC4 /* NavigationBarFeature.swift in Sources */,
-				CEF1F9EE2C57D14A00D0D5D2 /* BadgeExample.swift in Sources */,
-				CEF1FA022C57D78000D0D5D2 /* InputPhoneNumberViewExample.swift in Sources */,
-				CE6439F32C58FAEE002491EA /* SnackBarExample.swift in Sources */,
+				CED4CA9C2CE625A2009019A8 /* ModuleFlow.swift in Sources */,
 				CE2130B72C60C90000AB69BE /* SnackBarCellBuilder.swift in Sources */,
 				CEF2DE712C4150130065C1BD /* InputCellBuilder.swift in Sources */,
 				3477B69A2C734EB400C6C059 /* ChipsViewUpdater.swift in Sources */,
 				CE9121D42C73CA7400ACDB72 /* InputAmountModuleFeature.swift in Sources */,
 				CE23F6B42C749CE1004D6CE6 /* HintModuleFeature.swift in Sources */,
-				CEF1F9F82C57D75000D0D5D2 /* CheckboxViewExample.swift in Sources */,
 				CE694C372C3D56090064C0C0 /* ChipsCellBuilder.swift in Sources */,
 				34C3999E2C5B85D400C98DBC /* BadgeModuleFeature.swift in Sources */,
 				CEEB5E642C35681A000E0215 /* ComponentsShowcaseCellBuilder.swift in Sources */,
 				CEF1FA322C57D9DE00D0D5D2 /* RowViewExample.swift in Sources */,
-				CEF1FA172C57D8BB00D0D5D2 /* ButtonPayExample.swift in Sources */,
 				CE4A7C0A2C3E8ABF00AA7EB4 /* DividerCellBuilder.swift in Sources */,
-				CEF1FA0F2C57D88C00D0D5D2 /* HintViewExample.swift in Sources */,
-				CEF1FA0C2C57D7AA00D0D5D2 /* ImageViewExample.swift in Sources */,
 				CEA336002C36A66200880A1F /* CheckboxViewUpdater.swift in Sources */,
 				348C53932C7621BE00ACEA5C /* SegmentControlModuleFeature.swift in Sources */,
-				CEF1FA272C57D90000D0D5D2 /* TitleViewExample.swift in Sources */,
 				CE1170A82C636CB60032D933 /* CardCellBuilder.swift in Sources */,
 				CE2827B02C3C1ECD00156F14 /* CheckboxCellBuilder.swift in Sources */,
 				CEEB5E742C35A9A1000E0215 /* TableComponentViewCell.swift in Sources */,
@@ -794,41 +688,27 @@
 				CEA3360C2C36C0BE00880A1F /* MainCoordinator.swift in Sources */,
 				CEEB5E622C356802000E0215 /* ComponentsShowcaseFeature.swift in Sources */,
 				CE2827A12C3BDB6900156F14 /* CellBuilder.swift in Sources */,
-				CEF1F9DF2C57BC4200D0D5D2 /* ButtonAuthExample.swift in Sources */,
 				CEA4E2292C37CF700069707C /* ButtonAuthCellBuilder.swift in Sources */,
 				CEF2DE6E2C4130840065C1BD /* InputSelectCellBuilder.swift in Sources */,
-				CEF1F9FC2C57D76200D0D5D2 /* DividerViewExample.swift in Sources */,
 				CE3D0CD82C5CC90C00A9A5C1 /* StepperModuleBuilder.swift in Sources */,
 				CE15ECBC2C57A75A00F148B7 /* TitleCellBuilder.swift in Sources */,
 				348C538A2C73BC9C00ACEA5C /* SectionRowModelService.swift in Sources */,
 				CEA4E22D2C37DFCE0069707C /* GenericTableViewSectionModel+Extensions.swift in Sources */,
-				CEF1F9FE2C57D77000D0D5D2 /* InputTextareaViewExample.swift in Sources */,
 				CE28279E2C3BDB2600156F14 /* CommonDetailFeature.swift in Sources */,
 				CE5AE5242C53866300DD7BC4 /* NavigationBarCellBuilder.swift in Sources */,
 				8889558329140FFC00A46293 /* AppDelegate.swift in Sources */,
-				CEF1F9F62C57D74900D0D5D2 /* CardViewExample.swift in Sources */,
-				CEF1FA232C57D8F400D0D5D2 /* TabsViewExample.swift in Sources */,
 				348C538C2C73BCF900ACEA5C /* ChipsCreationService.swift in Sources */,
 				CE3D0CDE2C622EDC00A9A5C1 /* ButtonModuleBuilder.swift in Sources */,
-				CEF1FA002C57D77700D0D5D2 /* InputViewExample.swift in Sources */,
 				CEF1FA302C57D9D700D0D5D2 /* RowCellExample.swift in Sources */,
 				CE3D0CD22C5B648A00A9A5C1 /* RadioModuleBuilder.swift in Sources */,
-				CEF1FA062C57D78F00D0D5D2 /* InputSelectViewExample.swift in Sources */,
 				CE9E8C5A2C6B4D3B0034A37E /* LabelCellBuilder.swift in Sources */,
 				888955B72914108700A46293 /* SceneDelegate.swift in Sources */,
 				CEA336052C36B1A400880A1F /* Components.swift in Sources */,
-				CEF1F9F22C57D66500D0D5D2 /* ButtonViewExample.swift in Sources */,
 				348C53962C774FC000ACEA5C /* SegmentItemFeature.swift in Sources */,
-				CEF1F9FA2C57D75900D0D5D2 /* ChipsViewExample.swift in Sources */,
 				CEE15C4D2C3FD76C008E6D8C /* InputOTPCellBuilder.swift in Sources */,
 				CEA336162C36D11000880A1F /* TableHeaderView.swift in Sources */,
-				CEF1FA292C57D90600D0D5D2 /* ToggleViewExample.swift in Sources */,
-				CEF1F9F42C57D70D00D0D5D2 /* ButtonIconExample.swift in Sources */,
-				CEF1F9F02C57D65C00D0D5D2 /* BannerViewExample.swift in Sources */,
 				CE8994672C6B44B20019D130 /* HintViewBuilder.swift in Sources */,
 				348C53912C74AA3F00ACEA5C /* DividerModuleFeature.swift in Sources */,
-				CEF1FA082C57D79B00D0D5D2 /* InputOTPViewExample.swift in Sources */,
-				CEF1FA0A2C57D7A400D0D5D2 /* InputOTPItemExample.swift in Sources */,
 				CEF8CD762C622F55009B8409 /* ButtonPayCellBuilder.swift in Sources */,
 				CE2827A42C3BDE6600156F14 /* ChipsViewSectionHelper.swift in Sources */,
 				CEEB5E712C3596E6000E0215 /* Components+Reusable.swift in Sources */,
