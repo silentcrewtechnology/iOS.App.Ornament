@@ -24,6 +24,7 @@ private final class NavigationBarExampleVC: UIViewController {
         let navVCStyle = NavigationBarStyle(
             variant: .mainScreen(
                 name: "Алиса",
+                icon: .ic24UserFilled.centered(in: .circle(backgroundColor: .clear, diameter: 40)),
                 margins: nil,
                 onProfile: profileTapped
             ),
