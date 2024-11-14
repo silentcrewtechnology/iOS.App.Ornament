@@ -49,10 +49,10 @@ final class NavigationBarCellBuilder: NSObject, UITextFieldDelegate, UISearchRes
                 { [weak self] in self?.updateNavigationBarStyle(variant: NavigationBarStyle.Variant.none) },
                 { [weak self] in self?.updateNavigationBarStyle(variant: .basic(title: "Title", subtitle: "Subtitle", margins: nil)) },
                 { [weak self] in self?.updateNavigationBarStyle(variant: .collapsed(title: "Title")) },
-                { [weak self] in self?.updateNavigationBarStyle(variant: .mainScreen(name: "Name", margins: nil, onProfile: { })) },
+                { [weak self] in self?.updateNavigationBarStyle(variant: .mainScreen(name: "Name", icon: .ic24UserFilled.centered(in: .circle(backgroundColor: .clear, diameter: 40)), margins: nil, onProfile: { })) },
                 { [weak self] in self?.updateNavigationBarStyle(variant: .basicAmount(title: "Title", subtitle: "Subtitle", spacing: nil, updateAction: { print("Update tapped") }))
                 },
-                { [weak self] in self?.updateNavigationBarStyle(variant: .search(updater: self)) }
+                { [weak self] in self?.updateNavigationBarStyle(variant: .search(title: "Title", subtitle: "Subtitle", margins: nil, onTextDidChange: nil, cancelButtonClicked: nil, textDidBeginEditing: nil, textDidEndEditing: nil)) },
             ],
             headerTitle: Constants.componentVariant
         )
