@@ -14,21 +14,27 @@ private final class ButtonIconExampleVC: UIViewController {
     
     // MARK: - Private properties
     
-    private lazy var buttonIcon = ButtonIcon()
+    private lazy var buttonIconService: ButtonIconService = .init(
+        viewProperties: .init(
+            image: .ic24Close,
+            onTap: { print("Example") }
+        ),
+        style: .init(
+            variant: .primary,
+            size: .large,
+            state: .default,
+            color: .accent
+        )
+    )
     
     // MARK: - Life cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let style = ButtonIconStyle(
-            variant: .primary, 
-            size: .large,
-            state: .loading,
-            color: .accent
+        buttonIconService.update(
+            newSize: .small,
+            newImage: .ic16Close
         )
-        var viewProperties = ButtonIcon.ViewProperties()
-        style.update(viewProperties: &viewProperties)
-        buttonIcon.update(with: viewProperties)
     }
 }
