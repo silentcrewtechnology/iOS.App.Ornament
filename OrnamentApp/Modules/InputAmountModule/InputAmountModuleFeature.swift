@@ -138,9 +138,9 @@ final class InputAmountModuleFeature: NSObject, FeatureCoordinatorProtocol {
         let headerStateSection = SectionModel(cells: [headerStateCell])
         
         let stateCells = createStateRowModels()
-        let stateChipsSections = sectionModelService.createSections(from: stateCells)
+        let stateChipsSection = sectionModelService.createSection(from: stateCells)
         
-        return [headerStateSection] + stateChipsSections
+        return [headerStateSection, stateChipsSection]
     }
     
     private func hintSection() -> [SectionModel] {
@@ -152,9 +152,9 @@ final class InputAmountModuleFeature: NSObject, FeatureCoordinatorProtocol {
         let headerHintSection = SectionModel(cells: [headerHintCell])
         
         let hintCells = createHintVariantRowModels()
-        let hintChipsSections = sectionModelService.createSections(from: hintCells)
+        let hintChipsSection = sectionModelService.createSection(from: hintCells)
         
-        return [headerHintSection] + hintChipsSections
+        return [headerHintSection, hintChipsSection]
     }
     
     private func labelSection() -> [SectionModel] {
@@ -166,9 +166,9 @@ final class InputAmountModuleFeature: NSObject, FeatureCoordinatorProtocol {
         let headerLabelSection = SectionModel(cells: [headerLabelCell])
         
         let labelCells = createLabelVariantRowModels()
-        let labelChipsSections = sectionModelService.createSections(from: labelCells)
+        let labelChipsSection = sectionModelService.createSection(from: labelCells)
         
-        return [headerLabelSection] + labelChipsSections
+        return [headerLabelSection, labelChipsSection]
     }
     
     private func makeHeaderSection(
@@ -232,7 +232,7 @@ extension InputAmountModuleFeature {
         let stateChips = stateChipsService.map { updater -> (ChipsView) in updater.view }
         
         let rowModels: [DSRowModel] = [
-            DSRowModel(leading: .molecule(.horizontalChipseViews(stateChips))),
+            DSRowModel(leading: .molecule(.horizontalChipsViews(stateChips))),
         ]
         
         return rowModels
@@ -242,7 +242,7 @@ extension InputAmountModuleFeature {
         let hintVariantChips = hintVariantChipsService.map { updater -> (ChipsView) in updater.view }
         
         let rowModels: [DSRowModel] = [
-            DSRowModel(leading: .molecule(.horizontalChipseViews(hintVariantChips))),
+            DSRowModel(leading: .molecule(.horizontalChipsViews(hintVariantChips))),
         ]
         
         return rowModels
@@ -252,7 +252,7 @@ extension InputAmountModuleFeature {
         let labelVariantChips = labelVariantChipsService.map { updater -> (ChipsView) in updater.view }
         
         let rowModels: [DSRowModel] = [
-            DSRowModel(leading: .molecule(.horizontalChipseViews(labelVariantChips))),
+            DSRowModel(leading: .molecule(.horizontalChipsViews(labelVariantChips))),
         ]
         
         return rowModels

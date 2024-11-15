@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3477B69A2C734EB400C6C059 /* ChipsViewUpdater.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3477B6992C734EB400C6C059 /* ChipsViewUpdater.swift */; };
-		348C538A2C73BC9C00ACEA5C /* SectionRowModelService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 348C53892C73BC9C00ACEA5C /* SectionRowModelService.swift */; };
 		348C538C2C73BCF900ACEA5C /* ChipsCreationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 348C538B2C73BCF900ACEA5C /* ChipsCreationService.swift */; };
 		348C53912C74AA3F00ACEA5C /* DividerModuleFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 348C53902C74AA3F00ACEA5C /* DividerModuleFeature.swift */; };
 		348C53932C7621BE00ACEA5C /* SegmentControlModuleFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 348C53922C7621BE00ACEA5C /* SegmentControlModuleFeature.swift */; };
@@ -22,7 +20,7 @@
 		CE15ECBC2C57A75A00F148B7 /* TitleCellBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE15ECBB2C57A75A00F148B7 /* TitleCellBuilder.swift */; };
 		CE2130B72C60C90000AB69BE /* SnackBarCellBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2130B62C60C90000AB69BE /* SnackBarCellBuilder.swift */; };
 		CE23F6B42C749CE1004D6CE6 /* HintModuleFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE23F6B32C749CE1004D6CE6 /* HintModuleFeature.swift */; };
-		CE254A5B2C5CDAC20083EF57 /* BannerCellBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE254A5A2C5CDAC20083EF57 /* BannerCellBuilder.swift */; };
+		CE254A5B2C5CDAC20083EF57 /* BannerModuleFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE254A5A2C5CDAC20083EF57 /* BannerModuleFeature.swift */; };
 		CE28279E2C3BDB2600156F14 /* CommonDetailFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE28279D2C3BDB2600156F14 /* CommonDetailFeature.swift */; };
 		CE2827A12C3BDB6900156F14 /* CellBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2827A02C3BDB6900156F14 /* CellBuilder.swift */; };
 		CE2827A42C3BDE6600156F14 /* ChipsViewSectionHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2827A32C3BDE6600156F14 /* ChipsViewSectionHelper.swift */; };
@@ -50,6 +48,7 @@
 		CEA336162C36D11000880A1F /* TableHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA336152C36D11000880A1F /* TableHeaderView.swift */; };
 		CEA4E2292C37CF700069707C /* ButtonAuthCellBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA4E2282C37CF700069707C /* ButtonAuthCellBuilder.swift */; };
 		CEA4E22D2C37DFCE0069707C /* GenericTableViewSectionModel+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA4E22C2C37DFCE0069707C /* GenericTableViewSectionModel+Extensions.swift */; };
+		CEB9EE2F2CE76F72008B67ED /* BaseModuleFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB9EE2E2CE76F70008B67ED /* BaseModuleFeature.swift */; };
 		CEC824B82C4E90F200891643 /* ButtonIconModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC824B72C4E90F200891643 /* ButtonIconModuleBuilder.swift */; };
 		CEC824C22C512D4B00891643 /* ImageModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC824C12C512D4B00891643 /* ImageModuleBuilder.swift */; };
 		CED4CA9C2CE625A2009019A8 /* ModuleFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED4CA9B2CE62593009019A8 /* ModuleFlow.swift */; };
@@ -57,10 +56,8 @@
 		CEE15C502C400F66008E6D8C /* InputPhoneNumberCellBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE15C4F2C400F66008E6D8C /* InputPhoneNumberCellBuilder.swift */; };
 		CEEB5E5B2C356246000E0215 /* ArchitectureTableView in Frameworks */ = {isa = PBXBuildFile; productRef = CEEB5E5A2C356246000E0215 /* ArchitectureTableView */; };
 		CEEB5E622C356802000E0215 /* ComponentsShowcaseFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEB5E612C356801000E0215 /* ComponentsShowcaseFeature.swift */; };
-		CEEB5E642C35681A000E0215 /* ComponentsShowcaseCellBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEB5E632C35681A000E0215 /* ComponentsShowcaseCellBuilder.swift */; };
 		CEEB5E672C3568B0000E0215 /* Extensions in Frameworks */ = {isa = PBXBuildFile; productRef = CEEB5E662C3568B0000E0215 /* Extensions */; };
 		CEEB5E712C3596E6000E0215 /* Components+Reusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEB5E702C3596E6000E0215 /* Components+Reusable.swift */; };
-		CEEB5E742C35A9A1000E0215 /* TableComponentViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEB5E732C35A9A1000E0215 /* TableComponentViewCell.swift */; };
 		CEF1FA2D2C57D9A500D0D5D2 /* GibddFineCellsExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF1FA2C2C57D9A500D0D5D2 /* GibddFineCellsExample.swift */; };
 		CEF1FA302C57D9D700D0D5D2 /* RowCellExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF1FA2F2C57D9D700D0D5D2 /* RowCellExample.swift */; };
 		CEF1FA322C57D9DE00D0D5D2 /* RowViewExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF1FA312C57D9DE00D0D5D2 /* RowViewExample.swift */; };
@@ -70,8 +67,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		3477B6992C734EB400C6C059 /* ChipsViewUpdater.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChipsViewUpdater.swift; sourceTree = "<group>"; };
-		348C53892C73BC9C00ACEA5C /* SectionRowModelService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionRowModelService.swift; sourceTree = "<group>"; };
 		348C538B2C73BCF900ACEA5C /* ChipsCreationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChipsCreationService.swift; sourceTree = "<group>"; };
 		348C53902C74AA3F00ACEA5C /* DividerModuleFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DividerModuleFeature.swift; sourceTree = "<group>"; };
 		348C53922C7621BE00ACEA5C /* SegmentControlModuleFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentControlModuleFeature.swift; sourceTree = "<group>"; };
@@ -87,7 +82,7 @@
 		CE15ECBB2C57A75A00F148B7 /* TitleCellBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleCellBuilder.swift; sourceTree = "<group>"; };
 		CE2130B62C60C90000AB69BE /* SnackBarCellBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnackBarCellBuilder.swift; sourceTree = "<group>"; };
 		CE23F6B32C749CE1004D6CE6 /* HintModuleFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HintModuleFeature.swift; sourceTree = "<group>"; };
-		CE254A5A2C5CDAC20083EF57 /* BannerCellBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerCellBuilder.swift; sourceTree = "<group>"; };
+		CE254A5A2C5CDAC20083EF57 /* BannerModuleFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerModuleFeature.swift; sourceTree = "<group>"; };
 		CE28279D2C3BDB2600156F14 /* CommonDetailFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonDetailFeature.swift; sourceTree = "<group>"; };
 		CE2827A02C3BDB6900156F14 /* CellBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellBuilder.swift; sourceTree = "<group>"; };
 		CE2827A32C3BDE6600156F14 /* ChipsViewSectionHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChipsViewSectionHelper.swift; sourceTree = "<group>"; };
@@ -113,15 +108,14 @@
 		CEA336152C36D11000880A1F /* TableHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableHeaderView.swift; sourceTree = "<group>"; };
 		CEA4E2282C37CF700069707C /* ButtonAuthCellBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonAuthCellBuilder.swift; sourceTree = "<group>"; };
 		CEA4E22C2C37DFCE0069707C /* GenericTableViewSectionModel+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GenericTableViewSectionModel+Extensions.swift"; sourceTree = "<group>"; };
+		CEB9EE2E2CE76F70008B67ED /* BaseModuleFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseModuleFeature.swift; sourceTree = "<group>"; };
 		CEC824B72C4E90F200891643 /* ButtonIconModuleBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonIconModuleBuilder.swift; sourceTree = "<group>"; };
 		CEC824C12C512D4B00891643 /* ImageModuleBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageModuleBuilder.swift; sourceTree = "<group>"; };
 		CED4CA9B2CE62593009019A8 /* ModuleFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModuleFlow.swift; sourceTree = "<group>"; };
 		CEE15C4C2C3FD76C008E6D8C /* InputOTPCellBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputOTPCellBuilder.swift; sourceTree = "<group>"; };
 		CEE15C4F2C400F66008E6D8C /* InputPhoneNumberCellBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputPhoneNumberCellBuilder.swift; sourceTree = "<group>"; };
 		CEEB5E612C356801000E0215 /* ComponentsShowcaseFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComponentsShowcaseFeature.swift; sourceTree = "<group>"; };
-		CEEB5E632C35681A000E0215 /* ComponentsShowcaseCellBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComponentsShowcaseCellBuilder.swift; sourceTree = "<group>"; };
 		CEEB5E702C3596E6000E0215 /* Components+Reusable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Components+Reusable.swift"; sourceTree = "<group>"; };
-		CEEB5E732C35A9A1000E0215 /* TableComponentViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableComponentViewCell.swift; sourceTree = "<group>"; };
 		CEF1FA2C2C57D9A500D0D5D2 /* GibddFineCellsExample.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GibddFineCellsExample.swift; sourceTree = "<group>"; };
 		CEF1FA2F2C57D9D700D0D5D2 /* RowCellExample.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RowCellExample.swift; sourceTree = "<group>"; };
 		CEF1FA312C57D9DE00D0D5D2 /* RowViewExample.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RowViewExample.swift; sourceTree = "<group>"; };
@@ -181,7 +175,7 @@
 		8889558129140FFC00A46293 /* OrnamentApp */ = {
 			isa = PBXGroup;
 			children = (
-				CE98EE772C6A4C7000B78577 /* Cells */,
+				CEB9EE2D2CE76E81008B67ED /* Services */,
 				CE2827A22C3BDE5400156F14 /* Helpers */,
 				CE28279F2C3BDB5A00156F14 /* Protocols */,
 				CEA336142C36D10600880A1F /* Views */,
@@ -296,19 +290,10 @@
 			path = HintModule;
 			sourceTree = "<group>";
 		};
-		CE98EE772C6A4C7000B78577 /* Cells */ = {
-			isa = PBXGroup;
-			children = (
-				CEEB5E732C35A9A1000E0215 /* TableComponentViewCell.swift */,
-			);
-			path = Cells;
-			sourceTree = "<group>";
-		};
 		CEA335FE2C36A65100880A1F /* ViewUpdaters */ = {
 			isa = PBXGroup;
 			children = (
 				CEA335FF2C36A66200880A1F /* CheckboxViewUpdater.swift */,
-				3477B6992C734EB400C6C059 /* ChipsViewUpdater.swift */,
 			);
 			path = ViewUpdaters;
 			sourceTree = "<group>";
@@ -346,6 +331,14 @@
 			path = ButtonAuthModule;
 			sourceTree = "<group>";
 		};
+		CEB9EE2D2CE76E81008B67ED /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				348C538B2C73BCF900ACEA5C /* ChipsCreationService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
 		CEC824B62C4E90BE00891643 /* ButtonIconModuleBuilder */ = {
 			isa = PBXGroup;
 			children = (
@@ -381,7 +374,6 @@
 		CEEB5E5F2C356788000E0215 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
-				348C53942C774B8F00ACEA5C /* SegmentItemModule */,
 				CEF1FA2A2C57D97D00D0D5D2 /* AuxiliaryModules */,
 				CEA336072C36B94D00880A1F /* ActivityIndicatorModule */,
 				CEA4E2272C37CF530069707C /* ButtonAuthModule */,
@@ -406,6 +398,7 @@
 				CE5AE5222C5385AD00DD7BC4 /* NavigationBarModule */,
 				CEF1F9E52C57CD2B00D0D5D2 /* PageControlModule */,
 				CEF1F9E72C57D02F00D0D5D2 /* RadioModule */,
+				348C53942C774B8F00ACEA5C /* SegmentItemModule */,
 				CEF1F9E82C57D04200D0D5D2 /* SegmentControlModule */,
 				CE6439F12C58FAD8002491EA /* SnackBarModule */,
 				CEF1F9EA2C57D08300D0D5D2 /* StepperModule */,
@@ -414,10 +407,9 @@
 				CE15ECBA2C57A74400F148B7 /* TitleModule */,
 				CE4A7C102C3E9E4100AA7EB4 /* ToggleModule */,
 				CEEB5E602C35678D000E0215 /* ComponentsShowcaseModule */,
+				CEB9EE2E2CE76F70008B67ED /* BaseModuleFeature.swift */,
 				CED4CA9B2CE62593009019A8 /* ModuleFlow.swift */,
 				CEA3360B2C36C0BE00880A1F /* MainCoordinator.swift */,
-				348C538B2C73BCF900ACEA5C /* ChipsCreationService.swift */,
-				348C53892C73BC9C00ACEA5C /* SectionRowModelService.swift */,
 				CE28279D2C3BDB2600156F14 /* CommonDetailFeature.swift */,
 			);
 			path = Modules;
@@ -427,7 +419,6 @@
 			isa = PBXGroup;
 			children = (
 				CEEB5E612C356801000E0215 /* ComponentsShowcaseFeature.swift */,
-				CEEB5E632C35681A000E0215 /* ComponentsShowcaseCellBuilder.swift */,
 				CEA3360D2C36C0E100880A1F /* ComponentsShowcaseCoordinator.swift */,
 			);
 			path = ComponentsShowcaseModule;
@@ -445,7 +436,7 @@
 		CEF1F9E02C57BC5A00D0D5D2 /* BannerModule */ = {
 			isa = PBXGroup;
 			children = (
-				CE254A5A2C5CDAC20083EF57 /* BannerCellBuilder.swift */,
+				CE254A5A2C5CDAC20083EF57 /* BannerModuleFeature.swift */,
 			);
 			path = BannerModule;
 			sourceTree = "<group>";
@@ -665,25 +656,23 @@
 				CEF1FA2D2C57D9A500D0D5D2 /* GibddFineCellsExample.swift in Sources */,
 				CE4A7C0F2C3E8FC300AA7EB4 /* Constants.swift in Sources */,
 				CEC824B82C4E90F200891643 /* ButtonIconModuleBuilder.swift in Sources */,
-				CE254A5B2C5CDAC20083EF57 /* BannerCellBuilder.swift in Sources */,
+				CE254A5B2C5CDAC20083EF57 /* BannerModuleFeature.swift in Sources */,
 				CEA3360E2C36C0E100880A1F /* ComponentsShowcaseCoordinator.swift in Sources */,
+				CEB9EE2F2CE76F72008B67ED /* BaseModuleFeature.swift in Sources */,
 				CE5AE5262C53BF6300DD7BC4 /* NavigationBarFeature.swift in Sources */,
 				CED4CA9C2CE625A2009019A8 /* ModuleFlow.swift in Sources */,
 				CE2130B72C60C90000AB69BE /* SnackBarCellBuilder.swift in Sources */,
 				CEF2DE712C4150130065C1BD /* InputCellBuilder.swift in Sources */,
-				3477B69A2C734EB400C6C059 /* ChipsViewUpdater.swift in Sources */,
 				CE9121D42C73CA7400ACDB72 /* InputAmountModuleFeature.swift in Sources */,
 				CE23F6B42C749CE1004D6CE6 /* HintModuleFeature.swift in Sources */,
 				CE694C372C3D56090064C0C0 /* ChipsCellBuilder.swift in Sources */,
 				34C3999E2C5B85D400C98DBC /* BadgeModuleFeature.swift in Sources */,
-				CEEB5E642C35681A000E0215 /* ComponentsShowcaseCellBuilder.swift in Sources */,
 				CEF1FA322C57D9DE00D0D5D2 /* RowViewExample.swift in Sources */,
 				CE4A7C0A2C3E8ABF00AA7EB4 /* DividerCellBuilder.swift in Sources */,
 				CEA336002C36A66200880A1F /* CheckboxViewUpdater.swift in Sources */,
 				348C53932C7621BE00ACEA5C /* SegmentControlModuleFeature.swift in Sources */,
 				CE1170A82C636CB60032D933 /* CardCellBuilder.swift in Sources */,
 				CE2827B02C3C1ECD00156F14 /* CheckboxCellBuilder.swift in Sources */,
-				CEEB5E742C35A9A1000E0215 /* TableComponentViewCell.swift in Sources */,
 				CE4A7C122C3E9E5900AA7EB4 /* ToggleCellBuilder.swift in Sources */,
 				CEA3360C2C36C0BE00880A1F /* MainCoordinator.swift in Sources */,
 				CEEB5E622C356802000E0215 /* ComponentsShowcaseFeature.swift in Sources */,
@@ -692,7 +681,6 @@
 				CEF2DE6E2C4130840065C1BD /* InputSelectCellBuilder.swift in Sources */,
 				CE3D0CD82C5CC90C00A9A5C1 /* StepperModuleBuilder.swift in Sources */,
 				CE15ECBC2C57A75A00F148B7 /* TitleCellBuilder.swift in Sources */,
-				348C538A2C73BC9C00ACEA5C /* SectionRowModelService.swift in Sources */,
 				CEA4E22D2C37DFCE0069707C /* GenericTableViewSectionModel+Extensions.swift in Sources */,
 				CE28279E2C3BDB2600156F14 /* CommonDetailFeature.swift in Sources */,
 				CE5AE5242C53866300DD7BC4 /* NavigationBarCellBuilder.swift in Sources */,

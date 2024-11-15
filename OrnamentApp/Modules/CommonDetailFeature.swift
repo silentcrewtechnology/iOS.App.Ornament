@@ -12,6 +12,7 @@ import Extensions
 import DesignSystem
 import Components
 
+@available(*, deprecated, message: "Use BaseModuleFeature instead")
 final class CommonDetailFeature: NSObject, FeatureCoordinatorProtocol {
     
     // MARK: - Properties

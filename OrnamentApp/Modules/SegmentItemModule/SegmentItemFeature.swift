@@ -78,13 +78,13 @@ final class SegmentItemFeature: NSObject, FeatureCoordinatorProtocol {
         createUpdaters()
         
         let cells = createRowModels()
-        let sections = sectionRowModelService.createSections(
+        let section = sectionRowModelService.createSection(
             from: cells,
             rowsHeight: 72,
             cellBackgroundColor: .lightGray
         )
-        tableDelegate.update(with: sections)
-        tableDataSource.update(with: sections)
+        tableDelegate.update(with: [section])
+        tableDataSource.update(with: [section])
     }
     
     private func createUpdaters() {
@@ -136,10 +136,10 @@ final class SegmentItemFeature: NSObject, FeatureCoordinatorProtocol {
         
         let rowModels: [DSRowModel] = [
             DSRowModel(leading: .atom(.view(segmentItemService.view))),
-            DSRowModel(leading: .molecule(.horizontalChipseViews(sizeChips))),
-            DSRowModel(leading: .molecule(.horizontalChipseViews(stateChips))),
-            DSRowModel(leading: .molecule(.horizontalChipseViews(selectedChips))),
-            DSRowModel(leading: .molecule(.horizontalChipseViews(showDividerChips))),
+            DSRowModel(leading: .molecule(.horizontalChipsViews(sizeChips))),
+            DSRowModel(leading: .molecule(.horizontalChipsViews(stateChips))),
+            DSRowModel(leading: .molecule(.horizontalChipsViews(selectedChips))),
+            DSRowModel(leading: .molecule(.horizontalChipsViews(showDividerChips))),
 
         ]
         

@@ -107,12 +107,12 @@ final class HintModuleFeature: NSObject, FeatureCoordinatorProtocol {
         
         let hintSection = SectionModel(cells: [hintCell])
         
-        let chipsSections = sectionModelService.createSections(
+        let chipsSection = sectionModelService.createSection(
             from: cells,
             rowsHeight: 72
         )
         
-        let sections = [hintSection] + chipsSections
+        let sections = [hintSection] + [chipsSection]
         
         tableDelegate.update(with: sections)
         tableDataSource.update(with: sections)
@@ -151,8 +151,8 @@ final class HintModuleFeature: NSObject, FeatureCoordinatorProtocol {
         let colorChips = colorChipsService.map { updater -> (ChipsView) in updater.view }
         
         let rowModels: [DSRowModel] = [
-            DSRowModel(leading: .molecule(.horizontalChipseViews(variantChips))),
-            DSRowModel(leading: .molecule(.horizontalChipseViews(colorChips))),
+            DSRowModel(leading: .molecule(.horizontalChipsViews(variantChips))),
+            DSRowModel(leading: .molecule(.horizontalChipsViews(colorChips))),
         ]
         
         return rowModels

@@ -19,7 +19,7 @@ final class ComponentsShowcaseCoordinator: RootCoordinatorProtocol {
     private var activityIndicatorFeature: FeatureCoordinatorProtocol?
     private var authorizationButtonFeature: FeatureCoordinatorProtocol?
     private var badgeFeature: BadgeModuleFeature?
-    private var bannerFeature: FeatureCoordinatorProtocol?
+    private var bannerFeature: BannerModuleFeature?
     private var checkboxFeature: FeatureCoordinatorProtocol?
     private var chipsFeature: FeatureCoordinatorProtocol?
     private var dividerFeature: FeatureCoordinatorProtocol?
@@ -59,10 +59,10 @@ final class ComponentsShowcaseCoordinator: RootCoordinatorProtocol {
     // MARK: - Methods
     
     func setRoot() {
-        guard let vc = componentsShowcaseFeature.runFlow(data: nil)?.view as? UIViewController else { return }
+        guard let vc = componentsShowcaseFeature.runFlow(data: Constants.componentsShowcaseTitle)?.view as? UIViewController
+        else { return }
         
         navigationBar = NavigationBar(rootViewController: vc)
-        
         if let navigationBar {
             routerService.setRootViewController(viewController: navigationBar)
         }
@@ -106,12 +106,10 @@ final class ComponentsShowcaseCoordinator: RootCoordinatorProtocol {
                 
                 viewController = (builder.view as! UIViewController)
             case .banner:
-                self?.bannerFeature = CommonDetailFeature(
-                    cellBuilder: BannerCellBuilder(),
-                    screenTitle: Components.banner.rawValue,
-                    backAction: self?.popVC
-                )
-                guard let builder = self?.bannerFeature?.runFlow(data: nil) else { return }
+                self?.bannerFeature = .init()
+                self?.bannerFeature?.runNewFlow = moduleRunNewFlow
+                guard let builder = self?.bannerFeature?.runFlow(data: Components.banner.rawValue) else { return }
+                
                 viewController = (builder.view as! UIViewController)
             case .button:
                 self?.buttonFeature = CommonDetailFeature(
@@ -302,6 +300,10 @@ final class ComponentsShowcaseCoordinator: RootCoordinatorProtocol {
                 )
                 guard let builder = self?.toggleFeature?.runFlow(data: nil) else { return }
                 viewController = (builder.view as! UIViewController)
+            case .inputSearch:
+                break
+            case .loader:
+                break
             }
             
             self?.routerService.pushMainNavigation(to: viewController, animated: true)
