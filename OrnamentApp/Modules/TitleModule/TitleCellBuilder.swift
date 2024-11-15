@@ -12,46 +12,56 @@ import DesignSystem
 import ImagesService
 import Extensions
 
-final class TitleCellBuilder: NSObject, UITextFieldDelegate, CellBuilder {
+final class TitleCellBuilder: CellBuilder {
     
     // MARK: - Private properties
     
     private let chipsViewSectionHelper = ChipsViewSectionHelper()
-    private var titleView: TitleView?
-    private var viewProperties = TitleView.ViewProperties()
-    private var style = TitleViewStyle(size: .small, color: .primary)
-    private var size: TitleViewStyle.Size = .small
-    private var color: TitleViewStyle.Color = .primary
+    private lazy var titleViewService: TitleViewService = .init(
+        viewProperties: .init(
+            title: titleText.attributed,
+            description: descriptionText.attributed
+        ),
+        style: .init(size: .extraLarge, color: .primary),
+        buttonIconService: .init(
+            viewProperties: .init(
+                image: .ic16Close,
+                onTap: { print("Tapped") }
+            ),
+            style: .init(variant: .secondary, size: .small, state: .default, color: .accent))
+    )
     
     // MARK: - Methods
     
     func createSections() -> [GenericTableViewSectionModel] {
         return [
-            createTitleSection(),
-            createInputTextSection(),
+            createViewSection(),
+            createTitleLengthSection(),
+            createColorSection(),
+            createDescriptionLengthSection(),
             createSizeSection(),
-            createColorSection()
+            createButtonVisibilitySection(),
         ]
     }
     
     // MARK: - Private methods
     
-    private func createTitleSection() -> GenericTableViewSectionModel {
+    private func createViewSection() -> GenericTableViewSectionModel {
         let row = GenericTableViewRowModel(
-            with: GenericTableViewCellWrapper<TitleView>.self,
+            with: UITableViewCell.self,
             configuration: { [weak self] cell, _ in
                 guard let self = self else { return }
-
-                self.style.update(viewProperties: &self.viewProperties)
-                cell.containedView.update(with: self.viewProperties)
-                
-                cell.contentInset = .init(top: .zero, left: .zero, bottom: 16, right: 16)
+                cell.contentView.subviews.forEach { $0.removeFromSuperview() }
+                cell.contentView.addSubview(titleViewService.view)
                 cell.selectionStyle = .none
-                self.titleView = cell.containedView
+                titleViewService.view.snp.makeConstraints {
+                    $0.edges.equalToSuperview()
+                        .inset(UIEdgeInsets(top: 0, left: 0, bottom: 16, right: 0))
+                }
+                updateTitleViewStyle()
             },
             initializesFromNib: false
         )
-        row.rowHeight = 72
         
         let section = GenericTableViewSectionModel(with: [row])
         section.makeHeader(title: Constants.componentTitle)
@@ -59,44 +69,60 @@ final class TitleCellBuilder: NSObject, UITextFieldDelegate, CellBuilder {
         return section
     }
     
-    private func createInputTextSection() -> GenericTableViewSectionModel {
-        let row = GenericTableViewRowModel(
-            with: GenericTableViewCellWrapper<InputView>.self,
-            configuration: { [weak self] cell, _ in
-                guard let self = self else { return }
-                
-                var vp: InputView.ViewProperties = .init()
-                vp.textFieldViewProperties = .init(
-                    text: self.viewProperties.title,
-                    delegateAssigningClosure: { textField in
-                        textField.delegate = self
-                        textField.addTarget(self, action: #selector(self.onTextChange(textField:)), for: .editingChanged)
-                    }
-                )
-                let inputTextStyle = InputViewStyle(state: .default, set: .simple)
-                inputTextStyle.update(viewProperties: &vp)
-                cell.containedView.update(with: vp)
-
-                cell.contentInset = .init(top: .zero, left: 16, bottom: 16, right: 16)
-                cell.selectionStyle = .none
-            },
-            initializesFromNib: false
+    private lazy var titleText: String = longTitle
+    private let shortTitle = "Title"
+    private let longTitle = String(repeating: "T ", count: 40)
+    
+    private func createTitleLengthSection() -> GenericTableViewSectionModel {
+        return chipsViewSectionHelper.makeHorizontalSectionWithScroll(
+            titles: ["Long", "Short", "Hide"],
+            actions: [
+                { [weak self] in guard let self else { return }
+                    titleText = longTitle
+                    updateTitleViewStyle(newTitle: titleText.attributed)
+                },
+                { [weak self] in guard let self else { return }
+                    titleText = shortTitle
+                    updateTitleViewStyle(newTitle: titleText.attributed)
+                },
+                { [weak self] in guard let self else { return }
+                    updateTitleViewStyle(newTitle: "".attributed)
+                },
+            ],
+            headerTitle: "Title length"
         )
-        
-        let section = GenericTableViewSectionModel(with: [row])
-        section.makeHeader(title: Constants.componentText)
-        
-        return section
+    }
+    
+    private lazy var descriptionText: String = longDescription
+    private let shortDescription = "Description"
+    private let longDescription = String(repeating: "D ", count: 80)
+    
+    private func createDescriptionLengthSection() -> GenericTableViewSectionModel {
+        return chipsViewSectionHelper.makeHorizontalSectionWithScroll(
+            titles: ["Long", "Short", "Hide"],
+            actions: [
+                { [weak self] in guard let self else { return }
+                    updateTitleViewStyle(newDescription: longDescription.attributed)
+                },
+                { [weak self] in guard let self else { return }
+                    updateTitleViewStyle(newDescription: shortDescription.attributed)
+                },
+                { [weak self] in guard let self else { return }
+                    updateTitleViewStyle(newDescription: "".attributed)
+                },
+            ],
+            headerTitle: "Description length"
+        )
     }
     
     private func createSizeSection() -> GenericTableViewSectionModel {
         return chipsViewSectionHelper.makeHorizontalSectionWithScroll(
-            titles: ["Small", "Medium", "Large", "Extra large"],
+            titles: ["Extra large", "Large", "Medium", "Small"],
             actions: [
-                { [weak self] in self?.updateTitleViewStyle(size: .small) },
-                { [weak self] in self?.updateTitleViewStyle(size: .medium) },
-                { [weak self] in self?.updateTitleViewStyle(size: .large) },
-                { [weak self] in self?.updateTitleViewStyle(size: .extraLarge) }
+                { [weak self] in self?.updateTitleViewStyle(newSize: .extraLarge) },
+                { [weak self] in self?.updateTitleViewStyle(newSize: .large) },
+                { [weak self] in self?.updateTitleViewStyle(newSize: .medium) },
+                { [weak self] in self?.updateTitleViewStyle(newSize: .small) },
             ],
             headerTitle: Constants.componentSize
         )
@@ -106,33 +132,52 @@ final class TitleCellBuilder: NSObject, UITextFieldDelegate, CellBuilder {
         return chipsViewSectionHelper.makeHorizontalSectionWithScroll(
             titles: ["Primary", "Secondary"],
             actions: [
-                { [weak self] in self?.updateTitleViewStyle(color: .primary) },
-                { [weak self] in self?.updateTitleViewStyle(color: .secondary) }
+                { [weak self] in self?.updateTitleViewStyle(newTitleColor: .primary) },
+                { [weak self] in self?.updateTitleViewStyle(newTitleColor: .secondary) }
             ],
-            headerTitle: Constants.componentColor
+            headerTitle: "Title color"
+        )
+    }
+    
+    private func createButtonVisibilitySection() -> GenericTableViewSectionModel {
+        return chipsViewSectionHelper.makeHorizontalSectionWithScroll(
+            titles: ["Show", "Hide"],
+            actions: [
+                { [weak self] in guard let self else { return } ; updateTitleViewStyle(showButton: true) },
+                { [weak self] in guard let self else { return } ; updateTitleViewStyle(showButton: false) },
+            ],
+            headerTitle: "Button visibility"
         )
     }
     
     private func updateTitleViewStyle(
-        size: TitleViewStyle.Size? = nil,
-        color: TitleViewStyle.Color? = nil
+        newSize: TitleViewStyle.Size? = nil,
+        newTitle: NSMutableAttributedString? = nil,
+        newTitleColor: TitleViewStyle.Color? = nil,
+        newDescription: NSMutableAttributedString? = nil,
+        showButton: Bool? = nil
     ) {
-        if let size = size {
-            self.size = size
-        }
-        
-        if let color = color {
-            self.color = color
-        }
-    
-        style = .init(size: self.size, color: self.color)
-        style.update(viewProperties: &viewProperties)
-        titleView?.update(with: viewProperties)
+        tableView?.beginUpdates()
+        titleViewService.update(
+            newSize: newSize,
+            newTitle: newTitle,
+            newTitleColor: newTitleColor,
+            newDescription: newDescription,
+            showButton: showButton
+        )
+        tableView?.endUpdates()
     }
     
-    @objc private func onTextChange(textField: UITextField) {
-        viewProperties.title = NSMutableAttributedString(string: textField.text ?? "")
-        style.update(viewProperties: &viewProperties)
-        titleView?.update(with: viewProperties)
+    /// Ищем `tableView`, чтобы обновить `cell.heightConstraint`
+    private var tableView: UITableView? {
+        var view: UIView? = titleViewService.view
+        while view != nil {
+            view = view?.superview
+            switch view {
+            case let view as UITableView: return view
+            default: continue
+            }
+        }
+        return nil
     }
 }
