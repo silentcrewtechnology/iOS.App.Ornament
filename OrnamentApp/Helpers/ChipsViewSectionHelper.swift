@@ -74,7 +74,7 @@ struct ChipsViewSectionHelper {
                 stackView.axis = .horizontal
                 stackView.spacing = 8
                 stackView.distribution = .fillProportionally
-                cell.contentInset = .init(top: .zero, left: 16, bottom: 16, right: 16)
+                cell.contentInset = .init(top: .zero, left: 16, bottom: 8, right: 16)
                 cell.selectionStyle = .none
             },
             initializesFromNib: false
