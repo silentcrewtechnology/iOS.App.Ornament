@@ -88,10 +88,10 @@ final class DividerModuleFeature: NSObject, FeatureCoordinatorProtocol {
         let dividerView = dividerServise.view
         let dividerCell = CellModel(view: dividerView, height: 72)
         let dividerSection = SectionModel(cells: [dividerCell])
-        let chipsSetcions = sectionRowModelService.createSections(
+        let chipsSetcion = sectionRowModelService.createSection(
             from: cells,
             rowsHeight: 72)
-        let sections = [dividerSection] + chipsSetcions
+        let sections = [dividerSection, chipsSetcion]
         
         tableDelegate.update(with: sections)
         tableDataSource.update(with: sections)
@@ -121,8 +121,8 @@ final class DividerModuleFeature: NSObject, FeatureCoordinatorProtocol {
         let variantChip = variantChipsServices.map { updater -> (ChipsView) in updater.view }
         let styleChips = styleChipsServices.map { updater -> (ChipsView) in updater.view }
         let rowModels: [DSRowModel] = [
-            DSRowModel(leading: .molecule(.horizontalChipseViews(variantChip))),
-            DSRowModel(leading: .molecule(.horizontalChipseViews(styleChips)))
+            DSRowModel(leading: .molecule(.horizontalChipsViews(variantChip))),
+            DSRowModel(leading: .molecule(.horizontalChipsViews(styleChips)))
         ]
         
         return rowModels

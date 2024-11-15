@@ -5,20 +5,18 @@ import Extensions
 import DesignSystem
 import Components
 
-final class ComponentsShowcaseFeature: FeatureCoordinatorProtocol {
+class BaseModuleFeature: NSObject, FeatureCoordinatorProtocol {
     
     // MARK: Properties
     
     var runNewFlow: ((Any) -> Void)?
-    
-    // MARK: Private properties
-    
-    private var tableViewVCBuilder: TableViewVCBuilder
-    private var tableViewBuilder: TableViewBuilder
-    private var tableDataSource: TableDataSource
-    private var tableDelegate: TableDelegate
-    private var sectionModelService: SectionRowModelService
-    private let navigationBarViewPropertiesService: NavigationBarViewPropertiesService
+    var tableViewVCBuilder: TableViewVCBuilder
+    var tableViewBuilder: TableViewBuilder
+    var tableDataSource: TableDataSource
+    var tableDelegate: TableDelegate
+    var chipsCreationService: ChipsCreationService
+    var sectionModelService: SectionRowModelService
+    let navigationBarViewPropertiesService: NavigationBarViewPropertiesService
     
     // MARK: - Init
     
@@ -30,6 +28,7 @@ final class ComponentsShowcaseFeature: FeatureCoordinatorProtocol {
         self.tableDataSource = tableDataSource
         self.tableDelegate = tableDelegate
         self.sectionModelService = SectionRowModelService()
+        self.chipsCreationService = ChipsCreationService()
         self.navigationBarViewPropertiesService = navigationBarViewPropertiesService
         
         tableViewBuilder = .init(with: .init(
@@ -50,7 +49,8 @@ final class ComponentsShowcaseFeature: FeatureCoordinatorProtocol {
         tableViewVCBuilder.viewUpdater.state = .updateViewProperties(
             .init(
                 navigationBarViewProperties: navigationBarViewPropertiesService.createBasicVP(
-                    title: screenTitle
+                    title: screenTitle,
+                    backAction: { [weak self] in self?.runNewFlow?(ModuleFlow.back) }
                 ),
                 tableView: tableViewBuilder.view
             )
@@ -61,32 +61,19 @@ final class ComponentsShowcaseFeature: FeatureCoordinatorProtocol {
         return tableViewVCBuilder
     }
     
+    // Override
+    func createRowModels() -> [DSRowModel] { [] }
+    
+    // Override
+    func createUpdaters() { }
+    
     // MARK: Private methods
     
     private func createSections() {
-        let section = sectionModelService.createSection(
-            from: createRowModels(),
-            rowsHeight: 52
-        )
+        createUpdaters()
+        
+        let section = sectionModelService.createSection(from: createRowModels())
         tableDelegate.update(with: [section])
         tableDataSource.update(with: [section])
-    }
-    
-    private func createRowModels() -> [DSRowModel] {
-        var rowModels = [DSRowModel]()
-        
-        for component in Components.allCases {
-            rowModels.append(
-                .init(
-                    leading: .atom(.title(component.rawValue, nil, nil)),
-                    didTap: { [weak self] tableView, indexPath in
-                        tableView.deselectRow(at: indexPath, animated: true)
-                        self?.runNewFlow?(component)
-                    }
-                )
-            )
-        }
-        
-        return rowModels
     }
 }

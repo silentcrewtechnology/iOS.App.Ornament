@@ -10,8 +10,8 @@ import Extensions
 
 enum Components: String, CaseIterable {
     case activityIndicator = "Activity indicator"
-    case badge = "Badge"
-    case banner = "Banner"
+    case badge = "Badge (Actual)"
+    case banner = "Banner (Actual)"
     case button = "Button"
     case buttonIcon = "Button icon"
     case buttonPay = "Button pay"
@@ -21,31 +21,26 @@ enum Components: String, CaseIterable {
     case chips = "Chips"
     case divider = "Divider"
     case hint = "Hint"
-    // TODO: - Add
-    case inputTextarea = "Input textarea (not added)"
+    case label = "Label"
     case input = "Input"
-    // TODO: - Actualize
+    case inputTextarea = "Input textarea (not added)"
+    case inputSearch = "Input search (not added)"
     case inputContryCode = "Input country code (not actualized)"
     case inputAmount = "Input amount"
     case inputSelect = "Input select"
     case inputOTP = "Input OTP"
-    // TODO: - Realize, Add
     case inputAddCard = "Input add card (not realized, not added)"
-    // TODO: - Realize, Add
     case inputPIN = "Input PIN (not realized, not added)"
     case image = "Image"
-    case label = "Label"
+    case loader = "Loader"
     case navigationBar = "Navigation bar"
-    // TODO: - Actualize, Add
     case pageControl = "Page control (not actualized, not added)"
     case radio = "Radio"
     case segmentControl = "Segment control"
     case segmentItem = "Segment item"
     case snackBar = "SnackBar"
     case stepper = "Stepper"
-    // TODO: - Realize, Add
     case stories = "Stories (not realized, not added)"
-    // TODO: - Actualize, Add
     case tabs = "Tabs (not actualized, not added)"
     case tile = "Tile"
     case title = "Title"

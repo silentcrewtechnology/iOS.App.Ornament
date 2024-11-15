@@ -98,13 +98,13 @@ final class SegmentControlModuleFeature: NSObject, FeatureCoordinatorProtocol {
         let segmentControlSection = SectionModel(cells: [segmentControlCell])
         
         let chipsCells = createRowModels()
-        let chipsSections = sectionRowModelService.createSections(
+        let chipsSections = sectionRowModelService.createSection(
             from: chipsCells,
             rowsHeight: 72,
             cellBackgroundColor: .lightGray
         )
         
-        let sections = [segmentControlSection] + chipsSections
+        let sections = [segmentControlSection] + [chipsSections]
         
         tableDelegate.update(with: sections)
         tableDataSource.update(with: sections)
@@ -135,8 +135,8 @@ final class SegmentControlModuleFeature: NSObject, FeatureCoordinatorProtocol {
                 let sizeChips = sizeChipsServices.map { updater -> (ChipsView) in updater.view }
         
         let rowModels: [DSRowModel] = [
-            DSRowModel(leading: .molecule(.horizontalChipseViews(backgroundChips))),
-            DSRowModel(leading: .molecule(.horizontalChipseViews(sizeChips))),
+            DSRowModel(leading: .molecule(.horizontalChipsViews(backgroundChips))),
+            DSRowModel(leading: .molecule(.horizontalChipsViews(sizeChips))),
         ]
         
         return rowModels
