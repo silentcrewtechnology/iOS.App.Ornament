@@ -9,7 +9,6 @@ import Foundation
 import Extensions
 
 enum Components: String, CaseIterable {
-    case activityIndicator = "Activity indicator"
     case badge = "Badge (Actual)"
     case banner = "Banner (Actual)"
     case button = "Button"
@@ -32,7 +31,7 @@ enum Components: String, CaseIterable {
     case inputAddCard = "Input add card (not realized, not added)"
     case inputPIN = "Input PIN (not realized, not added)"
     case image = "Image"
-    case loader = "Loader"
+    case loader = "Loader (Actual)"
     case navigationBar = "Navigation bar"
     case pageControl = "Page control (not actualized, not added)"
     case radio = "Radio"
