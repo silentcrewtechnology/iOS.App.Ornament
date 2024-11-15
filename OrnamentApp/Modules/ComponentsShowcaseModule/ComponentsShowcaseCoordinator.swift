@@ -16,7 +16,7 @@ final class ComponentsShowcaseCoordinator: RootCoordinatorProtocol {
     
     private let routerService: RouterService
     private var componentsShowcaseFeature: FeatureCoordinatorProtocol
-    private var activityIndicatorFeature: FeatureCoordinatorProtocol?
+    private var loaderFeature: LoaderModuleFeature?
     private var authorizationButtonFeature: FeatureCoordinatorProtocol?
     private var badgeFeature: BadgeModuleFeature?
     private var bannerFeature: BannerModuleFeature?
@@ -83,14 +83,6 @@ final class ComponentsShowcaseCoordinator: RootCoordinatorProtocol {
             var viewController: UIViewController = .init()
             
             switch component {
-            case .activityIndicator:
-                self?.activityIndicatorFeature = CommonDetailFeature(
-                    cellBuilder: ActivityIndicatorCellBuilder(),
-                    screenTitle: Components.activityIndicator.rawValue, 
-                    backAction: self?.popVC
-                )
-                guard let builder = self?.activityIndicatorFeature?.runFlow(data: nil) else { return }
-                viewController = (builder.view as! UIViewController)
             case .buttonAuth:
                 self?.authorizationButtonFeature = CommonDetailFeature(
                     cellBuilder: ButtonAuthCellBuilder(),
@@ -303,7 +295,11 @@ final class ComponentsShowcaseCoordinator: RootCoordinatorProtocol {
             case .inputSearch:
                 break
             case .loader:
-                break
+                self?.loaderFeature = .init()
+                self?.loaderFeature?.runNewFlow = moduleRunNewFlow
+                guard let builder = self?.loaderFeature?.runFlow(data: Components.loader.rawValue) else { return }
+                
+                viewController = (builder.view as! UIViewController)
             }
             
             self?.routerService.pushMainNavigation(to: viewController, animated: true)
