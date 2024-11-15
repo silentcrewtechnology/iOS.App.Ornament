@@ -58,7 +58,7 @@ struct ChipsViewSectionHelper {
                         set: .leftIcon,
                         size: .large,
                         state: .default,
-                        selected: .off,
+                        selected: i == 0 ? .on : .off,
                         label: .true,
                         icon: .false)
                     
