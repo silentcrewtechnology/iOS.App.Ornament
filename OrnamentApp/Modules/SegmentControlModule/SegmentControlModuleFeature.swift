@@ -5,181 +5,119 @@ import Extensions
 import DesignSystem
 import Components
 
-final class SegmentControlModuleFeature: NSObject, FeatureCoordinatorProtocol {
+final class SegmentControlModuleFeature: BaseModuleFeature {
     
-    // MARK: Properties
-    
-    var runNewFlow: ((Any) -> Void)?
-    
-    // MARK: Private properties
-    
-    private var tableViewVCBuilder: TableViewVCBuilder?
-    private var tableViewBuilder: TableViewBuilder?
-    private var navigationBarStyle: NavigationBarStyle?
-    
-    private var tableDataSource: TableDataSource
-    private var tableDelegate: TableDelegate
+    // MARK: - Private properties
     
     private var segmentControlService: SegmentControlViewService
-    private var backgroundChipsServices: [ChipsViewService] = []
-    private var sizeChipsServices: [ChipsViewService] = []
-    private var countChipsServices: [ChipsViewService] = []
+    private var backgroundChipsUpdaters: [ChipsViewService] = []
+    private var sizeChipsUpdaters: [ChipsViewService] = []
     
-    private var chipsCreationService: ChipsCreationService
-    private var sectionRowModelService: SectionRowModelService
-    private var navigationBarVP = NavigationBar.ViewProperties()
+    // MARK: - Init
     
-    init(
-        screenTitle: String,
-        backAction: (() -> Void)?,
+    override init(
         tableDataSource: TableDataSource = .init(),
-        tableDelegate: TableDelegate = .init()
+        tableDelegate: TableDelegate = .init(),
+        navigationBarViewPropertiesService: NavigationBarViewPropertiesService = .init()
     ) {
-        self.tableDataSource = tableDataSource
-        self.tableDelegate = tableDelegate
-        self.sectionRowModelService = SectionRowModelService()
-        self.chipsCreationService = ChipsCreationService()
-        
-        // MARK: segmentControl
-        
-        let firstSegmentItem = SegmentItemView.ViewProperties(
-            text: "first".attributed,
-            onItemTap: { isSelected in
-                print("first \(isSelected)")
-            })
-        let secondSegmentItem = SegmentItemView.ViewProperties(
-            text: "second".attributed,
-            onItemTap: { isSelected in
-                print("second \(isSelected)")
-            })
-        let thirdSegmentItem = SegmentItemView.ViewProperties(
-            text: "third".attributed,
-            onItemTap: { isSelected in
-                print("third \(isSelected)")
-        })
-        
-        segmentControlService = SegmentControlViewService(
-            itemsProperties: [firstSegmentItem, secondSegmentItem, thirdSegmentItem]
+        segmentControlService = .init(
+            itemsServices: [
+                .init(
+                    viewProperties: .init(
+                        text: .init(string: "Tab1"),
+                        onItemTap: { _ in
+                            print("Tab1 tapped!")
+                        }
+                    ),
+                    style: .init()
+                ),
+                .init(
+                    viewProperties: .init(
+                        text: .init(string: "Tab2"),
+                        onItemTap: { _ in
+                            print("Tab2 tapped!")
+                        }
+                    ),
+                    style: .init()
+                ),
+                .init(
+                    viewProperties: .init(
+                        text: .init(string: "Tab3"),
+                        onItemTap: { _ in
+                            print("Tab3 tapped!")
+                        }
+                    ),
+                    style: .init()
+                ),
+                .init(
+                    viewProperties: .init(
+                        text: .init(string: "Tab4"),
+                        onItemTap: { _ in
+                            print("Tab4 tapped!")
+                        }
+                    ),
+                    style: .init()
+                )
+            ],
+            style: .init(background: .primary, size: .small)
         )
         
-        super.init()
-        self.setupTableViewBuilder()
-        self.setupNavigation(screenTitle: screenTitle, backAction: backAction)
-        self.setupTableViewVCBuilder()
+        super.init(
+            tableDataSource: tableDataSource,
+            tableDelegate: tableDelegate,
+            navigationBarViewPropertiesService: navigationBarViewPropertiesService
+        )
     }
     
     // MARK: Methods
-    
-    func runFlow(data: Any?) -> (any Architecture.BuilderProtocol)? {
-        setCell()
-        return tableViewVCBuilder
-    }
-    
-    // MARK: Private methods
-    
-    private func setCell() {
-        
-        createUpdaters()
-        
-        let segmentControlView = segmentControlService.view
-        let controlContainer = UIView()
-        controlContainer.addSubview(segmentControlView)
-        segmentControlView.snp.makeConstraints {
-            $0.leading.trailing.equalToSuperview()
-            $0.centerY.equalToSuperview()
-            $0.bottom.lessThanOrEqualToSuperview()
-            $0.top.greaterThanOrEqualToSuperview()
-        }
-        
-        let segmentControlCell = CellModel(view: controlContainer,
-                                           selectionStyle: .none,
-                                           height: 72,
-                                           backgroundColor: .lightGray)
-        let segmentControlSection = SectionModel(cells: [segmentControlCell])
-        
-        let chipsCells = createRowModels()
-        let chipsSections = sectionRowModelService.createSection(
-            from: chipsCells,
-            rowsHeight: 72,
-            cellBackgroundColor: .lightGray
-        )
-        
-        let sections = [segmentControlSection] + [chipsSections]
-        
-        tableDelegate.update(with: sections)
-        tableDataSource.update(with: sections)
-    }
-    
-    private func createUpdaters() {
-        backgroundChipsServices = chipsCreationService.createChipsUpdaters(
-            chipTitles: ["primary", "secondary"],
+ 
+    override func createUpdaters() {
+        backgroundChipsUpdaters = chipsCreationService.createChipsUpdaters(
+            chipTitles: ["Primary", "Secondary"],
+            selectedIndex: .zero,
             onChipTap: { [weak self] index in
                 guard let self = self else { return }
                 self.segmentControlService.update(background: [.primary, .secondary][index])
-                self.updateChipsSelection(for: &self.backgroundChipsServices, selectedIndex: index)
+                self.chipsCreationService.updateChipsSelection(
+                    for: &self.backgroundChipsUpdaters,
+                    selectedIndex: index
+                )
             }
         )
         
-        sizeChipsServices = chipsCreationService.createChipsUpdaters(
-            chipTitles: ["large", "small"],
+        sizeChipsUpdaters = chipsCreationService.createChipsUpdaters(
+            chipTitles: ["Small", "Large"],
+            selectedIndex: .zero,
             onChipTap: { [weak self] index in
                 guard let self = self else { return }
-                self.segmentControlService.update(size: [.large, .small][index])
-                self.updateChipsSelection(for: &self.sizeChipsServices, selectedIndex: index)
+                self.tableViewBuilder.view.beginUpdates()
+                self.segmentControlService.update(size: [.small, .large][index])
+                self.chipsCreationService.updateChipsSelection(for: &self.sizeChipsUpdaters, selectedIndex: index)
+                self.tableViewBuilder.view.endUpdates()
             }
         )
     }
     
-    private func createRowModels() -> [DSRowModel] {
-                let backgroundChips = backgroundChipsServices.map { updater -> (ChipsView) in updater.view }
-                let sizeChips = sizeChipsServices.map { updater -> (ChipsView) in updater.view }
+    override func createRowModels() -> [DSRowModel] {
+        let backgroundChips = backgroundChipsUpdaters.map { updater -> (ChipsView) in updater.view }
+        let sizeChips = sizeChipsUpdaters.map { updater -> (ChipsView) in updater.view }
         
         let rowModels: [DSRowModel] = [
-            DSRowModel(leading: .molecule(.horizontalChipsViews(backgroundChips))),
-            DSRowModel(leading: .molecule(.horizontalChipsViews(sizeChips))),
+            .init(
+                leading: .atom(.view(segmentControlService.view)),
+                margings: .init(leading: 16),
+                cellSelectionStyle: .none
+            ),
+            .init(
+                leading: .molecule(.horizontalChipsViews(backgroundChips)),
+                cellSelectionStyle: .none
+            ),
+            .init(
+                leading: .molecule(.horizontalChipsViews(sizeChips)),
+                cellSelectionStyle: .none
+            )
         ]
         
         return rowModels
-    }
-    
-    private func updateChipsSelection(for updaters: inout [ChipsViewService], selectedIndex: Int) {
-        for (index, updater) in updaters.enumerated() {
-            let selected: ChipsViewStyle.Selected = selectedIndex == index ? .on : .off
-            updater.update(selected: selected)
-        }
-    }
-}
-
-// MARK: Init
-extension SegmentControlModuleFeature {
-    private func setupTableViewVCBuilder() {
-        if let tableView = tableViewBuilder?.view {
-            tableViewVCBuilder = .init(with: .init(
-                navigationBarViewProperties: navigationBarVP,
-                tableView: tableView,
-                confirmButtonView: nil
-            ))
-        }
-    }
-    
-    private func setupTableViewBuilder() {
-        tableViewBuilder = .init(with: .init(
-            backgroundColor: .lightGray,
-            dataSources: self.tableDataSource,
-            delegate: self.tableDelegate
-        ))
-    }
-    
-    private func setupNavigation(screenTitle: String,
-                                 backAction: (() -> Void)?) {
-        navigationBarStyle = NavigationBarStyle(
-            variant: .basic(
-                title: screenTitle,
-                subtitle: nil,
-                margins: nil
-            ),
-            color: .primary
-        )
-        navigationBarStyle?.update(viewProperties: &navigationBarVP, backAction: backAction)
     }
 }

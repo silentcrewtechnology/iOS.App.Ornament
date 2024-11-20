@@ -93,8 +93,7 @@ final class InputOTPCellBuilder: NSObject, UITextFieldDelegate, CellBuilder {
                 )
                 
                 let style = InputAmountViewStyle(
-                    state: .default,
-                    hintStyle: hintStyle
+                    state: .default
                 )
                 
                 style.update(

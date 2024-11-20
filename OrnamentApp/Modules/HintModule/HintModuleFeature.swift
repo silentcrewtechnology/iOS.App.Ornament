@@ -5,123 +5,44 @@ import Extensions
 import DesignSystem
 import Components
 
-final class HintModuleFeature: NSObject, FeatureCoordinatorProtocol {
+final class HintModuleFeature: BaseModuleFeature {
     
-    // MARK: Properties
-    
-    var runNewFlow: ((Any) -> Void)?
-    
-    // MARK: Private properties
-    
-    private var tableViewVCBuilder: TableViewVCBuilder
-    private var tableViewBuilder: TableViewBuilder
-    private var navigationBarStyle: NavigationBarStyle
-    
-    private var tableDataSource: TableDataSource
-    private var tableDelegate: TableDelegate
+    // MARK: - Private properties
     
     private var hintService: HintViewService
     private var variantChipsService: [ChipsViewService] = []
     private var colorChipsService: [ChipsViewService] = []
     
-    private var chipsCreationService: ChipsCreationService
-    private var sectionModelService: SectionRowModelService
+    // MARK: - Init
     
-    init(
-        screenTitle: String,
-        backAction: (() -> Void)?,
+    override init(
         tableDataSource: TableDataSource = .init(),
-        tableDelegate: TableDelegate = .init()
+        tableDelegate: TableDelegate = .init(),
+        navigationBarViewPropertiesService: NavigationBarViewPropertiesService = .init()
     ) {
-        self.tableDataSource = tableDataSource
-        self.tableDelegate = tableDelegate
-        self.sectionModelService = SectionRowModelService()
-        self.chipsCreationService = ChipsCreationService()
-        
-        tableViewBuilder = .init(with: .init(
-            backgroundColor: .white,
-            dataSources: self.tableDataSource,
-            delegate: self.tableDelegate
-        ))
-        
-        var navigationBarVP = NavigationBar.ViewProperties()
-        navigationBarStyle = NavigationBarStyle(
-            variant: .basic(
-                title: screenTitle,
-                subtitle: nil,
-                margins: nil
-            ),
-            color: .primary
-        )
-        navigationBarStyle.update(
-            viewProperties: &navigationBarVP,
-            backAction: backAction
+        hintService = .init(
+            viewProperties: .init(
+                text: .init(string: "Text"),
+                additionalText: .init(string: "Text")),
+            style: .init(
+                variant: .both,
+                color: .default
+            )
         )
         
-        tableViewVCBuilder = .init(with: .init(
-            navigationBarViewProperties: navigationBarVP,
-            tableView: tableViewBuilder.view,
-            confirmButtonView: nil
-        ))
-        
-        // MARK: HintView
-        
-        let hintViewStyle = HintViewStyle(
-            variant: .both,
-            color: .default
+        super.init(
+            tableDataSource: tableDataSource,
+            tableDelegate: tableDelegate,
+            navigationBarViewPropertiesService: navigationBarViewPropertiesService
         )
-        
-        let hintViewProperties = HintView.ViewProperties(
-            text: "Hint".attributed,
-            additionalText: "Hint".attributed
-        )
-        
-        hintService = HintViewService(
-            viewProperties: hintViewProperties,
-            style: hintViewStyle
-        )
-        
-        super.init()
     }
     
     // MARK: Methods
-    
-    func runFlow(data: Any?) -> (any Architecture.BuilderProtocol)? {
-        setCell()
-        return tableViewVCBuilder
-    }
-    
-    // MARK: Private methods
-    
-    private func setCell() {
-        
-        createUpdaters()
-        
-        let cells = createRowModels()
-        
-        let hintCell = CellModel(
-            view: hintService.view,
-            height: 72,
-            insets: .init(top: 0, left: 16, bottom: 0, right: 16)
-        )
-        
-        let hintSection = SectionModel(cells: [hintCell])
-        
-        let chipsSection = sectionModelService.createSection(
-            from: cells,
-            rowsHeight: 72
-        )
-        
-        let sections = [hintSection] + [chipsSection]
-        
-        tableDelegate.update(with: sections)
-        tableDataSource.update(with: sections)
-    }
-    
-    private func createUpdaters() {
+ 
+    override func createUpdaters() {
         variantChipsService = chipsCreationService.createChipsUpdaters(
-            chipTitles: ["both", "center", "left", "right", "empty"],
-            selectedIndex: 0,
+            chipTitles: ["Both", "Center", "Left", "Right", "Empty"],
+            selectedIndex: .zero,
             onChipTap: { [weak self] index in
                 guard let self = self else { return }
                 self.hintService.update(newVariant: [.both, .center, .left, .right, .empty][index])
@@ -131,10 +52,10 @@ final class HintModuleFeature: NSObject, FeatureCoordinatorProtocol {
                 )
             }
         )
-        
+
         colorChipsService = chipsCreationService.createChipsUpdaters(
-            chipTitles: ["default", "active", "error", "disabled"],
-            selectedIndex: 0,
+            chipTitles: ["Default", "Active", "Error", "Disabled"],
+            selectedIndex: .zero,
             onChipTap: { [weak self] index in
                 guard let self = self else { return }
                 self.hintService.update(newColor: [.default, .active, .error, .disabled][index])
@@ -146,13 +67,23 @@ final class HintModuleFeature: NSObject, FeatureCoordinatorProtocol {
         )
     }
     
-    private func createRowModels() -> [DSRowModel] {
+    override func createRowModels() -> [DSRowModel] {
         let variantChips = variantChipsService.map { updater -> (ChipsView) in updater.view }
         let colorChips = colorChipsService.map { updater -> (ChipsView) in updater.view }
         
         let rowModels: [DSRowModel] = [
-            DSRowModel(leading: .molecule(.horizontalChipsViews(variantChips))),
-            DSRowModel(leading: .molecule(.horizontalChipsViews(colorChips))),
+            .init(
+                leading: .atom(.view(hintService.view)),
+                cellSelectionStyle: .none
+            ),
+            .init(
+                leading: .molecule(.horizontalChipsViews(variantChips)),
+                cellSelectionStyle: .none
+            ),
+            .init(
+                leading: .molecule(.horizontalChipsViews(colorChips)),
+                cellSelectionStyle: .none
+            )
         ]
         
         return rowModels

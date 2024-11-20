@@ -16,35 +16,43 @@ final class ComponentsShowcaseCoordinator: RootCoordinatorProtocol {
     
     private let routerService: RouterService
     private var componentsShowcaseFeature: FeatureCoordinatorProtocol
-    private var loaderFeature: LoaderModuleFeature?
-    private var authorizationButtonFeature: FeatureCoordinatorProtocol?
+    private var navigationBar: NavigationBar?
+    
     private var badgeFeature: BadgeModuleFeature?
     private var bannerFeature: BannerModuleFeature?
+    private var buttonFeature: FeatureCoordinatorProtocol?
+    private var buttonIconFeature: FeatureCoordinatorProtocol?
+    private var buttonPayFeature: ButtonPayModuleFeature?
+    private var buttonAuthFeature: FeatureCoordinatorProtocol?
+    private var cardFeature: FeatureCoordinatorProtocol?
     private var checkboxFeature: FeatureCoordinatorProtocol?
     private var chipsFeature: FeatureCoordinatorProtocol?
-    private var dividerFeature: FeatureCoordinatorProtocol?
-    private var inputAmountFeature: FeatureCoordinatorProtocol?
-    private var inputOTPFeature: FeatureCoordinatorProtocol?
-    private var inputPhoneNumberFeature: FeatureCoordinatorProtocol?
+    private var dividerFeature: DividerModuleFeature?
+    private var hintFeature: HintModuleFeature?
+    private var labelFeature: FeatureCoordinatorProtocol?
+    private var inputFeature: FeatureCoordinatorProtocol?
+    private var inputTextareaFeature: FeatureCoordinatorProtocol?
+    private var inputSearchFeature: FeatureCoordinatorProtocol?
+    private var inputCountryCodeFeature: FeatureCoordinatorProtocol?
+    private var inputAmountFeature: InputAmountModuleFeature?
     private var inputSelectFeature: FeatureCoordinatorProtocol?
-    private var inputTextFeature: FeatureCoordinatorProtocol?
+    private var inputOTPFeature: FeatureCoordinatorProtocol?
+    private var inputAddCardFeature: FeatureCoordinatorProtocol?
+    private var inputPINFeature: FeatureCoordinatorProtocol?
     private var imageFeature: FeatureCoordinatorProtocol?
-    private var buttonIconFeature: FeatureCoordinatorProtocol?
-    private var navigationBarFeature: NavigationBarFeature?
+    private var loaderFeature: LoaderModuleFeature?
+    private var navigationBarFeature: NavigationBarModuleFeature?
+    private var pageControlFeature: FeatureCoordinatorProtocol?
+    private var radioFeature: FeatureCoordinatorProtocol?
+    private var segmentControlFeature: SegmentControlModuleFeature?
+    private var segmentItemFeature: SegmentItemModuleFeature?
+    private var snackBarFeature: FeatureCoordinatorProtocol?
+    private var stepperFeature: FeatureCoordinatorProtocol?
+    private var storiesFeature: FeatureCoordinatorProtocol?
+    private var tabsFeature: FeatureCoordinatorProtocol?
+    private var tileFeature: FeatureCoordinatorProtocol?
     private var titleFeature: FeatureCoordinatorProtocol?
     private var toggleFeature: FeatureCoordinatorProtocol?
-    private var navigationBar: NavigationBar?
-    private var tileFeature: FeatureCoordinatorProtocol?
-    private var radioFeature: FeatureCoordinatorProtocol?
-    private var segmentControlFeature: FeatureCoordinatorProtocol?
-    private var segmentItemFeature: FeatureCoordinatorProtocol?
-    private var stepperFeature: FeatureCoordinatorProtocol?
-    private var snackBarFeature: FeatureCoordinatorProtocol?
-    private var buttonFeature: FeatureCoordinatorProtocol?
-    private var buttonPayFeature: FeatureCoordinatorProtocol?
-    private var cardFeature: FeatureCoordinatorProtocol?
-    private var hintFeature: FeatureCoordinatorProtocol?
-    private var labelFeature: FeatureCoordinatorProtocol?
 
     // MARK: - Life cycle
     
@@ -80,233 +88,107 @@ final class ComponentsShowcaseCoordinator: RootCoordinatorProtocol {
         componentsShowcaseFeature.runNewFlow = { [weak self] flow in
             guard let component = flow as? Components else { return }
             
-            var viewController: UIViewController = .init()
-            
+            var featureToPush: FeatureCoordinatorProtocol?
+            var screenTitle = String()
             switch component {
-            case .buttonAuth:
-                self?.authorizationButtonFeature = CommonDetailFeature(
-                    cellBuilder: ButtonAuthCellBuilder(),
-                    screenTitle: Components.buttonAuth.rawValue,
-                    backAction: self?.popVC
-                )
-                guard let builder = self?.authorizationButtonFeature?.runFlow(data: nil) else { return }
-                viewController = (builder.view as! UIViewController)
             case .badge:
                 self?.badgeFeature = .init()
-                self?.badgeFeature?.runNewFlow = moduleRunNewFlow
-                guard let builder = self?.badgeFeature?.runFlow(data: Components.badge.rawValue) else { return }
-                
-                viewController = (builder.view as! UIViewController)
+                featureToPush = self?.badgeFeature
+                screenTitle = Components.badge.rawValue
             case .banner:
                 self?.bannerFeature = .init()
-                self?.bannerFeature?.runNewFlow = moduleRunNewFlow
-                guard let builder = self?.bannerFeature?.runFlow(data: Components.banner.rawValue) else { return }
-                
-                viewController = (builder.view as! UIViewController)
+                featureToPush = self?.bannerFeature
+                screenTitle = Components.banner.rawValue
             case .button:
-                self?.buttonFeature = CommonDetailFeature(
-                    cellBuilder: ButtonModuleBuilder(),
-                    screenTitle: Components.button.rawValue,
-                    backAction: self?.popVC
-                )
-                guard let builder = self?.buttonFeature?.runFlow(data: nil) else { return }
-                viewController = (builder.view as! UIViewController)
+                break
             case .buttonIcon:
-                self?.buttonIconFeature = CommonDetailFeature(
-                    cellBuilder: ButtonIconModuleBuilder(),
-                    screenTitle: Components.buttonIcon.rawValue,
-                    backAction: self?.popVC
-                )
-                guard let builder = self?.buttonIconFeature?.runFlow(data: nil) else { return }
-                viewController = (builder.view as! UIViewController)
+                break
+            case .buttonPay:
+                self?.buttonPayFeature = .init()
+                featureToPush = self?.buttonPayFeature
+                screenTitle = Components.buttonPay.rawValue
+            case .buttonAuth:
+                break
             case .card:
-                self?.cardFeature = CommonDetailFeature(
-                    cellBuilder: CardCellBuilder(),
-                    screenTitle: Components.card.rawValue,
-                    backAction: self?.popVC
-                )
-                guard let builder = self?.cardFeature?.runFlow(data: nil) else { return }
-                viewController = (builder.view as! UIViewController)
+                break
             case .checkbox:
-                self?.checkboxFeature = CommonDetailFeature(
-                    cellBuilder: CheckboxCellBuilder(),
-                    screenTitle: Components.checkbox.rawValue,
-                    backAction: self?.popVC
-                )
-                guard let builder = self?.checkboxFeature?.runFlow(data: nil) else { return }
-                viewController = (builder.view as! UIViewController)
+                break
             case .chips:
                 break
-                // TODO Восстановить chipsView
-//                self?.chipsFeature = CommonDetailFeature(
-//                    cellBuilder: ChipsCellBuilder(),
-//                    screenTitle: Components.chips.rawValue,
-//                    backAction: self?.popVC
-//                )
-//                guard let builder = self?.chipsFeature?.runFlow(data: nil) else { return }
-//                viewController = (builder.view as! UIViewController)
             case .divider:
-                self?.dividerFeature = DividerModuleFeature(
-                    screenTitle: Components.divider.rawValue,
-                    backAction: self?.popVC)
-                guard let builder = self?.dividerFeature?.runFlow(data: nil) else { return }
-                
-                viewController = (builder.view as! UIViewController)
+                self?.dividerFeature = .init()
+                featureToPush = self?.dividerFeature
+                screenTitle = Components.divider.rawValue
             case .hint:
-                self?.hintFeature = HintModuleFeature.init(
-                    screenTitle: Components.hint.rawValue,
-                    backAction: self?.popVC
-                )
-                guard let builder = self?.hintFeature?.runFlow(data: nil) else { return }
-                viewController = (builder.view as! UIViewController)
-            case .image:
-                self?.imageFeature = CommonDetailFeature(
-                    cellBuilder: ImageModuleBuilder(),
-                    screenTitle: Components.image.rawValue, 
-                    backAction: self?.popVC
-                )
-                guard let builder = self?.imageFeature?.runFlow(data: nil) else { return }
-                viewController = (builder.view as! UIViewController)
-            case .inputAmount:
-                self?.inputAmountFeature = InputAmountModuleFeature.init(screenTitle: Components.badge.rawValue, backAction: self?.popVC)
-                guard let builder = self?.inputAmountFeature?.runFlow(data: nil) else { return }
-                viewController = (builder.view as! UIViewController)
-            case .inputOTP:
-                self?.inputOTPFeature = CommonDetailFeature(
-                    cellBuilder: InputOTPCellBuilder(),
-                    screenTitle: Components.inputOTP.rawValue,
-                    backAction: self?.popVC
-                )
-                guard let builder = self?.inputOTPFeature?.runFlow(data: nil) else { return }
-                viewController = (builder.view as! UIViewController)
-            case .inputContryCode:
-                self?.inputPhoneNumberFeature = CommonDetailFeature(
-                    cellBuilder: InputPhoneNumberCellBuilder(),
-                    screenTitle: Components.inputContryCode.rawValue,
-                    backAction: self?.popVC
-                )
-                guard let builder = self?.inputPhoneNumberFeature?.runFlow(data: nil) else { return }
-                viewController = (builder.view as! UIViewController)
-            case .inputSelect:
-                self?.inputSelectFeature = CommonDetailFeature(
-                    cellBuilder: InputSelectCellBuilder(),
-                    screenTitle: Components.inputSelect.rawValue,
-                    backAction: self?.popVC
-                )
-                guard let builder = self?.inputSelectFeature?.runFlow(data: nil) else { return }
-                viewController = (builder.view as! UIViewController)
+                self?.hintFeature = .init()
+                featureToPush = self?.hintFeature
+                screenTitle = Components.hint.rawValue
+            case .label:
+                break
             case .input:
-                self?.inputTextFeature = CommonDetailFeature(
-                    cellBuilder: InputCellBuilder(),
-                    screenTitle: Components.input.rawValue,
-                    backAction: self?.popVC
-                )
-                guard let builder = self?.inputTextFeature?.runFlow(data: nil) else { return }
-                viewController = (builder.view as! UIViewController)
+                break
             case .inputTextarea:
+                break
+            case .inputSearch:
+                break
+            case .inputContryCode:
+                break
+            case .inputAmount:
+                self?.inputAmountFeature = .init()
+                featureToPush = self?.inputAmountFeature
+                screenTitle = Components.inputAmount.rawValue
+            case .inputSelect:
+                break
+            case .inputOTP:
                 break
             case .inputAddCard:
                 break
             case .inputPIN:
                 break
-            case .label:
-                self?.labelFeature = CommonDetailFeature(
-                    cellBuilder: LabelCellBuilder(),
-                    screenTitle: Components.label.rawValue,
-                    backAction: self?.popVC
-                )
-                guard let builder = self?.labelFeature?.runFlow(data: nil) else { return }
-                viewController = (builder.view as! UIViewController)
+            case .image:
+                break
+            case .loader:
+                self?.loaderFeature = .init()
+                featureToPush = self?.loaderFeature
+                screenTitle = Components.loader.rawValue
+            case .navigationBar:
+                self?.navigationBarFeature = .init()
+                featureToPush = self?.navigationBarFeature
+                screenTitle = Components.navigationBar.rawValue
             case .pageControl:
                 break
-            case .buttonPay:
-                self?.buttonPayFeature = CommonDetailFeature(
-                    cellBuilder: ButtonPayCellBuilder(),
-                    screenTitle: Components.buttonPay.rawValue,
-                    backAction: self?.popVC
-                )
-                guard let builder = self?.buttonPayFeature?.runFlow(data: nil) else { return }
-                viewController = (builder.view as! UIViewController)
-            case .navigationBar:
-                self?.navigationBarFeature = NavigationBarFeature()
-                guard let builder = self?.navigationBarFeature?.runFlow(data: nil) else { return }
-                self?.navigationBarFeature?.setNavigationBar(navigationBar: self?.navigationBar)
-                viewController = (builder.view as! UIViewController)
             case .radio:
-                self?.radioFeature = CommonDetailFeature(
-                    cellBuilder: RadioModuleBuilder(),
-                    screenTitle: Components.radio.rawValue,
-                    backAction: self?.popVC
-                )
-                guard let builder = self?.radioFeature?.runFlow(data: nil) else { return }
-                viewController = (builder.view as! UIViewController)
+                break
             case .segmentControl:
-                self?.segmentControlFeature = SegmentControlModuleFeature.init(screenTitle: Components.segmentControl.rawValue, backAction: self?.popVC)
-                guard let builder = self?.segmentControlFeature?.runFlow(data: nil) else { return }
-                viewController = (builder.view as! UIViewController)
+                self?.segmentControlFeature = .init()
+                featureToPush = self?.segmentControlFeature
+                screenTitle = Components.segmentControl.rawValue
             case .segmentItem:
-                self?.segmentItemFeature = SegmentItemFeature.init(screenTitle: Components.segmentItem.rawValue, backAction: self?.popVC)
-                guard let builder = self?.segmentItemFeature?.runFlow(data: nil) else { return }
-                viewController = (builder.view as! UIViewController)
+                self?.segmentItemFeature = .init()
+                featureToPush = self?.segmentItemFeature
+                screenTitle = Components.segmentItem.rawValue
             case .snackBar:
-                self?.snackBarFeature = CommonDetailFeature(
-                    cellBuilder: SnackBarCellBuilder(),
-                    screenTitle: Components.snackBar.rawValue,
-                    backAction: self?.popVC
-                )
-                guard let builder = self?.snackBarFeature?.runFlow(data: nil) else { return }
-                viewController = (builder.view as! UIViewController)
+                break
             case .stepper:
-                self?.stepperFeature = CommonDetailFeature(
-                    cellBuilder: StepperModuleBuilder(),
-                    screenTitle: Components.stepper.rawValue,
-                    backAction: self?.popVC
-                )
-                guard let builder = self?.stepperFeature?.runFlow(data: nil) else { return }
-                viewController = (builder.view as! UIViewController)
+                break
             case .stories:
                 break
             case .tabs:
                 break
             case .tile:
-                self?.tileFeature = CommonDetailFeature(
-                    cellBuilder: TileModuleBuilder(),
-                    screenTitle: Components.tile.rawValue,
-                    backAction: self?.popVC
-                )
-                guard let builder = self?.tileFeature?.runFlow(data: nil) else { return }
-                viewController = (builder.view as! UIViewController)
-            case .title:
-                self?.titleFeature = CommonDetailFeature(
-                    cellBuilder: TitleCellBuilder(),
-                    screenTitle: Components.title.rawValue,
-                    backAction: self?.popVC
-                )
-                guard let builder = self?.titleFeature?.runFlow(data: nil) else { return }
-                viewController = (builder.view as! UIViewController)
-            case .toggle:
-                self?.toggleFeature = CommonDetailFeature(
-                    cellBuilder: ToggleCellBuilder(),
-                    screenTitle: Components.toggle.rawValue,
-                    backAction: self?.popVC
-                )
-                guard let builder = self?.toggleFeature?.runFlow(data: nil) else { return }
-                viewController = (builder.view as! UIViewController)
-            case .inputSearch:
                 break
-            case .loader:
-                self?.loaderFeature = .init()
-                self?.loaderFeature?.runNewFlow = moduleRunNewFlow
-                guard let builder = self?.loaderFeature?.runFlow(data: Components.loader.rawValue) else { return }
-                
-                viewController = (builder.view as! UIViewController)
+            case .title:
+                break
+            case .toggle:
+                break
             }
             
-            self?.routerService.pushMainNavigation(to: viewController, animated: true)
+            featureToPush?.runNewFlow = moduleRunNewFlow
+            guard let builder = featureToPush?.runFlow(data: screenTitle) else { return }
+            self?.routerService.pushMainNavigation(
+                to: (builder.view as! UIViewController),
+                animated: true
+            )
         }
-    }
-    
-    private func popVC() {
-        routerService.popMainNavigation(animated: true)
     }
 }
