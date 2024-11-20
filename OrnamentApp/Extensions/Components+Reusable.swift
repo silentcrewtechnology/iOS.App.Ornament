@@ -173,12 +173,6 @@ extension SegmentItemView: Reusable {
     }
 }
 
-extension SegmentSliderView: Reusable {
-    public func prepareForReuse() {
-        update(with: .init())
-    }
-}
-
 extension SegmentControlView: Reusable {
     public func prepareForReuse() {
         update(with: .init())
