@@ -17,42 +17,7 @@ final class ComponentsShowcaseCoordinator: RootCoordinatorProtocol {
     private let routerService: RouterService
     private var componentsShowcaseFeature: FeatureCoordinatorProtocol
     private var navigationBar: NavigationBar?
-    
-    private var badgeFeature: BadgeModuleFeature?
-    private var bannerFeature: BannerModuleFeature?
-    private var buttonFeature: FeatureCoordinatorProtocol?
-    private var buttonIconFeature: FeatureCoordinatorProtocol?
-    private var buttonPayFeature: ButtonPayModuleFeature?
-    private var buttonAuthFeature: FeatureCoordinatorProtocol?
-    private var cardFeature: FeatureCoordinatorProtocol?
-    private var checkboxFeature: FeatureCoordinatorProtocol?
-    private var chipsFeature: FeatureCoordinatorProtocol?
-    private var dividerFeature: DividerModuleFeature?
-    private var hintFeature: HintModuleFeature?
-    private var labelFeature: FeatureCoordinatorProtocol?
-    private var inputFeature: FeatureCoordinatorProtocol?
-    private var inputTextareaFeature: FeatureCoordinatorProtocol?
-    private var inputSearchFeature: FeatureCoordinatorProtocol?
-    private var inputCountryCodeFeature: FeatureCoordinatorProtocol?
-    private var inputAmountFeature: InputAmountModuleFeature?
-    private var inputSelectFeature: FeatureCoordinatorProtocol?
-    private var inputOTPFeature: FeatureCoordinatorProtocol?
-    private var inputAddCardFeature: FeatureCoordinatorProtocol?
-    private var inputPINFeature: FeatureCoordinatorProtocol?
-    private var imageFeature: FeatureCoordinatorProtocol?
-    private var loaderFeature: LoaderModuleFeature?
-    private var navigationBarFeature: NavigationBarModuleFeature?
-    private var pageControlFeature: FeatureCoordinatorProtocol?
-    private var radioFeature: FeatureCoordinatorProtocol?
-    private var segmentControlFeature: SegmentControlModuleFeature?
-    private var segmentItemFeature: SegmentItemModuleFeature?
-    private var snackBarFeature: FeatureCoordinatorProtocol?
-    private var stepperFeature: FeatureCoordinatorProtocol?
-    private var storiesFeature: FeatureCoordinatorProtocol?
-    private var tabsFeature: FeatureCoordinatorProtocol?
-    private var tileFeature: FeatureCoordinatorProtocol?
-    private var titleFeature: FeatureCoordinatorProtocol?
-    private var toggleFeature: FeatureCoordinatorProtocol?
+    private var nextScreenFeature: FeatureCoordinatorProtocol?
 
     // MARK: - Life cycle
     
@@ -88,27 +53,24 @@ final class ComponentsShowcaseCoordinator: RootCoordinatorProtocol {
         componentsShowcaseFeature.runNewFlow = { [weak self] flow in
             guard let component = flow as? Components else { return }
             
-            var featureToPush: FeatureCoordinatorProtocol?
             var screenTitle = String()
             switch component {
             case .badge:
-                self?.badgeFeature = .init()
-                featureToPush = self?.badgeFeature
+                self?.nextScreenFeature = BadgeModuleFeature()
                 screenTitle = Components.badge.rawValue
             case .banner:
-                self?.bannerFeature = .init()
-                featureToPush = self?.bannerFeature
+                self?.nextScreenFeature = BannerModuleFeature()
                 screenTitle = Components.banner.rawValue
             case .button:
                 break
             case .buttonIcon:
                 break
             case .buttonPay:
-                self?.buttonPayFeature = .init()
-                featureToPush = self?.buttonPayFeature
+                self?.nextScreenFeature = ButtonPayModuleFeature()
                 screenTitle = Components.buttonPay.rawValue
             case .buttonAuth:
-                break
+                self?.nextScreenFeature = ButtonAuthModuleFeature()
+                screenTitle = Components.buttonAuth.rawValue
             case .card:
                 break
             case .checkbox:
@@ -116,12 +78,10 @@ final class ComponentsShowcaseCoordinator: RootCoordinatorProtocol {
             case .chips:
                 break
             case .divider:
-                self?.dividerFeature = .init()
-                featureToPush = self?.dividerFeature
+                self?.nextScreenFeature = DividerModuleFeature()
                 screenTitle = Components.divider.rawValue
             case .hint:
-                self?.hintFeature = .init()
-                featureToPush = self?.hintFeature
+                self?.nextScreenFeature = HintModuleFeature()
                 screenTitle = Components.hint.rawValue
             case .label:
                 break
@@ -134,8 +94,7 @@ final class ComponentsShowcaseCoordinator: RootCoordinatorProtocol {
             case .inputContryCode:
                 break
             case .inputAmount:
-                self?.inputAmountFeature = .init()
-                featureToPush = self?.inputAmountFeature
+                self?.nextScreenFeature = InputAmountModuleFeature()
                 screenTitle = Components.inputAmount.rawValue
             case .inputSelect:
                 break
@@ -148,24 +107,20 @@ final class ComponentsShowcaseCoordinator: RootCoordinatorProtocol {
             case .image:
                 break
             case .loader:
-                self?.loaderFeature = .init()
-                featureToPush = self?.loaderFeature
+                self?.nextScreenFeature = LoaderModuleFeature()
                 screenTitle = Components.loader.rawValue
             case .navigationBar:
-                self?.navigationBarFeature = .init()
-                featureToPush = self?.navigationBarFeature
+                self?.nextScreenFeature = NavigationBarModuleFeature()
                 screenTitle = Components.navigationBar.rawValue
             case .pageControl:
                 break
             case .radio:
                 break
             case .segmentControl:
-                self?.segmentControlFeature = .init()
-                featureToPush = self?.segmentControlFeature
+                self?.nextScreenFeature = SegmentControlModuleFeature()
                 screenTitle = Components.segmentControl.rawValue
             case .segmentItem:
-                self?.segmentItemFeature = .init()
-                featureToPush = self?.segmentItemFeature
+                self?.nextScreenFeature = SegmentItemModuleFeature()
                 screenTitle = Components.segmentItem.rawValue
             case .snackBar:
                 break
@@ -183,8 +138,8 @@ final class ComponentsShowcaseCoordinator: RootCoordinatorProtocol {
                 break
             }
             
-            featureToPush?.runNewFlow = moduleRunNewFlow
-            guard let builder = featureToPush?.runFlow(data: screenTitle) else { return }
+            self?.nextScreenFeature?.runNewFlow = moduleRunNewFlow
+            guard let builder = self?.nextScreenFeature?.runFlow(data: screenTitle) else { return }
             self?.routerService.pushMainNavigation(
                 to: (builder.view as! UIViewController),
                 animated: true

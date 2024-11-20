@@ -97,18 +97,22 @@ final class SegmentItemModuleFeature: BaseModuleFeature {
             ),
             .init(
                 leading: .molecule(.horizontalChipsViews(sizeChips)),
+                centralBlockAlignment: .fill,
                 cellSelectionStyle: .none
             ),
             .init(
                 leading: .molecule(.horizontalChipsViews(stateChips)),
+                centralBlockAlignment: .fill,
                 cellSelectionStyle: .none
             ),
             .init(
                 leading: .molecule(.horizontalChipsViews(selectedChips)),
+                centralBlockAlignment: .fill,
                 cellSelectionStyle: .none
             ),
             .init(
                 leading: .molecule(.horizontalChipsViews(showDividerChips)),
+                centralBlockAlignment: .fill,
                 cellSelectionStyle: .none
             )
         ]

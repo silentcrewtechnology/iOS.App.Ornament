@@ -64,10 +64,12 @@ final class DividerModuleFeature: BaseModuleFeature {
             ),
             .init(
                 leading: .molecule(.horizontalChipsViews(variantChips)),
+                centralBlockAlignment: .fill,
                 cellSelectionStyle: .none
             ),
             .init(
                 leading: .molecule(.horizontalChipsViews(styleChips)),
+                centralBlockAlignment: .fill,
                 cellSelectionStyle: .none
             )
         ]

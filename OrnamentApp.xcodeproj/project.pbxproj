@@ -42,7 +42,7 @@
 		CEA3360E2C36C0E100880A1F /* ComponentsShowcaseCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA3360D2C36C0E100880A1F /* ComponentsShowcaseCoordinator.swift */; };
 		CEA336112C36C17100880A1F /* Router in Frameworks */ = {isa = PBXBuildFile; productRef = CEA336102C36C17100880A1F /* Router */; };
 		CEA336162C36D11000880A1F /* TableHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA336152C36D11000880A1F /* TableHeaderView.swift */; };
-		CEA4E2292C37CF700069707C /* ButtonAuthCellBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA4E2282C37CF700069707C /* ButtonAuthCellBuilder.swift */; };
+		CEA4E2292C37CF700069707C /* ButtonAuthModuleFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA4E2282C37CF700069707C /* ButtonAuthModuleFeature.swift */; };
 		CEA4E22D2C37DFCE0069707C /* GenericTableViewSectionModel+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA4E22C2C37DFCE0069707C /* GenericTableViewSectionModel+Extensions.swift */; };
 		CEB9EE2F2CE76F72008B67ED /* BaseModuleFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB9EE2E2CE76F70008B67ED /* BaseModuleFeature.swift */; };
 		CEB9EE322CE782DB008B67ED /* LoaderModuleFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB9EE312CE782D4008B67ED /* LoaderModuleFeature.swift */; };
@@ -99,7 +99,7 @@
 		CEA3360B2C36C0BE00880A1F /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
 		CEA3360D2C36C0E100880A1F /* ComponentsShowcaseCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComponentsShowcaseCoordinator.swift; sourceTree = "<group>"; };
 		CEA336152C36D11000880A1F /* TableHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableHeaderView.swift; sourceTree = "<group>"; };
-		CEA4E2282C37CF700069707C /* ButtonAuthCellBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonAuthCellBuilder.swift; sourceTree = "<group>"; };
+		CEA4E2282C37CF700069707C /* ButtonAuthModuleFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonAuthModuleFeature.swift; sourceTree = "<group>"; };
 		CEA4E22C2C37DFCE0069707C /* GenericTableViewSectionModel+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GenericTableViewSectionModel+Extensions.swift"; sourceTree = "<group>"; };
 		CEB9EE2E2CE76F70008B67ED /* BaseModuleFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseModuleFeature.swift; sourceTree = "<group>"; };
 		CEB9EE312CE782D4008B67ED /* LoaderModuleFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoaderModuleFeature.swift; sourceTree = "<group>"; };
@@ -358,7 +358,7 @@
 		CEA4E2272C37CF530069707C /* ButtonAuthModule */ = {
 			isa = PBXGroup;
 			children = (
-				CEA4E2282C37CF700069707C /* ButtonAuthCellBuilder.swift */,
+				CEA4E2282C37CF700069707C /* ButtonAuthModuleFeature.swift */,
 			);
 			path = ButtonAuthModule;
 			sourceTree = "<group>";
@@ -698,7 +698,7 @@
 				CEA3360C2C36C0BE00880A1F /* MainCoordinator.swift in Sources */,
 				CEEB5E622C356802000E0215 /* ComponentsShowcaseFeature.swift in Sources */,
 				CE2827A12C3BDB6900156F14 /* CellBuilder.swift in Sources */,
-				CEA4E2292C37CF700069707C /* ButtonAuthCellBuilder.swift in Sources */,
+				CEA4E2292C37CF700069707C /* ButtonAuthModuleFeature.swift in Sources */,
 				CEF2DE6E2C4130840065C1BD /* InputSelectCellBuilder.swift in Sources */,
 				CE3D0CD82C5CC90C00A9A5C1 /* StepperModuleBuilder.swift in Sources */,
 				CE15ECBC2C57A75A00F148B7 /* TitleCellBuilder.swift in Sources */,

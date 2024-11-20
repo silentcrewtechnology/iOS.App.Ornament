@@ -123,6 +123,7 @@ final class BannerModuleFeature: BaseModuleFeature, UITextFieldDelegate {
             ),
             .init(
                 leading: .molecule(.horizontalChipsViews(variantChips)),
+                centralBlockAlignment: .fill,
                 cellSelectionStyle: .none
             )
         ]
