@@ -77,12 +77,12 @@ final class HintModuleFeature: BaseModuleFeature {
                 cellSelectionStyle: .none
             ),
             .init(
-                leading: .molecule(.horizontalChipsViews(variantChips)),
+                center: .molecule(.horizontalChipsViews(variantChips)),
                 centralBlockAlignment: .fill,
                 cellSelectionStyle: .none
             ),
             .init(
-                leading: .molecule(.horizontalChipsViews(colorChips)),
+                center: .molecule(.horizontalChipsViews(colorChips)),
                 centralBlockAlignment: .fill,
                 cellSelectionStyle: .none
             )

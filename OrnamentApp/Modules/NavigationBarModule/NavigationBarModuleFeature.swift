@@ -107,12 +107,12 @@ final class NavigationBarModuleFeature: BaseModuleFeature {
                 cellSelectionStyle: .none
             ),
             .init(
-                leading: .molecule(.horizontalChipsViews(colorChips)),
+                center: .molecule(.horizontalChipsViews(colorChips)),
                 centralBlockAlignment: .fill,
                 cellSelectionStyle: .none
             ),
             .init(
-                leading: .molecule(.horizontalChipsViews(rightItemsChips)),
+                center: .molecule(.horizontalChipsViews(rightItemsChips)),
                 centralBlockAlignment: .fill,
                 cellSelectionStyle: .none
             )

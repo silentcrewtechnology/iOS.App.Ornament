@@ -88,17 +88,17 @@ final class LoaderModuleFeature: BaseModuleFeature {
                 cellSelectionStyle: .none
             ),
             .init(
-                leading: .molecule(.horizontalChipsViews(colorChips)),
+                center: .molecule(.horizontalChipsViews(colorChips)),
                 centralBlockAlignment: .fill,
                 cellSelectionStyle: .none
             ),
             .init(
-                leading: .molecule(.horizontalChipsViews(sizeChips)),
+                center: .molecule(.horizontalChipsViews(sizeChips)),
                 centralBlockAlignment: .fill,
                 cellSelectionStyle: .none
             ),
             .init(
-                leading: .molecule(.horizontalChipsViews(isHiddenChips)),
+                center: .molecule(.horizontalChipsViews(isHiddenChips)),
                 centralBlockAlignment: .fill,
                 cellSelectionStyle: .none
             ),

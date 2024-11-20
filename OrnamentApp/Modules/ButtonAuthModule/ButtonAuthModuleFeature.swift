@@ -89,17 +89,17 @@ final class ButtonAuthModuleFeature: BaseModuleFeature {
                 cellSelectionStyle: .none
             ),
             .init(
-                leading: .molecule(.horizontalChipsViews(variantChips)),
+                center: .molecule(.horizontalChipsViews(variantChips)),
                 centralBlockAlignment: .fill,
                 cellSelectionStyle: .none
             ),
             .init(
-                leading: .molecule(.horizontalChipsViews(stateChips)),
+                center: .molecule(.horizontalChipsViews(stateChips)),
                 centralBlockAlignment: .fill,
                 cellSelectionStyle: .none
             ),
             .init(
-                leading: .molecule(.horizontalChipsViews(colorChips)),
+                center: .molecule(.horizontalChipsViews(colorChips)),
                 centralBlockAlignment: .fill,
                 cellSelectionStyle: .none
             )

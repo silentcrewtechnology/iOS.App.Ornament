@@ -109,12 +109,12 @@ final class SegmentControlModuleFeature: BaseModuleFeature {
                 cellSelectionStyle: .none
             ),
             .init(
-                leading: .molecule(.horizontalChipsViews(backgroundChips)),
+                center: .molecule(.horizontalChipsViews(backgroundChips)),
                 centralBlockAlignment: .fill,
                 cellSelectionStyle: .none
             ),
             .init(
-                leading: .molecule(.horizontalChipsViews(sizeChips)),
+                center: .molecule(.horizontalChipsViews(sizeChips)),
                 centralBlockAlignment: .fill,
                 cellSelectionStyle: .none
             )
