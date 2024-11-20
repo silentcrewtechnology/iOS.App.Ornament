@@ -65,7 +65,8 @@ final class InputAmountModuleFeature: BaseModuleFeature {
                 cellSelectionStyle: .none
             ),
             .init(
-                leading: .molecule(.horizontalChipsViews(stateChips)),
+                center: .molecule(.horizontalChipsViews(stateChips)),
+                centralBlockAlignment: .fill,
                 cellSelectionStyle: .none
             )
         ]

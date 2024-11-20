@@ -80,15 +80,18 @@ final class BadgeModuleFeature: BaseModuleFeature {
                 cellSelectionStyle: .none
             ),
             .init(
-                leading: .molecule(.horizontalChipsViews(colorChips)),
+                center: .molecule(.horizontalChipsViews(colorChips)),
+                centralBlockAlignment: .fill,
                 cellSelectionStyle: .none
             ),
             .init(
-                leading: .molecule(.horizontalChipsViews(sizeChips)),
+                center: .molecule(.horizontalChipsViews(sizeChips)),
+                centralBlockAlignment: .fill,
                 cellSelectionStyle: .none
             ),
             .init(
-                leading: .molecule(.horizontalChipsViews(setChips)),
+                center: .molecule(.horizontalChipsViews(setChips)),
+                centralBlockAlignment: .fill,
                 cellSelectionStyle: .none
             ),
         ]

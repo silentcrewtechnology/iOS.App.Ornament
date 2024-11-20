@@ -63,11 +63,13 @@ final class DividerModuleFeature: BaseModuleFeature {
                 cellSelectionStyle: .none
             ),
             .init(
-                leading: .molecule(.horizontalChipsViews(variantChips)),
+                center: .molecule(.horizontalChipsViews(variantChips)),
+                centralBlockAlignment: .fill,
                 cellSelectionStyle: .none
             ),
             .init(
-                leading: .molecule(.horizontalChipsViews(styleChips)),
+                center: .molecule(.horizontalChipsViews(styleChips)),
+                centralBlockAlignment: .fill,
                 cellSelectionStyle: .none
             )
         ]

@@ -122,7 +122,8 @@ final class BannerModuleFeature: BaseModuleFeature, UITextFieldDelegate {
                 height: 80
             ),
             .init(
-                leading: .molecule(.horizontalChipsViews(variantChips)),
+                center: .molecule(.horizontalChipsViews(variantChips)),
+                centralBlockAlignment: .fill,
                 cellSelectionStyle: .none
             )
         ]

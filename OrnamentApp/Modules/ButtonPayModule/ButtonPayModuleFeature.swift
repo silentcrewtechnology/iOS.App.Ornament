@@ -54,7 +54,8 @@ final class ButtonPayModuleFeature: BaseModuleFeature {
                 cellSelectionStyle: .none
             ),
             .init(
-                leading: .molecule(.horizontalChipsViews(typeChips)),
+                center: .molecule(.horizontalChipsViews(typeChips)),
+                centralBlockAlignment: .fill,
                 cellSelectionStyle: .none
             )
         ]
