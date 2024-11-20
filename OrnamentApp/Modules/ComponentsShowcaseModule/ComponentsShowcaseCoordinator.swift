@@ -54,6 +54,7 @@ final class ComponentsShowcaseCoordinator: RootCoordinatorProtocol {
             guard let component = flow as? Components else { return }
             
             var screenTitle = String()
+            self?.nextScreenFeature = nil
             switch component {
             case .badge:
                 self?.nextScreenFeature = BadgeModuleFeature()
@@ -62,9 +63,9 @@ final class ComponentsShowcaseCoordinator: RootCoordinatorProtocol {
                 self?.nextScreenFeature = BannerModuleFeature()
                 screenTitle = Components.banner.rawValue
             case .button:
-                break
+                return
             case .buttonIcon:
-                break
+                return
             case .buttonPay:
                 self?.nextScreenFeature = ButtonPayModuleFeature()
                 screenTitle = Components.buttonPay.rawValue
@@ -72,11 +73,11 @@ final class ComponentsShowcaseCoordinator: RootCoordinatorProtocol {
                 self?.nextScreenFeature = ButtonAuthModuleFeature()
                 screenTitle = Components.buttonAuth.rawValue
             case .card:
-                break
+                return
             case .checkbox:
-                break
+                return
             case .chips:
-                break
+                return
             case .divider:
                 self?.nextScreenFeature = DividerModuleFeature()
                 screenTitle = Components.divider.rawValue
@@ -84,28 +85,28 @@ final class ComponentsShowcaseCoordinator: RootCoordinatorProtocol {
                 self?.nextScreenFeature = HintModuleFeature()
                 screenTitle = Components.hint.rawValue
             case .label:
-                break
+                return
             case .input:
-                break
+                return
             case .inputTextarea:
                 break
             case .inputSearch:
-                break
+                return
             case .inputContryCode:
-                break
+                return
             case .inputAmount:
                 self?.nextScreenFeature = InputAmountModuleFeature()
                 screenTitle = Components.inputAmount.rawValue
             case .inputSelect:
-                break
+                return
             case .inputOTP:
-                break
+                return
             case .inputAddCard:
-                break
+                return
             case .inputPIN:
-                break
+                return
             case .image:
-                break
+                return
             case .loader:
                 self?.nextScreenFeature = LoaderModuleFeature()
                 screenTitle = Components.loader.rawValue
@@ -113,9 +114,9 @@ final class ComponentsShowcaseCoordinator: RootCoordinatorProtocol {
                 self?.nextScreenFeature = NavigationBarModuleFeature()
                 screenTitle = Components.navigationBar.rawValue
             case .pageControl:
-                break
+                return
             case .radio:
-                break
+                return
             case .segmentControl:
                 self?.nextScreenFeature = SegmentControlModuleFeature()
                 screenTitle = Components.segmentControl.rawValue
@@ -123,19 +124,19 @@ final class ComponentsShowcaseCoordinator: RootCoordinatorProtocol {
                 self?.nextScreenFeature = SegmentItemModuleFeature()
                 screenTitle = Components.segmentItem.rawValue
             case .snackBar:
-                break
+                return
             case .stepper:
-                break
+                return
             case .stories:
-                break
+                return
             case .tabs:
                 break
             case .tile:
-                break
+                return
             case .title:
-                break
+                return
             case .toggle:
-                break
+                return
             }
             
             self?.nextScreenFeature?.runNewFlow = moduleRunNewFlow
