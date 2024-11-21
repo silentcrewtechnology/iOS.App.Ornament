@@ -73,7 +73,8 @@ final class HintModuleFeature: BaseModuleFeature {
         
         let rowModels: [DSRowModel] = [
             .init(
-                leading: .atom(.view(hintService.view)),
+                center: .atom(.view(hintService.view)),
+                centralBlockAlignment: .fill,
                 cellSelectionStyle: .none
             ),
             .init(

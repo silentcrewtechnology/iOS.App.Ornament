@@ -4,6 +4,8 @@ import Components
 
 struct ChipsCreationService {
     
+    // MARK: - Methods
+    
     func createChipsUpdaters(
         chipTitles: [String],
         selectedIndex: Int = 0,

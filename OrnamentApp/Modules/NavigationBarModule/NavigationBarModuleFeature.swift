@@ -104,6 +104,7 @@ final class NavigationBarModuleFeature: BaseModuleFeature {
         let rowModels: [DSRowModel] = [
             .init(
                 center: .molecule(.horizontalChipsViews(variantChis)),
+                centralBlockAlignment: .fill,
                 cellSelectionStyle: .none
             ),
             .init(

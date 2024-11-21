@@ -32,7 +32,7 @@ final class ComponentsShowcaseCoordinator: RootCoordinatorProtocol {
     // MARK: - Methods
     
     func setRoot() {
-        guard let vc = componentsShowcaseFeature.runFlow(data: Constants.componentsShowcaseTitle)?.view as? UIViewController
+        guard let vc = componentsShowcaseFeature.runFlow(data: "Витрина компонентов")?.view as? UIViewController
         else { return }
         
         navigationBar = NavigationBar(rootViewController: vc)
@@ -77,7 +77,8 @@ final class ComponentsShowcaseCoordinator: RootCoordinatorProtocol {
             case .checkbox:
                 return
             case .chips:
-                return
+                self?.nextScreenFeature = ChipsModuleFeature()
+                screenTitle = Components.chips.rawValue
             case .divider:
                 self?.nextScreenFeature = DividerModuleFeature()
                 screenTitle = Components.divider.rawValue

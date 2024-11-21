@@ -104,19 +104,22 @@ final class BannerModuleFeature: BaseModuleFeature, UITextFieldDelegate {
                 cellSelectionStyle: .none
             ),
             .init(
-                leading: .atom(.inputView(titleInputService.viewProperties, titleInputService.style)),
+                center: .atom(.inputView(titleInputService.viewProperties, titleInputService.style)),
+                centralBlockAlignment: .fill,
                 margings: BannerConstants.zeroMargins,
                 cellSelectionStyle: .none,
                 height: 80
             ),
             .init(
-                leading: .atom(.inputView(subtitleInputService.viewProperties, subtitleInputService.style)),
+                center: .atom(.inputView(subtitleInputService.viewProperties, subtitleInputService.style)),
+                centralBlockAlignment: .fill,
                 margings: BannerConstants.zeroMargins,
                 cellSelectionStyle: .none,
                 height: 80
             ),
             .init(
-                leading: .atom(.inputView(buttonInputService.viewProperties, buttonInputService.style)),
+                center: .atom(.inputView(buttonInputService.viewProperties, buttonInputService.style)),
+                centralBlockAlignment: .fill,
                 margings: BannerConstants.zeroMargins,
                 cellSelectionStyle: .none,
                 height: 80
