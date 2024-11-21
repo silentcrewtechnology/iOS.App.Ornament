@@ -59,7 +59,8 @@ final class DividerModuleFeature: BaseModuleFeature {
         
         let rowModels: [DSRowModel] = [
             .init(
-                leading: .atom(.view(dividerService.view)),
+                center: .atom(.view(dividerService.view)),
+                centralBlockAlignment: .fill,
                 cellSelectionStyle: .none
             ),
             .init(
