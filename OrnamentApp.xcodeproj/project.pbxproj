@@ -18,10 +18,19 @@
 		888955B72914108700A46293 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 888955B62914108700A46293 /* SceneDelegate.swift */; };
 		CE23F6B42C749CE1004D6CE6 /* HintModuleFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE23F6B32C749CE1004D6CE6 /* HintModuleFeature.swift */; };
 		CE254A5B2C5CDAC20083EF57 /* BannerModuleFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE254A5A2C5CDAC20083EF57 /* BannerModuleFeature.swift */; };
+		CE2C64E72CF0933E002A78CF /* CardModuleFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2C64E62CF09334002A78CF /* CardModuleFeature.swift */; };
 		CE32AC4B2C6CD561006969F2 /* Services in Frameworks */ = {isa = PBXBuildFile; productRef = CE32AC4A2C6CD561006969F2 /* Services */; };
 		CE3381812CEB83A100FABBC5 /* NavigationBarModuleFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3381802CEB839A00FABBC5 /* NavigationBarModuleFeature.swift */; };
+		CE4D2E6C2CEF5DA7000E7486 /* ButtonModuleFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4D2E6B2CEF5DA0000E7486 /* ButtonModuleFeature.swift */; };
+		CE4D2E702CEF75F7000E7486 /* ButtonIconModuleFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4D2E6F2CEF75F0000E7486 /* ButtonIconModuleFeature.swift */; };
 		CE694C372C3D56090064C0C0 /* ChipsModuleFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE694C362C3D56090064C0C0 /* ChipsModuleFeature.swift */; };
 		CE9121D42C73CA7400ACDB72 /* InputAmountModuleFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9121D32C73CA7400ACDB72 /* InputAmountModuleFeature.swift */; };
+		CE9EE9792CF4579C00A5E596 /* ImageModuleFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9EE9782CF4579500A5E596 /* ImageModuleFeature.swift */; };
+		CE9EE97B2CF47C7B00A5E596 /* InputModuleFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9EE97A2CF47C7600A5E596 /* InputModuleFeature.swift */; };
+		CE9EE97E2CF4A3FA00A5E596 /* InputPINItemModuleFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9EE97D2CF4A3E400A5E596 /* InputPINItemModuleFeature.swift */; };
+		CE9EE9802CF4B5E600A5E596 /* InputPINModuleFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9EE97F2CF4B5E000A5E596 /* InputPINModuleFeature.swift */; };
+		CE9EE9822CF4BB2B00A5E596 /* InputSearchModuleFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9EE9812CF4BB2400A5E596 /* InputSearchModuleFeature.swift */; };
+		CE9EE9842CF4C06400A5E596 /* LabelModuleFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9EE9832CF4C05E00A5E596 /* LabelModuleFeature.swift */; };
 		CEA336052C36B1A400880A1F /* Components.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA336042C36B1A400880A1F /* Components.swift */; };
 		CEA3360C2C36C0BE00880A1F /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA3360B2C36C0BE00880A1F /* MainCoordinator.swift */; };
 		CEA3360E2C36C0E100880A1F /* ComponentsShowcaseCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA3360D2C36C0E100880A1F /* ComponentsShowcaseCoordinator.swift */; };
@@ -53,9 +62,21 @@
 		888955B62914108700A46293 /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		CE23F6B32C749CE1004D6CE6 /* HintModuleFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HintModuleFeature.swift; sourceTree = "<group>"; };
 		CE254A5A2C5CDAC20083EF57 /* BannerModuleFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerModuleFeature.swift; sourceTree = "<group>"; };
+		CE2C64E62CF09334002A78CF /* CardModuleFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardModuleFeature.swift; sourceTree = "<group>"; };
 		CE3381802CEB839A00FABBC5 /* NavigationBarModuleFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBarModuleFeature.swift; sourceTree = "<group>"; };
+		CE4D2E692CEF5725000E7486 /* ios.designsystem */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = ios.designsystem; path = ../ios.designsystem; sourceTree = SOURCE_ROOT; };
+		CE4D2E6A2CEF572E000E7486 /* ios-resources-ui-components */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = "ios-resources-ui-components"; path = "../ios-resources-ui-components"; sourceTree = SOURCE_ROOT; };
+		CE4D2E6B2CEF5DA0000E7486 /* ButtonModuleFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonModuleFeature.swift; sourceTree = "<group>"; };
+		CE4D2E6E2CEF7295000E7486 /* ios-resources-colors */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = "ios-resources-colors"; path = "../ios-resources-colors"; sourceTree = SOURCE_ROOT; };
+		CE4D2E6F2CEF75F0000E7486 /* ButtonIconModuleFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonIconModuleFeature.swift; sourceTree = "<group>"; };
 		CE694C362C3D56090064C0C0 /* ChipsModuleFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChipsModuleFeature.swift; sourceTree = "<group>"; };
 		CE9121D32C73CA7400ACDB72 /* InputAmountModuleFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputAmountModuleFeature.swift; sourceTree = "<group>"; };
+		CE9EE9782CF4579500A5E596 /* ImageModuleFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageModuleFeature.swift; sourceTree = "<group>"; };
+		CE9EE97A2CF47C7600A5E596 /* InputModuleFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputModuleFeature.swift; sourceTree = "<group>"; };
+		CE9EE97D2CF4A3E400A5E596 /* InputPINItemModuleFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputPINItemModuleFeature.swift; sourceTree = "<group>"; };
+		CE9EE97F2CF4B5E000A5E596 /* InputPINModuleFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputPINModuleFeature.swift; sourceTree = "<group>"; };
+		CE9EE9812CF4BB2400A5E596 /* InputSearchModuleFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputSearchModuleFeature.swift; sourceTree = "<group>"; };
+		CE9EE9832CF4C05E00A5E596 /* LabelModuleFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelModuleFeature.swift; sourceTree = "<group>"; };
 		CEA336042C36B1A400880A1F /* Components.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Components.swift; sourceTree = "<group>"; };
 		CEA3360B2C36C0BE00880A1F /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
 		CEA3360D2C36C0E100880A1F /* ComponentsShowcaseCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComponentsShowcaseCoordinator.swift; sourceTree = "<group>"; };
@@ -104,6 +125,9 @@
 		8889557629140FFC00A46293 = {
 			isa = PBXGroup;
 			children = (
+				CE4D2E6E2CEF7295000E7486 /* ios-resources-colors */,
+				CE4D2E6A2CEF572E000E7486 /* ios-resources-ui-components */,
+				CE4D2E692CEF5725000E7486 /* ios.designsystem */,
 				8889558129140FFC00A46293 /* OrnamentApp */,
 				8889558029140FFC00A46293 /* Products */,
 				888955B82914112F00A46293 /* Frameworks */,
@@ -164,6 +188,7 @@
 		CE33817A2CEB4FFE00FABBC5 /* InputSearchModule */ = {
 			isa = PBXGroup;
 			children = (
+				CE9EE9812CF4BB2400A5E596 /* InputSearchModuleFeature.swift */,
 			);
 			path = InputSearchModule;
 			sourceTree = "<group>";
@@ -178,6 +203,7 @@
 		CE33817C2CEB503800FABBC5 /* InputPINModule */ = {
 			isa = PBXGroup;
 			children = (
+				CE9EE97F2CF4B5E000A5E596 /* InputPINModuleFeature.swift */,
 			);
 			path = InputPINModule;
 			sourceTree = "<group>";
@@ -257,6 +283,14 @@
 			path = HintModule;
 			sourceTree = "<group>";
 		};
+		CE9EE97C2CF49E1500A5E596 /* InputPINItemModule */ = {
+			isa = PBXGroup;
+			children = (
+				CE9EE97D2CF4A3E400A5E596 /* InputPINItemModuleFeature.swift */,
+			);
+			path = InputPINItemModule;
+			sourceTree = "<group>";
+		};
 		CEA336032C36B18800880A1F /* Enums */ = {
 			isa = PBXGroup;
 			children = (
@@ -292,6 +326,7 @@
 		CEC824B62C4E90BE00891643 /* ButtonIconModule */ = {
 			isa = PBXGroup;
 			children = (
+				CE4D2E6F2CEF75F0000E7486 /* ButtonIconModuleFeature.swift */,
 			);
 			path = ButtonIconModule;
 			sourceTree = "<group>";
@@ -299,6 +334,7 @@
 		CEC824C02C512D4000891643 /* ImageModule */ = {
 			isa = PBXGroup;
 			children = (
+				CE9EE9782CF4579500A5E596 /* ImageModuleFeature.swift */,
 			);
 			path = ImageModule;
 			sourceTree = "<group>";
@@ -342,6 +378,7 @@
 				CEE15C4B2C3FD759008E6D8C /* InputOTPModule */,
 				CE33817B2CEB502800FABBC5 /* InputAddCardModule */,
 				CE33817C2CEB503800FABBC5 /* InputPINModule */,
+				CE9EE97C2CF49E1500A5E596 /* InputPINItemModule */,
 				CEC824C02C512D4000891643 /* ImageModule */,
 				CEB9EE302CE782C3008B67ED /* LoaderModule */,
 				CE5AE5222C5385AD00DD7BC4 /* NavigationBarModule */,
@@ -384,6 +421,7 @@
 		CEF1F9E12C57BC6A00D0D5D2 /* ButtonModule */ = {
 			isa = PBXGroup;
 			children = (
+				CE4D2E6B2CEF5DA0000E7486 /* ButtonModuleFeature.swift */,
 			);
 			path = ButtonModule;
 			sourceTree = "<group>";
@@ -391,6 +429,7 @@
 		CEF1F9E22C57BC7900D0D5D2 /* CardModule */ = {
 			isa = PBXGroup;
 			children = (
+				CE2C64E62CF09334002A78CF /* CardModuleFeature.swift */,
 			);
 			path = CardModule;
 			sourceTree = "<group>";
@@ -398,6 +437,7 @@
 		CEF1F9E42C57CD1500D0D5D2 /* LabelModule */ = {
 			isa = PBXGroup;
 			children = (
+				CE9EE9832CF4C05E00A5E596 /* LabelModuleFeature.swift */,
 			);
 			path = LabelModule;
 			sourceTree = "<group>";
@@ -475,6 +515,7 @@
 		CEF2DE6F2C414FD00065C1BD /* InputModule */ = {
 			isa = PBXGroup;
 			children = (
+				CE9EE97A2CF47C7600A5E596 /* InputModuleFeature.swift */,
 			);
 			path = InputModule;
 			sourceTree = "<group>";
@@ -565,6 +606,7 @@
 				CE254A5B2C5CDAC20083EF57 /* BannerModuleFeature.swift in Sources */,
 				CEA3360E2C36C0E100880A1F /* ComponentsShowcaseCoordinator.swift in Sources */,
 				CEB9EE2F2CE76F72008B67ED /* BaseModuleFeature.swift in Sources */,
+				CE9EE97E2CF4A3FA00A5E596 /* InputPINItemModuleFeature.swift in Sources */,
 				CED4CA9C2CE625A2009019A8 /* ModuleFlow.swift in Sources */,
 				CEB9EE322CE782DB008B67ED /* LoaderModuleFeature.swift in Sources */,
 				CE9121D42C73CA7400ACDB72 /* InputAmountModuleFeature.swift in Sources */,
@@ -572,15 +614,23 @@
 				CE694C372C3D56090064C0C0 /* ChipsModuleFeature.swift in Sources */,
 				34C3999E2C5B85D400C98DBC /* BadgeModuleFeature.swift in Sources */,
 				CEF1FA322C57D9DE00D0D5D2 /* RowViewExample.swift in Sources */,
+				CE2C64E72CF0933E002A78CF /* CardModuleFeature.swift in Sources */,
 				348C53932C7621BE00ACEA5C /* SegmentControlModuleFeature.swift in Sources */,
 				CEA3360C2C36C0BE00880A1F /* MainCoordinator.swift in Sources */,
 				CEEB5E622C356802000E0215 /* ComponentsShowcaseFeature.swift in Sources */,
 				CEA4E2292C37CF700069707C /* ButtonAuthModuleFeature.swift in Sources */,
+				CE9EE9822CF4BB2B00A5E596 /* InputSearchModuleFeature.swift in Sources */,
 				8889558329140FFC00A46293 /* AppDelegate.swift in Sources */,
 				348C538C2C73BCF900ACEA5C /* ChipsCreationService.swift in Sources */,
 				CEF1FA302C57D9D700D0D5D2 /* RowCellExample.swift in Sources */,
+				CE9EE97B2CF47C7B00A5E596 /* InputModuleFeature.swift in Sources */,
 				CE3381812CEB83A100FABBC5 /* NavigationBarModuleFeature.swift in Sources */,
+				CE9EE9792CF4579C00A5E596 /* ImageModuleFeature.swift in Sources */,
+				CE9EE9842CF4C06400A5E596 /* LabelModuleFeature.swift in Sources */,
+				CE4D2E6C2CEF5DA7000E7486 /* ButtonModuleFeature.swift in Sources */,
+				CE9EE9802CF4B5E600A5E596 /* InputPINModuleFeature.swift in Sources */,
 				888955B72914108700A46293 /* SceneDelegate.swift in Sources */,
+				CE4D2E702CEF75F7000E7486 /* ButtonIconModuleFeature.swift in Sources */,
 				CEA336052C36B1A400880A1F /* Components.swift in Sources */,
 				348C53962C774FC000ACEA5C /* SegmentItemModuleFeature.swift in Sources */,
 				348C53912C74AA3F00ACEA5C /* DividerModuleFeature.swift in Sources */,

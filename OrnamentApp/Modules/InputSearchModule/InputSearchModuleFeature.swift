@@ -5,11 +5,11 @@ import Extensions
 import DesignSystem
 import Components
 
-final class InputAmountModuleFeature: BaseModuleFeature {
+final class InputSearchModuleFeature: BaseModuleFeature {
     
     // MARK: - Private properties
     
-    private var inputAmountService: InputAmountViewService
+    private var inputSearchService: InputSearchService
     private var stateChipsUpdaters: [ChipsViewService] = []
     
     // MARK: - Init
@@ -19,20 +19,14 @@ final class InputAmountModuleFeature: BaseModuleFeature {
         tableDelegate: TableDelegate = .init(),
         navigationBarViewPropertiesService: NavigationBarViewPropertiesService = .init()
     ) {
-        inputAmountService = .init(
+        inputSearchService = .init(
             viewProperties: .init(
-                textFieldProperties: .init(
-                    placeholder: .init(string: "0")
+                textField: .init(
+                    placeholder: .init(string: "Placeholder")
                 ),
-                amountSymbol: .init(string: "₽"),
-                onTextChanged: { text in print(text) }
+                textDidChange: { text in print(text) }
             ),
             style: .init(state: .default)
-        )
-        inputAmountService.labelService.update(newText: .init(string: "Label"))
-        inputAmountService.hintService.update(
-            newText: .init(string: "Hint"),
-            newAdditionalText: .init(string: "Hint")
         )
         
         super.init(
@@ -46,11 +40,10 @@ final class InputAmountModuleFeature: BaseModuleFeature {
  
     override func createUpdaters() {
         stateChipsUpdaters = chipsCreationService.createChipsUpdaters(
-            chipTitles: ["Default", "Active", "Error", "Disabled"],
-            selectedIndex: .zero,
+            chipTitles: ["Default", "Active"],
             onChipTap: { [weak self] index in
                 guard let self = self else { return }
-                self.inputAmountService.update(newState: [.default, .active, .error, .disabled][index])
+                self.inputSearchService.update(newState: [.default, .active][index])
                 self.chipsCreationService.updateChipsSelection(for: &self.stateChipsUpdaters, selectedIndex: index)
             }
         )
@@ -61,8 +54,9 @@ final class InputAmountModuleFeature: BaseModuleFeature {
         
         let rowModels: [DSRowModel] = [
             .init(
-                leading: .atom(.view(inputAmountService.view)),
-                margings: .init(leading: 16),
+                center: .atom(.view(inputSearchService.view)),
+                centralBlockAlignment: .fill,
+                margings: .init(leading: 8, trailing: 8),
                 cellSelectionStyle: .none
             ),
             .init(
