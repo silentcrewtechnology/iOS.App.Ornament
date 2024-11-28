@@ -10,6 +10,9 @@ final class BannerModuleFeature: BaseModuleFeature, UITextFieldDelegate {
     // MARK: Private properties
 
     private var bannerService: BannerViewService
+    private var titleInputService: InputViewService?
+    private var subtitleInputService: InputViewService?
+    private var buttonInputService: InputViewService?
     private var variantUpdaters: [ChipsViewService] = []
     
     // MARK: - Init
@@ -48,51 +51,33 @@ final class BannerModuleFeature: BaseModuleFeature, UITextFieldDelegate {
     override func createRowModels() -> [DSRowModel] {
         let variantChips = variantUpdaters.map { updater -> (ChipsView) in updater.view }
         
-        let titleInputService = InputViewService(
+        titleInputService = InputViewService(
             viewProperties: .init(
                 textFieldViewProperties: .init(
                     text: .init(string: ""),
-                    delegateAssigningClosure: { textField in
-                        textField.delegate = self
-                        textField.addTarget(
-                            self,
-                            action: #selector(self.onTitleTextChange(textField:)),
-                            for: .editingChanged
-                        )
-                    }
-                )
+                    placeholder: .init(string: "Title")
+                ),
+                onTextChanged: { [weak self] text in self?.onTitleTextChange(with: text) }
             ),
             style: .init(state: .default, set: .simple)
         )
-        let subtitleInputService = InputViewService(
+        subtitleInputService = InputViewService(
             viewProperties: .init(
                 textFieldViewProperties: .init(
                     text: .init(string: ""),
-                    delegateAssigningClosure: { textField in
-                        textField.delegate = self
-                        textField.addTarget(
-                            self,
-                            action: #selector(self.onSubtitleTextChange(textField:)),
-                            for: .editingChanged
-                        )
-                    }
-                )
+                    placeholder: .init(string: "Subtitle")
+                ),
+                onTextChanged: { [weak self] text in self?.onSubtitleTextChange(with: text) }
             ),
             style: .init(state: .default, set: .simple)
         )
-        let buttonInputService = InputViewService(
+        buttonInputService = InputViewService(
             viewProperties: .init(
                 textFieldViewProperties: .init(
                     text: .init(string: ""),
-                    delegateAssigningClosure: { textField in
-                        textField.delegate = self
-                        textField.addTarget(
-                            self,
-                            action: #selector(self.onButtonTextChange(textField:)),
-                            for: .editingChanged
-                        )
-                    }
-                )
+                    placeholder: .init(string: "Button text")
+                ),
+                onTextChanged: { [weak self] text in self?.onButtonTextChange(with: text) }
             ),
             style: .init(state: .default, set: .simple)
         )
@@ -104,25 +89,22 @@ final class BannerModuleFeature: BaseModuleFeature, UITextFieldDelegate {
                 cellSelectionStyle: .none
             ),
             .init(
-                center: .atom(.inputView(titleInputService.viewProperties, titleInputService.style)),
+                center: .atom(.view(titleInputService?.view ?? .init())),
                 centralBlockAlignment: .fill,
-                margings: BannerConstants.zeroMargins,
-                cellSelectionStyle: .none,
-                height: 80
+                margings: .init(bottom: 8),
+                cellSelectionStyle: .none
             ),
             .init(
-                center: .atom(.inputView(subtitleInputService.viewProperties, subtitleInputService.style)),
+                center: .atom(.view(subtitleInputService?.view ?? .init())),
                 centralBlockAlignment: .fill,
-                margings: BannerConstants.zeroMargins,
-                cellSelectionStyle: .none,
-                height: 80
+                margings: .init(bottom: 8),
+                cellSelectionStyle: .none
             ),
             .init(
-                center: .atom(.inputView(buttonInputService.viewProperties, buttonInputService.style)),
+                center: .atom(.view(buttonInputService?.view ?? .init())),
                 centralBlockAlignment: .fill,
-                margings: BannerConstants.zeroMargins,
-                cellSelectionStyle: .none,
-                height: 80
+                margings: .init(bottom: 8),
+                cellSelectionStyle: .none
             ),
             .init(
                 center: .molecule(.horizontalChipsViews(variantChips)),
@@ -136,10 +118,10 @@ final class BannerModuleFeature: BaseModuleFeature, UITextFieldDelegate {
     
     // MARK: - Private methods
 
-    @objc private func onTitleTextChange(textField: UITextField) {
+    private func onTitleTextChange(with text: String?) {
         tableViewBuilder.view.beginUpdates()
         
-        guard let text = textField.text, !text.isEmpty else {
+        guard let text, !text.isEmpty else {
             bannerService.update(newTitle: .init())
             tableViewBuilder.view.endUpdates()
             return
@@ -149,10 +131,10 @@ final class BannerModuleFeature: BaseModuleFeature, UITextFieldDelegate {
         tableViewBuilder.view.endUpdates()
     }
     
-    @objc private func onSubtitleTextChange(textField: UITextField) {
+    private func onSubtitleTextChange(with text: String?) {
         tableViewBuilder.view.beginUpdates()
         
-        guard let text = textField.text, !text.isEmpty else {
+        guard let text, !text.isEmpty else {
             bannerService.update(newSubtitle: .init())
             tableViewBuilder.view.endUpdates()
             return
@@ -162,10 +144,10 @@ final class BannerModuleFeature: BaseModuleFeature, UITextFieldDelegate {
         tableViewBuilder.view.endUpdates()
     }
     
-    @objc private func onButtonTextChange(textField: UITextField) {
+    private func onButtonTextChange(with text: String?) {
         tableViewBuilder.view.beginUpdates()
         
-        guard let text = textField.text, !text.isEmpty else {
+        guard let text, !text.isEmpty else {
             bannerService.update(newBottomButton: .init())
             tableViewBuilder.view.endUpdates()
             return

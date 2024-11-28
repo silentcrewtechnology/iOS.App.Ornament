@@ -63,9 +63,11 @@ final class ComponentsShowcaseCoordinator: RootCoordinatorProtocol {
                 self?.nextScreenFeature = BannerModuleFeature()
                 screenTitle = Components.banner.rawValue
             case .button:
-                return
+                self?.nextScreenFeature = ButtonModuleFeature()
+                screenTitle = Components.button.rawValue
             case .buttonIcon:
-                return
+                self?.nextScreenFeature = ButtonIconModuleFeature()
+                screenTitle = Components.buttonIcon.rawValue
             case .buttonPay:
                 self?.nextScreenFeature = ButtonPayModuleFeature()
                 screenTitle = Components.buttonPay.rawValue
@@ -73,7 +75,8 @@ final class ComponentsShowcaseCoordinator: RootCoordinatorProtocol {
                 self?.nextScreenFeature = ButtonAuthModuleFeature()
                 screenTitle = Components.buttonAuth.rawValue
             case .card:
-                return
+                self?.nextScreenFeature = CardModuleFeature()
+                screenTitle = Components.card.rawValue
             case .checkbox:
                 return
             case .chips:
@@ -86,13 +89,16 @@ final class ComponentsShowcaseCoordinator: RootCoordinatorProtocol {
                 self?.nextScreenFeature = HintModuleFeature()
                 screenTitle = Components.hint.rawValue
             case .label:
-                return
+                self?.nextScreenFeature = LabelModuleFeature()
+                screenTitle = Components.label.rawValue
             case .input:
-                return
+                self?.nextScreenFeature = InputModuleFeature()
+                screenTitle = Components.input.rawValue
             case .inputTextarea:
                 break
             case .inputSearch:
-                return
+                self?.nextScreenFeature = InputSearchModuleFeature()
+                screenTitle = Components.inputSearch.rawValue
             case .inputContryCode:
                 return
             case .inputAmount:
@@ -105,9 +111,14 @@ final class ComponentsShowcaseCoordinator: RootCoordinatorProtocol {
             case .inputAddCard:
                 return
             case .inputPIN:
-                return
+                self?.nextScreenFeature = InputPINModuleFeature()
+                screenTitle = Components.inputPIN.rawValue
+            case .inputPINItem:
+                self?.nextScreenFeature = InputPINItemModuleFeature()
+                screenTitle = Components.inputPINItem.rawValue
             case .image:
-                return
+                self?.nextScreenFeature = ImageModuleFeature()
+                screenTitle = Components.image.rawValue
             case .loader:
                 self?.nextScreenFeature = LoaderModuleFeature()
                 screenTitle = Components.loader.rawValue
@@ -135,7 +146,8 @@ final class ComponentsShowcaseCoordinator: RootCoordinatorProtocol {
             case .tile:
                 return
             case .title:
-                return
+                self?.nextScreenFeature = TitleModuleFeature()
+                screenTitle = Components.title.rawValue
             case .toggle:
                 return
             }

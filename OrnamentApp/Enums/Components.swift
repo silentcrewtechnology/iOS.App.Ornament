@@ -30,6 +30,7 @@ enum Components: String, CaseIterable {
     case inputOTP = "Input OTP"
     case inputAddCard = "Input add card"
     case inputPIN = "Input PIN"
+    case inputPINItem = "Input PIN item"
     case image = "Image"
     case loader = "Loader"
     case navigationBar = "Navigation bar"
