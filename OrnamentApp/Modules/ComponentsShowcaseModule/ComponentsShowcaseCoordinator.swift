@@ -146,7 +146,8 @@ final class ComponentsShowcaseCoordinator: RootCoordinatorProtocol {
             case .tile:
                 return
             case .title:
-                return
+                self?.nextScreenFeature = TitleModuleFeature()
+                screenTitle = Components.title.rawValue
             case .toggle:
                 return
             }
