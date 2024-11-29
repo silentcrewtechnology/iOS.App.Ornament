@@ -23,6 +23,7 @@
 		CE3381812CEB83A100FABBC5 /* NavigationBarModuleFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3381802CEB839A00FABBC5 /* NavigationBarModuleFeature.swift */; };
 		CE4D2E6C2CEF5DA7000E7486 /* ButtonModuleFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4D2E6B2CEF5DA0000E7486 /* ButtonModuleFeature.swift */; };
 		CE4D2E702CEF75F7000E7486 /* ButtonIconModuleFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4D2E6F2CEF75F0000E7486 /* ButtonIconModuleFeature.swift */; };
+		CE6692C82CF8B2F200B68634 /* CheckboxModuleFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6692C72CF8B2E500B68634 /* CheckboxModuleFeature.swift */; };
 		CE694C372C3D56090064C0C0 /* ChipsModuleFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE694C362C3D56090064C0C0 /* ChipsModuleFeature.swift */; };
 		CE9121D42C73CA7400ACDB72 /* InputAmountModuleFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9121D32C73CA7400ACDB72 /* InputAmountModuleFeature.swift */; };
 		CE9EE9792CF4579C00A5E596 /* ImageModuleFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9EE9782CF4579500A5E596 /* ImageModuleFeature.swift */; };
@@ -67,6 +68,7 @@
 		CE3381802CEB839A00FABBC5 /* NavigationBarModuleFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBarModuleFeature.swift; sourceTree = "<group>"; };
 		CE4D2E6B2CEF5DA0000E7486 /* ButtonModuleFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonModuleFeature.swift; sourceTree = "<group>"; };
 		CE4D2E6F2CEF75F0000E7486 /* ButtonIconModuleFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonIconModuleFeature.swift; sourceTree = "<group>"; };
+		CE6692C72CF8B2E500B68634 /* CheckboxModuleFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckboxModuleFeature.swift; sourceTree = "<group>"; };
 		CE694C362C3D56090064C0C0 /* ChipsModuleFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChipsModuleFeature.swift; sourceTree = "<group>"; };
 		CE9121D32C73CA7400ACDB72 /* InputAmountModuleFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputAmountModuleFeature.swift; sourceTree = "<group>"; };
 		CE9EE9782CF4579500A5E596 /* ImageModuleFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageModuleFeature.swift; sourceTree = "<group>"; };
@@ -168,13 +170,6 @@
 			path = TitleModule;
 			sourceTree = "<group>";
 		};
-		CE2827AE2C3C1EBA00156F14 /* CheckboxModule */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = CheckboxModule;
-			sourceTree = "<group>";
-		};
 		CE3381792CEB4FE500FABBC5 /* InputTextAreaModule */ = {
 			isa = PBXGroup;
 			children = (
@@ -262,6 +257,14 @@
 			children = (
 			);
 			path = SnackBarModule;
+			sourceTree = "<group>";
+		};
+		CE6692C62CF8B2CF00B68634 /* CheckboxModule */ = {
+			isa = PBXGroup;
+			children = (
+				CE6692C72CF8B2E500B68634 /* CheckboxModuleFeature.swift */,
+			);
+			path = CheckboxModule;
 			sourceTree = "<group>";
 		};
 		CE694C352C3D4E2A0064C0C0 /* ChipsModule */ = {
@@ -361,7 +364,7 @@
 				CEF1F9E62C57D01A00D0D5D2 /* ButtonPayModule */,
 				CEA4E2272C37CF530069707C /* ButtonAuthModule */,
 				CEF1F9E22C57BC7900D0D5D2 /* CardModule */,
-				CE2827AE2C3C1EBA00156F14 /* CheckboxModule */,
+				CE6692C62CF8B2CF00B68634 /* CheckboxModule */,
 				CE694C352C3D4E2A0064C0C0 /* ChipsModule */,
 				CE4A7C082C3E8AAA00AA7EB4 /* DividerModule */,
 				CE8994652C6B44370019D130 /* HintModule */,
@@ -608,6 +611,7 @@
 				CEB9EE322CE782DB008B67ED /* LoaderModuleFeature.swift in Sources */,
 				CE9121D42C73CA7400ACDB72 /* InputAmountModuleFeature.swift in Sources */,
 				CE23F6B42C749CE1004D6CE6 /* HintModuleFeature.swift in Sources */,
+				CE6692C82CF8B2F200B68634 /* CheckboxModuleFeature.swift in Sources */,
 				CE694C372C3D56090064C0C0 /* ChipsModuleFeature.swift in Sources */,
 				34C3999E2C5B85D400C98DBC /* BadgeModuleFeature.swift in Sources */,
 				CEF1FA322C57D9DE00D0D5D2 /* RowViewExample.swift in Sources */,

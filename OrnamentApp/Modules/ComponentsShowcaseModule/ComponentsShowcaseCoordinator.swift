@@ -78,7 +78,8 @@ final class ComponentsShowcaseCoordinator: RootCoordinatorProtocol {
                 self?.nextScreenFeature = CardModuleFeature()
                 screenTitle = Components.card.rawValue
             case .checkbox:
-                return
+                self?.nextScreenFeature = CheckboxModuleFeature()
+                screenTitle = Components.checkbox.rawValue
             case .chips:
                 self?.nextScreenFeature = ChipsModuleFeature()
                 screenTitle = Components.chips.rawValue
