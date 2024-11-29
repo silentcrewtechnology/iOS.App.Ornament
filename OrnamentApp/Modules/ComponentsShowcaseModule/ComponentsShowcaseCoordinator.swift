@@ -129,7 +129,8 @@ final class ComponentsShowcaseCoordinator: RootCoordinatorProtocol {
             case .pageControl:
                 return
             case .radio:
-                return
+                self?.nextScreenFeature = RadioModuleFeature()
+                screenTitle = Components.radio.rawValue
             case .segmentControl:
                 self?.nextScreenFeature = SegmentControlModuleFeature()
                 screenTitle = Components.segmentControl.rawValue
