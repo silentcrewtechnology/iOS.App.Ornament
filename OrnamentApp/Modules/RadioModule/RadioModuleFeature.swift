@@ -5,13 +5,13 @@ import Extensions
 import DesignSystem
 import Components
 
-final class CheckboxModuleFeature: BaseModuleFeature {
+final class RadioModuleFeature: BaseModuleFeature {
     
     // MARK: - Private properties
     
-    private var checkboxService: CheckboxViewService
-    private var selectionChipsUpdaters: [ChipsViewService] = []
+    private var radioService: RadioViewService
     private var stateChipsUpdaters: [ChipsViewService] = []
+    private var selectionChipsUpdaters: [ChipsViewService] = []
     
     // MARK: - Init
     
@@ -20,11 +20,11 @@ final class CheckboxModuleFeature: BaseModuleFeature {
         tableDelegate: TableDelegate = .init(),
         navigationBarViewPropertiesService: NavigationBarViewPropertiesService = .init()
     ) {
-        checkboxService = .init(
+        radioService = .init(
             viewProperties: .init(
-                onTap: { _ in print("Checkbox tapped!") }
+                onTap: { _ in print("Radio tapped!") }
             ),
-            style: .init(selection: .off, state: .default)
+            style: .init(state: .default, selection: .off)
         )
         
         super.init(
@@ -37,41 +37,41 @@ final class CheckboxModuleFeature: BaseModuleFeature {
     // MARK: Methods
  
     override func createUpdaters() {
-        selectionChipsUpdaters = chipsCreationService.createChipsUpdaters(
-            chipTitles: ["Off", "On"],
-            onChipTap: { [weak self] index in
-                guard let self = self else { return }
-                self.checkboxService.update(newSelection: [.off, .on][index])
-                self.chipsCreationService.updateChipsSelection(for: &self.selectionChipsUpdaters, selectedIndex: index)
-            }
-        )
-        
         stateChipsUpdaters = chipsCreationService.createChipsUpdaters(
             chipTitles: ["Default", "Pressed", "Disabled"],
             onChipTap: { [weak self] index in
                 guard let self = self else { return }
-                self.checkboxService.update(newState: [.default, .pressed, .disabled][index])
+                self.radioService.update(newState: [.default, .pressed, .disabled][index])
                 self.chipsCreationService.updateChipsSelection(for: &self.stateChipsUpdaters, selectedIndex: index)
+            }
+        )
+        
+        selectionChipsUpdaters = chipsCreationService.createChipsUpdaters(
+            chipTitles: ["Off", "On"],
+            onChipTap: { [weak self] index in
+                guard let self = self else { return }
+                self.radioService.update(newSelection: [.off, .on][index])
+                self.chipsCreationService.updateChipsSelection(for: &self.selectionChipsUpdaters, selectedIndex: index)
             }
         )
     }
     
     override func createRowModels() -> [DSRowModel] {
-        let selectionChips = selectionChipsUpdaters.map { updater -> (ChipsView) in updater.view }
         let stateChips = stateChipsUpdaters.map { updater -> (ChipsView) in updater.view }
+        let selectionChips = selectionChipsUpdaters.map { updater -> (ChipsView) in updater.view }
         
         let rowModels: [DSRowModel] = [
             .init(
-                leading: .atom(.view(checkboxService.view)),
-                cellSelectionStyle: .none
-            ),
-            .init(
-                center: .molecule(.horizontalChipsViews(selectionChips)),
-                centralBlockAlignment: .fill,
+                leading: .atom(.view(radioService.view)),
                 cellSelectionStyle: .none
             ),
             .init(
                 center: .molecule(.horizontalChipsViews(stateChips)),
+                centralBlockAlignment: .fill,
+                cellSelectionStyle: .none
+            ),
+            .init(
+                center: .molecule(.horizontalChipsViews(selectionChips)),
                 centralBlockAlignment: .fill,
                 cellSelectionStyle: .none
             )

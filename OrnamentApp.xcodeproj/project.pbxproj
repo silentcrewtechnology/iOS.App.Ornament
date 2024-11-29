@@ -39,6 +39,7 @@
 		CEA4E2292C37CF700069707C /* ButtonAuthModuleFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA4E2282C37CF700069707C /* ButtonAuthModuleFeature.swift */; };
 		CEB9EE2F2CE76F72008B67ED /* BaseModuleFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB9EE2E2CE76F70008B67ED /* BaseModuleFeature.swift */; };
 		CEB9EE322CE782DB008B67ED /* LoaderModuleFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB9EE312CE782D4008B67ED /* LoaderModuleFeature.swift */; };
+		CEC5F8502CF9B10F004C0B8A /* RadioModuleFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC5F84F2CF9B10A004C0B8A /* RadioModuleFeature.swift */; };
 		CED4CA9C2CE625A2009019A8 /* ModuleFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED4CA9B2CE62593009019A8 /* ModuleFlow.swift */; };
 		CEDF50FE2CF86E8100160278 /* TitleModuleFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDF50FD2CF86E7700160278 /* TitleModuleFeature.swift */; };
 		CEEB5E5B2C356246000E0215 /* ArchitectureTableView in Frameworks */ = {isa = PBXBuildFile; productRef = CEEB5E5A2C356246000E0215 /* ArchitectureTableView */; };
@@ -83,6 +84,7 @@
 		CEA4E2282C37CF700069707C /* ButtonAuthModuleFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonAuthModuleFeature.swift; sourceTree = "<group>"; };
 		CEB9EE2E2CE76F70008B67ED /* BaseModuleFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseModuleFeature.swift; sourceTree = "<group>"; };
 		CEB9EE312CE782D4008B67ED /* LoaderModuleFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoaderModuleFeature.swift; sourceTree = "<group>"; };
+		CEC5F84F2CF9B10A004C0B8A /* RadioModuleFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioModuleFeature.swift; sourceTree = "<group>"; };
 		CED4CA9B2CE62593009019A8 /* ModuleFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModuleFlow.swift; sourceTree = "<group>"; };
 		CEDF50FD2CF86E7700160278 /* TitleModuleFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleModuleFeature.swift; sourceTree = "<group>"; };
 		CEEB5E612C356801000E0215 /* ComponentsShowcaseFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComponentsShowcaseFeature.swift; sourceTree = "<group>"; };
@@ -323,6 +325,14 @@
 			path = LoaderModule;
 			sourceTree = "<group>";
 		};
+		CEC5F84E2CF9B0FD004C0B8A /* RadioModule */ = {
+			isa = PBXGroup;
+			children = (
+				CEC5F84F2CF9B10A004C0B8A /* RadioModuleFeature.swift */,
+			);
+			path = RadioModule;
+			sourceTree = "<group>";
+		};
 		CEC824B62C4E90BE00891643 /* ButtonIconModule */ = {
 			isa = PBXGroup;
 			children = (
@@ -383,7 +393,7 @@
 				CEB9EE302CE782C3008B67ED /* LoaderModule */,
 				CE5AE5222C5385AD00DD7BC4 /* NavigationBarModule */,
 				CE33817D2CEB504D00FABBC5 /* PageControlModule */,
-				CEF1F9E72C57D02F00D0D5D2 /* RadioModule */,
+				CEC5F84E2CF9B0FD004C0B8A /* RadioModule */,
 				CEF1F9E82C57D04200D0D5D2 /* SegmentControlModule */,
 				348C53942C774B8F00ACEA5C /* SegmentItemModule */,
 				CE6439F12C58FAD8002491EA /* SnackBarModule */,
@@ -448,13 +458,6 @@
 				CEF8CD752C622F55009B8409 /* ButtonPayModuleFeature.swift */,
 			);
 			path = ButtonPayModule;
-			sourceTree = "<group>";
-		};
-		CEF1F9E72C57D02F00D0D5D2 /* RadioModule */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = RadioModule;
 			sourceTree = "<group>";
 		};
 		CEF1F9E82C57D04200D0D5D2 /* SegmentControlModule */ = {
@@ -630,6 +633,7 @@
 				CE9EE9792CF4579C00A5E596 /* ImageModuleFeature.swift in Sources */,
 				CE9EE9842CF4C06400A5E596 /* LabelModuleFeature.swift in Sources */,
 				CE4D2E6C2CEF5DA7000E7486 /* ButtonModuleFeature.swift in Sources */,
+				CEC5F8502CF9B10F004C0B8A /* RadioModuleFeature.swift in Sources */,
 				CE9EE9802CF4B5E600A5E596 /* InputPINModuleFeature.swift in Sources */,
 				888955B72914108700A46293 /* SceneDelegate.swift in Sources */,
 				CE4D2E702CEF75F7000E7486 /* ButtonIconModuleFeature.swift in Sources */,
