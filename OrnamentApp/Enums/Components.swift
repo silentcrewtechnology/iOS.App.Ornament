@@ -22,7 +22,7 @@ enum Components: String, CaseIterable {
     case hint = "Hint"
     case label = "Label"
     case input = "Input"
-    case inputTextarea = "Input textarea"
+    case inputTextArea = "Input textArea"
     case inputSearch = "Input search"
     case inputContryCode = "Input country code"
     case inputAmount = "Input amount"
