@@ -25,6 +25,7 @@
 		CE4D2E702CEF75F7000E7486 /* ButtonIconModuleFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4D2E6F2CEF75F0000E7486 /* ButtonIconModuleFeature.swift */; };
 		CE6692C82CF8B2F200B68634 /* CheckboxModuleFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6692C72CF8B2E500B68634 /* CheckboxModuleFeature.swift */; };
 		CE694C372C3D56090064C0C0 /* ChipsModuleFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE694C362C3D56090064C0C0 /* ChipsModuleFeature.swift */; };
+		CE8687AF2CFDAB2E00182C47 /* ToggleModuleFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8687AE2CFDAB2A00182C47 /* ToggleModuleFeature.swift */; };
 		CE9121D42C73CA7400ACDB72 /* InputAmountModuleFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9121D32C73CA7400ACDB72 /* InputAmountModuleFeature.swift */; };
 		CE9EE9792CF4579C00A5E596 /* ImageModuleFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9EE9782CF4579500A5E596 /* ImageModuleFeature.swift */; };
 		CE9EE97B2CF47C7B00A5E596 /* InputModuleFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9EE97A2CF47C7600A5E596 /* InputModuleFeature.swift */; };
@@ -72,6 +73,7 @@
 		CE4D2E6F2CEF75F0000E7486 /* ButtonIconModuleFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonIconModuleFeature.swift; sourceTree = "<group>"; };
 		CE6692C72CF8B2E500B68634 /* CheckboxModuleFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckboxModuleFeature.swift; sourceTree = "<group>"; };
 		CE694C362C3D56090064C0C0 /* ChipsModuleFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChipsModuleFeature.swift; sourceTree = "<group>"; };
+		CE8687AE2CFDAB2A00182C47 /* ToggleModuleFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToggleModuleFeature.swift; sourceTree = "<group>"; };
 		CE9121D32C73CA7400ACDB72 /* InputAmountModuleFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputAmountModuleFeature.swift; sourceTree = "<group>"; };
 		CE9EE9782CF4579500A5E596 /* ImageModuleFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageModuleFeature.swift; sourceTree = "<group>"; };
 		CE9EE97A2CF47C7600A5E596 /* InputModuleFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputModuleFeature.swift; sourceTree = "<group>"; };
@@ -233,13 +235,6 @@
 			path = DividerModule;
 			sourceTree = "<group>";
 		};
-		CE4A7C102C3E9E4100AA7EB4 /* ToggleModule */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ToggleModule;
-			sourceTree = "<group>";
-		};
 		CE4A7C132C3EBBD300AA7EB4 /* InputAmountModule */ = {
 			isa = PBXGroup;
 			children = (
@@ -277,6 +272,14 @@
 				CE694C362C3D56090064C0C0 /* ChipsModuleFeature.swift */,
 			);
 			path = ChipsModule;
+			sourceTree = "<group>";
+		};
+		CE8687AD2CFDAB1A00182C47 /* ToggleModule */ = {
+			isa = PBXGroup;
+			children = (
+				CE8687AE2CFDAB2A00182C47 /* ToggleModuleFeature.swift */,
+			);
+			path = ToggleModule;
 			sourceTree = "<group>";
 		};
 		CE8994652C6B44370019D130 /* HintModule */ = {
@@ -404,7 +407,7 @@
 				CE33817F2CEB507300FABBC5 /* TabsModule */,
 				CEF1F9EC2C57D0AC00D0D5D2 /* TileModule */,
 				CE15ECBA2C57A74400F148B7 /* TitleModule */,
-				CE4A7C102C3E9E4100AA7EB4 /* ToggleModule */,
+				CE8687AD2CFDAB1A00182C47 /* ToggleModule */,
 				CEEB5E602C35678D000E0215 /* ComponentsShowcaseModule */,
 				CEB9EE2E2CE76F70008B67ED /* BaseModuleFeature.swift */,
 				CED4CA9B2CE62593009019A8 /* ModuleFlow.swift */,
@@ -631,6 +634,7 @@
 				348C538C2C73BCF900ACEA5C /* ChipsCreationService.swift in Sources */,
 				CEF1FA302C57D9D700D0D5D2 /* RowCellExample.swift in Sources */,
 				CE9EE97B2CF47C7B00A5E596 /* InputModuleFeature.swift in Sources */,
+				CE8687AF2CFDAB2E00182C47 /* ToggleModuleFeature.swift in Sources */,
 				CE3381812CEB83A100FABBC5 /* NavigationBarModuleFeature.swift in Sources */,
 				CE9EE9792CF4579C00A5E596 /* ImageModuleFeature.swift in Sources */,
 				CE9EE9842CF4C06400A5E596 /* LabelModuleFeature.swift in Sources */,
