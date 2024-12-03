@@ -152,7 +152,8 @@ final class ComponentsShowcaseCoordinator: RootCoordinatorProtocol {
                 self?.nextScreenFeature = TitleModuleFeature()
                 screenTitle = Components.title.rawValue
             case .toggle:
-                return
+                self?.nextScreenFeature = ToggleModuleFeature()
+                screenTitle = Components.toggle.rawValue
             }
             
             self?.nextScreenFeature?.runNewFlow = moduleRunNewFlow
