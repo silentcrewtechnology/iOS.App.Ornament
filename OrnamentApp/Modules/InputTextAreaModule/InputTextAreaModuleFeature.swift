@@ -23,8 +23,7 @@ final class InputTextAreaModuleFeature: BaseModuleFeature {
     ) {
         inputTextAreaService = .init(
             viewProperties: .init(
-                placeholder: .init(string: "Placeholder"),
-                onTextChanged: { text in print(text) }
+                placeholder: .init(string: "Placeholder")
             ),
             style: .init(
                 state: .default,
@@ -32,7 +31,10 @@ final class InputTextAreaModuleFeature: BaseModuleFeature {
             )
         )
         inputTextAreaService.labelService.update(newText: .init(string: "Label"))
-        inputTextAreaService.hintService.update(newAdditionalText: .init(string: "n/n"))
+        inputTextAreaService.hintService.update(
+            newText: .init(string: "Hint"),
+            newAdditionalText: .init(string: "n/n")
+        )
         
         super.init(
             tableDataSource: tableDataSource,
@@ -44,6 +46,11 @@ final class InputTextAreaModuleFeature: BaseModuleFeature {
     // MARK: Methods
  
     override func createUpdaters() {
+        inputTextAreaService.update { [weak self] text in
+            self?.tableViewBuilder.view.beginUpdates()
+            print(text)
+            self?.tableViewBuilder.view.endUpdates()
+        }
         stateChipsUpdaters = chipsCreationService.createChipsUpdaters(
             chipTitles: ["Default", "Active", "Error", "Disabled"],
             onChipTap: { [weak self] index in
