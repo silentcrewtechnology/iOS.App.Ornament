@@ -95,8 +95,9 @@ final class ComponentsShowcaseCoordinator: RootCoordinatorProtocol {
             case .input:
                 self?.nextScreenFeature = InputModuleFeature()
                 screenTitle = Components.input.rawValue
-            case .inputTextarea:
-                break
+            case .inputTextArea:
+                self?.nextScreenFeature = InputTextAreaModuleFeature()
+                screenTitle = Components.inputTextArea.rawValue
             case .inputSearch:
                 self?.nextScreenFeature = InputSearchModuleFeature()
                 screenTitle = Components.inputSearch.rawValue

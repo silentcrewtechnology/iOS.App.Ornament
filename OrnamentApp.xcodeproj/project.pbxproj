@@ -40,6 +40,7 @@
 		CEB9EE2F2CE76F72008B67ED /* BaseModuleFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB9EE2E2CE76F70008B67ED /* BaseModuleFeature.swift */; };
 		CEB9EE322CE782DB008B67ED /* LoaderModuleFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB9EE312CE782D4008B67ED /* LoaderModuleFeature.swift */; };
 		CEC5F8502CF9B10F004C0B8A /* RadioModuleFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC5F84F2CF9B10A004C0B8A /* RadioModuleFeature.swift */; };
+		CEC5F8542CF9E5FB004C0B8A /* InputTextAreaModuleFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC5F8532CF9E5F1004C0B8A /* InputTextAreaModuleFeature.swift */; };
 		CED4CA9C2CE625A2009019A8 /* ModuleFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED4CA9B2CE62593009019A8 /* ModuleFlow.swift */; };
 		CEDF50FE2CF86E8100160278 /* TitleModuleFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDF50FD2CF86E7700160278 /* TitleModuleFeature.swift */; };
 		CEEB5E5B2C356246000E0215 /* ArchitectureTableView in Frameworks */ = {isa = PBXBuildFile; productRef = CEEB5E5A2C356246000E0215 /* ArchitectureTableView */; };
@@ -85,6 +86,7 @@
 		CEB9EE2E2CE76F70008B67ED /* BaseModuleFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseModuleFeature.swift; sourceTree = "<group>"; };
 		CEB9EE312CE782D4008B67ED /* LoaderModuleFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoaderModuleFeature.swift; sourceTree = "<group>"; };
 		CEC5F84F2CF9B10A004C0B8A /* RadioModuleFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioModuleFeature.swift; sourceTree = "<group>"; };
+		CEC5F8532CF9E5F1004C0B8A /* InputTextAreaModuleFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputTextAreaModuleFeature.swift; sourceTree = "<group>"; };
 		CED4CA9B2CE62593009019A8 /* ModuleFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModuleFlow.swift; sourceTree = "<group>"; };
 		CEDF50FD2CF86E7700160278 /* TitleModuleFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleModuleFeature.swift; sourceTree = "<group>"; };
 		CEEB5E612C356801000E0215 /* ComponentsShowcaseFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComponentsShowcaseFeature.swift; sourceTree = "<group>"; };
@@ -175,6 +177,7 @@
 		CE3381792CEB4FE500FABBC5 /* InputTextAreaModule */ = {
 			isa = PBXGroup;
 			children = (
+				CEC5F8532CF9E5F1004C0B8A /* InputTextAreaModuleFeature.swift */,
 			);
 			path = InputTextAreaModule;
 			sourceTree = "<group>";
@@ -638,6 +641,7 @@
 				888955B72914108700A46293 /* SceneDelegate.swift in Sources */,
 				CE4D2E702CEF75F7000E7486 /* ButtonIconModuleFeature.swift in Sources */,
 				CEA336052C36B1A400880A1F /* Components.swift in Sources */,
+				CEC5F8542CF9E5FB004C0B8A /* InputTextAreaModuleFeature.swift in Sources */,
 				348C53962C774FC000ACEA5C /* SegmentItemModuleFeature.swift in Sources */,
 				348C53912C74AA3F00ACEA5C /* DividerModuleFeature.swift in Sources */,
 				CEF8CD762C622F55009B8409 /* ButtonPayModuleFeature.swift in Sources */,
