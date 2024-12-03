@@ -86,6 +86,7 @@
 		CEB9EE2E2CE76F70008B67ED /* BaseModuleFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseModuleFeature.swift; sourceTree = "<group>"; };
 		CEB9EE312CE782D4008B67ED /* LoaderModuleFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoaderModuleFeature.swift; sourceTree = "<group>"; };
 		CEC5F84F2CF9B10A004C0B8A /* RadioModuleFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioModuleFeature.swift; sourceTree = "<group>"; };
+		CEC5F8532CF9E5F1004C0B8A /* InputTextAreaModuleFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputTextAreaModuleFeature.swift; sourceTree = "<group>"; };
 		CED4CA9B2CE62593009019A8 /* ModuleFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModuleFlow.swift; sourceTree = "<group>"; };
 		CEDF50FD2CF86E7700160278 /* TitleModuleFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleModuleFeature.swift; sourceTree = "<group>"; };
 		CEEB5E612C356801000E0215 /* ComponentsShowcaseFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComponentsShowcaseFeature.swift; sourceTree = "<group>"; };
