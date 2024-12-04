@@ -141,7 +141,11 @@ final class ComponentsShowcaseCoordinator: RootCoordinatorProtocol {
             case .snackBar:
                 return
             case .stepper:
-                return
+                self?.nextScreenFeature = StepperModuleFeature()
+                screenTitle = Components.stepper.rawValue
+            case .stepperItem:
+                self?.nextScreenFeature = StepperItemModuleFeature()
+                screenTitle = Components.stepperItem.rawValue
             case .stories:
                 return
             case .tabs:

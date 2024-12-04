@@ -40,6 +40,7 @@ enum Components: String, CaseIterable {
     case segmentItem = "Segment item"
     case snackBar = "SnackBar"
     case stepper = "Stepper"
+    case stepperItem = "Stepper item"
     case stories = "Stories"
     case tabs = "Tabs"
     case tile = "Tile"
