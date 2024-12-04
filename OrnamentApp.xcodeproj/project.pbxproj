@@ -16,6 +16,8 @@
 		8889558C29140FFE00A46293 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8889558B29140FFE00A46293 /* Assets.xcassets */; };
 		8889558F29140FFE00A46293 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8889558D29140FFE00A46293 /* LaunchScreen.storyboard */; };
 		888955B72914108700A46293 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 888955B62914108700A46293 /* SceneDelegate.swift */; };
+		CE0F19522CFF3E73003A77DC /* StepperItemModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0F19512CFF3E6E003A77DC /* StepperItemModule.swift */; };
+		CE0F19542CFF542B003A77DC /* StepperModuleFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0F19532CFF5426003A77DC /* StepperModuleFeature.swift */; };
 		CE23F6B42C749CE1004D6CE6 /* HintModuleFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE23F6B32C749CE1004D6CE6 /* HintModuleFeature.swift */; };
 		CE254A5B2C5CDAC20083EF57 /* BannerModuleFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE254A5A2C5CDAC20083EF57 /* BannerModuleFeature.swift */; };
 		CE2C64E72CF0933E002A78CF /* CardModuleFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2C64E62CF09334002A78CF /* CardModuleFeature.swift */; };
@@ -65,6 +67,8 @@
 		8889558E29140FFE00A46293 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8889559029140FFE00A46293 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		888955B62914108700A46293 /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		CE0F19512CFF3E6E003A77DC /* StepperItemModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepperItemModule.swift; sourceTree = "<group>"; };
+		CE0F19532CFF5426003A77DC /* StepperModuleFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepperModuleFeature.swift; sourceTree = "<group>"; };
 		CE23F6B32C749CE1004D6CE6 /* HintModuleFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HintModuleFeature.swift; sourceTree = "<group>"; };
 		CE254A5A2C5CDAC20083EF57 /* BannerModuleFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerModuleFeature.swift; sourceTree = "<group>"; };
 		CE2C64E62CF09334002A78CF /* CardModuleFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardModuleFeature.swift; sourceTree = "<group>"; };
@@ -166,6 +170,22 @@
 			children = (
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CE0F194E2CFF3D65003A77DC /* StepperModule */ = {
+			isa = PBXGroup;
+			children = (
+				CE0F19532CFF5426003A77DC /* StepperModuleFeature.swift */,
+			);
+			path = StepperModule;
+			sourceTree = "<group>";
+		};
+		CE0F19502CFF3D8C003A77DC /* StepperItemModule */ = {
+			isa = PBXGroup;
+			children = (
+				CE0F19512CFF3E6E003A77DC /* StepperItemModule.swift */,
+			);
+			path = StepperItemModule;
 			sourceTree = "<group>";
 		};
 		CE15ECBA2C57A74400F148B7 /* TitleModule */ = {
@@ -403,7 +423,8 @@
 				CEF1F9E82C57D04200D0D5D2 /* SegmentControlModule */,
 				348C53942C774B8F00ACEA5C /* SegmentItemModule */,
 				CE6439F12C58FAD8002491EA /* SnackBarModule */,
-				CEF1F9EA2C57D08300D0D5D2 /* StepperModule */,
+				CE0F194E2CFF3D65003A77DC /* StepperModule */,
+				CE0F19502CFF3D8C003A77DC /* StepperItemModule */,
 				CE33817E2CEB506500FABBC5 /* StoriesModule */,
 				CE33817F2CEB507300FABBC5 /* TabsModule */,
 				CEF1F9EC2C57D0AC00D0D5D2 /* TileModule */,
@@ -472,13 +493,6 @@
 				348C53922C7621BE00ACEA5C /* SegmentControlModuleFeature.swift */,
 			);
 			path = SegmentControlModule;
-			sourceTree = "<group>";
-		};
-		CEF1F9EA2C57D08300D0D5D2 /* StepperModule */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = StepperModule;
 			sourceTree = "<group>";
 		};
 		CEF1F9EC2C57D0AC00D0D5D2 /* TileModule */ = {
@@ -633,6 +647,7 @@
 				CE9EE9822CF4BB2B00A5E596 /* InputSearchModuleFeature.swift in Sources */,
 				8889558329140FFC00A46293 /* AppDelegate.swift in Sources */,
 				348C538C2C73BCF900ACEA5C /* ChipsCreationService.swift in Sources */,
+				CE0F19522CFF3E73003A77DC /* StepperItemModule.swift in Sources */,
 				CEF1FA302C57D9D700D0D5D2 /* RowCellExample.swift in Sources */,
 				CE9EE97B2CF47C7B00A5E596 /* InputModuleFeature.swift in Sources */,
 				CE8687AF2CFDAB2E00182C47 /* ToggleModuleFeature.swift in Sources */,
@@ -644,6 +659,7 @@
 				CE9EE9802CF4B5E600A5E596 /* InputPINModuleFeature.swift in Sources */,
 				888955B72914108700A46293 /* SceneDelegate.swift in Sources */,
 				CE4D2E702CEF75F7000E7486 /* ButtonIconModuleFeature.swift in Sources */,
+				CE0F19542CFF542B003A77DC /* StepperModuleFeature.swift in Sources */,
 				CEA336052C36B1A400880A1F /* Components.swift in Sources */,
 				CEC5F8542CF9E5FB004C0B8A /* InputTextAreaModuleFeature.swift in Sources */,
 				348C53962C774FC000ACEA5C /* SegmentItemModuleFeature.swift in Sources */,
