@@ -147,7 +147,8 @@ final class ComponentsShowcaseCoordinator: RootCoordinatorProtocol {
                 self?.nextScreenFeature = StepperItemModuleFeature()
                 screenTitle = Components.stepperItem.rawValue
             case .stories:
-                return
+                self?.nextScreenFeature = StoriesModuleFeature()
+                screenTitle = Components.stories.rawValue
             case .tabs:
                 break
             case .tile:
