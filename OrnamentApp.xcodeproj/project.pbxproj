@@ -18,6 +18,7 @@
 		888955B72914108700A46293 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 888955B62914108700A46293 /* SceneDelegate.swift */; };
 		CE0F19522CFF3E73003A77DC /* StepperItemModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0F19512CFF3E6E003A77DC /* StepperItemModule.swift */; };
 		CE0F19542CFF542B003A77DC /* StepperModuleFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0F19532CFF5426003A77DC /* StepperModuleFeature.swift */; };
+		CE18EE3D2D01AB2200D12F1C /* TileModuleFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE18EE3C2D01AB1E00D12F1C /* TileModuleFeature.swift */; };
 		CE23F6B42C749CE1004D6CE6 /* HintModuleFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE23F6B32C749CE1004D6CE6 /* HintModuleFeature.swift */; };
 		CE254A5B2C5CDAC20083EF57 /* BannerModuleFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE254A5A2C5CDAC20083EF57 /* BannerModuleFeature.swift */; };
 		CE2C64E72CF0933E002A78CF /* CardModuleFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2C64E62CF09334002A78CF /* CardModuleFeature.swift */; };
@@ -69,6 +70,7 @@
 		888955B62914108700A46293 /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		CE0F19512CFF3E6E003A77DC /* StepperItemModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepperItemModule.swift; sourceTree = "<group>"; };
 		CE0F19532CFF5426003A77DC /* StepperModuleFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepperModuleFeature.swift; sourceTree = "<group>"; };
+		CE18EE3C2D01AB1E00D12F1C /* TileModuleFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TileModuleFeature.swift; sourceTree = "<group>"; };
 		CE23F6B32C749CE1004D6CE6 /* HintModuleFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HintModuleFeature.swift; sourceTree = "<group>"; };
 		CE254A5A2C5CDAC20083EF57 /* BannerModuleFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerModuleFeature.swift; sourceTree = "<group>"; };
 		CE2C64E62CF09334002A78CF /* CardModuleFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardModuleFeature.swift; sourceTree = "<group>"; };
@@ -194,6 +196,14 @@
 				CEDF50FD2CF86E7700160278 /* TitleModuleFeature.swift */,
 			);
 			path = TitleModule;
+			sourceTree = "<group>";
+		};
+		CE18EE3B2D01AB1100D12F1C /* TileModule */ = {
+			isa = PBXGroup;
+			children = (
+				CE18EE3C2D01AB1E00D12F1C /* TileModuleFeature.swift */,
+			);
+			path = TileModule;
 			sourceTree = "<group>";
 		};
 		CE3381792CEB4FE500FABBC5 /* InputTextAreaModule */ = {
@@ -427,7 +437,7 @@
 				CE0F19502CFF3D8C003A77DC /* StepperItemModule */,
 				CE33817E2CEB506500FABBC5 /* StoriesModule */,
 				CE33817F2CEB507300FABBC5 /* TabsModule */,
-				CEF1F9EC2C57D0AC00D0D5D2 /* TileModule */,
+				CE18EE3B2D01AB1100D12F1C /* TileModule */,
 				CE15ECBA2C57A74400F148B7 /* TitleModule */,
 				CE8687AD2CFDAB1A00182C47 /* ToggleModule */,
 				CEEB5E602C35678D000E0215 /* ComponentsShowcaseModule */,
@@ -493,13 +503,6 @@
 				348C53922C7621BE00ACEA5C /* SegmentControlModuleFeature.swift */,
 			);
 			path = SegmentControlModule;
-			sourceTree = "<group>";
-		};
-		CEF1F9EC2C57D0AC00D0D5D2 /* TileModule */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = TileModule;
 			sourceTree = "<group>";
 		};
 		CEF1FA2A2C57D97D00D0D5D2 /* AuxiliaryModules */ = {
@@ -660,6 +663,7 @@
 				888955B72914108700A46293 /* SceneDelegate.swift in Sources */,
 				CE4D2E702CEF75F7000E7486 /* ButtonIconModuleFeature.swift in Sources */,
 				CE0F19542CFF542B003A77DC /* StepperModuleFeature.swift in Sources */,
+				CE18EE3D2D01AB2200D12F1C /* TileModuleFeature.swift in Sources */,
 				CEA336052C36B1A400880A1F /* Components.swift in Sources */,
 				CEC5F8542CF9E5FB004C0B8A /* InputTextAreaModuleFeature.swift in Sources */,
 				348C53962C774FC000ACEA5C /* SegmentItemModuleFeature.swift in Sources */,

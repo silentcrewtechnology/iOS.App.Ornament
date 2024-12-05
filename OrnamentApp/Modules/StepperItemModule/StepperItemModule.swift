@@ -21,7 +21,6 @@ final class StepperItemModuleFeature: BaseModuleFeature {
     ) {
         stepperItemService = .init(style: .init(state: .next))
         
-        
         super.init(
             tableDataSource: tableDataSource,
             tableDelegate: tableDelegate,
