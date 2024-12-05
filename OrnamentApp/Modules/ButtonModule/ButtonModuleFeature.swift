@@ -15,6 +15,8 @@ final class ButtonModuleFeature: BaseModuleFeature {
     private var variantChipsUpdaters: [ChipsViewService] = []
     private var stateChipsUpdaters: [ChipsViewService] = []
     private var iconChipsUpdaters: [ChipsViewService] = []
+    private var size: ButtonViewStyle.Size
+    private var icon: ButtonViewStyle.Icon
     
     // MARK: - Init
     
@@ -23,17 +25,19 @@ final class ButtonModuleFeature: BaseModuleFeature {
         tableDelegate: TableDelegate = .init(),
         navigationBarViewPropertiesService: NavigationBarViewPropertiesService = .init()
     ) {
+        size = .small
+        icon = .without
         buttonService = .init(
             viewProperties: .init(
                 attributedText: .init(string: "Label"),
                 onTap: { print("Button tapped!") }
             ),
             style: .init(
-                size: .small,
+                size: size,
                 color: .accent,
                 variant: .primary,
                 state: .default,
-                icon: .without
+                icon: icon
             )
         )
         
@@ -52,7 +56,9 @@ final class ButtonModuleFeature: BaseModuleFeature {
             onChipTap: { [weak self] index in
                 guard let self = self else { return }
                 self.tableViewBuilder.view.beginUpdates()
-                self.buttonService.update(newSize: [.small, .large][index])
+                size = [.small, .large][index]
+                if case .with = icon { icon = remakeIcon() }
+                self.buttonService.update(newSize: size, newIcon: icon)
                 self.chipsCreationService.updateChipsSelection(for: &self.sizeChipsUpdaters, selectedIndex: index)
                 self.tableViewBuilder.view.endUpdates()
             }
@@ -89,7 +95,8 @@ final class ButtonModuleFeature: BaseModuleFeature {
             chipTitles: ["Without icon", "With icon"],
             onChipTap: { [weak self] index in
                 guard let self = self else { return }
-                self.buttonService.update(newIcon: [.without, .with(.ic24PlayFilled)][index])
+                icon = [.without, remakeIcon()][index]
+                self.buttonService.update(newIcon: icon)
                 self.chipsCreationService.updateChipsSelection(for: &self.iconChipsUpdaters, selectedIndex: index)
             }
         )
@@ -135,5 +142,12 @@ final class ButtonModuleFeature: BaseModuleFeature {
         ]
         
         return rowModels
+    }
+    
+    private func remakeIcon() -> ButtonViewStyle.Icon {
+        switch size {
+        case .large: .with(.ic24Refresh)
+        case .small: .with(.ic16Refresh)
+        }
     }
 }
