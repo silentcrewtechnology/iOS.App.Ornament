@@ -139,7 +139,8 @@ final class ComponentsShowcaseCoordinator: RootCoordinatorProtocol {
                 self?.nextScreenFeature = SegmentItemModuleFeature()
                 screenTitle = Components.segmentItem.rawValue
             case .snackBar:
-                return
+                self?.nextScreenFeature = SnackBarModuleFeature()
+                screenTitle = Components.snackBar.rawValue
             case .stepper:
                 self?.nextScreenFeature = StepperModuleFeature()
                 screenTitle = Components.stepper.rawValue

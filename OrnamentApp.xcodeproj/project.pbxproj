@@ -47,6 +47,7 @@
 		CEC5F8542CF9E5FB004C0B8A /* InputTextAreaModuleFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC5F8532CF9E5F1004C0B8A /* InputTextAreaModuleFeature.swift */; };
 		CED4CA9C2CE625A2009019A8 /* ModuleFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED4CA9B2CE62593009019A8 /* ModuleFlow.swift */; };
 		CEDF50FE2CF86E8100160278 /* TitleModuleFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDF50FD2CF86E7700160278 /* TitleModuleFeature.swift */; };
+		CEE02DC22D03214900C0AF86 /* SnackBarModuleFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE02DC12D03214300C0AF86 /* SnackBarModuleFeature.swift */; };
 		CEEB5E5B2C356246000E0215 /* ArchitectureTableView in Frameworks */ = {isa = PBXBuildFile; productRef = CEEB5E5A2C356246000E0215 /* ArchitectureTableView */; };
 		CEEB5E622C356802000E0215 /* ComponentsShowcaseFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEB5E612C356801000E0215 /* ComponentsShowcaseFeature.swift */; };
 		CEEB5E672C3568B0000E0215 /* Extensions in Frameworks */ = {isa = PBXBuildFile; productRef = CEEB5E662C3568B0000E0215 /* Extensions */; };
@@ -98,6 +99,7 @@
 		CEC5F8532CF9E5F1004C0B8A /* InputTextAreaModuleFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputTextAreaModuleFeature.swift; sourceTree = "<group>"; };
 		CED4CA9B2CE62593009019A8 /* ModuleFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModuleFlow.swift; sourceTree = "<group>"; };
 		CEDF50FD2CF86E7700160278 /* TitleModuleFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleModuleFeature.swift; sourceTree = "<group>"; };
+		CEE02DC12D03214300C0AF86 /* SnackBarModuleFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnackBarModuleFeature.swift; sourceTree = "<group>"; };
 		CEEB5E612C356801000E0215 /* ComponentsShowcaseFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComponentsShowcaseFeature.swift; sourceTree = "<group>"; };
 		CEF1FA2C2C57D9A500D0D5D2 /* GibddFineCellsExample.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GibddFineCellsExample.swift; sourceTree = "<group>"; };
 		CEF1FA2F2C57D9D700D0D5D2 /* RowCellExample.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RowCellExample.swift; sourceTree = "<group>"; };
@@ -285,13 +287,6 @@
 			path = NavigationBarModule;
 			sourceTree = "<group>";
 		};
-		CE6439F12C58FAD8002491EA /* SnackBarModule */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = SnackBarModule;
-			sourceTree = "<group>";
-		};
 		CE6692C62CF8B2CF00B68634 /* CheckboxModule */ = {
 			isa = PBXGroup;
 			children = (
@@ -388,6 +383,14 @@
 			path = ImageModule;
 			sourceTree = "<group>";
 		};
+		CEE02DC02D03213600C0AF86 /* SnackBarModule */ = {
+			isa = PBXGroup;
+			children = (
+				CEE02DC12D03214300C0AF86 /* SnackBarModuleFeature.swift */,
+			);
+			path = SnackBarModule;
+			sourceTree = "<group>";
+		};
 		CEE15C4B2C3FD759008E6D8C /* InputOTPModule */ = {
 			isa = PBXGroup;
 			children = (
@@ -435,7 +438,7 @@
 				CEC5F84E2CF9B0FD004C0B8A /* RadioModule */,
 				CEF1F9E82C57D04200D0D5D2 /* SegmentControlModule */,
 				348C53942C774B8F00ACEA5C /* SegmentItemModule */,
-				CE6439F12C58FAD8002491EA /* SnackBarModule */,
+				CEE02DC02D03213600C0AF86 /* SnackBarModule */,
 				CE0F194E2CFF3D65003A77DC /* StepperModule */,
 				CE0F19502CFF3D8C003A77DC /* StepperItemModule */,
 				CE33817E2CEB506500FABBC5 /* StoriesModule */,
@@ -640,6 +643,7 @@
 				CEB9EE322CE782DB008B67ED /* LoaderModuleFeature.swift in Sources */,
 				CE9121D42C73CA7400ACDB72 /* InputAmountModuleFeature.swift in Sources */,
 				CE23F6B42C749CE1004D6CE6 /* HintModuleFeature.swift in Sources */,
+				CEE02DC22D03214900C0AF86 /* SnackBarModuleFeature.swift in Sources */,
 				CE6692C82CF8B2F200B68634 /* CheckboxModuleFeature.swift in Sources */,
 				CE694C372C3D56090064C0C0 /* ChipsModuleFeature.swift in Sources */,
 				34C3999E2C5B85D400C98DBC /* BadgeModuleFeature.swift in Sources */,
