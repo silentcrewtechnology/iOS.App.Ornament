@@ -152,7 +152,8 @@ final class ComponentsShowcaseCoordinator: RootCoordinatorProtocol {
             case .tabs:
                 break
             case .tile:
-                return
+                self?.nextScreenFeature = TileModuleFeature()
+                screenTitle = Components.tile.rawValue
             case .title:
                 self?.nextScreenFeature = TitleModuleFeature()
                 screenTitle = Components.title.rawValue
