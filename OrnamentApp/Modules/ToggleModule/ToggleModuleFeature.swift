@@ -38,10 +38,10 @@ final class ToggleModuleFeature: BaseModuleFeature {
  
     override func createUpdaters() {
         stateChipsUpdaters = chipsCreationService.createChipsUpdaters(
-            chipTitles: ["Default", "Pressed", "Disabled"],
+            chipTitles: ["Default", "Disabled"],
             onChipTap: { [weak self] index in
                 guard let self = self else { return }
-                self.toggleService.update(newState: [.default, .pressed, .disabled][index])
+                self.toggleService.update(newState: [.default, .disabled][index])
                 self.chipsCreationService.updateChipsSelection(for: &self.stateChipsUpdaters, selectedIndex: index)
             }
         )
