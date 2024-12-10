@@ -22,7 +22,9 @@
 		CE23F6B42C749CE1004D6CE6 /* HintModuleFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE23F6B32C749CE1004D6CE6 /* HintModuleFeature.swift */; };
 		CE254A5B2C5CDAC20083EF57 /* BannerModuleFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE254A5A2C5CDAC20083EF57 /* BannerModuleFeature.swift */; };
 		CE2C64E72CF0933E002A78CF /* CardModuleFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2C64E62CF09334002A78CF /* CardModuleFeature.swift */; };
+		CE3200C62D06F85100B526A1 /* InputOTPModuleFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3200C52D06F84900B526A1 /* InputOTPModuleFeature.swift */; };
 		CE32AC4B2C6CD561006969F2 /* Services in Frameworks */ = {isa = PBXBuildFile; productRef = CE32AC4A2C6CD561006969F2 /* Services */; };
+		CE32FFFF2D06DF9000B526A1 /* InputOTPItemModuleFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE32FFFE2D06DF8600B526A1 /* InputOTPItemModuleFeature.swift */; };
 		CE3381812CEB83A100FABBC5 /* NavigationBarModuleFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3381802CEB839A00FABBC5 /* NavigationBarModuleFeature.swift */; };
 		CE4D2E6C2CEF5DA7000E7486 /* ButtonModuleFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4D2E6B2CEF5DA0000E7486 /* ButtonModuleFeature.swift */; };
 		CE4D2E702CEF75F7000E7486 /* ButtonIconModuleFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4D2E6F2CEF75F0000E7486 /* ButtonIconModuleFeature.swift */; };
@@ -76,6 +78,8 @@
 		CE23F6B32C749CE1004D6CE6 /* HintModuleFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HintModuleFeature.swift; sourceTree = "<group>"; };
 		CE254A5A2C5CDAC20083EF57 /* BannerModuleFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerModuleFeature.swift; sourceTree = "<group>"; };
 		CE2C64E62CF09334002A78CF /* CardModuleFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardModuleFeature.swift; sourceTree = "<group>"; };
+		CE3200C52D06F84900B526A1 /* InputOTPModuleFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputOTPModuleFeature.swift; sourceTree = "<group>"; };
+		CE32FFFE2D06DF8600B526A1 /* InputOTPItemModuleFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputOTPItemModuleFeature.swift; sourceTree = "<group>"; };
 		CE3381802CEB839A00FABBC5 /* NavigationBarModuleFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBarModuleFeature.swift; sourceTree = "<group>"; };
 		CE4D2E6B2CEF5DA0000E7486 /* ButtonModuleFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonModuleFeature.swift; sourceTree = "<group>"; };
 		CE4D2E6F2CEF75F0000E7486 /* ButtonIconModuleFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonIconModuleFeature.swift; sourceTree = "<group>"; };
@@ -208,6 +212,22 @@
 				CE18EE3C2D01AB1E00D12F1C /* TileModuleFeature.swift */,
 			);
 			path = TileModule;
+			sourceTree = "<group>";
+		};
+		CE32FFFC2D06DF5200B526A1 /* InputOTPModule */ = {
+			isa = PBXGroup;
+			children = (
+				CE3200C52D06F84900B526A1 /* InputOTPModuleFeature.swift */,
+			);
+			path = InputOTPModule;
+			sourceTree = "<group>";
+		};
+		CE32FFFD2D06DF5D00B526A1 /* InputOTPItemModule */ = {
+			isa = PBXGroup;
+			children = (
+				CE32FFFE2D06DF8600B526A1 /* InputOTPItemModuleFeature.swift */,
+			);
+			path = InputOTPItemModule;
 			sourceTree = "<group>";
 		};
 		CE3381792CEB4FE500FABBC5 /* InputTextAreaModule */ = {
@@ -391,13 +411,6 @@
 			path = SnackBarModule;
 			sourceTree = "<group>";
 		};
-		CEE15C4B2C3FD759008E6D8C /* InputOTPModule */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = InputOTPModule;
-			sourceTree = "<group>";
-		};
 		CEE15C4E2C400F48008E6D8C /* InputContryCodeModule */ = {
 			isa = PBXGroup;
 			children = (
@@ -427,7 +440,8 @@
 				CEE15C4E2C400F48008E6D8C /* InputContryCodeModule */,
 				CE4A7C132C3EBBD300AA7EB4 /* InputAmountModule */,
 				CEF2DE6C2C41306F0065C1BD /* InputSelectModule */,
-				CEE15C4B2C3FD759008E6D8C /* InputOTPModule */,
+				CE32FFFC2D06DF5200B526A1 /* InputOTPModule */,
+				CE32FFFD2D06DF5D00B526A1 /* InputOTPItemModule */,
 				CE33817B2CEB502800FABBC5 /* InputAddCardModule */,
 				CE33817C2CEB503800FABBC5 /* InputPINModule */,
 				CE9EE97C2CF49E1500A5E596 /* InputPINItemModule */,
@@ -659,6 +673,7 @@
 				8889558329140FFC00A46293 /* AppDelegate.swift in Sources */,
 				348C538C2C73BCF900ACEA5C /* ChipsCreationService.swift in Sources */,
 				CE0F19522CFF3E73003A77DC /* StepperItemModule.swift in Sources */,
+				CE3200C62D06F85100B526A1 /* InputOTPModuleFeature.swift in Sources */,
 				CEF1FA302C57D9D700D0D5D2 /* RowCellExample.swift in Sources */,
 				CE9EE97B2CF47C7B00A5E596 /* InputModuleFeature.swift in Sources */,
 				CE8687AF2CFDAB2E00182C47 /* ToggleModuleFeature.swift in Sources */,
@@ -676,6 +691,7 @@
 				CEC5F8542CF9E5FB004C0B8A /* InputTextAreaModuleFeature.swift in Sources */,
 				348C53962C774FC000ACEA5C /* SegmentItemModuleFeature.swift in Sources */,
 				348C53912C74AA3F00ACEA5C /* DividerModuleFeature.swift in Sources */,
+				CE32FFFF2D06DF9000B526A1 /* InputOTPItemModuleFeature.swift in Sources */,
 				CEF8CD762C622F55009B8409 /* ButtonPayModuleFeature.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
