@@ -109,7 +109,11 @@ final class ComponentsShowcaseCoordinator: RootCoordinatorProtocol {
             case .inputSelect:
                 return
             case .inputOTP:
-                return
+                self?.nextScreenFeature = InputOTPModuleFeature()
+                screenTitle = Components.inputOTP.rawValue
+            case .inputOTPItem:
+                self?.nextScreenFeature = InputOTPItemModuleFeature()
+                screenTitle = Components.inputOTPItem.rawValue
             case .inputAddCard:
                 return
             case .inputPIN:

@@ -28,6 +28,7 @@ enum Components: String, CaseIterable {
     case inputAmount = "Input amount"
     case inputSelect = "Input select"
     case inputOTP = "Input OTP"
+    case inputOTPItem = "Input OTP item"
     case inputAddCard = "Input add card"
     case inputPIN = "Input PIN"
     case inputPINItem = "Input PIN item"
