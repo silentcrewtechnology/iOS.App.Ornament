@@ -58,6 +58,7 @@
 		CEF1FA302C57D9D700D0D5D2 /* RowCellExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF1FA2F2C57D9D700D0D5D2 /* RowCellExample.swift */; };
 		CEF1FA322C57D9DE00D0D5D2 /* RowViewExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF1FA312C57D9DE00D0D5D2 /* RowViewExample.swift */; };
 		CEF8CD762C622F55009B8409 /* ButtonPayModuleFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF8CD752C622F55009B8409 /* ButtonPayModuleFeature.swift */; };
+		D87970612D0742BF009454E2 /* InputAddCardModuleFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = D87970602D0742BF009454E2 /* InputAddCardModuleFeature.swift */; };
 		D8A9B7EB2D00ADE600F1423B /* StoriesModuleFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8A9B7EA2D00ADE600F1423B /* StoriesModuleFeature.swift */; };
 /* End PBXBuildFile section */
 
@@ -111,6 +112,7 @@
 		CEF1FA2F2C57D9D700D0D5D2 /* RowCellExample.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RowCellExample.swift; sourceTree = "<group>"; };
 		CEF1FA312C57D9DE00D0D5D2 /* RowViewExample.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RowViewExample.swift; sourceTree = "<group>"; };
 		CEF8CD752C622F55009B8409 /* ButtonPayModuleFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonPayModuleFeature.swift; sourceTree = "<group>"; };
+		D87970602D0742BF009454E2 /* InputAddCardModuleFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputAddCardModuleFeature.swift; sourceTree = "<group>"; };
 		D8A9B7EA2D00ADE600F1423B /* StoriesModuleFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoriesModuleFeature.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -251,6 +253,7 @@
 		CE33817B2CEB502800FABBC5 /* InputAddCardModule */ = {
 			isa = PBXGroup;
 			children = (
+				D87970602D0742BF009454E2 /* InputAddCardModuleFeature.swift */,
 			);
 			path = InputAddCardModule;
 			sourceTree = "<group>";
@@ -658,6 +661,7 @@
 				CE9EE97E2CF4A3FA00A5E596 /* InputPINItemModuleFeature.swift in Sources */,
 				CED4CA9C2CE625A2009019A8 /* ModuleFlow.swift in Sources */,
 				CEB9EE322CE782DB008B67ED /* LoaderModuleFeature.swift in Sources */,
+				D87970612D0742BF009454E2 /* InputAddCardModuleFeature.swift in Sources */,
 				CE9121D42C73CA7400ACDB72 /* InputAmountModuleFeature.swift in Sources */,
 				CE23F6B42C749CE1004D6CE6 /* HintModuleFeature.swift in Sources */,
 				CEE02DC22D03214900C0AF86 /* SnackBarModuleFeature.swift in Sources */,
