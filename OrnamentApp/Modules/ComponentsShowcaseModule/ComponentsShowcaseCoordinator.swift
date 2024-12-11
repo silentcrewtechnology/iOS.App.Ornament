@@ -116,7 +116,8 @@ final class ComponentsShowcaseCoordinator: RootCoordinatorProtocol {
                 self?.nextScreenFeature = InputOTPItemModuleFeature()
                 screenTitle = Components.inputOTPItem.rawValue
             case .inputAddCard:
-                return
+                self?.nextScreenFeature = InputAddCardModuleFeature()
+                screenTitle = Components.inputAddCard.rawValue
             case .inputPIN:
                 self?.nextScreenFeature = InputPINModuleFeature()
                 screenTitle = Components.inputPIN.rawValue
