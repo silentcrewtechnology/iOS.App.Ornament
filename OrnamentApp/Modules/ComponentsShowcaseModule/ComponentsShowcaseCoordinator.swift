@@ -107,7 +107,8 @@ final class ComponentsShowcaseCoordinator: RootCoordinatorProtocol {
                 self?.nextScreenFeature = InputAmountModuleFeature()
                 screenTitle = Components.inputAmount.rawValue
             case .inputSelect:
-                return
+                self?.nextScreenFeature = InputSelectModuleFeature()
+                screenTitle = Components.inputSelect.rawValue
             case .inputOTP:
                 self?.nextScreenFeature = InputOTPModuleFeature()
                 screenTitle = Components.inputOTP.rawValue

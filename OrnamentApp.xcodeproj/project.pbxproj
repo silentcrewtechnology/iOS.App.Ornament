@@ -28,6 +28,7 @@
 		CE3381812CEB83A100FABBC5 /* NavigationBarModuleFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3381802CEB839A00FABBC5 /* NavigationBarModuleFeature.swift */; };
 		CE4D2E6C2CEF5DA7000E7486 /* ButtonModuleFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4D2E6B2CEF5DA0000E7486 /* ButtonModuleFeature.swift */; };
 		CE4D2E702CEF75F7000E7486 /* ButtonIconModuleFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4D2E6F2CEF75F0000E7486 /* ButtonIconModuleFeature.swift */; };
+		CE585B0F2D0883ED000BC559 /* InputSelectModuleFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE585B0E2D0883E5000BC559 /* InputSelectModuleFeature.swift */; };
 		CE6692C82CF8B2F200B68634 /* CheckboxModuleFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6692C72CF8B2E500B68634 /* CheckboxModuleFeature.swift */; };
 		CE694C372C3D56090064C0C0 /* ChipsModuleFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE694C362C3D56090064C0C0 /* ChipsModuleFeature.swift */; };
 		CE8687AF2CFDAB2E00182C47 /* ToggleModuleFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8687AE2CFDAB2A00182C47 /* ToggleModuleFeature.swift */; };
@@ -83,6 +84,7 @@
 		CE3381802CEB839A00FABBC5 /* NavigationBarModuleFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBarModuleFeature.swift; sourceTree = "<group>"; };
 		CE4D2E6B2CEF5DA0000E7486 /* ButtonModuleFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonModuleFeature.swift; sourceTree = "<group>"; };
 		CE4D2E6F2CEF75F0000E7486 /* ButtonIconModuleFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonIconModuleFeature.swift; sourceTree = "<group>"; };
+		CE585B0E2D0883E5000BC559 /* InputSelectModuleFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputSelectModuleFeature.swift; sourceTree = "<group>"; };
 		CE6692C72CF8B2E500B68634 /* CheckboxModuleFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckboxModuleFeature.swift; sourceTree = "<group>"; };
 		CE694C362C3D56090064C0C0 /* ChipsModuleFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChipsModuleFeature.swift; sourceTree = "<group>"; };
 		CE8687AE2CFDAB2A00182C47 /* ToggleModuleFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToggleModuleFeature.swift; sourceTree = "<group>"; };
@@ -299,6 +301,14 @@
 			path = InputAmountModule;
 			sourceTree = "<group>";
 		};
+		CE585B0D2D0883CD000BC559 /* InputSelectModule */ = {
+			isa = PBXGroup;
+			children = (
+				CE585B0E2D0883E5000BC559 /* InputSelectModuleFeature.swift */,
+			);
+			path = InputSelectModule;
+			sourceTree = "<group>";
+		};
 		CE5AE5222C5385AD00DD7BC4 /* NavigationBarModule */ = {
 			isa = PBXGroup;
 			children = (
@@ -439,7 +449,7 @@
 				CE33817A2CEB4FFE00FABBC5 /* InputSearchModule */,
 				CEE15C4E2C400F48008E6D8C /* InputContryCodeModule */,
 				CE4A7C132C3EBBD300AA7EB4 /* InputAmountModule */,
-				CEF2DE6C2C41306F0065C1BD /* InputSelectModule */,
+				CE585B0D2D0883CD000BC559 /* InputSelectModule */,
 				CE32FFFC2D06DF5200B526A1 /* InputOTPModule */,
 				CE32FFFD2D06DF5D00B526A1 /* InputOTPItemModule */,
 				CE33817B2CEB502800FABBC5 /* InputAddCardModule */,
@@ -549,13 +559,6 @@
 				CEF1FA2F2C57D9D700D0D5D2 /* RowCellExample.swift */,
 			);
 			path = RowModule;
-			sourceTree = "<group>";
-		};
-		CEF2DE6C2C41306F0065C1BD /* InputSelectModule */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = InputSelectModule;
 			sourceTree = "<group>";
 		};
 		CEF2DE6F2C414FD00065C1BD /* InputModule */ = {
@@ -681,6 +684,7 @@
 				CE9EE9792CF4579C00A5E596 /* ImageModuleFeature.swift in Sources */,
 				CE9EE9842CF4C06400A5E596 /* LabelModuleFeature.swift in Sources */,
 				CE4D2E6C2CEF5DA7000E7486 /* ButtonModuleFeature.swift in Sources */,
+				CE585B0F2D0883ED000BC559 /* InputSelectModuleFeature.swift in Sources */,
 				CEC5F8502CF9B10F004C0B8A /* RadioModuleFeature.swift in Sources */,
 				CE9EE9802CF4B5E600A5E596 /* InputPINModuleFeature.swift in Sources */,
 				888955B72914108700A46293 /* SceneDelegate.swift in Sources */,
