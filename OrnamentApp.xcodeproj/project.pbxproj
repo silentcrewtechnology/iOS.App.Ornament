@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		344C10A52D4CAA0800B91760 /* Services in Frameworks */ = {isa = PBXBuildFile; productRef = 344C10A42D4CAA0800B91760 /* Services */; };
 		348C538C2C73BCF900ACEA5C /* ChipsCreationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 348C538B2C73BCF900ACEA5C /* ChipsCreationService.swift */; };
 		348C53912C74AA3F00ACEA5C /* DividerModuleFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 348C53902C74AA3F00ACEA5C /* DividerModuleFeature.swift */; };
 		348C53932C7621BE00ACEA5C /* SegmentControlModuleFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 348C53922C7621BE00ACEA5C /* SegmentControlModuleFeature.swift */; };
@@ -23,7 +24,6 @@
 		CE254A5B2C5CDAC20083EF57 /* BannerModuleFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE254A5A2C5CDAC20083EF57 /* BannerModuleFeature.swift */; };
 		CE2C64E72CF0933E002A78CF /* CardModuleFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2C64E62CF09334002A78CF /* CardModuleFeature.swift */; };
 		CE3200C62D06F85100B526A1 /* InputOTPModuleFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3200C52D06F84900B526A1 /* InputOTPModuleFeature.swift */; };
-		CE32AC4B2C6CD561006969F2 /* Services in Frameworks */ = {isa = PBXBuildFile; productRef = CE32AC4A2C6CD561006969F2 /* Services */; };
 		CE32FFFF2D06DF9000B526A1 /* InputOTPItemModuleFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE32FFFE2D06DF8600B526A1 /* InputOTPItemModuleFeature.swift */; };
 		CE3381812CEB83A100FABBC5 /* NavigationBarModuleFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3381802CEB839A00FABBC5 /* NavigationBarModuleFeature.swift */; };
 		CE4D2E6C2CEF5DA7000E7486 /* ButtonModuleFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4D2E6B2CEF5DA0000E7486 /* ButtonModuleFeature.swift */; };
@@ -121,7 +121,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CE32AC4B2C6CD561006969F2 /* Services in Frameworks */,
+				344C10A52D4CAA0800B91760 /* Services in Frameworks */,
 				CEEB5E672C3568B0000E0215 /* Extensions in Frameworks */,
 				CEEB5E5B2C356246000E0215 /* ArchitectureTableView in Frameworks */,
 				CEA336112C36C17100880A1F /* Router in Frameworks */,
@@ -592,7 +592,7 @@
 				CEEB5E5A2C356246000E0215 /* ArchitectureTableView */,
 				CEEB5E662C3568B0000E0215 /* Extensions */,
 				CEA336102C36C17100880A1F /* Router */,
-				CE32AC4A2C6CD561006969F2 /* Services */,
+				344C10A42D4CAA0800B91760 /* Services */,
 			);
 			productName = OrnamentApp;
 			productReference = 8889557F29140FFC00A46293 /* OrnamentApp.app */;
@@ -626,7 +626,7 @@
 				CEEB5E592C356246000E0215 /* XCRemoteSwiftPackageReference "ios-architecture-table" */,
 				CEEB5E652C3568B0000E0215 /* XCRemoteSwiftPackageReference "ios-extensions" */,
 				CEA3360F2C36C17100880A1F /* XCRemoteSwiftPackageReference "ios-service-routing" */,
-				CE32AC492C6CD561006969F2 /* XCRemoteSwiftPackageReference "ios-services" */,
+				344C10A32D4CAA0800B91760 /* XCRemoteSwiftPackageReference "ios-services" */,
 			);
 			productRefGroup = 8889558029140FFC00A46293 /* Products */;
 			projectDirPath = "";
@@ -920,12 +920,12 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		CE32AC492C6CD561006969F2 /* XCRemoteSwiftPackageReference "ios-services" */ = {
+		344C10A32D4CAA0800B91760 /* XCRemoteSwiftPackageReference "ios-services" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://gitlab.akbars.tech/abo/ios-services";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 0.3.0;
+				minimumVersion = 0.7.3;
 			};
 		};
 		CEA3360F2C36C17100880A1F /* XCRemoteSwiftPackageReference "ios-service-routing" */ = {
@@ -955,9 +955,9 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		CE32AC4A2C6CD561006969F2 /* Services */ = {
+		344C10A42D4CAA0800B91760 /* Services */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = CE32AC492C6CD561006969F2 /* XCRemoteSwiftPackageReference "ios-services" */;
+			package = 344C10A32D4CAA0800B91760 /* XCRemoteSwiftPackageReference "ios-services" */;
 			productName = Services;
 		};
 		CEA336102C36C17100880A1F /* Router */ = {
