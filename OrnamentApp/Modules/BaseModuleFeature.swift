@@ -50,7 +50,9 @@ class BaseModuleFeature: NSObject, FeatureCoordinatorProtocol {
             .init(
                 navigationBarViewProperties: navigationBarViewPropertiesService.createBasicVP(
                     title: screenTitle,
-                    backAction: { [weak self] in self?.runNewFlow?(ModuleFlow.back) }
+                    backAction: { [weak self] in
+                        self?.runNewFlow?(ModuleFlow.back)
+                    }
                 ),
                 tableView: tableViewBuilder.view
             )

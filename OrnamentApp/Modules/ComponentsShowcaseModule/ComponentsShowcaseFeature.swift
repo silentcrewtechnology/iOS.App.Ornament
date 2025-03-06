@@ -78,7 +78,11 @@ final class ComponentsShowcaseFeature: FeatureCoordinatorProtocol {
         for component in Components.allCases {
             let atom = AtomDSElement.title(component.rawValue, nil, nil)
             let leadingBlock = DSRowBlocks.atom(atom)
-            let dSRowModel = DSRowModel(leading: leadingBlock)
+            let dSRowModel = DSRowModel(leading: leadingBlock,
+                                        didTap: {[weak self] tableView, indexPath in
+                tableView.deselectRow(at: indexPath, animated: true)
+                self?.runNewFlow?(component)
+            })
             rowModels.append(dSRowModel)
         }
         
