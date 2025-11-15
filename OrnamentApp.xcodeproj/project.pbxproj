@@ -623,10 +623,10 @@
 			);
 			mainGroup = 8889557629140FFC00A46293;
 			packageReferences = (
-				CEEB5E592C356246000E0215 /* XCRemoteSwiftPackageReference "ios-architecture-table" */,
-				CEEB5E652C3568B0000E0215 /* XCRemoteSwiftPackageReference "ios-extensions" */,
-				CEA3360F2C36C17100880A1F /* XCRemoteSwiftPackageReference "ios-service-routing" */,
-				344C10A32D4CAA0800B91760 /* XCRemoteSwiftPackageReference "ios-services" */,
+				CEEB5E592C356246000E0215 /* XCRemoteSwiftPackageReference "iOS.Architecture.Table" */,
+				CEEB5E652C3568B0000E0215 /* XCRemoteSwiftPackageReference "iOS.Extensions" */,
+				CEA3360F2C36C17100880A1F /* XCRemoteSwiftPackageReference "iOS.Service.Routing" */,
+				344C10A32D4CAA0800B91760 /* XCRemoteSwiftPackageReference "iOS.Services" */,
 			);
 			productRefGroup = 8889558029140FFC00A46293 /* Products */;
 			projectDirPath = "";
@@ -920,7 +920,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		344C10A32D4CAA0800B91760 /* XCRemoteSwiftPackageReference "ios-services" */ = {
+		344C10A32D4CAA0800B91760 /* XCRemoteSwiftPackageReference "iOS.Services" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/silentcrewtechnology/iOS.Services.git";
 			requirement = {
@@ -928,7 +928,7 @@
 				minimumVersion = 1.0.0;
 			};
 		};
-		CEA3360F2C36C17100880A1F /* XCRemoteSwiftPackageReference "ios-service-routing" */ = {
+		CEA3360F2C36C17100880A1F /* XCRemoteSwiftPackageReference "iOS.Service.Routing" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/silentcrewtechnology/iOS.Service.Routing.git";
 			requirement = {
@@ -936,7 +936,7 @@
 				minimumVersion = 1.0.0;
 			};
 		};
-		CEEB5E592C356246000E0215 /* XCRemoteSwiftPackageReference "ios-architecture-table" */ = {
+		CEEB5E592C356246000E0215 /* XCRemoteSwiftPackageReference "iOS.Architecture.Table" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/silentcrewtechnology/iOS.Architecture.Table.git";
 			requirement = {
@@ -944,7 +944,7 @@
 				minimumVersion = 1.0.0;
 			};
 		};
-		CEEB5E652C3568B0000E0215 /* XCRemoteSwiftPackageReference "ios-extensions" */ = {
+		CEEB5E652C3568B0000E0215 /* XCRemoteSwiftPackageReference "iOS.Extensions" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/silentcrewtechnology/iOS.Extensions.git";
 			requirement = {
@@ -957,22 +957,22 @@
 /* Begin XCSwiftPackageProductDependency section */
 		344C10A42D4CAA0800B91760 /* Services */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 344C10A32D4CAA0800B91760 /* XCRemoteSwiftPackageReference "ios-services" */;
+			package = 344C10A32D4CAA0800B91760 /* XCRemoteSwiftPackageReference "iOS.Services" */;
 			productName = Services;
 		};
 		CEA336102C36C17100880A1F /* Router */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = CEA3360F2C36C17100880A1F /* XCRemoteSwiftPackageReference "ios-service-routing" */;
+			package = CEA3360F2C36C17100880A1F /* XCRemoteSwiftPackageReference "iOS.Service.Routing" */;
 			productName = Router;
 		};
 		CEEB5E5A2C356246000E0215 /* ArchitectureTableView */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = CEEB5E592C356246000E0215 /* XCRemoteSwiftPackageReference "ios-architecture-table" */;
+			package = CEEB5E592C356246000E0215 /* XCRemoteSwiftPackageReference "iOS.Architecture.Table" */;
 			productName = ArchitectureTableView;
 		};
 		CEEB5E662C3568B0000E0215 /* Extensions */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = CEEB5E652C3568B0000E0215 /* XCRemoteSwiftPackageReference "ios-extensions" */;
+			package = CEEB5E652C3568B0000E0215 /* XCRemoteSwiftPackageReference "iOS.Extensions" */;
 			productName = Extensions;
 		};
 /* End XCSwiftPackageProductDependency section */
