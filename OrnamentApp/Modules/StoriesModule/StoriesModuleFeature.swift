@@ -92,11 +92,11 @@ final class StoriesModuleFeature: BaseModuleFeature {
         }
         
         let urls: [URL] = [
-            URL(string: "https://life.akbars.ru/upload/iblock/97c/30vuhbt1c87sazwy98wykzq9sjtdtq3o.png")!,
-            URL(string: "https://life.akbars.ru")!,
-            URL(string: "https://life.akbars.ru/upload/iblock/f35/g2unhb62eok00nw7ndneli4z9fauu3hn.png")!,
-            URL(string: "https://life.akbars.ru")!,
-            URL(string: "https://life.akbars.ru/upload/iblock/bb7/r90sbo03xjbuhgf2tft62xzfvd6eldme.png")!,
+            URL(string: "https://example.com/image1.png")!,
+            URL(string: "https://example.com")!,
+            URL(string: "https://example.com/image2.png")!,
+            URL(string: "https://example.com")!,
+            URL(string: "https://example.com/image3.png")!,
         ]
         for (url, tileService) in zip(urls, tilesViewService.tileServices) {
             KingfisherManager.shared.retrieveImage(with: url) { result in
